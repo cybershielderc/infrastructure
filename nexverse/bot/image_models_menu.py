@@ -13,7 +13,6 @@ def ai_models_image_menu() -> InlineKeyboardMarkup:
                 InlineKeyboardButton("Realistic Vision v4", callback_data="text_rvision"),
                 InlineKeyboardButton("Juggernaut XL", callback_data="text_juggernaut")
             ],
-            [InlineKeyboardButton("Realism", callback_data="ignore_0xdead")],
-
+            [InlineKeyboardButton("Anime", callback_data="ignore_0xdead")],
         ]
     )
