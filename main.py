@@ -25,6 +25,6 @@ if __name__ == '__main__':
 
     cserc_thread.join()
     nexverse_thread.join()
-    #tele_app = run_app(token, cryptocurrency)
-    #nexverse = nexverse_runbot(data['nexverse']['token'])
+    # tele_app = run_app(token, cryptocurrency)
+    # nexverse = nexverse_runbot(data['nexverse']['token'])
     print("Running")
