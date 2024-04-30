@@ -11,7 +11,7 @@ def ai_models_image_menu() -> InlineKeyboardMarkup:
             [
                 InlineKeyboardButton("MidJourney v4", callback_data="text_midjourney"),
                 InlineKeyboardButton("Realistic Vision v4", callback_data="text_rvision"),
-                InlineKeyboardButton("")
+                InlineKeyboardButton("", callback_data="")
             ]
         ]
     )
