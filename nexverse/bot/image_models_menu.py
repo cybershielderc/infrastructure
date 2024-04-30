@@ -16,7 +16,7 @@ def ai_models_image_menu() -> InlineKeyboardMarkup:
             [InlineKeyboardButton("Anime", callback_data="ignore_0xdead")],
             [
                 InlineKeyboardButton("Anything v4", callback_data="text_anything"),
-                InlineKeyboardButton("Dark Sushi 2.5D", callback_data="text_"),
+                InlineKeyboardButton("Dark Sushi 2.5D", callback_data="text_dark"),
                 InlineKeyboardButton(),
             ]
         ]
