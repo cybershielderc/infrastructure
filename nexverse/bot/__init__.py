@@ -32,7 +32,8 @@ class NexVerse:
         caption = f'<strong>{message}</strong>' if message else \
             f'<strong>Hi {update.effective_user.name}</strong>'
         if update.message is None:
-            await update.
+            await update.callback_query.messag
+
 
 def run_app(token: str) -> ApplicationBuilder:
     bot = NexVerse(token)
