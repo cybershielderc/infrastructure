@@ -42,7 +42,7 @@ class NexVerse:
             await update.message.reply_text(
                 text=caption,
                 parse_mode='HTML',
-                reply_markup=start_menu_markup(),
+                reply_markup=start_menu_markup() if not menu else menu,
             )
 
     async def image_to_image(self, update: Update, context: CallbackContext) -> None:
