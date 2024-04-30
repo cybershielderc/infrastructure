@@ -45,7 +45,7 @@ class NexVerse:
                 reply_markup=start_menu_markup(),
             )
 
-    async def 
+    async def s
 
     def run(self):
         """Run the bot"""
