@@ -1,8 +1,7 @@
 from bots.tele.main import run_app
 from bots.modules.cryptocurrency import *
-from nexverse.bot
+from nexverse.bot import run_app
 import json
-
 
 if __name__ == '__main__':
     with open("cfgs/bots.json", "r") as f:
@@ -16,5 +15,5 @@ if __name__ == '__main__':
         exit(0xdead)
     # Initiate Eth Net Connection
     cryptocurrency.initiate_eth_net()
-    tele_app = run_app(token,cryptocurrency)
+    tele_app = run_app(token, cryptocurrency)
     print("Running")
