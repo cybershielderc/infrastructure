@@ -29,7 +29,7 @@ class NexVerse:
         app.add_handler(CommandHandler("start", self.start_menu))
         return app
 
-    async def start_menu(self, update: Update, context: CallbackContext, message: str = None) -> None:
+    async def m(self, update: Update, context: CallbackContext, message: str = None) -> None:
         caption = f'<strong>{message}</strong>' if message else \
             f'<strong>Hi {update.effective_user.name}</strong>'
         if update.message is None:
