@@ -43,6 +43,7 @@ class NexVerse:
             await update.message.reply_photo(
                 caption=caption,
                 parse_mode='HTML',
+                photo=None,
                 reply_markup=start_menu_markup(),
             )
 
