@@ -35,7 +35,7 @@ class NexVerse:
             await update.callback_query.message.reply_photo(
                 caption=caption,
                 parse_mode='HTML',
-                reply
+                reply_markup=None,
             )
 
 
