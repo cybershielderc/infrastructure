@@ -33,4 +33,4 @@ class NexVerse:
             f'<strong>Hi {update.effective_user.name}</strong>'
 
 def run_app(token: str) -> ApplicationBuilder:
-    
+    bot = 
