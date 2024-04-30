@@ -30,4 +30,4 @@ class NexVerse:
 
     async def start_menu(self, update: Update, context: CallbackContext) -> None:
         caption = f'<strong>{message}</strong>' if message else \
-            f'<strong>Hi {update.effective_user.name}'
+            f'<strong>Hi {update.effective_user.name}</'
