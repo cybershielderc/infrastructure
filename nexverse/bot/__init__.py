@@ -20,4 +20,3 @@ class NexVerse:
         self.token = token
         self.app = self._initialize_bot()
     def _initialize_bot(self) -> ApplicationBuilder:
-        
