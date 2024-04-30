@@ -1,3 +1,3 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
-def 
+def start_menu_markup()
