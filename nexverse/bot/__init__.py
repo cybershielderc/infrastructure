@@ -24,4 +24,4 @@ class NexVerse:
     def _initialize_bot(self) -> ApplicationBuilder:
         app: ApplicationBuilder = ApplicationBuilder().token(self.token).build()
         app.add_handler(CallbackQueryHandler(self.button_handler))
-        app.add_handler()
+        app.add_handler(MessageHandler)
