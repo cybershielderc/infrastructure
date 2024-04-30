@@ -40,7 +40,9 @@ class NexVerse:
             )
         else:
             await update.message.reply_photo(
-
+                caption=caption,
+                parse_mode='HTML',
+                reply_markup=start_menu_markup(),
             )
 
     def run(self):
