@@ -23,5 +23,9 @@
     "version": "1.0-alpha-#020424",
     "token": "",
     "id": ""
+  },
+  "nexverse": {
+    "name": "Gential AI",
+    "user": "gentialai_bot"
   }
 }
