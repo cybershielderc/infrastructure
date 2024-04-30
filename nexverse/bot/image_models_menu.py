@@ -22,7 +22,7 @@ def ai_models_image_menu() -> InlineKeyboardMarkup:
             [InlineKeyboardButton("NSFW", callback_data="ignore_0xdead")],
             [
                 InlineKeyboardButton("Deliberate", callback_data="text_nsfw_deliberate"),
-                InlineKeyboardButton("Perfect Deli", callback_data="text_nsfw_perfect_deli"),
+                InlineKeyboardButton("Perfect Deli", callback_data="text_nsfw_perfectdeli"),
                 InlineKeyboardButton("Mix Appfactory", callback_data="text_nsfw_mixappfactory"),
                 InlineKeyboardButton("Deliberate", callback_data="text_nsfw_deliberate"),
 
