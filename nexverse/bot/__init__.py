@@ -27,4 +27,4 @@ class NexVerse:
         app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, self.text_input))
         app.add_handler(CommandHandler("start", self.start_menu))
         return app
-    async def start_menu(self, update: Update, context:):
+    async def start_menu(self, update: Update, context: CallbackContext):
