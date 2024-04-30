@@ -34,13 +34,13 @@ class NexVerse:
             f'<strong>Hi {update.effective_user.name}</strong>'
         if update.message is None:
             await update.callback_query.message.reply_text(
-                caption=caption,
+                text=caption,
                 parse_mode='HTML',
                 reply_markup=start_menu_markup(),
             )
         else:
             await update.message.reply_text(
-                caption=caption,
+                text=caption,
                 parse_mode='HTML',
                 reply_markup=start_menu_markup(),
             )
