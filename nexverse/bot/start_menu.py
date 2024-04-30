@@ -1,1 +1,1 @@
-from telegram
+from telegram import I
