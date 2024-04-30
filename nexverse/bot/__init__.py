@@ -46,7 +46,7 @@ class NexVerse:
             )
 
     async def image_to_image(self, update: Update, context: CallbackContext) -> None:
-        
+
 
     def run(self):
         """Run the bot"""
