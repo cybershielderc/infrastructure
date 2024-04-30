@@ -38,6 +38,8 @@ class NexVerse:
                 parse_mode='HTML',
                 reply_markup=start_menu_markup(),
             )
+        else:
+            
 
     def run(self):
         """Run the bot"""
