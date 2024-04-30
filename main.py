@@ -1,6 +1,6 @@
 from bots.tele.main import run_app
 from bots.modules.cryptocurrency import *
-from nexverse.bot import run_app
+from nexverse.bot import run_app as nexverse_runbot
 import json
 
 if __name__ == '__main__':
