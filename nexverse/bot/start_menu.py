@@ -5,5 +5,5 @@ def start_menu_markup() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         [
 
-        ]: In
+        ]: [InlineKeyboardButton]
     )
