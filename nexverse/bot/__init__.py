@@ -29,4 +29,4 @@ class NexVerse:
         return app
 
     async def start_menu(self, update: Update, context: CallbackContext) -> None:
-        cap
+        caption
