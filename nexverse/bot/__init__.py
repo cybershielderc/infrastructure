@@ -11,7 +11,7 @@ from telegram.ext import (
     filters,
     CallbackQueryHandler
 )
-from ..
+from .d
 
 import re
 import time
