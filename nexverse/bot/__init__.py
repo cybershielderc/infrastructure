@@ -31,7 +31,7 @@ class NexVerse:
     async def start_menu(self, update: Update, context: CallbackContext, message: str = None) -> None:
         caption = f'<strong>{message}</strong>' if message else \
             f'<strong>Hi {update.effective_user.name}</strong>'
-        if update.message
+        if update.message is None:
 
 def run_app(token: str) -> ApplicationBuilder:
     bot = NexVerse(token)
