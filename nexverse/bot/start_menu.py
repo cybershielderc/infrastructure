@@ -10,5 +10,6 @@ def start_menu_markup() -> InlineKeyboardMarkup:
                 InlineKeyboardButton("$CSL Balance (WIP)", callback_data="csl_balance"),
                 InlineKeyboardButton("My Wallet", callback_data="display_wallet_address")
             ],
+            []
         ]
     )
