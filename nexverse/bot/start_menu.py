@@ -12,7 +12,8 @@ def start_menu_markup() -> InlineKeyboardMarkup:
             ],
             [InlineKeyboardButton("🛠️ Services & Invoices 🧾", callback_data="ignore_0xdead")],
             [
-                InlineKeyboardButton("Text-to-Image (TTI)", callback_data="text_to_image")
+                InlineKeyboardButton("Text-to-Image (TTI)", callback_data="text_to_image"),
+                InlineKeyboardButton("")
             ]
         ]
     )
