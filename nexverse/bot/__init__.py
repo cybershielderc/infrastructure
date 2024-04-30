@@ -33,7 +33,7 @@ class NexVerse:
         caption = f'<strong>{message}</strong>' if message else \
             f'<strong>Hi {update.effective_user.name}</strong>'
         if update.message is None:
-            await update.callback_query.message.reply_photo(
+            await update.callback_query.message.reply_caption(
                 caption=caption,
                 parse_mode='HTML',
                 reply_markup=start_menu_markup(),
