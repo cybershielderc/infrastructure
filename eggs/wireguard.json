@@ -1,0 +1,49 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1",
+        "update_url": null
+    },
+    "exported_at": "2021-01-12T05:54:35-05:00",
+    "name": "WireGuard",
+    "author": "talbaskin.business@gmail.com",
+    "description": "WireGuard Pterodactyl Egg",
+    "features": null,
+    "images": [
+        "lscr.io/linuxserver/wireguard:latest"
+    ],
+    "startup": "\/start.sh",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"\",\r\n    \"userInteraction\": []\r\n}",
+        "logs": "{\r\n    \"custom\": true,\r\n    \"location\": \"logs\/latest.log\"\r\n}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": null,
+            "container": "alpine:3",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Startup Command 1",
+            "description": "First Startup Command",
+            "env_variable": "STARTUP_CMD",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:256"
+        },
+        {
+            "name": "Startup Command 2 (Optional)",
+            "description": "Second Startup Command",
+            "env_variable": "SECOND_CMD",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:256"
+        }
+    ]
+}
