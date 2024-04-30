@@ -34,7 +34,8 @@ class NexVerse:
         if update.message is None:
             await update.callback_query.message.reply_photo(
                 caption=caption,
-                parse_mode='HTML'
+                parse_mode='HTML',
+                
             )
 
 
