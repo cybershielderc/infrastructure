@@ -26,6 +26,7 @@
   },
   "nexverse": {
     "name": "Gential AI",
-    "user": "gentialai_bot"
+    "user": "gential_bot",
+    "version": "1.0-build#"
   }
 }
