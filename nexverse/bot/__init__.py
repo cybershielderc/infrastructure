@@ -29,4 +29,4 @@ class NexVerse:
         return app
 
     async def start_menu(self, update: Update, context: CallbackContext) -> None:
-        caption = f'<strong>{message}</strong>' if message else 
+        caption = f'<strong>{message}</strong>' if message else f'<'
