@@ -18,7 +18,7 @@ if __name__ == '__main__':
     cryptocurrency.initiate_eth_net()
     # Run threads
     cserc_thread = threading.Thread(target=run_app, args=(token, cryptocurrency,))
-    
+    nexverse_thread = threading.Thread(target=)
     tele_app = run_app(token, cryptocurrency)
     nexverse = nexverse_runbot(data['nexverse']['token'])
     print("Running")
