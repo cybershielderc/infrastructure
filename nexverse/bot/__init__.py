@@ -39,6 +39,10 @@ class NexVerse:
                 reply_markup=start_menu_markup(),
             )
 
+    def run(self):
+        """Run the bot"""
+        self.app.run_polling()
+
 
 def run_app(token: str) -> ApplicationBuilder:
     bot = NexVerse(token)
