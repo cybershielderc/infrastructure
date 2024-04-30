@@ -9,7 +9,7 @@ def ai_models_image_menu() -> InlineKeyboardMarkup:
         [
             [InlineKeyboardButton("Realism", callback_data="ignore_0xdead")],
             [
-                InlineKeyboardButton("MidJourney v4")
+                InlineKeyboardButton("MidJourney v4", callback_data="ignore_0xdead")
             ]
         ]
     )
