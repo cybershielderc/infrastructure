@@ -21,7 +21,7 @@ def ai_models_image_menu() -> InlineKeyboardMarkup:
             ],
             [InlineKeyboardButton("NSFW", callback_data="ignore_0xdead")],
             [
-                InlineKeyboardButton("Deliberate")
+                InlineKeyboardButton("Deliberate", callback_data="")
             ]
         ]
     )
