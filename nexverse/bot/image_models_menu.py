@@ -14,5 +14,8 @@ def ai_models_image_menu() -> InlineKeyboardMarkup:
                 InlineKeyboardButton("Juggernaut XL", callback_data="text_juggernaut")
             ],
             [InlineKeyboardButton("Anime", callback_data="ignore_0xdead")],
+            [
+                
+            ]
         ]
     )
