@@ -45,7 +45,7 @@ class NexVerse:
                 reply_markup=start_menu_markup(),
             )
 
-    async def i
+    async def image_to_image(self, update: Update, context: CallbackContext) -> None:
 
     def run(self):
         """Run the bot"""
