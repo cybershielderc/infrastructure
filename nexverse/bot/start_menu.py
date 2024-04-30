@@ -13,7 +13,7 @@ def start_menu_markup() -> InlineKeyboardMarkup:
             [InlineKeyboardButton("🛠️ Services & Invoices 🧾", callback_data="ignore_0xdead")],
             [
                 InlineKeyboardButton("Text-to-Image (TTI)", callback_data="text_to_image"),
-                InlineKeyboardButton("Image-to-Image (ITI)", callback_data="image_")
+                InlineKeyboardButton("Image-to-Image (ITI)", callback_data="image_to")
             ]
         ]
     )
