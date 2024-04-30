@@ -3,3 +3,4 @@ from telegram import (
     InlineKeyboardMarkup
 )
 def ai_models_image_menu() -> InlineKeyboardMarkup:
+    
