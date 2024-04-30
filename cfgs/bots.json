@@ -1,0 +1,27 @@
+{
+  "database": {
+      "host": "csl.sh",
+      "port": 3306,
+      "user": "u4_H4D2gtn0lm",
+      "password": "8lohL3!Y@2ajbL6Vl4c+9Yth",
+      "database": "s4_merc_db"
+  },
+  "apis": {
+    "vshield_api": "8269ad74c42b862e13511f02c33d4ac87ea12cfe",
+    "openai_api": "sk-proj-5p5lSoZ8qvSm1O0O018mT3BlbkFJUDeSk3tKdPtsUyHT8gxd",
+    "blockchain_api": ""
+  },
+  "tg": {
+    "name": "Unnamed Crypto Bot",
+    "user": "unn_crp_bot",
+    "version": "1.0-alpha-#020424",
+    "token": "7023348531:AAGsXBdUuqOB5V0fUMus3azX39lFmHsJZCI"
+  },
+  "dc": {
+    "name": "Unnamed Crypto Bot",
+    "user": "unn_crp_bot",
+    "version": "1.0-alpha-#020424",
+    "token": "",
+    "id": ""
+  }
+}
