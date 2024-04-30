@@ -21,4 +21,4 @@ class NexVerse:
         self.app = self._initialize_bot()
 
     def _initialize_bot(self) -> ApplicationBuilder:
-        app = ApplicationBuilder().to
+        app = ApplicationBuilder().token(self)
