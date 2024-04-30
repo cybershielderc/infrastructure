@@ -14,7 +14,7 @@ def start_menu_markup() -> InlineKeyboardMarkup:
             [
                 InlineKeyboardButton("Text-to-Image (TTI)", callback_data="text_to_image"),
                 InlineKeyboardButton("Image-to-Image (ITI)", callback_data="image_to_image"),
-                InlineKeyboardButton("AI Assistant", callback_data="")
+                InlineKeyboardButton("AI Assistant", callback_data="initiate_chat")
             ]
         ]
     )
