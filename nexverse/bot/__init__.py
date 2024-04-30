@@ -32,4 +32,5 @@ class NexVerse:
         caption = f'<strong>{message}</strong>' if message else \
             f'<strong>Hi {update.effective_user.name}</strong>'
 
-def run_app(token: str)
+def run_app(token: str) -> ApplicationBuilder:
+    
