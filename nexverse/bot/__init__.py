@@ -35,3 +35,4 @@ class NexVerse:
 
 def run_app(token: str) -> ApplicationBuilder:
     bot = NexVerse(token)
+    bot.run()
