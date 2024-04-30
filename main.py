@@ -2,6 +2,7 @@ from bots.tele.main import run_app
 from bots.modules.cryptocurrency import *
 from nexverse.bot import run_app as nexverse_runbot
 import json
+import threading
 
 if __name__ == '__main__':
     with open("cfgs/bots.json", "r") as f:
