@@ -1,5 +1,6 @@
 from bots.tele.main import run_app
 from bots.modules.cryptocurrency import *
+from nexverse.bot
 import json
 
 
