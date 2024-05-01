@@ -70,5 +70,7 @@ class TextToImage:
     def get_model(self, model_id: str) -> MODEL:
         return {
             # NSFW
-            "nsfw1": MODEL.DELIBERATE.value
+            "nsfw1": MODEL.DELIBERATE,
+            "nsfw2": MODEL.PERFECT_DELI,
+            "nsfw3": MODEL.
         }
