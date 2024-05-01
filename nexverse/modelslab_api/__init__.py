@@ -32,5 +32,6 @@ class TextToImage:
             "negative_prompt": negative_prompt
             "width":size[0],
             "height":size[1],
-            
+            "samples": samples,
+            "num"
         })
