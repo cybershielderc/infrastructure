@@ -9,4 +9,4 @@ api_data = data['apis']['modelslab']
 
 
 class URIS:
-    T
+    TTI = url = "https://modelslab.com/api/v6/images/text2img"
