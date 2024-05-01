@@ -60,4 +60,4 @@ api = TextToImage(data['apis']['modelslab'])
 response: requests.Request = api.build_request(MODEL.PINKDREAM, "hot lady in leggings, and see-through bra",
                                                "painting, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, deformed, ugly, blurry, bad anatomy, bad proportions, extra limbs, cloned face, skinny, glitchy, double torso, extra arms, extra hands, mangled fingers, missing lips, ugly face, distorted face, extra legs, anime")
 
-print(response.)
+print(response.text)
