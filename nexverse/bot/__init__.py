@@ -91,7 +91,9 @@ class NexVerse:
                         parse_mode="HTML",
                         reply_markup=ai_models_image_menu()
                     )
-                    processing_message = await update.message.reply_text("Processing... ⌛")
+                    processing_message = await update.message.reply_text(
+                        "Processing... ⌛ | Please be patient this will only take a few seconds!"
+                    )
                     context.user_data['neg_prompt'] = user_input
                     context.user_data['waiting_for_neg_prompt'] = False
         if 'waiting_for_prompt' in context.user_data:
