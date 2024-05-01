@@ -95,7 +95,7 @@ class NexVerse:
         await update.message.reply_photo(
             photo=image['output'][0],
             caption=message,
-            
+            parse_mode='HTML'
         )
 
     async def text_input(self, update: Update, context: CallbackContext):
