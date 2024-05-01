@@ -93,7 +93,7 @@ class NexVerse:
         await update._bot.delete_message(chat_id=update.message.chat_id,
                                          message_id=context.user_data['reply_message_id'])
         await update.message.reply_photo(
-            
+            photo=
         )
 
     async def text_input(self, update: Update, context: CallbackContext):
