@@ -15,9 +15,9 @@ def ai_models_image_menu() -> InlineKeyboardMarkup:
             ],
             [InlineKeyboardButton("Anime", callback_data="ignore_0xdead")],
             [
-                InlineKeyboardButton("Anything v4", callback_data="ai>img>model>selection#//anything"),
-                InlineKeyboardButton("Dark Sushi 2.5D", callback_data="ai>img>model>selection#//darksushi"),
-                InlineKeyboardButton("Sakura v3", callback_data="ai>img>model>selection#//sakura")
+                InlineKeyboardButton("Anything v4", callback_data="ai>img>model>selection#//anime1"),
+                InlineKeyboardButton("Dark Sushi 2.5D", callback_data="ai>img>model>selection#//anime2"),
+                InlineKeyboardButton("Sakura v3", callback_data="ai>img>model>selection#//anime3")
             ],
             [InlineKeyboardButton("NSFW", callback_data="ignore_0xdead")],
             [
