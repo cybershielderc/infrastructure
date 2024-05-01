@@ -84,13 +84,17 @@ class NexVerse:
     async def reply_with_generated_image(self, update: Update, context: CallbackContext):
         try:
             image = self.ai_image_api.build_request(
-            self.ai_image_api.get_model(context.user_data['selected_model']),
-            context.user_data['pos_prompt'],
-            context.user_data['neg_prompt'] if context.user_data[
-                                                   'neg_prompt'] is not '-' else self.ai_image_api.DEFAULT_NEG_PROMPT
+                self.ai_image_api.get_model(context.user_data['selected_model']),
+                context.user_data['pos_prompt'],
+                context.user_data['neg_prompt'] if context.user_data[
+                                                       'neg_prompt'] is not '-' else self.ai_image_api.DEFAULT_NEG_PROMPT
             ).json()
         except requests.exceptions.ConnectionError:
-            
+            await update._bot.delete_message(chat_id=update.message.chat_id,
+                                             message_id=context.user_data['reply_message_id'])
+            await update.message.reply_text(
+                text="Sorry, I couldn't generate that image for you! :/\nPlease try again!."
+            )
         print(image)
         print(self.ai_image_api.get_model(context.user_data['selected_model']))
         print(context.user_data['pos_prompt'])
