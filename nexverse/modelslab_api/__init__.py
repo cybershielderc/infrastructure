@@ -37,8 +37,8 @@ class TextToImage:
             "model_id": model.value,
             "prompt": prompt,
             "negative_prompt": negative_prompt,
-            "width":size[0],
-            "height":size[1],
+            "width": size[0],
+            "height": size[1],
             "samples": samples,
             "num_inference_steps": num_inference_steps,
             "seed": seed,
@@ -54,7 +54,9 @@ class TextToImage:
 
         return request
 
+
 api = TextToImage(data['apis']['modelslab'])
-response = api.build_request(MODEL.PINKDREAM, "hot lady in leggings, and see-through bra", "painting, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, deformed, ugly, blurry, bad anatomy, bad proportions, extra limbs, cloned face, skinny, glitchy, double torso, extra arms, extra hands, mangled fingers, missing lips, ugly face, distorted face, extra legs, anime")
+response = api.build_request(MODEL.PINKDREAM, "hot lady in leggings, and see-through bra",
+                             "painting, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, deformed, ugly, blurry, bad anatomy, bad proportions, extra limbs, cloned face, skinny, glitchy, double torso, extra arms, extra hands, mangled fingers, missing lips, ugly face, distorted face, extra legs, anime")
 
 print(response)
