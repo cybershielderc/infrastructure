@@ -80,3 +80,5 @@ class TextToImage:
             "realism2": MODEL.REALISTIC_VISION,
             "realism3": MODEL.JUGGERNAUT,
         }.get(model_id, None)
+
+    def get_queued(self, id: int = None) -> :
