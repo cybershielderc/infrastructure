@@ -19,5 +19,5 @@ if __name__ == '__main__':
     cryptocurrency.initiate_eth_net()
     # Run threads
     # tele_app = run_app(token, cryptocurrency)
-    nexverse = nexverse_runbot(data['nexverse']['token'], TextToImage(data['']))
+    nexverse = nexverse_runbot(data['nexverse']['token'], TextToImage(data['apis']['modelslab_api']))
     print("Running")
