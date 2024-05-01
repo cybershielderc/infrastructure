@@ -97,4 +97,5 @@ responses = []
 
 for k, v in api.MODELS:
     for model in v:
-        responses.append(api.build_request(model, prompt)
+        if k is "nsfw":
+        responses.append(api.build_request(model,)
