@@ -9,9 +9,9 @@ def ai_models_image_menu() -> InlineKeyboardMarkup:
         [
             [InlineKeyboardButton("Realism", callback_data="ignore_0xdead")],
             [
-                InlineKeyboardButton("MidJourney v4", callback_data="ai>img>model>selection#//midjourney"),
-                InlineKeyboardButton("Realistic Vision v4", callback_data="ai>img>model>selection#//rvision"),
-                InlineKeyboardButton("Juggernaut XL", callback_data="ai>img>model>selection#//juggernaut")
+                InlineKeyboardButton("MidJourney v4", callback_data="ai>img>model>selection#//realism1"),
+                InlineKeyboardButton("Realistic Vision v4", callback_data="ai>img>model>selection#//realism2-0xdead"),
+                InlineKeyboardButton("Juggernaut XL", callback_data="ai>img>model>selection#//realism3-0xdead")
             ],
             [InlineKeyboardButton("Anime", callback_data="ignore_0xdead")],
             [
