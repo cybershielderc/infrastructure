@@ -21,7 +21,7 @@ class MODEL(enum.Enum):
     REALISTIC_VISION = "realistic-vision-v40"
     JUGGERNAUT = "juggernaut-xl"
     # Anime
-
+    
 
 class TextToImage:
     def __init__(self, api: str = None) -> None:
