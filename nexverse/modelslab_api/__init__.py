@@ -45,7 +45,7 @@ class TextToImage:
             "key": self.api_key,
             "model_id": model.value,
             "prompt": prompt,
-            "negative_prompt": negative_prompt[0] if type(negative_prompt) == tu,
+            "negative_prompt": negative_prompt[0] if type(negative_prompt) == tuple,
             "width": size[0],
             "height": size[1],
             "samples": samples,
