@@ -118,12 +118,12 @@ class NexVerse:
             )
 
         if not 'generationTime' in image.keys():
-            await time.sleep(image['eta'] + 1)
+            time.sleep(image['eta'] + 1)
             print(image)
             try:
                 image['output'][0] = self.ai_image_api.get_queued(image['id'])
             except IndexError:
-                await time.sleep(image['eta'] + 0.8)
+                time.sleep(image['eta'] + 0.8)
                 image['output'][0] = self.ai_image_api.get_queued(image['id'])
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image['id']}</code>\n" + \
                   f"<strong>Time Took {image['generationTime']:.2f} seconds</strong>\n\n<strong>Prompt</strong>\n" + \
@@ -138,7 +138,7 @@ class NexVerse:
             if 'tti_response_message' in context.user_data:
                 if context.user_data['tti_response_message'] is not None:
                     context.user_data['tti_response_message'] = None
-            await time.sleep(1)
+            time.sleep(1)
             image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
             if not update.message:
                 response_message = await update.callback_query.message.reply_photo(
@@ -169,7 +169,7 @@ class NexVerse:
             if 'tti_response_message' in context.user_data:
                 if context.user_data['tti_response_message'] is not None:
                     context.user_data['tti_response_message'] = None
-            await time.sleep(1)
+            time.sleep(1)
             if not update.message:
                 response_message = await update.callback_query.message.reply_photo(
                     photo=image_bytes,
