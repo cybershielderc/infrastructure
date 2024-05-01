@@ -83,8 +83,8 @@ class NexVerse:
                     # Capture message
                     user_input = update.message.text
                     await update.message.delete()
-                    await update.message.reply_to_message.edit_caption(
-                        caption=update.message.mess.caption + "\n\n<strong>User Prompt<strong>\n" + user_input,
+                    await update.message.edit_caption(
+                        caption=update.message.caption + "\n\n<strong>User Prompt<strong>\n" + user_input,
                         parse_mode="HTML",
                         reply_markup=ai_models_image_menu()
                     )
