@@ -91,9 +91,8 @@ class NexVerse:
                         parse_mode="HTML",
                         reply_markup=ai_models_image_menu()
                     )
-                    context.user_data['waiting_for_prompt'] = False
-                    context.user_data['pos_prompt'] = user_input
-                    context.user_data['waiting_for_neg_prompt'] = True
+                    context.user_data['neg_prompt'] = user_input
+                    context.user_data['waiting_for_neg_prompt'] = False
         if 'waiting_for_prompt' in context.user_data:
             if context.user_data['waiting_for_prompt']:
                 if update.message.reply_to_message:
