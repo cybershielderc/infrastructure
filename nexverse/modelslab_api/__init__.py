@@ -16,8 +16,9 @@ class URIS:
 class MODEL(enum.Enum):
     # NSFW
     DELIBERATE = "deliberateappfactory"
-    PERFECT_DELI = ""
+    PERFECT_DELI = "perfect-deli-appfact"
     PINKDREAM = "pinkdream-appfactory"
+    
     # Realism
     MIDJOURNEY = "midjourney"
     REALISTIC_VISION = "realistic-vision-v40"
