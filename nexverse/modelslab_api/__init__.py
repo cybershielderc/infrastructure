@@ -74,4 +74,5 @@ class TextToImage:
             "nsfw2": MODEL.PERFECT_DELI,
             "nsfw3": MODEL.MIX_APPFACTORY,
             "nsfw4": MODEL.DARK_APPFACTORY,
+            #
         }
