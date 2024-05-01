@@ -86,6 +86,5 @@ class TextToImage:
 
         return request
 
-
-api = TextToImage(data['apis']['modelslab'])
-negative_prompt =
+    def get_model(self, model_id: str) -> MODEL:
+        
