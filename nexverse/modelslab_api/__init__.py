@@ -54,3 +54,4 @@ class TextToImage:
 
         return request
 
+api = TextToImage(data['apis']['modelslab'])
