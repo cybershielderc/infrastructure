@@ -139,7 +139,7 @@ class NexVerse:
                 if context.user_data['tti_response_message'] is not None:
                     context.user_data['tti_response_message'] = None
             time.sleep(1)
-            image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
+            image_bytes: bytes = get_file_byte_data_from_url(context.user_data['generated_image_uri'])
             if not update.message:
                 response_message = await update.callback_query.message.reply_photo(
                     photo=image_bytes,
