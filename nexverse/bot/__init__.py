@@ -149,7 +149,8 @@ class NexVerse:
                     context.user_data['tti_response_message'] = None
             image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
             while image_bytes is None:
-                image_bytes = get_file_byte_data_from_url(image[''])
+                image_bytes = get_file_byte_data_from_url(image['output'][0])
+                await asyncio.sleep(0.5)
             response_message = await update.message.reply_photo(
                 photo=,
                 caption=message,
