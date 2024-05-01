@@ -96,4 +96,4 @@ realism_prompt = "hot brunette lady in lingerie, laying on a bed"
 responses = []
 
 for k,v in api.MODELS:
-    
+    for model in 
