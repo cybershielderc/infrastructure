@@ -147,7 +147,7 @@ class NexVerse:
                     await update._bot.delete_message(chat_id=update.message.chat_id,
                                                      message_id=context.user_data['tti_response_message'])
                     context.user_data['tti_response_message'] = None
-            image_bytes: bytes = get_file_byte_data_from_url(image['output'][0]()
+            image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
             response_message = await update.message.reply_photo(
                 photo=image_bytes,
                 caption=message,
@@ -161,9 +161,10 @@ class NexVerse:
             )
             context.user_data['tti_response_message'] = response_message
         except telegram.error.BadRequest:
-
+            await asyncio.sleep(3)
+            image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
             response_message = await update.message.reply_photo(
-                photo=get_file_byte_data_from_url(image['output'][0]),
+                photo=image_bytes,
                 caption=message,
                 parse_mode='HTML',
                 reply_markup=InlineKeyboardMarkup(
