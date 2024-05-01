@@ -125,13 +125,13 @@ class NexVerse:
                                          message_id=context.user_data['reply_message_id'])
         try:
             await update.message.reply_photo(
-                photo=image['output'][0],
+                photo=get_file_byte_data_from_url(image['output'][0]),
                 caption=message,
                 parse_mode='HTML'
             )
         except telegram.error.BadRequest:
             await update.message.reply_photo(
-                photo=image['output'][0],
+                photo=get_file_byte_data_from_url(image['output'][0]),
                 caption=message,
                 parse_mode='HTML'
             )
