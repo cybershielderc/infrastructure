@@ -121,9 +121,10 @@ class NexVerse:
             time.sleep(image['eta'] + 1)
             print(image)
             try:
-                image['output'][0] = image['output'][0]
+                context.user_data['generated_image_uri'] = image['output'][0]
             except IndexError:
                 image_url = image['future_links'][0]
+                context.user_data['generated_image_uri'] = image_url
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image['id']}</code>\n" + \
                   f"<strong>Time Took {image['generationTime']:.2f} seconds</strong>\n\n<strong>Prompt</strong>\n" + \
                   f"{context.user_data['pos_prompt']}\n\n<strong>Negative Prompt</strong>\n{context.user_data['neg_prompt']}" + \
