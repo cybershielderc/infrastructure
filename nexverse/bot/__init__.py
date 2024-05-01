@@ -80,7 +80,7 @@ class NexVerse:
             context.user_data['waiting_for_prompt'] = True
 
     async def reply_with_generated_image(self, update: Update, context: CallbackContext):
-        image = self.ai_image_api.
+        image = self.ai_image_api.build_request()
 
     async def text_input(self, update: Update, context: CallbackContext):
         if 'waiting_for_neg_prompt' in context.user_data:
