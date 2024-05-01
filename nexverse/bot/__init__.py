@@ -152,6 +152,18 @@ class NexVerse:
                 if context.user_data['tti_response_message'] is not None:
                     context.user_data['tti_response_message'] = None
             image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
+            if not update.message:
+                response_message = await context.u.message.reply_photo(
+                    photo=image_bytes,
+                    caption=message,
+                    parse_mode='HTML',
+                    reply_markup=InlineKeyboardMarkup(
+                        [[
+                            InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
+                            InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
+                        ]]
+                    )
+                )
             response_message = await update.message.reply_photo(
                 photo=image_bytes,
                 caption=message,
