@@ -150,7 +150,7 @@ class NexVerse:
             image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
             while image_bytes is None:
                 image_bytes = get_file_byte_data_from_url(image['output'][0])
-                await asyncio.sleep(0.5)
+                await asyncio.sleep(1)
             response_message = await update.message.reply_photo(
                 photo=,
                 caption=message,
