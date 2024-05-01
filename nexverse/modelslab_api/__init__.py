@@ -106,7 +106,6 @@ for k, v in api.MODELS:
 i = 0
 for i in range(len(responses)):
     if 0 <= i <= 2:
-        
         print(f"NSFW Response-{i}: {responses[i].json['output'][0]}")
-   if 3 <= i <= 6:
+    elif 3 <= i <= 6:
         print(f"Anime Response-{i}: {responses[i]}")
