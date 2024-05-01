@@ -121,6 +121,7 @@ class NexVerse:
             time.sleep(image['eta'] + 1)
             print(image)
             try:
+                
                 image_url = self.ai_image_api.get_queued(image['id'])
             except IndexError:
                 time.sleep(image['eta'] + 0.8)
