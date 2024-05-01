@@ -84,7 +84,7 @@ class NexVerse:
                     user_input = update.message.text
                     await update.message.delete()
                     await update.message.reply_to_message.edit_caption(
-                        caption=update.message.reply_to_message.caption + "\n\n<User Prompt"
+                        caption=update.message.reply_to_message.caption + "\n\n<strong>User Prompt<strong>\n"+
                     )
                     context.user_data['waiting_for_prompt'] = False
 
