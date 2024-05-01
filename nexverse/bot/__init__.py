@@ -139,6 +139,7 @@ class NexVerse:
                 if context.user_data['tti_response_message'] is not None:
                     context.user_data['tti_response_message'] = None
             image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
+            await time.sleep(3)
             if not update.message:
                 response_message = await update.callback_query.message.reply_photo(
                     photo=image_bytes,
@@ -168,7 +169,7 @@ class NexVerse:
             if 'tti_response_message' in context.user_data:
                 if context.user_data['tti_response_message'] is not None:
                     context.user_data['tti_response_message'] = None
-            await asyncio.sleep(3)
+            await time.sleep(3)
             if not update.message:
                 response_message = await update.callback_query.message.reply_photo(
                     photo=image_bytes,
