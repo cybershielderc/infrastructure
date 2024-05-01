@@ -31,7 +31,22 @@ class MODEL(enum.Enum):
 
 class TextToImage:
     MODELS: dict = {
-        "nsfw":
+        "nsfw": [
+            MODEL.DELIBERATE,
+            MODEL.PERFECT_DELI,
+            MODEL.MIX_APPFACTORY,
+            MODEL.DARK_APPFACTORY
+        ],
+        "realism": [
+            MODEL.MIDJOURNEY,
+            MODEL.REALISTIC_VISION,
+            MODEL.JUGGERNAUT,
+        ],
+        "anime": [
+            MODEL.ANYTHING,
+            MODEL.DARK_SUSHI,
+            MODEL.SAKURA,
+        ]
     }
     def __init__(self, api: str = None) -> None:
         if not api: raise Exception("No api key provided")
