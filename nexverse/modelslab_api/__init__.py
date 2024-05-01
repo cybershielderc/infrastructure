@@ -18,3 +18,4 @@ class TextToImage:
         self.api_key = api
 
     def build_request(self):
+        
