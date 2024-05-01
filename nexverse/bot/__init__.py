@@ -64,13 +64,13 @@ class NexVerse:
             selection = query.data.split("ai>img>model>selection#//")[1].split("#CNAME#")
             if update.message is None:
                 await update.callback_query.edit_message_text(
-                    text=f"You have selected <strong>{selection[1]}</strong><br>Please reply to this message to set the prompt you would like the AI to use!",
+                    text=f"You have selected <strong>{selection[1]}</strong>\nPlease reply to this message to set the prompt you would like the AI to use!",
                     parse_mode="HTML",
                     reply_markup=ai_models_image_menu()
                 )
             else:
                 await update.message.edit_caption(
-                    caption=f"You have selected <strong>{selection[1]}</strong><br>Please reply to this message to set the prompt you would like the AI to use!",
+                    caption=f"You have selected <strong>{selection[1]}</strong>\nPlease reply to this message to set the prompt you would like the AI to use!",
                     parse_mode="HTML",
                     reply_markup=ai_models_image_menu())
             context.user_data['selected_model'] = selection[0]
