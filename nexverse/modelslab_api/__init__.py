@@ -81,4 +81,5 @@ class TextToImage:
             "realism3": MODEL.JUGGERNAUT,
         }.get(model_id, None)
 
-    def get_queued(self, id: int = None) -> requests.Request:
+    def get_queued(self, id: int = None) -> requests.api:
+        
