@@ -146,6 +146,7 @@ class NexVerse:
             if context.user_data['reply_message_id'] is not None:
                 await update._bot.delete_message(chat_id=update.message.chat_id,
                                                  message_id=context.user_data['reply_message_id'])
+                context.user_data['reply_message_id'] = None
         try:
             if 'tti_response_message' in context.user_data:
                 if context.user_data['tti_response_message'] is not None:
