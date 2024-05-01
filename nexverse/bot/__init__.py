@@ -164,17 +164,18 @@ class NexVerse:
                         ]]
                     )
                 )
-            response_message = await update.message.reply_photo(
-                photo=image_bytes,
-                caption=message,
-                parse_mode='HTML',
-                reply_markup=InlineKeyboardMarkup(
-                    [[
-                        InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
-                        InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
-                    ]]
+            else:
+                response_message = await update.message.reply_photo(
+                    photo=image_bytes,
+                    caption=message,
+                    parse_mode='HTML',
+                    reply_markup=InlineKeyboardMarkup(
+                        [[
+                            InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
+                            InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
+                        ]]
+                    )
                 )
-            )
             context.user_data['tti_response_message'] = response_message.message_id
         except (telegram.error.BadRequest, telegram.error.TimedOut):
             if 'tti_response_message' in context.user_data:
