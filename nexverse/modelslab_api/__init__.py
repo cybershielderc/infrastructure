@@ -92,5 +92,7 @@ negative_prompt = "lowres, text, error, cropped, worst quality, low quality, jpe
 nsfw_prompts = "hot lady in leggings, and see-through bra"
 anime_prompts = "hot asian lady in a tight leather skirt and see-through buttoned white shirt"
 realism_prompt = "hot brunette lady in lingerie, laying on a bed"
-response: requests.Request = api.build_request(MODEL.PINKDREAM, "hot lady in leggings, and see-through bra",
-                                               "misfigured face")
+
+responses = []
+
+for 
