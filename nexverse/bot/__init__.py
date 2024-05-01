@@ -86,6 +86,7 @@ class NexVerse:
             context.user_data['neg_prompt'] if context.user_data[
                                                    'neg_prompt'] is not '-' else self.ai_image_api.DEFAULT_NEG_PROMPT
         ).json()
+        print(image)
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image['id']}</code>\n" + \
                   f"<strong>Time Took {image['generationTime']:.2f}</strong>\n\n<strong>Prompt</strong>\n" + \
                   f"{image['prompt']}\n\n<strong>Negative Prompt</strong>\n{image['negative_prompt']}" + \
