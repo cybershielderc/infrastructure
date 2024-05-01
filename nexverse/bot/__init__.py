@@ -71,10 +71,9 @@ class NexVerse:
             if context.user_data['waiting_for_prompt']:
                 if update.message.reply_to_message:
                     # Capture message
-                    
-                user_input = update.message.text
-                update.message.reply_text(f'You entered: {user_input}')
-                context.user_data['waiting_for_input'] = False
+                    user_input = update.message.text
+                    update.message.reply_text(f'You entered: {user_input}')
+                    context.user_data['waiting_for_prompt'] = False
 
     def run(self):
         """Run the bot"""
