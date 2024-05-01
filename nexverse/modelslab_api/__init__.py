@@ -16,3 +16,5 @@ class TextToImage:
     def __init__(self, api: str = None) -> None:
         if not api: raise Exception("No api key provided")
         self.api_key = api
+
+    def build_request(self):
