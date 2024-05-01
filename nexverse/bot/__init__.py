@@ -74,6 +74,7 @@ class NexVerse:
                     parse_mode="HTML",
                     reply_markup=ai_models_image_menu())
             context.user_data['selected_model'] = selection[0]
+            context.user_data['selected_model_name'] = selection[1]
             context.user_data['waiting_for_prompt'] = True
 
     async def text_input(self, update: Update, context: CallbackContext):
@@ -84,7 +85,7 @@ class NexVerse:
                     user_input = update.message.text
                     await update.message.delete()
                     await update.message.edit_caption(
-                        caption=f"You have selected <strong>{context.user_data['selection']}</strong>\nPlease reply to this message to set the prompt you would like the AI to use!" + "\n\n<strong>User Prompt<strong>\n" + user_input,
+                        caption=f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\nPlease reply to this message to set the prompt you would like the AI to use!" + "\n\n<strong>User Prompt<strong>\n" + user_input,
                         parse_mode="HTML",
                         reply_markup=ai_models_image_menu()
                     )
