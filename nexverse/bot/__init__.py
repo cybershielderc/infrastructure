@@ -162,9 +162,8 @@ class NexVerse:
             context.user_data['tti_response_message'] = response_message
         except telegram.error.BadRequest:
             await asyncio.sleep(3)
-            image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
             response_message = await update.message.reply_photo(
-                photo=image_bytes,
+                photo=image['output'][0],
                 caption=message,
                 parse_mode='HTML',
                 reply_markup=InlineKeyboardMarkup(
