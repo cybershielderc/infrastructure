@@ -19,5 +19,5 @@ class TextToImage:
 
     def build_request(self):
         return json.dumps({
-            
+            "api"
         })
