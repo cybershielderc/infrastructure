@@ -82,6 +82,8 @@ class NexVerse:
     async def reply_with_generated_image(self, update: Update, context: CallbackContext):
         image = self.ai_image_api.build_request(
             self.ai_image_api.get_model(context.user_data['selected_model']),
+            context.user_data['pos_prompt'],
+            
         )
 
     async def text_input(self, update: Update, context: CallbackContext):
