@@ -130,7 +130,8 @@ class NexVerse:
                 parse_mode='HTML',
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        InlineKeyboardButton("Regenerate", callback_data="regenerate_data")
+                        InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
+                        InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
                     ]
                 )
             )
