@@ -5,6 +5,7 @@ import json
 
 class URIS:
     TTI = "https://modelslab.com/api/v6/images/text2img"
+    QUEUED_IMAGES = "https://modelslab.com/api/v6/images/fetch"
 
 
 class MODEL(enum.Enum):
@@ -83,5 +84,5 @@ class TextToImage:
 
     def get_queued(self, id: int = None) -> requests.api:
         return requests.get(
-            
+
         )
