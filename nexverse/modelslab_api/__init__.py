@@ -25,6 +25,7 @@ class MODEL(enum.Enum):
     DARK_SUSHI = "dark-sushi-25d"
     SAKURA = "sakurav3"
 
+
 class TextToImage:
     def __init__(self, api: str = None) -> None:
         if not api: raise Exception("No api key provided")
