@@ -84,7 +84,7 @@ class NexVerse:
                     user_input = update.message.text
                     await update.message.delete()
                     await update.message.edit_caption(
-                        caption=update.message.text + "\n\n<strong>User Prompt<strong>\n" + user_input,
+                        caption=f"You have selected <strong>{context.user_data['selection']}</strong>\nPlease reply to this message to set the prompt you would like the AI to use!" + "\n\n<strong>User Prompt<strong>\n" + user_input,
                         parse_mode="HTML",
                         reply_markup=ai_models_image_menu()
                     )
