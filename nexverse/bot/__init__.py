@@ -88,7 +88,7 @@ class NexVerse:
         ).json()
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image['id']}</code>\n" + \
                   f"<strong>Time Took {image['generationTime']:.2f}</strong>\n\n<strong>Prompt</strong>\n" + \
-                  f"{image['prompt']}\n\n"
+                  f"{image['prompt']}\n\n<strong>"
 
     async def text_input(self, update: Update, context: CallbackContext):
         if 'waiting_for_neg_prompt' in context.user_data:
