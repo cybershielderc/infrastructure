@@ -90,6 +90,8 @@ class NexVerse:
                         reply_markup=ai_models_image_menu()
                     )
                     context.user_data['waiting_for_prompt'] = False
+                    context.user_data['pos_prompt'] = user_input
+                    context.user_data['waiting_for_neg_prompt'] = True
 
     def run(self):
         """Run the bot"""
