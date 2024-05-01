@@ -1,7 +1,7 @@
 from bots.tele.main import run_app
 from bots.modules.cryptocurrency import *
 from nexverse.bot import run_app as nexverse_runbot
-from nexverse.
+from nexverse.modelslab_api import MODEL, TextToImage
 import json
 import threading
 
