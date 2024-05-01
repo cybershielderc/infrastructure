@@ -124,7 +124,7 @@ class NexVerse:
         await update._bot.delete_message(chat_id=update.message.chat_id,
                                          message_id=context.user_data['reply_message_id'])
         try:
-            await update.message.reply_photo(
+            response_message = await update.message.reply_photo(
                 photo=get_file_byte_data_from_url(image['output'][0]),
                 caption=message,
                 parse_mode='HTML',
@@ -139,7 +139,13 @@ class NexVerse:
             await update.message.reply_photo(
                 photo=get_file_byte_data_from_url(image['output'][0]),
                 caption=message,
-                parse_mode='HTML'
+                parse_mode='HTML',
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
+                        InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
+                    ]
+                )
             )
 
     async def text_input(self, update: Update, context: CallbackContext):
