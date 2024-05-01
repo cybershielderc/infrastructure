@@ -90,6 +90,7 @@ class TextToImage:
 api = TextToImage(data['apis']['modelslab'])
 negative_prompt = "lowres, text, error, cropped, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, username, watermark, signature"
 nsfw_prompts = "hot lady in leggings, and see-through bra"
-anime_prompts = ""
+anime_prompts = "hot asian lady in a tight leather skirt and see-through buttoned white shirt"
+realism_prompt = "hot brunette lady in lingerie, laying on a bed"
 response: requests.Request = api.build_request(MODEL.PINKDREAM, "hot lady in leggings, and see-through bra",
                                                "misfigured face")
