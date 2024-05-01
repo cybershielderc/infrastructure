@@ -23,7 +23,7 @@ class MODEL(enum.Enum):
     # Anime
     ANYTHING = "anything-v4"
     DARK_SUSHI = "dark-sushi-25d"
-    
+    SAKURA = 
 
 class TextToImage:
     def __init__(self, api: str = None) -> None:
