@@ -94,6 +94,7 @@ class NexVerse:
                                          message_id=context.user_data['reply_message_id'])
         await update.message.reply_photo(
             photo=image['output'][0],
+            caption=message,
             
         )
 
