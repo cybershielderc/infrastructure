@@ -112,9 +112,10 @@ class NexVerse:
             )
 
         if not 'generationTime' in image.keys():
-            await asyncio.sleep(image['eta'] + 0.5)
-            image['output_url'] = self.ai_image_api.get_queued(image['id'])
-        
+            await asyncio.sleep(image['eta'] + 0.5
+            print(image)
+            image['output'][0] = self.ai_image_api.get_queued(image['id'])
+        print(image)
         print(self.ai_image_api.get_model(context.user_data['selected_model']))
         print(context.user_data['pos_prompt'])
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image['id']}</code>\n" + \
