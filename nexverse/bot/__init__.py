@@ -117,21 +117,25 @@ class NexVerse:
             )
 
         if not 'generationTime' in image.keys():
-            await asyncio.sleep(image['eta'] + 1)
+            await time.sleep(image['eta'] + 1)
             print(image)
             try:
+                await time.sleep(image['eta'] + 2)
                 image['output'][0] = self.ai_image_api.get_queued(image['id'])
             except IndexError:
                 try:
+                    await time.sleep(image['eta'] + 2)
                     image['output'][0] = self.ai_image_api.get_queued(image['id'])
                 except IndexError:
                     try:
+                        await time.sleep(image['eta'] + 2)
                         image['output'][0] = self.ai_image_api.get_queued(image['id'])
                     except IndexError:
                         try:
+                            await time.sleep(image['eta'] + 2)
                             image['output'][0] = self.ai_image_api.get_queued(image['id'])
                         except IndexError:
-                            await asyncio.sleep(image['eta'] + 2)
+                            await time.sleep(image['eta'] + 2)
                             image['output'][0] = self.ai_image_api.get_queued(image['id'])
             print(image)
         print(self.ai_image_api.get_model(context.user_data['selected_model']))
