@@ -40,3 +40,4 @@ class TextToImage:
             "webhook": None,
             "track_id": None,
         })
+        header = 
