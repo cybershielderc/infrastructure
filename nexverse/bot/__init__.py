@@ -161,6 +161,11 @@ class NexVerse:
             )
             context.user_data['tti_response_message'] = response_message.message_id
         except (telegram.error.BadRequest, telegram.error.TimedOut):
+            if 'tti_response_message' in context.user_data:
+                if context.user_data['tti_response_message'] is not None:
+                    await update._bot.delete_message(chat_id=update.message.chat_id,
+                                                     message_id=context.user_data['tti_response_message'])
+                    context.user_data['tti_response_message'] = None
             await asyncio.sleep(3)
             response_message = await update.message.reply_photo(
                 photo=image['output'][0],
