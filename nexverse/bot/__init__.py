@@ -121,12 +121,14 @@ class NexVerse:
             time.sleep(image['eta'] + 1)
             print(image)
             try:
+                time.sleep(image['eta'] + 0.8)
                 image_url = self.ai_image_api.get_queued(image['id'])
+                time.sleep(image['eta'] + 0.8)
             except IndexError:
                 time.sleep(image['eta'] + 0.8)
                 image_url = self.ai_image_api.get_queued(image['id'])
-            finally:
-                image['output'][0] = image_url
+                time.sleep(image['eta'] + 0.8)
+            image['output'][0] = image_url
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image['id']}</code>\n" + \
                   f"<strong>Time Took {image['generationTime']:.2f} seconds</strong>\n\n<strong>Prompt</strong>\n" + \
                   f"{context.user_data['pos_prompt']}\n\n<strong>Negative Prompt</strong>\n{context.user_data['neg_prompt']}" + \
