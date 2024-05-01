@@ -77,5 +77,6 @@ class TextToImage:
             # Anime
             "anime1": MODEL.ANYTHING,
             "anime2": MODEL.DARK_SUSHI,
-            "anime3": MODEL.SAKURA
+            "anime3": MODEL.SAKURA,
+            # 
         }
