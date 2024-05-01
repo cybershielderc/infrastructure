@@ -129,7 +129,9 @@ class NexVerse:
                 caption=message,
                 parse_mode='HTML',
                 reply_markup=InlineKeyboardMarkup(
-                    []
+                    [
+                        InlineKeyboardButton()
+                    ]
                 )
             )
         except telegram.error.BadRequest:
