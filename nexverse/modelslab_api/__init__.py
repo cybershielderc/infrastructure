@@ -5,4 +5,4 @@ with open("../cfgs/bot.json", "r") as file:
     data = json.loads(file.read())
     file.close()
 
-print(data['apis']['modelslab'])
+api_data = data['apis']['modelslab']
