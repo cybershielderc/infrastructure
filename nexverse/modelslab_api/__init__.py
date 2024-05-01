@@ -79,7 +79,7 @@ class TextToImage:
             "anime2": MODEL.DARK_SUSHI,
             "anime3": MODEL.SAKURA,
             # Realism
-            "realism1": MODEL,
-            "realism2": MODEL,
-            "realism3": MODEL,
+            "realism1": MODEL.MIDJOURNEY,
+            "realism2": MODEL.REALISTIC_VISION,
+            "realism3": MODEL.JUGGERNAUT,
         }
