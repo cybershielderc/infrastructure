@@ -102,4 +102,4 @@ for k, v in api.MODELS:
         elif k is "anime":
             responses.append(api.build_request(model, anime_prompts, negative_prompt))
         elif k is "realism":
-            response
+            responses
