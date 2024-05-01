@@ -89,6 +89,7 @@ class TextToImage:
                 'Content-Type': 'application/json'
             },
             data=json.dumps({
-                
+                "key": self.api_key,
+                "request_id": id
             })
         )
