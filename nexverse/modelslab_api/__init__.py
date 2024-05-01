@@ -110,3 +110,4 @@ for i in range(len(responses)):
     elif 3 <= i <= 5:
         print(f"Anime Response-{i}: {responses[i].json['output'][0]}")
     elif 6 <= i <= 8:
+        print(f"Realism Response-{i}: {responses[i].json['output'][0]}")
