@@ -66,12 +66,13 @@ class NexVerse:
                 await update.callback_query.edit_message_text(
                     f"You have selected <strong>{selection[1]}</strong><br>Please reply to this message to set the prompt you would like the AI to use!",
                     "HTML",
-                    
+                    ai_models_image_menu()
                 )
             else:
                 await update.message.edit_caption(
-                    f"You have selected <strong>{selection[1]}</strong><br>Please reply to this message to set the prompt you would like the AI to use!"
-                )
+                    f"You have selected <strong>{selection[1]}</strong><br>Please reply to this message to set the prompt you would like the AI to use!",
+                    "HTML",
+                    ai_models_image_menu())
             context.user_data['selected_model'] = selection[0]
             context.user_data['waiting_for_prompt'] = True
 
