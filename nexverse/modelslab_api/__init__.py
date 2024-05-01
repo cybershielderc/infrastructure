@@ -12,7 +12,7 @@ api_data = data['apis']['modelslab']
 class URIS:
     TTI = "https://modelslab.com/api/v6/images/text2img"
 
-class MODELS(enum.Enum):
+class MODEL(enum.Enum):
     PINKDREAM = "pinkdream-appfactory"
 
 class TextToImage:
