@@ -95,4 +95,4 @@ realism_prompt = "hot brunette lady in lingerie, laying on a bed"
 
 responses = []
 
-for 
+for k,v in api.
