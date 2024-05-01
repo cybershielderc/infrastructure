@@ -20,7 +20,7 @@ class TextToImage:
         if not api: raise Exception("No api key provided")
         self.api_key = api
 
-    def build_request(self, model: MODEL, prompt: str = None, negative_prompt: str = None, ):
+    def build_request(self, model: MODEL, prompt: str = None, negative_prompt: str = None, size: tuple = ):
         return json.dumps({
             "key": self.api_key,
             "model_id":
