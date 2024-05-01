@@ -39,7 +39,7 @@ class TextToImage:
     def build_request(self,
                       model: MODEL,
                       prompt: str = None,
-                      negative_prompt: str = DEFAULT_NEG_PROMPT
+                      negative_prompt: str = DEFAULT_NEG_PROMPT,
                       size: [int, int] = [512, 512],
                       samples: int = 1,
                       num_inference_steps: int = 30,
