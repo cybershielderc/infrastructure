@@ -43,4 +43,4 @@ class TextToImage:
         header = {
             'Content-Type': 'application/json'
         }
-        request = requests.Request()
+        request = requests.Request().p
