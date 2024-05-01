@@ -1,6 +1,7 @@
 import asyncio
 
 import requests.exceptions
+import telegram.error
 from telegram import (
     Update, InlineKeyboardButton, InlineKeyboardMarkup
 )
@@ -110,7 +111,7 @@ class NexVerse:
                 caption=message,
                 parse_mode='HTML'
             )
-        except
+        except telegram.error.BadRequest:
 
     async def text_input(self, update: Update, context: CallbackContext):
         if 'waiting_for_neg_prompt' in context.user_data:
