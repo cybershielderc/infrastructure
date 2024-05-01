@@ -15,7 +15,8 @@ class URIS:
 
 class MODEL(enum.Enum):
     PINKDREAM = "pinkdream-appfactory"
-
+    MIDJOURNEY = "midjourney"
+    
 
 class TextToImage:
     def __init__(self, api: str = None) -> None:
