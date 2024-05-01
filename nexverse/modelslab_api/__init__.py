@@ -31,7 +31,7 @@ class TextToImage:
                       num_inference_steps: int = 30,
                       seed: int = None,
                       guidance_scale: float = 7.5) -> str:
-        if not prompt or not negative_prompt
+        if not prompt or not negative_prompt: raise Exception("No prompt provided")
         payload = json.dumps({
             "key": self.api_key,
             "model_id": model.value,
