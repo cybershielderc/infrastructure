@@ -43,4 +43,4 @@ class TextToImage:
         header = {
             'Content-Type': 'application/json'
         }
-        request = requests.
+        request = requests.request("POST", URIS.TTI, headers=header, )
