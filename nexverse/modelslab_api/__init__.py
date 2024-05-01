@@ -21,7 +21,7 @@ class TextToImage:
         self.api_key = api
 
     def build_request(self, model: MODEL, prompt: str = None, negative_prompt: str = None, size: [int,int] = [512,512], samples: int = 1, num_inference_steps: int = 30, seed: int = None, guidance_scale: float = 7.5) -> dict:
-        json.dumps
+        json.dumps()
         return json.dumps({
             "key": self.api_key,
             "model_id":
