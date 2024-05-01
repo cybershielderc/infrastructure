@@ -118,6 +118,7 @@ class NexVerse:
                     context.user_data['neg_prompt'] = user_input
                     context.user_data['reply_message_id'] = processing_message.message_id
                     context.user_data['waiting_for_neg_prompt'] = False
+                    await i
         if 'waiting_for_prompt' in context.user_data:
             if context.user_data['waiting_for_prompt']:
                 if update.message.reply_to_message:
