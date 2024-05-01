@@ -80,7 +80,9 @@ class NexVerse:
         query = update.callback_query
         await query.answer()
         if query.data == "regenerate_data":
-            await update._bot.send_message(text="Regenerating... ⌛ | Please be patient this will only take a few seconds!", chat_id=query.message.chat_id)
+            await update._bot.send_message(
+                text="Regenerating... ⌛ | Please be patient this will only take a few seconds!",
+                chat_id=query.message.chat_id)
 
             await self.reply_with_generated_image(update, context)
         if query.data.startswith('ai>img>model>selection#//'):
