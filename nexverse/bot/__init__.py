@@ -87,6 +87,7 @@ class NexVerse:
                                                    'neg_prompt'] is not '-' else self.ai_image_api.DEFAULT_NEG_PROMPT
         ).json()
         message = f""
+
     async def text_input(self, update: Update, context: CallbackContext):
         if 'waiting_for_neg_prompt' in context.user_data:
             if context.user_data['waiting_for_neg_prompt']:
