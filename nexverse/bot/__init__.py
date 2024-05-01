@@ -130,7 +130,7 @@ class NexVerse:
                 parse_mode='HTML',
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        InlineKeyboardButton("Regenerate")
+                        InlineKeyboardButton("Regenerate", callback_data="regenerate_data")
                     ]
                 )
             )
