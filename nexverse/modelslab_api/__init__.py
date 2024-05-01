@@ -33,5 +33,6 @@ class TextToImage:
             "width":size[0],
             "height":size[1],
             "samples": samples,
-            "num"
+            "num_inference_steps": num_inference_steps,
+            ""
         })
