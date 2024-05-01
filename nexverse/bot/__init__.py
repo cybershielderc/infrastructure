@@ -111,7 +111,7 @@ class NexVerse:
                 text="Sorry, I couldn't generate that image for you! :/\nPlease try again!."
             )
 
-        if image['status'] is 'processing':
+        if not 'generationT':
             await asyncio.sleep(image['eta'] + 0.5)
             image['output'][0] = self.ai_image_api.get_queued(image['id'])
         print(image)
