@@ -1,4 +1,4 @@
 import requests
 import json
 
-data = js
+with open("./cfgs/")
