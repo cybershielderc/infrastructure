@@ -97,4 +97,4 @@ responses = []
 
 for k, v in api.MODELS:
     for model in v:
-        responses.append(api.build_request())
+        responses.append(api.build_request(model, ))
