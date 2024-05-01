@@ -129,7 +129,7 @@ class NexVerse:
         try:
             if 'tti_response_message' in context.user_data:
                 if context.user_data['tti_response_message'] is not None:
-                    await update._bot.delete_message(chat_id=update.message.chat_id, )
+                    await update._bot.delete_message(chat_id=update.message.chat_id, message_id=context)
             response_message = await update.message.reply_photo(
                 photo=get_file_byte_data_from_url(image['output'][0]),
                 caption=message,
