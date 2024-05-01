@@ -117,11 +117,10 @@ class NexVerse:
                 text="Sorry, I couldn't generate that image for you! :/\nPlease try again!."
             )
 
-        if not 'generationTime' in image.keys():
+        if not 'generationTime' in image.keys() and image['status'] == 'processing':
             time.sleep(image['eta'] + 1)
             print(image)
             try:
-                
                 image_url = self.ai_image_api.get_queued(image['id'])
             except IndexError:
                 time.sleep(image['eta'] + 0.8)
