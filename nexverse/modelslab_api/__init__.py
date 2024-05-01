@@ -87,5 +87,6 @@ class TextToImage:
             URIS.QUEUED_IMAGES,
             headers={
                 'Content-Type': 'application/json'
-            }
+            },
+            data=json.d
         )
