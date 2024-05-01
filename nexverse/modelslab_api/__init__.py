@@ -17,6 +17,7 @@ class MODEL(enum.Enum):
     PINKDREAM = "pinkdream-appfactory"
     MIDJOURNEY = "midjourney"
     REALISTIC_VISION = "realistic-vision-v40"
+    
 
 
 class TextToImage:
