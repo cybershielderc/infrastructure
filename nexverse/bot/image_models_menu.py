@@ -21,9 +21,9 @@ def ai_models_image_menu() -> InlineKeyboardMarkup:
             ],
             [InlineKeyboardButton("NSFW", callback_data="ignore_0xdead")],
             [
-                InlineKeyboardButton("Deliberate", callback_data="ai>img>model>selection#//nsfw_deliberate"),
-                InlineKeyboardButton("Perfect Deli", callback_data="ai>img>model>selection#//nsfw_perfectdeli"),
-                InlineKeyboardButton("Mix Appfactory", callback_data="ai>img>model>selection#//nsfw_mixappfactory"),
+                InlineKeyboardButton("Deliberate", callback_data="ai>img>model>selection#//deliberate"),
+                InlineKeyboardButton("Perfect Deli", callback_data="ai>img>model>selection#//perfectdeli"),
+                InlineKeyboardButton("Mix Appfactory", callback_data="ai>img>model>selection#//mixappfactory"),
                 InlineKeyboardButton("Dark Appfactory (Anime)",
                                      callback_data="ai>img>model>selection#//nsfw_darkappfactory")
             ],
