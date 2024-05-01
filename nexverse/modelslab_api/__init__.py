@@ -89,25 +89,3 @@ class TextToImage:
 
 api = TextToImage(data['apis']['modelslab'])
 negative_prompt = "lowres, text, error, cropped, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, username, watermark, signature"
-nsfw_prompts = "hot lady in leggings, and see-through bra"
-anime_prompts = "hot asian lady in a tight leather skirt and see-through buttoned white shirt"
-realism_prompt = "hot brunette lady in lingerie, laying on a bed"
-
-responses = []
-
-for k, v in api.MODELS.items():
-    for model in v:
-        if k == "nsfw":
-            responses.append(api.build_request(model, nsfw_prompts, negative_prompt))
-        elif k == "anime":
-            responses.append(api.build_request(model, anime_prompts, negative_prompt))
-        elif k == "realism":
-            responses.append(api.build_request(model, realism_prompt, negative_prompt))
-i = 0
-for i in range(len(responses)):
-    if 0 <= i <= 2:
-        print(f"NSFW Response-{i}: {responses[i].json['output'][0]}")
-    elif 3 <= i <= 5:
-        print(f"Anime Response-{i}: {responses[i].json['output'][0]}")
-    elif 6 <= i <= 8:
-        print(f"Realism Response-{i}: {responses[i].json['output'][0]}")
