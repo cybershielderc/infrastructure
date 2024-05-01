@@ -67,7 +67,7 @@ class NexVerse:
             context.user_data['waiting_for_input'] = True
 
     async def text_input(self, update: Update, context: CallbackContext):
-        if 'waiting_for_input' in context.user_data:
+        if 'waiting_for_prompt' in context.user_data:
             if context.user_data['waiting_for_input']:
                 user_input = update.message.text
                 update.message.reply_text(f'You entered: {user_input}')
