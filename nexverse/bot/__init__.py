@@ -80,7 +80,7 @@ class NexVerse:
         query = update.callback_query
         await query.answer()
         if query.data == "regenerate_data":
-            await update._bot.edit_message_text(text="Regenerating... ", update.)
+            await update._bot.edit_message_text(text="Regenerating... ", update._bot.)
             await self.reply_with_generated_image(update, context)
         if query.data.startswith('ai>img>model>selection#//'):
             selection = query.data.split("ai>img>model>selection#//")[1].split("#CNAME#")
