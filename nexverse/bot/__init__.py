@@ -63,7 +63,7 @@ class NexVerse:
         if query.data.startswith('ai>img>model>selection#//'):
             selection = query.data.split("ai>img>model>selection#//")[1].split("#CNAME#")
             await update.message.edit_caption(
-                f"You have selected <strong>{selection[1]}</strong><br>Please reply to this message ")
+                f"You have selected <strong>{selection[1]}</strong><br>Please reply to this message to set the prompt you would like the AI to use!")
             context.user_data['selected_model'] = selection[0]
             context.user_data['waiting_for_prompt'] = True
 
