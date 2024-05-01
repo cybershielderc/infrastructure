@@ -127,7 +127,8 @@ class NexVerse:
             await update.message.reply_photo(
                 photo=get_file_byte_data_from_url(image['output'][0]),
                 caption=message,
-                parse_mode='HTML'
+                parse_mode='HTML',
+                reply_markup=InlineKeyboardMarkup()
             )
         except telegram.error.BadRequest:
             await update.message.reply_photo(
