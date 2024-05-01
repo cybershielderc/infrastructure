@@ -22,6 +22,7 @@ class MODEL(enum.Enum):
     JUGGERNAUT = "juggernaut-xl"
     # Anime
     ANYTHING = "anything-v4"
+    DARK_SUSHI = "dark-sushi-25d"
     
 
 class TextToImage:
