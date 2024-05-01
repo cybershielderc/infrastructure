@@ -97,6 +97,8 @@ class NexVerse:
                 text="Sorry, I couldn't generate that image for you! :/\nPlease try again!."
             )
         print(image)
+        if image['status'] is 'processing':
+            await as
         print(self.ai_image_api.get_model(context.user_data['selected_model']))
         print(context.user_data['pos_prompt'])
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image['id']}</code>\n" + \
