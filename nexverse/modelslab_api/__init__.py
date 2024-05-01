@@ -82,4 +82,4 @@ class TextToImage:
             "realism1": MODEL.MIDJOURNEY,
             "realism2": MODEL.REALISTIC_VISION,
             "realism3": MODEL.JUGGERNAUT,
-        }
+        }.get(model_id, None)
