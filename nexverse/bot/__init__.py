@@ -89,7 +89,7 @@ class NexVerse:
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image['id']}</code>\n" + \
                   f"<strong>Time Took {image['generationTime']:.2f}</strong>\n\n<strong>Prompt</strong>\n" + \
                   f"{image['prompt']}\n\n<strong>Negative Prompt</strong>\n{image['negative_prompt']}" + \
-                  f"\n\n<strong>Model Name</strong>\n"
+                  f"\n\n<strong>Model Name</strong>\n{context.user_data['selected_model_name']}"
 
     async def text_input(self, update: Update, context: CallbackContext):
         if 'waiting_for_neg_prompt' in context.user_data:
