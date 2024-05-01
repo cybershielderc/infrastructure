@@ -22,7 +22,7 @@ class MODEL(enum.Enum):
     JUGGERNAUT = "juggernaut-xl"
     # Anime
     ANYTHING = "anything-v4"
-
+    
 
 class TextToImage:
     def __init__(self, api: str = None) -> None:
