@@ -107,4 +107,5 @@ i = 0
 for i in range(len(responses)):
     if 0 <= i <= 2:
         print(f"NSFW Response-{i}: {responses[i].json['output'][0]}")
-   elif 3 <= i <= 6
+   if 3 <= i <= 6:
+       
