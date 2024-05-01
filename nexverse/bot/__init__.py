@@ -118,8 +118,6 @@ class NexVerse:
             )
 
         if image['status'] == 'processing':
-            time.sleep(image['eta'] + 1)
-            print(image)
             try:
                 context.user_data['generated_image_uri'] = image['output'][0]
             except IndexError:
