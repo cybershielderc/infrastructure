@@ -98,7 +98,7 @@ class NexVerse:
             )
         print(image)
         if image['status'] is 'processing':
-            await asyncio.sleep()
+            await asyncio.sleep(image['eta']+0.5)
         print(self.ai_image_api.get_model(context.user_data['selected_model']))
         print(context.user_data['pos_prompt'])
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image['id']}</code>\n" + \
