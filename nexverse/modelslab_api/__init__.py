@@ -106,4 +106,4 @@ for k, v in api.MODELS:
 i = 0
 for i in range(len(responses)):
     if 0 <= i <= 2:
-        print(f"NSFW Response: {responses[i]}")
+        print(f"NSFW Response-{i}: {responses[i].json[]}")
