@@ -10,3 +10,8 @@ api_data = data['apis']['modelslab']
 
 class URIS:
     TTI = "https://modelslab.com/api/v6/images/text2img"
+
+
+class TextToImage:
+    def __init__(self, api: str = None) -> None:
+        self.api_key = api
