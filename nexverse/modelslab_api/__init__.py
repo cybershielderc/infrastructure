@@ -103,4 +103,3 @@ for k, v in api.MODELS:
             responses.append(api.build_request(model, anime_prompts, negative_prompt))
         elif k is "realism":
             responses.append(api.build_request(model, realism_prompt, negative_prompt))
-
