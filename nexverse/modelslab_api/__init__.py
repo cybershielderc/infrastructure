@@ -88,5 +88,6 @@ class TextToImage:
 
     def get_model(self, model_id: str) -> MODEL:
         return {
-            #
+            # NSFW
+            "nsfw1": MODEL.
         }
