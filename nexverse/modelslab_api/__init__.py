@@ -6,3 +6,4 @@ with open("../cfgs/bot.json", "r") as file:
     file.close()
 
 api_data = data['apis']['modelslab']
+print(api_data)
