@@ -1,4 +1,6 @@
 import asyncio
+
+import requests.exceptions
 from telegram import (
     Update, InlineKeyboardButton, InlineKeyboardMarkup
 )
@@ -80,12 +82,15 @@ class NexVerse:
             context.user_data['waiting_for_prompt'] = True
 
     async def reply_with_generated_image(self, update: Update, context: CallbackContext):
-        image = self.ai_image_api.build_request(
+        try:
+            image = self.ai_image_api.build_request(
             self.ai_image_api.get_model(context.user_data['selected_model']),
             context.user_data['pos_prompt'],
             context.user_data['neg_prompt'] if context.user_data[
                                                    'neg_prompt'] is not '-' else self.ai_image_api.DEFAULT_NEG_PROMPT
-        ).json()
+            ).json()
+        except requests.exceptions.ConnectionError:
+            
         print(image)
         print(self.ai_image_api.get_model(context.user_data['selected_model']))
         print(context.user_data['pos_prompt'])
