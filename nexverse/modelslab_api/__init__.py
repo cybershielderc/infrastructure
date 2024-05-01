@@ -15,10 +15,11 @@ class URIS:
 
 class MODEL(enum.Enum):
     PINKDREAM = "pinkdream-appfactory"
+    # Realism
     MIDJOURNEY = "midjourney"
     REALISTIC_VISION = "realistic-vision-v40"
     JUGGERNAUT = "juggernaut-xl"
-    #
+    # Anime
 
 
 class TextToImage:
