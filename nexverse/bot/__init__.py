@@ -165,60 +165,22 @@ class NexVerse:
             )
             context.user_data['tti_response_message'] = response_message.message_id
         except (telegram.error.BadRequest, telegram.error.TimedOut):
-            try:
-                if 'tti_response_message' in context.user_data:
-                    if context.user_data['tti_response_message'] is not None:
-                        context.user_data['tti_response_message'] = None
-                image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
-                response_message = await update.message.reply_photo(
-                    photo=image_bytes,
-                    caption=message,
-                    parse_mode='HTML',
-                    reply_markup=InlineKeyboardMarkup(
-                        [[
-                            InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
-                            InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
-                        ]]
-                    )
+            if 'tti_response_message' in context.user_data:
+                if context.user_data['tti_response_message'] is not None:
+                    context.user_data['tti_response_message'] = None
+            await asyncio.sleep(3)
+            response_message = await update.message.reply_photo(
+                photo=image['output'][0],
+                caption=message,
+                parse_mode='HTML',
+                reply_markup=InlineKeyboardMarkup(
+                    [[
+                        InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
+                        InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
+                    ]]
                 )
-                context.user_data['tti_response_message'] = response_message.message_id
-            except (telegram.error.BadRequest, telegram.error.TimedOut):
-                try:
-                    if 'tti_response_message' in context.user_data:
-                        if context.user_data['tti_response_message'] is not None:
-                            context.user_data['tti_response_message'] = None
-                    image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
-                    response_message = await update.message.reply_photo(
-                        photo=image_bytes,
-                        caption=message,
-                        parse_mode='HTML',
-                        reply_markup=InlineKeyboardMarkup(
-                            [[
-                                InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
-                                InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
-                            ]]
-                        )
-                    )
-                    context.user_data['tti_response_message'] = response_message.message_id
-                except (telegram.error.BadRequest, telegram.error.TimedOut):
-                    try:
-                        if 'tti_response_message' in context.user_data:
-                            if context.user_data['tti_response_message'] is not None:
-                                context.user_data['tti_response_message'] = None
-                        image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
-                        response_message = await update.message.reply_photo(
-                            photo=image_bytes,
-                            caption=message,
-                            parse_mode='HTML',
-                            reply_markup=InlineKeyboardMarkup(
-                                [[
-                                    InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
-                                    InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
-                                ]]
-                            )
-                        )
-                        context.user_data['tti_response_message'] = response_message.message_id
-                    except (telegram.error.BadRequest, telegram.error.TimedOut):
+            )
+            context.user_data['tti_response_message'] = response_message.message_id
 
 
     async def text_input(self, update: Update, context: CallbackContext):
