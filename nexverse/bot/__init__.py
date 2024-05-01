@@ -22,7 +22,7 @@ import time
 class NexVerse:
     def __init__(self, token: str, ai_image_api: TextToImage):
         self.token = token
-        self.ai
+        self.ai_image_api = ai_image_api
         self.app = self._initialize_bot()
 
     def _initialize_bot(self) -> ApplicationBuilder:
