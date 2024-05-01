@@ -90,7 +90,7 @@ class NexVerse:
         print(self.ai_image_api.get_model(context.user_data['selected_model']))
         print(context.user_data['pos_prompt'])
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image['id']}</code>\n" + \
-                  f"<strong>Time Took {image['generationTime']:.2f}</strong>\n\n<strong>Prompt</strong>\n" + \
+                  f"<strong>Time Took {image['generationTime']:.2f} seconds</strong>\n\n<strong>Prompt</strong>\n" + \
                   f"{context.user_data['pos_prompt']}\n\n<strong>Negative Prompt</strong>\n{context.user_data['neg_prompt']}" + \
                   f"\n\n<strong>Model Name</strong>\n{context.user_data['selected_model_name']}"
         await update._bot.delete_message(chat_id=update.message.chat_id,
