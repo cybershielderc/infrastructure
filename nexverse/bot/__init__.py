@@ -160,7 +160,7 @@ class NexVerse:
                 )
             )
             context.user_data['tti_response_message'] = response_message
-        except telegram.error.BadRequest:
+        except (telegram.error.BadRequest, telegram.error):
             await asyncio.sleep(3)
             response_message = await update.message.reply_photo(
                 photo=image['output'][0],
