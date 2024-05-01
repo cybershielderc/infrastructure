@@ -17,7 +17,7 @@ class MODEL(enum.Enum):
     # NSFW
     DELIBERATE = "deliberateappfactory"
     PERFECT_DELI = "perfect-deli-appfact"
-    MIX_APPFACTORY
+    MIX_APPFACTORY = 
     # Realism
     MIDJOURNEY = "midjourney"
     REALISTIC_VISION = "realistic-vision-v40"
