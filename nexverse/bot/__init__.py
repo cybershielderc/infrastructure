@@ -62,8 +62,8 @@ class NexVerse:
         await query.answer()
         if query.data.startswith('ai>img>model>selection#//'):
             selection = query.data.split("ai>img>model>selection#//")[1].split("#CNAME#")
-            await query.message.reply_text("You have selected " + selection)
-            context.user_data['selected_model'] = selection
+            await query.message.reply_text("You have selected " + selection[1])
+            context.user_data['selected_model'] = selection[0]
             context.user_data['waiting_for_input'] = True
 
     async def text_input(self, update: Update, context: CallbackContext):
