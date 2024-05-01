@@ -13,7 +13,7 @@ class URIS:
     TTI = "https://modelslab.com/api/v6/images/text2img"
 
 class MODELS(enum.Enum):
-    PINKDREAM = ""
+    PINKDREAM = "pinkdream-appfactory"
 
 class TextToImage:
     def __init__(self, api: str = None) -> None:
