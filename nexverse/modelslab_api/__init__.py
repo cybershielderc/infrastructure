@@ -55,4 +55,4 @@ class TextToImage:
         return request
 
 api = TextToImage(data['apis']['modelslab'])
-response = api.build_request(MODEL.PINKDREAM, "hot lady in leggings ")
+response = api.build_request(MODEL.PINKDREAM, "hot lady in leggings, and see-through bra", "")
