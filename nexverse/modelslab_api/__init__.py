@@ -72,5 +72,6 @@ class TextToImage:
             # NSFW
             "nsfw1": MODEL.DELIBERATE,
             "nsfw2": MODEL.PERFECT_DELI,
-            "nsfw3": MODEL.
+            "nsfw3": MODEL.MIX_APPFACTORY,
+            "nsfw4": MODEL.DARK_APPFACTORY,
         }
