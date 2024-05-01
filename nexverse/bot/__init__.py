@@ -147,6 +147,7 @@ class NexVerse:
                     await update._bot.delete_message(chat_id=update.message.chat_id,
                                                      message_id=context.user_data['tti_response_message'])
                     context.user_data['tti_response_message'] = None
+            
             response_message = await update.message.reply_photo(
                 photo=,
                 caption=message,
