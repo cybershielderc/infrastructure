@@ -37,5 +37,6 @@ class TextToImage:
             "seed": seed,
             "guidance_scale": guidance_scale,
             "scheduler": "UniPCMultistepScheduler",
-            "webhook"
+            "webhook": None,
+            "track_id": None,
         })
