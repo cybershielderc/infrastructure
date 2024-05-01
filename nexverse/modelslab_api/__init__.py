@@ -82,4 +82,6 @@ class TextToImage:
         }.get(model_id, None)
 
     def get_queued(self, id: int = None) -> requests.api:
-        
+        return requests.get(
+            
+        )
