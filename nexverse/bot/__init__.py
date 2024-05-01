@@ -21,6 +21,7 @@ from ..modelslab_api import MODEL, TextToImage
 import re
 import time
 
+
 def get_file_byte_data_from_url(file_url):
     try:
         response = requests.get(file_url)
@@ -33,6 +34,7 @@ def get_file_byte_data_from_url(file_url):
     except Exception as e:
         print(f"An error occurred while retrieving file from URL: {file_url}. Error: {str(e)}")
         return None
+
 
 class NexVerse:
     def __init__(self, token: str, ai_image_api: TextToImage):
