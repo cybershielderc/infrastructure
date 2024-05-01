@@ -83,7 +83,7 @@ class NexVerse:
                     # Capture message
                     user_input = update.message.text
                     await update.message.delete()
-                    await update.message.re(f'You entered: {user_input}')
+                    await update.message.reply_to_message.(f'You entered: {user_input}')
                     context.user_data['waiting_for_prompt'] = False
 
     def run(self):
