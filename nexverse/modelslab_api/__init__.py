@@ -105,4 +105,4 @@ for k, v in api.MODELS:
             responses.append(api.build_request(model, realism_prompt, negative_prompt))
 i = 0
 for i in range(len(responses)):
-    if i is 1 or 
+    if i is 1 or i is 2 or i is 3:
