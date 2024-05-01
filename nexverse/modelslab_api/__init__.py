@@ -17,8 +17,9 @@ class MODEL(enum.Enum):
     PINKDREAM = "pinkdream-appfactory"
     MIDJOURNEY = "midjourney"
     REALISTIC_VISION = "realistic-vision-v40"
-    JUGGERNAUT = ""
-    
+    JUGGERNAUT = "juggernaut-xl"
+    #
+
 
 class TextToImage:
     def __init__(self, api: str = None) -> None:
