@@ -129,10 +129,10 @@ class NexVerse:
                 caption=message,
                 parse_mode='HTML',
                 reply_markup=InlineKeyboardMarkup(
-                    [
+                    [[
                         InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
                         InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
-                    ]
+                    ]]
                 )
             )
             context.user_data['tti_response_message'] = response_message
@@ -142,10 +142,10 @@ class NexVerse:
                 caption=message,
                 parse_mode='HTML',
                 reply_markup=InlineKeyboardMarkup(
-                    [
+                    [[
                         InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
                         InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
-                    ]
+                    ]]
                 )
             )
             context.user_data['tti_response_message'] = response_message
