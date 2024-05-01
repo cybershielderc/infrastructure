@@ -95,7 +95,7 @@ realism_prompt = "hot brunette lady in lingerie, laying on a bed"
 
 responses = []
 
-for k, v in api.MODELS:
+for k, v in api.MODELS.:
     for model in v:
         if k is "nsfw":
             responses.append(api.build_request(model, nsfw_prompts, negative_prompt))
