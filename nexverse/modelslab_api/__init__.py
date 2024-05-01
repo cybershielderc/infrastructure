@@ -78,5 +78,5 @@ class TextToImage:
             "anime1": MODEL.ANYTHING,
             "anime2": MODEL.DARK_SUSHI,
             "anime3": MODEL.SAKURA,
-            # 
+            # Realism
         }
