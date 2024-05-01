@@ -78,7 +78,9 @@ class NexVerse:
 
     async def button_input(self, update: Update, context: CallbackContext):
         query = update.callback_query
-        await query.answerןכ
+        await query.answer()
+        if query.data == "regenerate_data":
+            
         if query.data.startswith('ai>img>model>selection#//'):
             selection = query.data.split("ai>img>model>selection#//")[1].split("#CNAME#")
             if update.message is None:
