@@ -95,6 +95,7 @@ class NexVerse:
                         "Processing... ⌛ | Please be patient this will only take a few seconds!"
                     )
                     context.user_data['neg_prompt'] = user_input
+                    
                     context.user_data['waiting_for_neg_prompt'] = False
         if 'waiting_for_prompt' in context.user_data:
             if context.user_data['waiting_for_prompt']:
