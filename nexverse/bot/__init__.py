@@ -84,7 +84,7 @@ class NexVerse:
             self.ai_image_api.get_model(context.user_data['selected_model']),
             context.user_data['pos_prompt'],
             context.user_data['neg_prompt'] if context.user_data[
-                                                   'neg_prompt'] is not '-' else self.ai_image_api.DEFAULT_NEG_PROMPT
+                                                   'neg_prompt'] is not '-' else self.ai_image_api.DEFAULT_NEG_PROMPT,
         )
 
     async def text_input(self, update: Update, context: CallbackContext):
