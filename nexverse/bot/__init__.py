@@ -182,7 +182,6 @@ class NexVerse:
             )
             context.user_data['tti_response_message'] = response_message.message_id
 
-
     async def text_input(self, update: Update, context: CallbackContext):
         if 'waiting_for_neg_prompt' in context.user_data:
             if context.user_data['waiting_for_neg_prompt']:
