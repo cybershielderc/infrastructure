@@ -117,7 +117,7 @@ class NexVerse:
                 text="Sorry, I couldn't generate that image for you! :/\nPlease try again!."
             )
 
-        if not 'generationTime' in image.keys() and image['status'] == 'processing':
+        if image['status'] == 'processing':
             time.sleep(image['eta'] + 1)
             print(image)
             try:
