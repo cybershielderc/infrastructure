@@ -90,7 +90,7 @@ class TextToImage:
 api = TextToImage(data['apis']['modelslab'])
 nsfw_prompts = [
     "hot lady in leggings, and see-through bra",
-    ""
+    
 ]
 response: requests.Request = api.build_request(MODEL.PINKDREAM, "hot lady in leggings, and see-through bra",
                                                "misfigured face")
