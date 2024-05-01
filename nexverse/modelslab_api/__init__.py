@@ -59,6 +59,7 @@ class TextToImage:
         header = {
             'Content-Type': 'application/json'
         }
+        print(model,prompt,negative_prompt,)
         request = requests.request("POST", URIS.TTI, headers=header, data=payload)
 
         return request
