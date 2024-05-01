@@ -75,5 +75,7 @@ class TextToImage:
             "nsfw3": MODEL.MIX_APPFACTORY,
             "nsfw4": MODEL.DARK_APPFACTORY,
             # Anime
-
+            "anime1": MODEL.ANYTHING,
+            "anime2": MODEL.DARK_SUSHI,
+            "anime3": MODEL.SAKURA
         }
