@@ -97,11 +97,11 @@ responses = []
 
 for k, v in api.MODELS.items():
     for model in v:
-        if k is "nsfw":
+        if k=="nsfw":
             responses.append(api.build_request(model, nsfw_prompts, negative_prompt))
-        elif k is "anime":
+        elif k=="anime":
             responses.append(api.build_request(model, anime_prompts, negative_prompt))
-        elif k is "realism":
+        elif k=="realism":
             responses.append(api.build_request(model, realism_prompt, negative_prompt))
 i = 0
 for i in range(len(responses)):
