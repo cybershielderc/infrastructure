@@ -30,4 +30,7 @@ class TextToImage:
             "model_id": model.value,
             "prompt": prompt,
             "negative_prompt": negative_prompt
+            "width":size[0],
+            "height":size[1],
+            
         })
