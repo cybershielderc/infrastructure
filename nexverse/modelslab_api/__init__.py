@@ -24,7 +24,7 @@ class MODEL(enum.Enum):
     ANYTHING = "anything-v4"
     DARK_SUSHI = "dark-sushi-25d"
     SAKURA = "sakurav3"
-
+    
 
 class TextToImage:
     def __init__(self, api: str = None) -> None:
