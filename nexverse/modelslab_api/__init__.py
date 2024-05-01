@@ -14,6 +14,7 @@ class URIS:
 
 
 class MODEL(enum.Enum):
+    # NSFW
     PINKDREAM = "pinkdream-appfactory"
     # Realism
     MIDJOURNEY = "midjourney"
