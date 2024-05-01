@@ -44,4 +44,5 @@ class TextToImage:
             'Content-Type': 'application/json'
         }
         request = requests.request("POST", URIS.TTI, headers=header, data=payload)
+
         
