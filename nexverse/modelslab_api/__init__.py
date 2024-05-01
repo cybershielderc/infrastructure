@@ -21,7 +21,7 @@ class MODEL(enum.Enum):
     REALISTIC_VISION = "realistic-vision-v40"
     JUGGERNAUT = "juggernaut-xl"
     # Anime
-    ANYTHING = "anything"
+    ANYTHING = "anything-v4"
 
 
 class TextToImage:
