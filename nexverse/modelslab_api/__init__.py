@@ -40,4 +40,7 @@ class TextToImage:
             "webhook": None,
             "track_id": None,
         })
-        header = 
+        header = {
+            'Content-Type': 'application/json'
+        }
+        
