@@ -135,6 +135,7 @@ class NexVerse:
                     ]
                 )
             )
+            context.user_data['tti_response_message'] = response_message
         except telegram.error.BadRequest:
             response_message = await update.message.reply_photo(
                 photo=get_file_byte_data_from_url(image['output'][0]),
@@ -147,7 +148,7 @@ class NexVerse:
                     ]
                 )
             )
-            context.user_data['']
+            context.user_data['tti_response_message'] = response_message
 
     async def text_input(self, update: Update, context: CallbackContext):
         if 'waiting_for_neg_prompt' in context.user_data:
