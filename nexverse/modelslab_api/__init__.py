@@ -30,6 +30,7 @@ class MODEL(enum.Enum):
 
 
 class TextToImage:
+    MODELS: 
     def __init__(self, api: str = None) -> None:
         if not api: raise Exception("No api key provided")
         self.api_key = api
