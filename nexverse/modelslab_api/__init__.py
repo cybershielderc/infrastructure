@@ -25,7 +25,7 @@ class TextToImage:
     def build_request(self, model: MODEL, prompt: str = None, negative_prompt: str = None,
                       size: [int, int] = [512, 512], samples: int = 1, num_inference_steps: int = 30, seed: int = None,
                       guidance_scale: float = 7.5) -> str:
-        data = json.dumps({
+        payload = json.dumps({
             "key": self.api_key,
             "model_id": model.value,
             "prompt": prompt,
