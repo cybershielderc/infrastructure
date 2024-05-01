@@ -34,5 +34,6 @@ class TextToImage:
             "height":size[1],
             "samples": samples,
             "num_inference_steps": num_inference_steps,
-            ""
+            "seed": seed,
+            
         })
