@@ -78,6 +78,20 @@ class NexVerse:
             context.user_data['waiting_for_prompt'] = True
 
     async def text_input(self, update: Update, context: CallbackContext):
+        if 'waiting_for_neg_prompt' in context.user_data:
+            if context.user_data['waiting_for_neg_prompt']:
+                if update.message.reply_to_message:
+                    # Capture message
+                    user_input = update.message.text
+                    await update.message.delete()
+                    await update.message.reply_to_message.edit_text(
+                        text=f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n<strong>User Prompt</strong>\n" + user_input + "\n\n<strong>\nPlease reply to this message once more to set the negative prompt you would like the AI to use!</strong>\n<strong>Or reply with - to use the default negative prompt</strong>",
+                        parse_mode="HTML",
+                        reply_markup=ai_models_image_menu()
+                    )
+                    context.user_data['waiting_for_prompt'] = False
+                    context.user_data['pos_prompt'] = user_input
+                    context.user_data['waiting_for_neg_prompt'] = True
         if 'waiting_for_prompt' in context.user_data:
             if context.user_data['waiting_for_prompt']:
                 if update.message.reply_to_message:
