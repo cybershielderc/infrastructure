@@ -104,11 +104,13 @@ class NexVerse:
                   f"\n\n<strong>Model Name</strong>\n{context.user_data['selected_model_name']}"
         await update._bot.delete_message(chat_id=update.message.chat_id,
                                          message_id=context.user_data['reply_message_id'])
-        await update.message.reply_photo(
-            photo=image['output'][0],
-            caption=message,
-            parse_mode='HTML'
-        )
+        try:
+            await update.message.reply_photo(
+                photo=image['output'][0],
+                caption=message,
+                parse_mode='HTML'
+            )
+        except
 
     async def text_input(self, update: Update, context: CallbackContext):
         if 'waiting_for_neg_prompt' in context.user_data:
