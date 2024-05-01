@@ -36,5 +36,6 @@ class TextToImage:
             "num_inference_steps": num_inference_steps,
             "seed": seed,
             "guidance_scale": guidance_scale,
-            "scheduler": "UniPC"
+            "scheduler": "UniPCMultistepScheduler",
+            "webhook"
         })
