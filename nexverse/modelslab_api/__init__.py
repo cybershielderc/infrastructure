@@ -88,5 +88,5 @@ class TextToImage:
             headers={
                 'Content-Type': 'application/json'
             },
-            data=json.d
+            data=json.dumps()
         )
