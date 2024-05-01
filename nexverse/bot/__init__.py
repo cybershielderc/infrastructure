@@ -81,7 +81,6 @@ class NexVerse:
         await query.answer()
         if query.data == "regenerate_data":
             await update._bot.send_message(text="Regenerating... ", chat_id=query.message.chat_id,
-                                           message_id=context.user_data["tti_response_message"])
             await self.reply_with_generated_image(update, context)
         if query.data.startswith('ai>img>model>selection#//'):
             selection = query.data.split("ai>img>model>selection#//")[1].split("#CNAME#")
