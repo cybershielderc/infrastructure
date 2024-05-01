@@ -84,5 +84,5 @@ class TextToImage:
 
     def get_queued(self, id: int = None) -> requests.api:
         return requests.get(
-
+            URIS.QUEUED_IMAGES,
         )
