@@ -62,7 +62,8 @@ class TextToImage:
         }
         request = requests.request("POST", URIS.TTI, headers=header, data=payload)
         try:
-            req_response: req = request.raise_for_status()
+            req_response: requests.Response = request.raise_for_status()
+            
         request_response = request.raise_for_status()
         while (request_response.json()['status'] != 'success'):
             request_response: requests.Response = request.raise_for_status()
