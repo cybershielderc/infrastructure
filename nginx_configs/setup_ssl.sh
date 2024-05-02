@@ -14,6 +14,7 @@ certbot certonly --webroot -d sa-vpn.csl.sh --email talbaskin.business@gmail.com
 certbot certonly --webroot -d us-vpn.csl.sh --email talbaskin.business@gmail.com -w /var/www/_letsencrypt -n --agree-tos --force-renewal
 certbot certonly --webroot -d smtp.csl.sh --email talbaskin.business@gmail.com -w /var/www/_letsencrypt -n --agree-tos --force-renewal
 certbot certonly --webroot -d node1.csl.sh --email talbaskin.business@gmail.com -w /var/www/_letsencrypt -n --agree-tos --force-renewal
+certbot certonly --webroot -d gential-ai.com --email talbaskin.business@gmail.com -w /var/www/_letsencrypt -n --agree-tos --force-renewal
 
 sed -i -r 's/#?;#//g' /etc/nginx/sites-available/*
 
