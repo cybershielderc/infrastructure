@@ -2,7 +2,7 @@
 
 sed -i -r 's/(listen .*443)/\1;#/g; s/(ssl_(certificate|certificate_key|trusted_certificate) )/#;#\1/g' /etc/nginx/sites-available/*
 
-# Create SSL certificates for domains
+# Create SSL certificates for domains and subdomains
 certbot certonly --webroot -d api.csl.sh --email talbaskin.business@gmail.com -w /var/www/_letsencrypt -n --agree-tos --force-renewal
 certbot certonly --webroot -d as-vpn.csl.sh --email talbaskin.business@gmail.com -w /var/www/_letsencrypt -n --agree-tos --force-renewal
 certbot certonly --webroot -d cdn.csl.sh --email talbaskin.business@gmail.com -w /var/www/_letsencrypt -n --agree-tos --force-renewal
@@ -21,6 +21,7 @@ certbot certonly --webroot -d smtp.csl.sh --email talbaskin.business@gmail.com -
 certbot certonly --webroot -d node1.csl.sh --email talbaskin.business@gmail.com -w /var/www/_letsencrypt -n --agree-tos --force-renewal
 certbot certonly --webroot -d gential-ai.com --email talbaskin.business@gmail.com -w /var/www/_letsencrypt -n --agree-tos --force-renewal
 
+# Mark-in every SSL related line in all sites available
 sed -i -r 's/#?;#//g' /etc/nginx/sites-available/*
 
 
