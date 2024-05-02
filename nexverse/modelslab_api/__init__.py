@@ -63,7 +63,7 @@ class TextToImage:
         print(model, prompt, negative_prompt[0])
         request = requests.request("POST", URIS.TTI, headers=header, data=payload)
         request_response: requests.Response = request.raise_for_status()
-        if request_response.js
+        if request_response.json()['status'] == 'processing':
     def get_model(self, model_id: str) -> MODEL:
         return {
             # NSFW
