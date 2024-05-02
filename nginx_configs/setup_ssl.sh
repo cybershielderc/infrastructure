@@ -1,3 +1,5 @@
+# Markout every SSL related line in all sites available
+
 sed -i -r 's/(listen .*443)/\1;#/g; s/(ssl_(certificate|certificate_key|trusted_certificate) )/#;#\1/g' /etc/nginx/sites-available/*
 
 certbot certonly --webroot -d api.csl.sh --email talbaskin.business@gmail.com -w /var/www/_letsencrypt -n --agree-tos --force-renewal
