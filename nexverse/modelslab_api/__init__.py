@@ -66,7 +66,8 @@ class TextToImage:
             response: requests.Response = request.raise_for_status()
         except requests.exceptions.HTTPError as e:
             print(f"HTTP Error: {e}")
-        while response.json()['status'] != 'success'
+        while response.json()['status'] != 'success':
+            
         return
 
     def get_model(self, model_id: str) -> MODEL:
