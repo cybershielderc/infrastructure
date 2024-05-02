@@ -63,10 +63,10 @@ class TextToImage:
         request = requests.request("POST", URIS.TTI, headers=header, data=payload)
 
         try:
-            response = request.raise_for_status()
+            response: requests.Response = request.raise_for_status()
         except requests.exceptions.HTTPError as e:
             print(f"HTTP Error: {e}")
-        
+        while response.json()
         return
 
     def get_model(self, model_id: str) -> MODEL:
