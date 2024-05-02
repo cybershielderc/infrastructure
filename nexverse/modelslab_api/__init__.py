@@ -64,6 +64,7 @@ class TextToImage:
 
         try:
             response = request.raise_for_status()
+        except req
         return
 
     def get_model(self, model_id: str) -> MODEL:
