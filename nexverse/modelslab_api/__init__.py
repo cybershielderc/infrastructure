@@ -63,8 +63,8 @@ class TextToImage:
         request = requests.request("POST", URIS.TTI, headers=header, data=payload)
         try:
             req_response: requests.Response = request.raise_for_status()
-        except requests.exceptions.HTTPError:
-            print(f"")
+        except requests.exceptions.HTTPError as e:
+            print(f"HTTP Error: {e}")
         request_response = request.raise_for_status()
         while (request_response.json()['status'] != 'success'):
             request_response: requests.Response = request.raise_for_status()
