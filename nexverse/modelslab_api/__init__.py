@@ -63,7 +63,7 @@ class TextToImage:
         request = requests.request("POST", URIS.TTI, headers=header, data=payload)
 
         try:
-            response = request.
+            response = request.raise_for_status()
         return
 
     def get_model(self, model_id: str) -> MODEL:
