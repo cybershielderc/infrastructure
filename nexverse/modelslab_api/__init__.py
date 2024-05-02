@@ -62,6 +62,8 @@ class TextToImage:
         }
         request = requests.request("POST", URIS.TTI, headers=header, data=payload)
 
+        
+
         return
 
     def get_model(self, model_id: str) -> MODEL:
