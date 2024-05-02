@@ -62,8 +62,8 @@ class TextToImage:
         }
         print(model, prompt, negative_prompt[0])
         request = requests.request("POST", URIS.TTI, headers=header, data=payload)
+        request.
 
-        return request
 
     def get_model(self, model_id: str) -> MODEL:
         return {
