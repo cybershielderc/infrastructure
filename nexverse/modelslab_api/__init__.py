@@ -64,7 +64,7 @@ class TextToImage:
         try:
             req_response: requests.Response = request.raise_for_status()
         except requests.exceptions.HTTPError:
-            
+            print(f"")
         request_response = request.raise_for_status()
         while (request_response.json()['status'] != 'success'):
             request_response: requests.Response = request.raise_for_status()
