@@ -65,6 +65,7 @@ class TextToImage:
         request_response: requests.Response = request.raise_for_status()
         if request_response.json()['status'] == 'processing': # Handle Processing Status
             
+
     def get_model(self, model_id: str) -> MODEL:
         return {
             # NSFW
