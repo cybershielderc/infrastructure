@@ -63,7 +63,8 @@ class TextToImage:
         print(model, prompt, negative_prompt[0])
         request = requests.request("POST", URIS.TTI, headers=header, data=payload)
         request_response: requests.Response = request.raise_for_status()
-        while request_response.json()['status'] != 'success'
+        while request_response.json()['status'] != 'success':
+            
 
     def get_model(self, model_id: str) -> MODEL:
         return {
