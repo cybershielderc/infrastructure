@@ -119,8 +119,13 @@ class NexVerse:
 
         if image['status'] == 'processing':
             try:
-                context.user_data['generated_image_uri'] = image['output'][0]
-            except IndexError:
+                image = self.ai_image_api.build_request(
+                    self.ai_image_api.get_model(context.user_data['selected_model']),
+                    context.user_data['pos_prompt'],
+                    context.user_data['neg_prompt'] if context.user_data[
+                                                           'neg_prompt'] is not '-' else self.ai_image_api.DEFAULT_NEG_PROMPT
+                ).json()
+            except requests.ConnectionError:
                 image_url = image['future_links'][0]
                 context.user_data['generated_image_uri'] = image_url
         else:
