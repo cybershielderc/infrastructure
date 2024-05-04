@@ -166,7 +166,7 @@ class NexVerse:
                     reply_markup=InlineKeyboardMarkup(
                         [[
                             InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
-                            InlineKeyboardButton("Back to Text2Image Menu", callback_data="tti_menu")
+                            InlineKeyboardButton("Back to ", callback_data="m1")
                         ]]
                     )
                 )
