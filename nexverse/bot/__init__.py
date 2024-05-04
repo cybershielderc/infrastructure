@@ -179,7 +179,7 @@ class NexVerse:
             image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
             if not update.message:
                 response_message = await update.callback_query.message.reply_photo(
-                    photo=context.user_data['generated_image_uri'],
+                    photo=image['output'][0],
                     caption=message,
                     parse_mode='HTML',
                     reply_markup=InlineKeyboardMarkup(
