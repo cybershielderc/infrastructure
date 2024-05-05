@@ -180,4 +180,4 @@ class TextToImageAsynchronous(TextToImage):
                         safety_checker: bool = False
                         ):
         while True:
-            response = self.
+            
