@@ -109,16 +109,16 @@ class TextToImageAsynchronous(TextToImage):
         self.api_key = api
 
     async def fetch_image(self,
-                            model: MODEL,
-                            requesting_uid: int = None,
-                            prompt: str = None,
-                            negative_prompt: str = TextToImage.DEFAULT_NEG_PROMPT,
-                            size: [int, int] = [512, 512],
-                            samples: int = 1,
-                            num_inference_steps: int = 30,
-                            seed: int = None,
-                            guidance_scale: float = 7.5
-                            ) -> requests.api:
+                          model: MODEL,
+                          requesting_uid: int = None,
+                          prompt: str = None,
+                          negative_prompt: str = TextToImage.DEFAULT_NEG_PROMPT,
+                          size: [int, int] = [512, 512],
+                          samples: int = 1,
+                          num_inference_steps: int = 30,
+                          seed: int = None,
+                          guidance_scale: float = 7.5
+                          ) -> requests.api:
         if not prompt or not negative_prompt: raise Exception("No prompt/negative prompt provided")
         if not requesting_uid: raise Exception("No requesting uid provided")
         payload = json.dumps({
