@@ -156,8 +156,7 @@ class TextToImageAsynchronous(TextToImage):
                 request.json(),
                 {"data": {
                     ""
-                }
-                }
+                }}
             ]
         except requests.RequestException as e:
             return None, str(e)
