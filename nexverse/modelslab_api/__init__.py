@@ -113,14 +113,16 @@ class TextToImageAsynchronous(TextToImage):
                         requesting_uid: int = None,
                         prompt: str = None,
                         neg_prompt: str = TextToImage.DEFAULT_NEG_PROMPT,
-                        size: [int, int] = [512,512],
+                        size: [int, int] = [512, 512],
                         samples: int = 1,
                         num_inference_steps: int = 30,
                         seed: int = None,
                         guidance_scale: float = 7.5,
                         safety_checker: bool = False
                         ):
-        
+        if not prompt or not neg_prompt: raise Exception("No prompt/negative prompt provided")
+        if not requesting_uid: raise Exception("No requesting uid provided")
+
     async def fetch_image(self,
                           model: MODEL,
                           requesting_uid: int = None,
