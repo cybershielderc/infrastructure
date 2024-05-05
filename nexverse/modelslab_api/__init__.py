@@ -123,6 +123,22 @@ class TextToImageAsynchronous(TextToImage):
         if not prompt or not neg_prompt: raise Exception("No prompt/negative prompt provided")
         if not requesting_uid: raise Exception("No requesting uid provided")
         print(f"")
+        payload = json.dumps({
+            "key": self.api_key,
+            "model_id": model.value,
+            "prompt": prompt,
+            "negative_prompt": neg_prompt if type(neg_prompt) == tuple else neg_prompt,
+            "width": size[0],
+            "height": size[1],
+            "samples": samples,
+            "num_inference_steps": num_inference_steps,
+            "seed": seed,
+            "guidance_scale": guidance_scale,
+            "scheduler": "UniPCMultistepScheduler",
+            "webhook": None,
+            "track_id": None,
+            "safety_checker": False,
+        })
 
     async def fetch_image(self,
                           model: MODEL,
