@@ -199,4 +199,4 @@ class TextToImageAsynchronous(TextToImage):
                         f"{start_time - time.time():.2f}",  # Image Generation Time
                     ]
                 elif response[1]['status'] == 'processing':
-                    
+                    estimated_time = 
