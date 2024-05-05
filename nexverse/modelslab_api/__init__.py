@@ -4,7 +4,6 @@ import json
 import asyncio
 
 
-
 class URIS:
     TTI = "https://modelslab.com/api/v6/images/text2img"
     QUEUED_IMAGES = "https://modelslab.com/api/v6/images/fetch"
