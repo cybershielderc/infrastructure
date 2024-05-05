@@ -193,9 +193,9 @@ class TextToImageAsynchronous(TextToImage):
                 if response[1]['status'] == 'success':
                     # Handle SUCCESS status response
                     return [
-                        response[1]['id'],              # Image ID
-                        response[1]['output'][0],       # Image URI,
-                        response[1]['prompt'],          # Prompt
+                        response[1]['id'],  # Image ID
+                        response[1]['output'][0],  # Image URI,
+                        response[1]['prompt'],  # Prompt
                     ]
                 elif response[1]['status'] == 'processing':
                     pass
