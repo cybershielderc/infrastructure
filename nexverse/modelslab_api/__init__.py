@@ -187,6 +187,6 @@ class TextToImageAsynchronous(TextToImage):
         if response[0] is not None:
             if response[0] is 200:
                 # Handle 200 OK HTTP CODE
-                if response[1]['status']: 'success':
+                if response[1]['status'] == 'success':
                     # Handle SUCCESS status response
-                elif response[1]['status']
+                elif response[1]['status'] == 'processing':
