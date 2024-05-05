@@ -115,6 +115,8 @@ class TextToImageAsynchronous(TextToImage):
                         neg_prompt: str = TextToImage.DEFAULT_NEG_PROMPT,
                         size: [int, int] = [512,512],
                         samples: int = 1,
+                        num_inference_steps: int = 30,
+                        seed: int = None,
                         
                         ):
     async def fetch_image(self,
