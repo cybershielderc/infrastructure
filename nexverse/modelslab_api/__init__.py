@@ -180,7 +180,9 @@ class TextToImageAsynchronous(TextToImage):
                         safety_checker: bool = False
                         ):
         response = self.get_image(
-            model, requesting_uid, prompt, neg_prompt, size, samples, num_inference_steps, seed, guidance_scale,
+            model, requesting_uid, prompt, neg_prompt,
+            size, samples, num_inference_steps, seed,
+            guidance_scale, safety_checker
         )
         while True:
 
