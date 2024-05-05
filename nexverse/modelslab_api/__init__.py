@@ -104,4 +104,4 @@ class TextToImageAsynchronous(TextToImage):
         if not api: raise Exception("No api key provided")
         self.api_key = api
 
-    await 
+    async def get_
