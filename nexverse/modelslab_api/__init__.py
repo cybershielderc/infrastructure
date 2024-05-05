@@ -148,7 +148,7 @@ class TextToImageAsynchronous(TextToImage):
             'Content-Type': 'application/json'
         }
         print(f"[{ftime()}]-(TTI): payload and header created for user request URQ-{requesting_uid}")
-        print(f"[{ftime()}]-(TTI): Creating header for user request URQ-{requesting_uid}")
+        print(f"[{ftime()}]-(TTI): Sending request to API for user request URQ-{requesting_uid}")
 
     async def fetch_image(self,
                           model: MODEL,
