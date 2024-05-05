@@ -99,6 +99,7 @@ class TextToImage:
         )
 
     def __default_prompt__(self):
+        
 
 
 class TextToImageAsynchronous(TextToImage):
