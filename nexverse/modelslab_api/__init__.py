@@ -188,9 +188,12 @@ class TextToImageAsynchronous(TextToImage):
             guidance_scale, safety_checker
         )
         if response[0] is not None:
+            print(f"[{ftime()}]-(TTI): request URQ-{requesting_uid} is valid")
             if response[0] is 200:
+                print(f"[{ftime()}]-(TTI): HTTP<200> code received for request URQ-{requesting_uid}")
                 # Handle 200 OK HTTP CODE
                 if response[1]['status'] == 'success':
+                    print(f"[{ftime()}]-(TTI): HTTP<200><success> received for request URQ-{requesting_uid}")
                     # Handle SUCCESS status response
                     return [
                         response[1]['id'],  # Image ID
@@ -201,4 +204,3 @@ class TextToImageAsynchronous(TextToImage):
                 elif response[1]['status'] == 'processing':
                     eta: int = response[1]['eta']
                     await asyncio.sleep(eta)
-                    
