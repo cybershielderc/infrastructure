@@ -7,7 +7,7 @@ import datetime
 
 def format_unix_time() -> str:
     # Convert Unix time to a datetime object
-    dt_object = datetime.datetime.fromtimestamp(datetime)
+    dt_object = datetime.datetime.fromtimestamp(datetime.datetime.now().)
 
     # Format the datetime object as DD-MM-YYYY#HH:MM:SS
     formatted_time = dt_object.strftime("%d-%m-%Y#%H:%M:%S")
