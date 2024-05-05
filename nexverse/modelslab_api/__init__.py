@@ -193,6 +193,7 @@ class TextToImageAsynchronous(TextToImage):
                 if response[1]['status'] == 'success':
                     # Handle SUCCESS status response
                     return [
+                        response[1]['output'][0], # Image URI,
                         
                     ]
                 elif response[1]['status'] == 'processing':
