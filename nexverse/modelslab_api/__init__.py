@@ -162,4 +162,3 @@ class TextToImageAsynchronous(TextToImage):
         except requests.RequestException as e:
             return None, str(e)
         print(f"[{ftime()}]-(TTI): Request sent to API for user request URQ-{requesting_uid}")
-
