@@ -98,6 +98,8 @@ class TextToImage:
             })
         )
 
+    def __default_prompt__(self):
+
 
 class TextToImageAsynchronous(TextToImage):
     def __init__(self, api: str = None) -> None:
