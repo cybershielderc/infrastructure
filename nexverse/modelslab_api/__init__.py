@@ -7,7 +7,7 @@ import datetime
 
 def format_unix_time() -> str:
     formatted_time = datetime.datetime.now().strftime("%d-%m-%Y#%H:%M:%S")
-    return formatted_time
+    return datetime.datetime.now().strftime("%d-%m-%Y#%H:%M:%S")
 
 
 class URIS:
