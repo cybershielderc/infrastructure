@@ -198,3 +198,4 @@ class TextToImageAsynchronous(TextToImage):
                         response[1]['prompt'],          # Prompt
                     ]
                 elif response[1]['status'] == 'processing':
+                    pass
