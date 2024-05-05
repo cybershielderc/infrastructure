@@ -16,7 +16,7 @@ from telegram.ext import (
 )
 from .start_menu import start_menu_markup
 from .image_models_menu import ai_models_image_menu
-from ..modelslab_api import MODEL, TextToImage
+from ..modelslab_api import MODEL, TextToImageAsynchronous
 
 import re
 import time
