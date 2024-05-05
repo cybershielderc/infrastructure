@@ -57,6 +57,7 @@ class TextToImage:
             "scheduler": "UniPCMultistepScheduler",
             "webhook": None,
             "track_id": None,
+            "safety_checker": False,
         })
         header = {
             'Content-Type': 'application/json'
