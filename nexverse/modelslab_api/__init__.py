@@ -195,6 +195,7 @@ class TextToImageAsynchronous(TextToImage):
                 if response[1]['status'] == 'success':
                     print(f"[{ftime()}]-(TTI): HTTP<200><success> received for request URQ-{requesting_uid}")
                     # Handle SUCCESS status response
+                    print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}")
                     return [
                         response[1]['id'],  # Image ID
                         response[1]['output'][0],  # Image URI,
