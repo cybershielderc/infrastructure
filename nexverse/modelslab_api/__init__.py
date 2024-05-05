@@ -124,7 +124,7 @@ class TextToImageAsynchronous(TextToImage):
                         seed: int = None,
                         guidance_scale: float = 7.5,
                         safety_checker: bool = False
-                        ):
+                        ) -> list:
         if not prompt or not neg_prompt: raise Exception("No prompt/negative prompt provided")
         if not requesting_uid: raise Exception("No requesting uid provided")
         print(f"[{ftime()}]-(TTI): Creating payload and header for user request URQ-{requesting_uid}")
@@ -165,7 +165,7 @@ class TextToImageAsynchronous(TextToImage):
             print(f"[{ftime()}]-(TTI): An error occurred for request URQ-{requesting_uid}")
             print(f"[{ftime()}]-(TTI): Error response for request URQ-{requesting_uid}")
             print(f"[{ftime()}]-(TTI): {str(e)}")
-            return None, str(e)
+            return [None, str(e)]
 
     async def handle_response(self,
                         model: MODEL = None,
@@ -184,6 +184,6 @@ class TextToImageAsynchronous(TextToImage):
             size, samples, num_inference_steps, seed,
             guidance_scale, safety_checker
         )
-        while True:
-            
+        if response[]
+
 
