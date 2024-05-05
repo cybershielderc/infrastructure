@@ -189,4 +189,4 @@ class TextToImageAsynchronous(TextToImage):
                 # Handle 200 OK HTTP CODE
                 if response[1]['status']: 'success':
                     # Handle SUCCESS status response
-                
+                elif response[1]['status']
