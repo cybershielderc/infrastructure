@@ -192,4 +192,7 @@ class TextToImageAsynchronous(TextToImage):
                 # Handle 200 OK HTTP CODE
                 if response[1]['status'] == 'success':
                     # Handle SUCCESS status response
+                    return [
+                        
+                    ]
                 elif response[1]['status'] == 'processing':
