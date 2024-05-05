@@ -244,6 +244,6 @@ class NexVerse:
         self.app.run_polling()
 
 
-def run_app(token: str, image_api: TextToImage) -> ApplicationBuilder:
+def run_app(token: str, image_api: TextToImageAsynchronous) -> ApplicationBuilder:
     bot = NexVerse(token, image_api)
     bot.run()
