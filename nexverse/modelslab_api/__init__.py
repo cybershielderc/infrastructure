@@ -184,6 +184,7 @@ class TextToImageAsynchronous(TextToImage):
             size, samples, num_inference_steps, seed,
             guidance_scale, safety_checker
         )
-        if response[]
+        if response[0] is not None:
+            
 
 
