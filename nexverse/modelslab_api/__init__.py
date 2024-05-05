@@ -185,4 +185,5 @@ class TextToImageAsynchronous(TextToImage):
             guidance_scale, safety_checker
         )
         while True:
+            
 
