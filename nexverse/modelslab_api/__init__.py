@@ -168,17 +168,17 @@ class TextToImageAsynchronous(TextToImage):
             return [None, str(e)]
 
     async def handle_response(self,
-                        model: MODEL = None,
-                        requesting_uid: int = None,
-                        prompt: str = None,
-                        neg_prompt: str = TextToImage.DEFAULT_NEG_PROMPT,
-                        size: [int, int] = [512, 512],
-                        samples: int = 1,
-                        num_inference_steps: int = 30,
-                        seed: int = None,
-                        guidance_scale: float = 7.5,
-                        safety_checker: bool = False
-                        ):
+                              model: MODEL = None,
+                              requesting_uid: int = None,
+                              prompt: str = None,
+                              neg_prompt: str = TextToImage.DEFAULT_NEG_PROMPT,
+                              size: [int, int] = [512, 512],
+                              samples: int = 1,
+                              num_inference_steps: int = 30,
+                              seed: int = None,
+                              guidance_scale: float = 7.5,
+                              safety_checker: bool = False
+                              ):
         response = self.get_image(
             model, requesting_uid, prompt, neg_prompt,
             size, samples, num_inference_steps, seed,
@@ -187,5 +187,4 @@ class TextToImageAsynchronous(TextToImage):
         if response[0] is not None:
             if response[0] is 200:
                 # Handle 200 OK HTTP CODE
-
-
+                re
