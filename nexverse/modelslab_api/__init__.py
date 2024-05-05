@@ -1,4 +1,6 @@
 import enum
+import time
+
 import requests
 import json
 import asyncio
@@ -179,6 +181,7 @@ class TextToImageAsynchronous(TextToImage):
                               guidance_scale: float = 7.5,
                               safety_checker: bool = False
                               ):
+        start_time = time.time()
         response = self.get_image(
             model, requesting_uid, prompt, neg_prompt,
             size, samples, num_inference_steps, seed,
