@@ -6,7 +6,6 @@ import datetime
 
 
 def format_unix_time() -> str:
-    formatted_time = datetime.datetime.now().strftime("%d-%m-%Y#%H:%M:%S")
     return datetime.datetime.now().strftime("%d-%m-%Y#%H:%M:%S")
 
 
