@@ -127,7 +127,7 @@ class TextToImageAsynchronous(TextToImage):
                         ):
         if not prompt or not neg_prompt: raise Exception("No prompt/negative prompt provided")
         if not requesting_uid: raise Exception("No requesting uid provided")
-        print(f"[]")
+        print(f"[{ftime()}]-(TTI): Creating payload for user request URQ-{requesting_uid}")
         payload = json.dumps({
             "key": self.api_key,
             "model_id": model.value,
