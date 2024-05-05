@@ -179,6 +179,6 @@ class TextToImageAsynchronous(TextToImage):
                         guidance_scale: float = 7.5,
                         safety_checker: bool = False
                         ):
-        response = self.get
+        response = self.get_image()
         while True:
 
