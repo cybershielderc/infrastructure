@@ -97,3 +97,6 @@ class TextToImage:
                 "request_id": id
             })
         )
+
+
+class TextToImageAsynchronous(TextToImage):
