@@ -166,3 +166,6 @@ class TextToImageAsynchronous(TextToImage):
             print(f"[{ftime()}]-(TTI): Error response for request URQ-{requesting_uid}")
             print(f"[{ftime()}]-(TTI): {str(e)}")
             return None, str(e)
+
+    async def handle_response(self):
+        pass
