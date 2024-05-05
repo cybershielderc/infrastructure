@@ -149,39 +149,6 @@ class TextToImageAsynchronous(TextToImage):
         }
         print(f"[{ftime()}]-(TTI): payload and header created for user request URQ-{requesting_uid}")
         print(f"[{ftime()}]-(TTI): Sending request to API for user request URQ-{requesting_uid}")
-
-    async def fetch_image(self,
-                          model: MODEL,
-                          requesting_uid: int = None,
-                          prompt: str = None,
-                          neg_prompt: str = TextToImage.DEFAULT_NEG_PROMPT,
-                          size: [int, int] = [512, 512],
-                          samples: int = 1,
-                          num_inference_steps: int = 30,
-                          seed: int = None,
-                          guidance_scale: float = 7.5
-                          ) -> requests.api:
-        if not prompt or not neg_prompt: raise Exception("No prompt/negative prompt provided")
-        if not requesting_uid: raise Exception("No requesting uid provided")
-        payload = json.dumps({
-            "key": self.api_key,
-            "model_id": model.value,
-            "prompt": prompt,
-            "negative_prompt": negative_prompt[0] if type(negative_prompt) == tuple else negative_prompt,
-            "width": size[0],
-            "height": size[1],
-            "samples": samples,
-            "num_inference_steps": num_inference_steps,
-            "seed": seed,
-            "guidance_scale": guidance_scale,
-            "scheduler": "UniPCMultistepScheduler",
-            "webhook": None,
-            "track_id": None,
-            "safety_checker": False,
-        })
-        header = {
-            'Content-Type': 'application/json'
-        }
         request = requests.request("POST", URIS.TTI, headers=header, data=payload)
 
         try:
