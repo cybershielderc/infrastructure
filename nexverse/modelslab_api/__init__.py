@@ -13,6 +13,7 @@ def format_unix_time() -> str:
 
     return formatted_time
 
+
 class URIS:
     TTI = "https://modelslab.com/api/v6/images/text2img"
     QUEUED_IMAGES = "https://modelslab.com/api/v6/images/fetch"
