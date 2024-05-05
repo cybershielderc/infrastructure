@@ -120,6 +120,7 @@ class TextToImageAsynchronous(TextToImage):
                         guidance_scale: float = 7.5,
                         safety_checker: bool = False
                         ):
+        
     async def fetch_image(self,
                           model: MODEL,
                           requesting_uid: int = None,
