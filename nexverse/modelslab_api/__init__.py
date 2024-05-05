@@ -168,4 +168,5 @@ class TextToImageAsynchronous(TextToImage):
             return None, str(e)
 
     async def handle_response(self):
-        pass
+        while True:
+            
