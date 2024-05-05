@@ -5,7 +5,7 @@ import asyncio
 import datetime
 
 
-def format_unix_time() -> str:
+def ftime() -> str:
     return datetime.datetime.now().strftime("%d-%m-%Y#%H:%M:%S")
 
 
