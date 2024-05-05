@@ -4,6 +4,15 @@ import json
 import asyncio
 
 
+def format_unix_time() -> str:
+    # Convert Unix time to a datetime object
+    dt_object = datetime.datetime.fromtimestamp(datetime)
+
+    # Format the datetime object as DD-MM-YYYY#HH:MM:SS
+    formatted_time = dt_object.strftime("%d-%m-%Y#%H:%M:%S")
+
+    return formatted_time
+
 class URIS:
     TTI = "https://modelslab.com/api/v6/images/text2img"
     QUEUED_IMAGES = "https://modelslab.com/api/v6/images/fetch"
