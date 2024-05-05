@@ -122,6 +122,7 @@ class TextToImageAsynchronous(TextToImage):
                         ):
         if not prompt or not neg_prompt: raise Exception("No prompt/negative prompt provided")
         if not requesting_uid: raise Exception("No requesting uid provided")
+        print(f"")
 
     async def fetch_image(self,
                           model: MODEL,
