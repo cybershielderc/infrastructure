@@ -185,6 +185,7 @@ class TextToImageAsynchronous(TextToImage):
             guidance_scale, safety_checker
         )
         if response[0] is not None:
-            if response[0]
+            if response[0] is 200:
+                
 
 
