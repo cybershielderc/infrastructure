@@ -167,6 +167,17 @@ class TextToImageAsynchronous(TextToImage):
             print(f"[{ftime()}]-(TTI): {str(e)}")
             return None, str(e)
 
-    async def handle_response(self):
+    async def handle_response(self,
+                        model: MODEL = None,
+                        requesting_uid: int = None,
+                        prompt: str = None,
+                        neg_prompt: str = TextToImage.DEFAULT_NEG_PROMPT,
+                        size: [int, int] = [512, 512],
+                        samples: int = 1,
+                        num_inference_steps: int = 30,
+                        seed: int = None,
+                        guidance_scale: float = 7.5,
+                        safety_checker: bool = False
+                        ):
         while True:
-            
+            response = self.
