@@ -187,4 +187,4 @@ class TextToImageAsynchronous(TextToImage):
         if response[0] is not None:
             if response[0] is 200:
                 # Handle 200 OK HTTP CODE
-                re
+                if response[1]
