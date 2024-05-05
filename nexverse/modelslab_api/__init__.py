@@ -196,7 +196,7 @@ class TextToImageAsynchronous(TextToImage):
                         response[1]['id'],  # Image ID
                         response[1]['output'][0],  # Image URI,
                         response[1]['prompt'],  # Prompt
-                        f"{start_time - time.time():.2f}"
+                        f"{start_time - time.time():.2f}",
                     ]
                 elif response[1]['status'] == 'processing':
                     pass
