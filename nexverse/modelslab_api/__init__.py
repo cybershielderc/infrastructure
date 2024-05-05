@@ -179,6 +179,8 @@ class TextToImageAsynchronous(TextToImage):
                         guidance_scale: float = 7.5,
                         safety_checker: bool = False
                         ):
-        response = self.get_image()
+        response = self.get_image(
+            model, requesting_uid, prompt, neg_prompt, size, samples, num_inference_steps, seed, guidance_scale,
+        )
         while True:
 
