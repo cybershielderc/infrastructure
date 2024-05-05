@@ -6,7 +6,7 @@ import datetime
 
 
 def ftime() -> str:
-    return datetime.datetime.now().strftime("%d-%m-%Y/%H:%M:%S.%f")
+    return datetime.datetime.now().strftime("%d-%m-%Y//%H:%M:%S.%f")
 
 
 class URIS:
