@@ -209,6 +209,7 @@ class TextToImageAsynchronous(TextToImage):
                     eta: int = response[1]['eta']
                     await asyncio.sleep(eta)
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}")
+
                     return [
                         response[1]['id'],  # Image ID
                         response[1]['output'][0],  # Image URI,
