@@ -144,6 +144,7 @@ class TextToImageAsynchronous(TextToImage):
             "track_id": None,
             "safety_checker": False,
         })
+        print(f"[{ftime()}]-(TTI): Creating payload for user request URQ-{requesting_uid}")
 
     async def fetch_image(self,
                           model: MODEL,
