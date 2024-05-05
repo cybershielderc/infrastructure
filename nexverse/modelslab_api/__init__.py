@@ -203,5 +203,6 @@ class TextToImageAsynchronous(TextToImage):
                         f"{start_time - time.time():.2f}",  # Image Generation Time
                     ]
                 elif response[1]['status'] == 'processing':
+                    print(f"[{ftime()}]-(TTI): HTTP<200><processing> received for request URQ-{requesting_uid}")
                     eta: int = response[1]['eta']
                     await asyncio.sleep(eta)
