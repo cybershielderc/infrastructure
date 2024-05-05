@@ -1,7 +1,7 @@
 from bots.tele.main import run_app
 from bots.modules.cryptocurrency import *
 from nexverse.bot import run_app as nexverse_runbot
-from nexverse.modelslab_api import MODEL, TextToImage
+from nexverse.modelslab_api import MODEL, TextToImageAsynchronous
 import json
 import threading
 
@@ -19,5 +19,5 @@ if __name__ == '__main__':
     cryptocurrency.initiate_eth_net()
     # Run threads
     # tele_app = run_app(token, cryptocurrency)
-    nexverse = nexverse_runbot(data['nexverse']['token'], Tex(data['apis']['modelslab_api']))
+    nexverse = nexverse_runbot(data['nexverse']['token'], TextToImageAsynchronous(data['apis']['modelslab_api']))
     print("Running")
