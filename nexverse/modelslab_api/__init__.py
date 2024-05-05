@@ -156,6 +156,7 @@ class TextToImageAsynchronous(TextToImage):
                 request.json(),
                 {"data": {
                     "ruid": requesting_uid,
+                    ""
                 }}
             ]
         except requests.RequestException as e:
