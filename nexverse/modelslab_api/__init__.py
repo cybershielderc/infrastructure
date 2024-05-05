@@ -120,6 +120,7 @@ class TextToImageAsynchronous(TextToImage):
                             guidance_scale: float = 7.5
                             ) -> requests.api:
         if not prompt or not negative_prompt: raise Exception("No prompt/negative prompt provided")
+        if not requesting_uid: raise Exception("No requesting uid provided")
         payload = json.dumps({
             "key": self.api_key,
             "model_id": model.value,
