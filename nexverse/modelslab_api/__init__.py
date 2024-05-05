@@ -117,7 +117,8 @@ class TextToImageAsynchronous(TextToImage):
                         samples: int = 1,
                         num_inference_steps: int = 30,
                         seed: int = None,
-                        
+                        guidance_scale: float = 7.5,
+                        safety_checker: bool = False
                         ):
     async def fetch_image(self,
                           model: MODEL,
