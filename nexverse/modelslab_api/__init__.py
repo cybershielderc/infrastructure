@@ -162,6 +162,7 @@ class TextToImageAsynchronous(TextToImage):
                 }}
             ]
         except requests.RequestException as e:
-            print(f"[{ftime()}]-(TTI): An error occured for request URQ-{requesting_uid}")
+            print(f"[{ftime()}]-(TTI): An error occurred for request URQ-{requesting_uid}")
+            print(f"[{ftime()}]-(TTI): Error response for request URQ-{requesting_uid}")
             return None, str(e)
         print(f"[{ftime()}]-(TTI): Request sent to API for user request URQ-{requesting_uid}")
