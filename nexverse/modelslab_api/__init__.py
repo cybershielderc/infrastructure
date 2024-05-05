@@ -201,7 +201,7 @@ class TextToImageAsynchronous(TextToImage):
                               safety_checker: bool = False
                               ):
         start_time = time.time()
-        response = self.get_image(
+        response = await self.get_image(
             model, requesting_uid, prompt, neg_prompt,
             size, samples, num_inference_steps, seed,
             guidance_scale, safety_checker
