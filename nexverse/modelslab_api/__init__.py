@@ -150,6 +150,7 @@ class TextToImageAsynchronous(TextToImage):
         print(f"[{ftime()}]-(TTI): payload and header created for user request URQ-{requesting_uid}")
         print(f"[{ftime()}]-(TTI): Sending request to API for user request URQ-{requesting_uid}")
         try:
+            
             request = requests.request("POST", URIS.TTI, headers=header, data=payload)
         except requests.RequestException as e:
             return None, str(e)
