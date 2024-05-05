@@ -98,7 +98,7 @@ class TextToImage:
             })
         )
 
-    def __default_prompt__(self):
+    def __default_prompt__(self) -> str:
         return self.DEFAULT_NEG_PROMPT
 
 
