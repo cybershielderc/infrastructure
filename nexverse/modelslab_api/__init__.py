@@ -208,3 +208,10 @@ class TextToImageAsynchronous(TextToImage):
                         f"[{ftime()}]-(TTI): Awaiting {response[1]['eta']:.2f}s before returning request URQ-{requesting_uid}")
                     eta: int = response[1]['eta']
                     await asyncio.sleep(eta)
+                    print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}")
+                    return [
+                        response[1]['id'],  # Image ID
+                        response[1]['output'][0],  # Image URI,
+                        response[1]['prompt'],  # Prompt
+                        f"{start_time - time.time():.2f}",  # Image Generation Time
+                    ]
