@@ -151,6 +151,8 @@ class TextToImageAsynchronous(TextToImage):
         print(f"[{ftime()}]-(TTI): Sending request to API for user request URQ-{requesting_uid}")
         try:
             request = requests.request("POST", URIS.TTI, headers=header, data=payload)
+            print(f"[{ftime()}]-(TTI): Request sent to API for user request URQ-{requesting_uid}")
+            print(f"[{ftime()}]-(TTI): Returning request response to API for user request URQ-{requesting_uid}")
             return [
                 request.status_code,
                 request.json(),
