@@ -110,6 +110,7 @@ class TextToImageAsynchronous(TextToImage):
 
     async def get_image(self,
                         model: MODEL = None,
+                        requesting_uid: int = None,
                         ):
     async def fetch_image(self,
                           model: MODEL,
