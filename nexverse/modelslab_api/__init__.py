@@ -147,7 +147,6 @@ class TextToImageAsynchronous(TextToImage):
         print(f"[{ftime()}]-(TTI): payload created for user request URQ-{requesting_uid}")
         print(f"[{ftime()}]-(TTI): Creating header for user request URQ-{requesting_uid}")
 
-
     async def fetch_image(self,
                           model: MODEL,
                           requesting_uid: int = None,
