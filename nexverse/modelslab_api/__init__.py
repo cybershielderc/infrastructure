@@ -110,7 +110,7 @@ class TextToImageAsynchronous(TextToImage):
 
     async def build_request(self,
                             model: MODEL,
-                            
+                            requesting_uid: int = None,
                             prompt: str = None,
                             negative_prompt: str = TextToImage.DEFAULT_NEG_PROMPT,
                             size: [int, int] = [512, 512],
