@@ -106,6 +106,7 @@ class NexVerse:
         try:
             image = await self.ai_image_api.handle_response(
                 self.ai_image_api.get_model(context.user_data['selected_model']),
+                
                 context.user_data['pos_prompt'],
                 context.user_data['neg_prompt'] if context.user_data[
                                                        'neg_prompt'] is not '-' else self.ai_image_api.DEFAULT_NEG_PROMPT
