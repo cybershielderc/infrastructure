@@ -155,7 +155,7 @@ class TextToImageAsynchronous(TextToImage):
                 request.status_code,
                 request.json(),
                 {"data": {
-                    
+                    ""
                 }
                 }
             ]
