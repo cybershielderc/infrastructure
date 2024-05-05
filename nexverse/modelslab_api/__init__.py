@@ -107,7 +107,7 @@ class TextToImageAsynchronous(TextToImage):
     async def build_request(self,
                             model: MODEL,
                             prompt: str = None,
-                            negative_prompt: str = self.,
+                            negative_prompt: str = ,
                             size: [int, int] = [512, 512],
                             samples: int = 1,
                             num_inference_steps: int = 30,
