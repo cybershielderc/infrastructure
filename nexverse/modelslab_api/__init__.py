@@ -113,6 +113,7 @@ class TextToImageAsynchronous(TextToImage):
                         requesting_uid: int = None,
                         prompt: str = None,
                         neg_prompt: str = TextToImage.DEFAULT_NEG_PROMPT,
+                        
                         ):
     async def fetch_image(self,
                           model: MODEL,
