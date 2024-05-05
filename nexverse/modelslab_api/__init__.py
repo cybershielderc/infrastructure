@@ -108,7 +108,7 @@ class TextToImageAsynchronous(TextToImage):
         if not api: raise Exception("No api key provided")
         self.api_key = api
 
-    async def build_request(self,
+    async def fetch_image(self,
                             model: MODEL,
                             requesting_uid: int = None,
                             prompt: str = None,
