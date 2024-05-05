@@ -115,6 +115,23 @@ class TextToImageAsynchronous(TextToImage):
         if not api: raise Exception("No api key provided")
         self.api_key = api
 
+    def get_model(self, model_id: str) -> MODEL:
+        return {
+            # NSFW
+            "nsfw1": MODEL.DELIBERATE,
+            "nsfw2": MODEL.PERFECT_DELI,
+            "nsfw3": MODEL.MIX_APPFACTORY,
+            "nsfw4": MODEL.DARK_APPFACTORY,
+            # Anime
+            "anime1": MODEL.ANYTHING,
+            "anime2": MODEL.DARK_SUSHI,
+            "anime3": MODEL.SAKURA,
+            # Realism
+            "realism1": MODEL.MIDJOURNEY,
+            "realism2": MODEL.REALISTIC_VISION,
+            "realism3": MODEL.JUGGERNAUT,
+        }.get(model_id, None)
+
     async def get_image(self,
                         model: MODEL = None,
                         requesting_uid: int = None,
