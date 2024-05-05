@@ -127,7 +127,7 @@ class TextToImageAsynchronous(TextToImage):
                         ):
         if not prompt or not neg_prompt: raise Exception("No prompt/negative prompt provided")
         if not requesting_uid: raise Exception("No requesting uid provided")
-        print(f"[{ftime()}]-(TTI): Creating payload for user request URQ-{requesting_uid}")
+        print(f"[{ftime()}]-(TTI): Creating payload and header for user request URQ-{requesting_uid}")
         payload = json.dumps({
             "key": self.api_key,
             "model_id": model.value,
@@ -144,7 +144,10 @@ class TextToImageAsynchronous(TextToImage):
             "track_id": None,
             "safety_checker": False,
         })
-        print(f"[{ftime()}]-(TTI): payload created for user request URQ-{requesting_uid}")
+        header = {
+            'Content-Type': 'application/json'
+        }
+        print(f"[{ftime()}]-(TTI): payload and header created for user request URQ-{requesting_uid}")
         print(f"[{ftime()}]-(TTI): Creating header for user request URQ-{requesting_uid}")
 
     async def fetch_image(self,
