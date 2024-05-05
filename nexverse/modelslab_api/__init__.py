@@ -201,3 +201,4 @@ class TextToImageAsynchronous(TextToImage):
                 elif response[1]['status'] == 'processing':
                     eta: int = response[1]['eta']
                     await asyncio.sleep(eta)
+                    
