@@ -104,6 +104,19 @@ class NexVerse:
             # context.user_data['waiting_for_prompt'] = True
         if query.data.startswith('samples='):
             number_of_samples = query.data.split("samples=")[1]
+            if update.message is None:
+                await update.callback_query.edit_message_text(
+                    text=f"You have selected <strong>{selection[1]}</strong>\nPlease select the amount of samples you would like the\nbot to generate!",
+                    parse_mode="HTML",
+                    reply_markup=numberof_samples()
+                )
+            else:
+                await update.callback_query.edit_message_text(
+                    text=f"You have selected <strong>{selection[1]}</strong>\nPlease select the amount of samples you would like the\nbot to generate!",
+                    parse_mode="HTML",
+                    reply_markup=numberof_samples()
+                )
+            context.user_data['number_of_samples'] = selection[0]
 
     async def reply_with_generated_image(self, update: Update, context: CallbackContext):
         try:
