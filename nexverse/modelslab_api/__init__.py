@@ -201,9 +201,9 @@ class TextToImageAsynchronous(TextToImage):
                               safety_checker: bool = False
                               ):
         print(f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // MODEL: {model.value}" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // PROMPT: \n{prompt}" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // NEG_PROMPT: \n{neg_prompt}" + \
+              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // MODEL: {model.value}" + \
+              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // PROMPT: \n{prompt}" + \
+              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // NEG_PROMPT: \n{neg_prompt}" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // SIZE: {size}" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // TECHNICAL // SAMPLES: {samples}" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // TECHNICAL // N. INFER STEPS: {num_inference_steps}" + \
