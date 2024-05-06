@@ -1,31 +1,25 @@
-import asyncio
-
 import requests.exceptions
-import telegram.error
 from telegram import (
     Update, InlineKeyboardButton, InlineKeyboardMarkup,
-    InputMediaPhoto, CallbackQuery
+    InputMediaPhoto
 )
 from telegram.ext import (
     ApplicationBuilder,
     CommandHandler,
     MessageHandler,
     CallbackContext,
-    ContextTypes,
     filters,
     CallbackQueryHandler
 )
-from .start_menu import start_menu_markup
-from .image_models_menu import ai_models_image_menu
-from ..modelslab_api import MODEL, TextToImageAsynchronous
+
 from .image_generation_options import (
     size_options,
     inference_steps,
     numberof_samples
 )
-
-import re
-import time
+from .image_models_menu import ai_models_image_menu
+from .start_menu import start_menu_markup
+from ..modelslab_api import TextToImageAsynchronous
 
 
 def get_file_byte_data_from_url(file_url):
