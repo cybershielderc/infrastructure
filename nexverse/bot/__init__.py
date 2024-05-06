@@ -125,53 +125,10 @@ class NexVerse:
             if context.user_data['reply_message_id'] is not None:
                 await update._bot.delete_message(chat_id=update.message.chat_id,
                                                  message_id=context.user_data['reply_message_id'])
-                context.user_data['reply_message_id'] = NoneS
-            if not update.message:
-                response_message = await update.callback_query.message.reply_photo(
-                    photo=image_bytes,
-                    caption=message,
-                    parse_mode='HTML',
-                    reply_markup=InlineKeyboardMarkup(
-                        [[
-                            InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
-                            InlineKeyboardButton("Back to Menu", callback_data="m1")
-                        ]]
-                    )
-                )
-            else:
-                response_message = await update.message.reply_photo(
-                    photo=image_bytes,
-                    caption=message,
-                    parse_mode='HTML',
-                    reply_markup=InlineKeyboardMarkup(
-                        [[
-                            InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
-                            InlineKeyboardButton("Back to Menu", callback_data="m1")
-                        ]]
-                    )
-                )
-            context.user_data['tti_response_message'] = response_message.message_id
-        except (telegram.error.BadRequest, telegram.error.TimedOut):
-            if 'tti_response_message' in context.user_data:
-                if context.user_data['tti_response_message'] is not None:
-                    context.user_data['tti_response_message'] = None
-            time.sleep(1)
-            image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
+                context.user_data['reply_message_id'] = None
             if not update.message:
                 response_message = await update.callback_query.message.reply_photo(
                     photo=image['output'][0],
-                    caption=message,
-                    parse_mode='HTML',
-                    reply_markup=InlineKeyboardMarkup(
-                        [[
-                            InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
-                            InlineKeyboardButton("Back to Menu", callback_data="m1")
-                        ]]
-                    )
-                )
-            else:
-                response_message = await update.message.reply_photo(
-                    photo=context.user_data['generated_image_uri'],
                     caption=message,
                     parse_mode='HTML',
                     reply_markup=InlineKeyboardMarkup(
