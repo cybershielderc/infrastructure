@@ -260,7 +260,7 @@ class TextToImageAsynchronous(TextToImage):
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
                         response[1]['id'],  # Image ID
-                        response[1]['future_links'][0],
+                        response[1]['future_links'][0] if response[1]['future_links'],
                         # Image URI ignore the fetch endpoint as it is returning the same URI in both the future_links and api fetch endpoint
                         "N/A",  # Prompt
                         f"{time.time() - start_time:.2f}",  # Image Generation Time
