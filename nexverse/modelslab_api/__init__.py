@@ -173,7 +173,7 @@ class TextToImageAsynchronous(TextToImage):
             print(f"[{ftime()}]-(TTI): Request sent to API for user request URQ-{requesting_uid}")
             print(f"[{ftime()}]-(TTI): Returning request response for user request URQ-{requesting_uid}")
             print(f"[{ftime()}]-(TTI): Showing raw data for request URQ-{requesting_uid}")
-            print(f"[{ftime()}]-(TTI): URQ-{requesting_uid}:\n{request.json()}")
+            print(f"[{ftime()}]-(TTI): URQ-{requesting_uid}:<{request.status_code}>\n{request.json()}")
             return [
                 request.status_code,
                 request.json(),
