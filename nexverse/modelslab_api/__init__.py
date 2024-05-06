@@ -247,10 +247,8 @@ class TextToImageAsynchronous(TextToImage):
                         print(
                             f"[{ftime()}]-(TTI): URQ-{requesting_uid} Image URL Returned HTTP<404>. Awaiting answer.")
                         while queue_status_code != 200:
-                            queue_status_code = requests.post(
-                                url=response[1]['future_links'][0],
-                                data=json.dumps({'key': self.api_key}),
-                                headers={'Content-Type': 'application/json'}
+                            queue_status_code = requests.get(
+                                url=response[1]['future_links'][0]
                             ).status_code
                             if queue_status_code == 200:
                                 break
