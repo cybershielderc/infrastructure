@@ -243,7 +243,7 @@ class TextToImageAsynchronous(TextToImage):
                         url=response[1]['future_links'][0]
                     ).status_code
                     print(f"[{ftime()}]-(TTI): Queued Image Status Code <{queue_status_code}>")
-                    if queue_status_code == 404:
+                    if queue_status_code == 404 or queue_status_code == 401 or queue_status_code == 403:
                         print(
                             f"[{ftime()}]-(TTI): URQ-{requesting_uid} Image URL Returned HTTP<404>. Awaiting answer.")
                         while queue_status_code != 200:
