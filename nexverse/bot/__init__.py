@@ -247,8 +247,10 @@ class NexVerse:
                 )
                 context.user_data['tti_response_message'] = response_message.message_id
             elif type(image[1]) is list:
-                response_message = await update.message.reply_media_group(
+                await update.message.reply_media_group(
                     media=[InputMediaPhoto(media=x) for x in image[1]],
+                )
+                response_message = await update.message.reply_caption(
                     caption=message,
                     parse_mode='HTML',
                     reply_markup=InlineKeyboardMarkup(
@@ -258,6 +260,7 @@ class NexVerse:
                         ]]
                     )
                 )
+                context.user_data['tti_response_message'] = response_message.message_id
                 context.user_data['tti_response_message'] = response_message.message_id
 
     async def text_input(self, update: Update, context: CallbackContext):
