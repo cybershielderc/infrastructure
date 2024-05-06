@@ -112,7 +112,7 @@ class NexVerse:
                 )
             else:
                 await update.callback_query.edit_message_text(
-                    text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count</strong><code>{number_of_samples}<",
+                    text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count</strong><code>{number_of_samples}</code>",
                     parse_mode="HTML",
                     reply_markup=size_options()
                 )
