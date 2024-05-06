@@ -241,7 +241,8 @@ class TextToImageAsynchronous(TextToImage):
                     await asyncio.sleep(eta + 0.95)
                     queue_status_code = requests.post(
                         url=response[1]['future_links'][0],
-                        
+                        data=json.dumps({'key': self.api_key}),
+                        headers=
                     ).status_code
                     if requests.post(
                             url=response[1]['future_links'][0]
