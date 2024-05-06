@@ -275,7 +275,7 @@ class NexVerse:
                              context.user_data[
                                  'pos_prompt'] + "\n\n<strong>User Negative Prompt</strong>\n" + user_input,
                         parse_mode="HTML",
-                        reply_markup=ai_models_image_menu()
+                        reply_markup=
                     )
                     processing_message = await update.message.reply_text(
                         "Processing... ⌛ | Please be patient this will only take a few seconds!"
