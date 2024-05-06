@@ -166,7 +166,7 @@ class NexVerse:
                     f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
                     f"<strong>Image Size</strong>" + \
                     f"<code>{context.user_data['image_width']}x{context.user_data['image_height']}</code>\n\n" + \
-                    f"Select the number of inference steps!\nThe <strong>higher</strong>" + \
+                    f"<strong>Inference Steps</strong>" + \
                     f"the <strong>better</strong> the image!"
                 await update.callback_query.edit_message_text(
                     text=message,
