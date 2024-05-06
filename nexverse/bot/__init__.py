@@ -275,7 +275,7 @@ class NexVerse:
                              context.user_data[
                                  'pos_prompt'] + "\n\n<strong>User Negative Prompt</strong>\n" + user_input,
                         parse_mode="HTML",
-                        reply_markup=
+                        reply_markup=None
                     )
                     processing_message = await update.message.reply_text(
                         "Processing... ⌛ | Please be patient this will only take a few seconds!"
@@ -293,7 +293,7 @@ class NexVerse:
                     await update.message.reply_to_message.edit_text(
                         text=f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n<strong>User Prompt</strong>\n" + user_input + "\n\n<strong>\nPlease reply to this message once more to set the negative prompt you would like the AI to use!</strong>\n<strong>Or reply with - to use the default negative prompt</strong>",
                         parse_mode="HTML",
-                        reply_markup=ai_models_image_menu()
+                        reply_markup=None
                     )
                     context.user_data['waiting_for_prompt'] = False
                     context.user_data['pos_prompt'] = user_input
