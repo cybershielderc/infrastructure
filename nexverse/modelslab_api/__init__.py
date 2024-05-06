@@ -200,6 +200,7 @@ class TextToImageAsynchronous(TextToImage):
                               guidance_scale: float = 7.5,
                               safety_checker: bool = False
                               ):
+        print(f"[{ftime()}]-(TTI): request URQ-{requesting_uid} is valid")
         start_time = time.time()
         response = await self.get_image(
             model, requesting_uid, prompt, neg_prompt,
