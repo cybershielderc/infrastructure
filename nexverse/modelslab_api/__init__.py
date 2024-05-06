@@ -240,9 +240,7 @@ class TextToImageAsynchronous(TextToImage):
                     eta: int = response[1]['eta']
                     await asyncio.sleep(eta + 0.95)
                     queue_status_code = requests.get(
-                        url=response[1]['future_links'][0],
-                        data=json.dumps({'key': self.api_key}),
-                        headers={'Content-Type': 'application/json'}
+                        url=response[1]['future_links'][0]
                     ).status_code
                     print(f"[{ftime()}]-(TTI): Queued Image Status Code <{queue_status_code}>")
                     if queue_status_code == 404:
