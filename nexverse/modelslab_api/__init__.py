@@ -204,6 +204,8 @@ class TextToImageAsynchronous(TextToImage):
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
+              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
+              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
               )
         start_time = time.time()
         response = await self.get_image(
