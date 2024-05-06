@@ -4,7 +4,7 @@ import requests.exceptions
 import telegram.error
 from telegram import (
     Update, InlineKeyboardButton, InlineKeyboardMarkup,
-    InputMediaPhoto
+    InputMediaPhoto, CallbackQuery
 )
 from telegram.ext import (
     ApplicationBuilder,
