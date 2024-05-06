@@ -245,7 +245,12 @@ class TextToImageAsynchronous(TextToImage):
                         headers={'Content-Type': 'application/json'}
                     ).status_code
                     while queue_status_code != 200:
-                        
+                        queue_status_code = requests.post(
+                            url=response[1]['future_links'][0],
+                            data=json.dumps({'key': self.api_key}),
+                            headers={'Content-Type': 'application/json'}
+                        ).status_code
+                        await 
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
