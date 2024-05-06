@@ -204,11 +204,11 @@ class TextToImageAsynchronous(TextToImage):
               f"[{ftime()}]-(TTI): URQ-{requesting_uid} // MODEL: {model.value}" + \
               f"[{ftime()}]-(TTI): URQ-{requesting_uid} // PROMPT: \n{prompt}" + \
               f"[{ftime()}]-(TTI): URQ-{requesting_uid} // NEG_PROMPT: \n{neg_prompt}" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // SIZE: {size}" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // TECHNICAL // SAMPLES: {samples}" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // TECHNICAL // N. INFER STEPS: {num_inference_steps}" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // TECHNICAL // GUIDANCE: {guidance_scale}" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} //"
+              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // SIZE: {size}" + \
+              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // TECHNICAL // SAMPLES: {samples}" + \
+              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // TECHNICAL // N. INFER STEPS: {num_inference_steps}" + \
+              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // TECHNICAL // GUIDANCE: {guidance_scale}" + \
+              f"[{ftime()}]-(TTI): URQ-{requesting_uid} //"
               )
         start_time = time.time()
         response = await self.get_image(
