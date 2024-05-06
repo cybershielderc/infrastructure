@@ -129,7 +129,7 @@ class NexVerse:
                 await update.callback_query.edit_message_text(
                     text=message,
                     parse_mode="HTML",
-                    reply_markup=size_options()
+                    reply_markup=inference_steps()
                 )
             else:
                 message = \
@@ -141,7 +141,7 @@ class NexVerse:
                 await update.callback_query.edit_message_text(
                     text=message,
                     parse_mode="HTML",
-                    reply_markup=size_options()
+                    reply_markup=inference_steps()
                 )
             context.user_data['number_of_samples'] = int(number_of_samples)
 
