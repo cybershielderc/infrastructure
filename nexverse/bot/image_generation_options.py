@@ -10,3 +10,9 @@ def size_options() -> InlineKeyboardMarkup:
          InlineKeyboardButton('1024x1024', callback_data='size=1024x1024')
          ]
     ])
+
+
+def inference_steps() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup([
+        
+    ])
