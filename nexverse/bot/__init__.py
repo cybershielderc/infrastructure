@@ -122,6 +122,7 @@ class NexVerse:
             if update.message is None:
                 message = \
                     f"You have selected <strong>{selection[1]}</strong>\n\n" + \
+                    
                     await update.callback_query.edit_message_text(
                         text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count </strong><code>{number_of_samples}</code>\nPlease select the size of the image you would like the AI to use!",
                         parse_mode="HTML",
