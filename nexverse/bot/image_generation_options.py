@@ -33,4 +33,6 @@ def inference_steps() -> InlineKeyboardMarkup:
 
 
 def numberof_samples() -> InlineKeyboardMarkup:
-    return InlineKeyboardMarkup([])
+    return InlineKeyboardMarkup([
+        []
+    ])
