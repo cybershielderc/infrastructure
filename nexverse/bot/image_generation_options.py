@@ -15,6 +15,8 @@ def size_options() -> InlineKeyboardMarkup:
 def inference_steps() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup([
         [
-            InlineKeyboardButton('10', callback_data='infs=10')
+            InlineKeyboardButton('10', callback_data='infs=10'),
+            InlineKeyboardButton('10', callback_data='infs=20'),
+            InlineKeyboardButton('10', callback_data='infs=30'),
         ]
     ])
