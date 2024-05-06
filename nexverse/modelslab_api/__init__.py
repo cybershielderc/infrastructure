@@ -194,7 +194,7 @@ class TextToImageAsynchronous(TextToImage):
                               requesting_uid: int = None,
                               prompt: str = None,
                               neg_prompt: str = TextToImage.DEFAULT_NEG_PROMPT,
-                              size: [int, int] = [512, 512],
+                              size: [int, int] = [1024, 1024],
                               samples: int = 1,
                               num_inference_steps: int = 100,
                               seed: int = None,
