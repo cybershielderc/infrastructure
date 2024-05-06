@@ -116,7 +116,7 @@ class NexVerse:
                     parse_mode="HTML",
                     reply_markup=numberof_samples()
                 )
-            context.user_data['number_of_samples'] = selection[0]
+            context.user_data['number_of_samples'] = int(num)
 
     async def reply_with_generated_image(self, update: Update, context: CallbackContext):
         try:
