@@ -218,8 +218,18 @@ class NexVerse:
                 )
                 context.user_data['tti_response_message'] = response_message.message_id
             elif type(image[1]) is list:
-                response_message = await update.callback_query.message.reply_media_group(
+                await update.callback_query.message.reply_media_group(
                     media=[InputMediaPhoto(media=x) for x in image[1]],
+                )
+                response_message = await update.callback_query.message.reply_caption(
+                    caption=message,
+                    parse_mode='HTML',
+                    reply_markup=InlineKeyboardMarkup(
+                        [[
+                            InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
+                            InlineKeyboardButton("Back to Menu", callback_data="m1")
+                        ]]
+                    )
                 )
                 context.user_data['tti_response_message'] = response_message.message_id
         else:
