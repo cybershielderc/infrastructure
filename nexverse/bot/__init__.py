@@ -106,13 +106,13 @@ class NexVerse:
             number_of_samples = query.data.split("samples=")[1]
             if update.message is None:
                 await update.callback_query.edit_message_text(
-                    text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count </strong><code>{number_of_samples}</code>\nPlease select the size of the image you would like the AI to use!",
+                    text=f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n<strong>Sample Count </strong><code>{number_of_samples}</code>\nPlease select the size of the image you would like the AI to use!",
                     parse_mode="HTML",
                     reply_markup=size_options()
                 )
             else:
                 await update.callback_query.edit_message_text(
-                    text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count </strong><code>{number_of_samples}</code>\nPlease select the size of the image you would like the AI to use!",
+                    text=f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n<strong>Sample Count </strong><code>{number_of_samples}</code>\nPlease select the size of the image you would like the AI to use!",
                     parse_mode="HTML",
                     reply_markup=size_options()
                 )
@@ -121,10 +121,10 @@ class NexVerse:
             number_of_samples = query.data.split("samples=")[1]
             if update.message is None:
                 message = \
-                    f"You have selected <strong>{selection[1]}</strong>\n\n" + \
-                    f"<strong>Sample Count </strong><code>{number_of_samples}</code>" + \
+                    f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
+                    f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>" + \
                     f""
-                    await update.callback_query.edit_message_text(
+                await update.callback_query.edit_message_text(
                         text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count </strong><code>{number_of_samples}</code>\nPlease select the size of the image you would like the AI to use!",
                         parse_mode="HTML",
                         reply_markup=size_options()
