@@ -140,7 +140,7 @@ class NexVerse:
             )
             context.user_data['tti_response_message'] = response_message.message_id
         else:
-            response_message = await update.callback_query.message.reply_photo(
+            response_message = await update.message.reply_photo(
                 photo=image[1],
                 caption=message,
                 parse_mode='HTML',
