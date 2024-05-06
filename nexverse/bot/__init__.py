@@ -173,8 +173,7 @@ class NexVerse:
                     parse_mode="HTML",
                     reply_markup=None
                 )
-            context.user_data['image_width'] = int(image_size.split("x")[0])
-            context.user_data['image_height'] = int(image_size.split("x")[1])
+            context.user_data['inference_steps'] = int(inference_steps)
 
     async def reply_with_generated_image(self, update: Update, context: CallbackContext):
         try:
