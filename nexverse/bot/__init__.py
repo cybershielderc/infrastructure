@@ -117,7 +117,7 @@ class NexVerse:
                     reply_markup=size_options()
                 )
             context.user_data['number_of_samples'] = int(number_of_samples)
-        if query.data.startswith('samples='):
+        if query.data.startswith('size='):
             number_of_samples = query.data.split("samples=")[1]
             if update.message is None:
                 message = \
