@@ -238,7 +238,7 @@ class TextToImageAsynchronous(TextToImage):
                     print(
                         f"[{ftime()}]-(TTI): Awaiting {response[1]['eta']:.2f}s before returning request URQ-{requesting_uid}")
                     eta: int = response[1]['eta']
-                    await asyncio.sleep(eta + 0.)
+                    await asyncio.sleep(eta + 0.95)
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
