@@ -240,11 +240,12 @@ class TextToImageAsynchronous(TextToImage):
                     eta: int = response[1]['eta']
                     await asyncio.sleep(eta + 0.95)
                     queue_status_code = requests.post(
-                            url=response[1]['future_links'][0]
+                        url=response[1]['future_links'][0],
+                        
                     ).status_code
                     if requests.post(
                             url=response[1]['future_links'][0]
-                    ).status_code == 404:
+                    ).status_code == 404: pass
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
