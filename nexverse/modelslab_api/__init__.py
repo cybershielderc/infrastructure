@@ -244,6 +244,7 @@ class TextToImageAsynchronous(TextToImage):
                         data=json.dumps({'key': self.api_key}),
                         headers={'Content-Type': 'application/json'}
                     ).status_code
+                    print(f"[{ftime()}]-(TTI): Queued Image Status Code <{queue_status_code}>")
                     if queue_status_code == 404:
                         print(
                             f"[{ftime()}]-(TTI): URQ-{requesting_uid} Image URL Returned HTTP<404>. Awaiting answer.")
