@@ -163,9 +163,9 @@ class NexVerse:
             else:
                 message = \
                     f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
-                    f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
+                    f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n" + \
                     f"<strong>Image Size</strong>" + \
-                    f"<code>{context.user_data['image_width']}x{context.user_data['image_height']}</code>\n\n" + \
+                    f"<code>{context.user_data['image_width']}x{context.user_data['image_height']}</code>\n" + \
                     f"<strong>Inference Steps </strong><code>{inference_steps}</code>" + \
                     f"the <strong>better</strong> the image!"
                 await update.callback_query.edit_message_text(
