@@ -174,6 +174,7 @@ class NexVerse:
                     reply_markup=None
                 )
             context.user_data['inference_steps'] = int(inference_steps)
+            context.user_data['waiting_for_prompt'] = True
 
     async def reply_with_generated_image(self, update: Update, context: CallbackContext):
         try:
