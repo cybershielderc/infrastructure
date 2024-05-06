@@ -125,13 +125,17 @@ class NexVerse:
                     f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
                     f"Please select the size of the image you would like the AI to use!"
                 await update.callback_query.edit_message_text(
-                    text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count </strong><code>{number_of_samples}</code>\nPlease select the size of the image you would like the AI to use!",
+                    text=message,
                     parse_mode="HTML",
                     reply_markup=size_options()
                 )
             else:
+                message = \
+                    f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
+                    f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
+                    f"Please select the size of the image you would like the AI to use!"
                 await update.callback_query.edit_message_text(
-                    text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count </strong><code>{number_of_samples}</code>\nPlease select the size of the image you would like the AI to use!",
+                    text=message,
                     parse_mode="HTML",
                     reply_markup=size_options()
                 )
