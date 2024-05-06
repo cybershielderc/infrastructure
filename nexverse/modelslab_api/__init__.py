@@ -229,7 +229,8 @@ class TextToImageAsynchronous(TextToImage):
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
                         response[1]['id'],  # Image ID
-                        response[1]['output'][0] if len(response[1]['output'])==1 else response[1]['output'],  # Image URI,
+                        response[1]['output'][0] if len(response[1]['output']) == 1 else response[1]['output'],
+                        # Image URI,
                         "N/A",  # Prompt
                         f"{response[1]['generationTime']:.2f}",  # Image Generation Time
                     ]
