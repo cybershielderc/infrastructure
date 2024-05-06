@@ -167,6 +167,7 @@ class TextToImageAsynchronous(TextToImage):
             'Content-Type': 'application/json'
         }
         print(f"[{ftime()}]-(TTI): payload and header created for user request URQ-{requesting_uid}")
+        print(f"[{ftime()}]-(TTI): payload for user request URQ-{requesting_uid}:\n{payload}")
         print(f"[{ftime()}]-(TTI): Sending request to API for user request URQ-{requesting_uid}")
         try:
             request = requests.request("POST", URIS.TTI, headers=header, data=payload)
