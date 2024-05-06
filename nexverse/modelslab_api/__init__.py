@@ -239,7 +239,9 @@ class TextToImageAsynchronous(TextToImage):
                         f"[{ftime()}]-(TTI): Awaiting {response[1]['eta']:.2f}s before returning request URQ-{requesting_uid}")
                     eta: int = response[1]['eta']
                     await asyncio.sleep(eta + 0.95)
-                    if requests.post()
+                    if requests.post(
+                            url=response[1]['future_links'][0]
+                    ):
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
