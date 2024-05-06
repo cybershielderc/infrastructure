@@ -126,7 +126,7 @@ class NexVerse:
                 await update._bot.delete_message(chat_id=update.message.chat_id,
                                                  message_id=context.user_data['reply_message_id'])
                 context.user_data['reply_message_id'] = None
-            if not update.message:
+        if not update.message:
                 response_message = await update.callback_query.message.reply_photo(
                     photo=image['output'][0],
                     caption=message,
