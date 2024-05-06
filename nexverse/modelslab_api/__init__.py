@@ -256,7 +256,7 @@ class TextToImageAsynchronous(TextToImage):
                                 break
                             else:
                                 print(
-                                    f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting image for URQ-{requesting_uid}")
+                                    f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting image for URQ-{requesting_uid} HTTP<{queue_status_code}>")
                                 await asyncio.sleep(1)
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
