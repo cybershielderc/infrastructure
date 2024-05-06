@@ -171,7 +171,7 @@ class NexVerse:
                 await update.callback_query.edit_message_text(
                     text=message,
                     parse_mode="HTML",
-                    reply_markup=inference_steps()
+                    reply_markup=None
                 )
             context.user_data['image_width'] = int(image_size.split("x")[0])
             context.user_data['image_height'] = int(image_size.split("x")[1])
