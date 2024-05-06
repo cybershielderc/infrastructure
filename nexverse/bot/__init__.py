@@ -232,7 +232,7 @@ class NexVerse:
                 context.user_data['tti_response_message'] = response_message.message_id
         else:
             if type(image[1]) is str:
-                response_message = await update.callback_query.message.reply_photo(
+                response_message = await update.message.reply_photo(
                     photo=image[1],
                     caption=message,
                     parse_mode='HTML',
@@ -245,7 +245,7 @@ class NexVerse:
                 )
                 context.user_data['tti_response_message'] = response_message.message_id
             elif type(image[1]) is list:
-                response_message = await update.callback_query.message.reply_media_group(
+                response_message = await update.message.reply_media_group(
                     media=[InputMediaPhoto(media=x) for x in image[1]],
                     caption=message,
                     parse_mode='HTML',
