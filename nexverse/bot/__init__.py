@@ -129,18 +129,31 @@ class NexVerse:
                 context.user_data['reply_message_id'] = None
         if not update.message:
             if type(image[1]) is str:
-            response_message = await update.callback_query.message.reply_photo(
-                photo=image[1],
-                caption=message,
-                parse_mode='HTML',
-                reply_markup=InlineKeyboardMarkup(
-                    [[
-                        InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
-                        InlineKeyboardButton("Back to Menu", callback_data="m1")
-                    ]]
+                response_message = await update.callback_query.message.reply_photo(
+                    photo=image[1],
+                    caption=message,
+                    parse_mode='HTML',
+                    reply_markup=InlineKeyboardMarkup(
+                        [[
+                            InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
+                            InlineKeyboardButton("Back to Menu", callback_data="m1")
+                        ]]
+                    )
                 )
-            )
-            context.user_data['tti_response_message'] = response_message.message_id
+                context.user_data['tti_response_message'] = response_message.message_id
+            elif type(image[1]) is list:
+                response_message = await update.callback_query.message.reply_photo(
+                    photo=image[1],
+                    caption=message,
+                    parse_mode='HTML',
+                    reply_markup=InlineKeyboardMarkup(
+                        [[
+                            InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
+                            InlineKeyboardButton("Back to Menu", callback_data="m1")
+                        ]]
+                    )
+                )
+                context.user_data['tti_response_message'] = response_message.message_id
         else:
             response_message = await update.message.reply_photo(
                 photo=image[1],
