@@ -225,7 +225,7 @@ class TextToImageAsynchronous(TextToImage):
                     print(f"[{ftime()}]-(TTI): HTTP<200><success> received for request URQ-{requesting_uid}")
                     # Handle SUCCESS status response
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
-                          f"[{ftime()}]-(TTI): URQ-{requesting_uid} ")
+                          f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
                         response[1]['id'],  # Image ID
                         response[1]['output'][0],  # Image URI,
@@ -238,8 +238,8 @@ class TextToImageAsynchronous(TextToImage):
                         f"[{ftime()}]-(TTI): Awaiting {response[1]['eta']:.2f}s before returning request URQ-{requesting_uid}")
                     eta: int = response[1]['eta']
                     await asyncio.sleep(eta)
-                    print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}")
-
+                    print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
+                          f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
                         response[1]['id'],  # Image ID
                         response[1]['output'][0],  # Image URI,
