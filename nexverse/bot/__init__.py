@@ -108,13 +108,13 @@ class NexVerse:
                 await update.callback_query.edit_message_text(
                     text=f"You have selected <strong>{selection[1]}</strong>\nPlease select the amount of samples you would like the\nbot to generate!",
                     parse_mode="HTML",
-                    reply_markup=numberof_samples()
+                    reply_markup=size_options()
                 )
             else:
                 await update.callback_query.edit_message_text(
-                    text=f"You have selected <strong>{selection[1]}</strong>\nPlease select the amount of samples you would like the\nbot to generate!",
+                    text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count",
                     parse_mode="HTML",
-                    reply_markup=numberof_samples()
+                    reply_markup=size_options()
                 )
             context.user_data['number_of_samples'] = int(number_of_samples)
 
