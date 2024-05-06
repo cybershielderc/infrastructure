@@ -205,7 +205,7 @@ class TextToImageAsynchronous(TextToImage):
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // PROMPT: \n{prompt}" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // NEG_PROMPT: \n{neg_prompt}" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // SIZE: {size}" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // " + \
+              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // SAMPLES: {}" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:"
               )
         start_time = time.time()
