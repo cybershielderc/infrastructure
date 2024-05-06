@@ -35,6 +35,6 @@ def inference_steps() -> InlineKeyboardMarkup:
 def numberof_samples() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup([
         [
-            InlineKeyboardButton('1', callback_data='')
+            InlineKeyboardButton('1', callback_data='samples=1')
         ]
     ])
