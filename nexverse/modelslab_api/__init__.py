@@ -263,5 +263,5 @@ class TextToImageAsynchronous(TextToImage):
                         response[1]['future_links'][0],
                         # Image URI ignore the fetch endpoint as it is returning the same URI in both the future_links and api fetch endpoint
                         "N/A",  # Prompt
-                        f"{start_time - time.time():.2f}",  # Image Generation Time
+                        f"{time.time() - start_time:.2f}",  # Image Generation Time
                     ]
