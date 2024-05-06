@@ -146,14 +146,14 @@ class NexVerse:
             context.user_data['image_width'] = int(image_size.split("x")[0])
             context.user_data['image_height'] = int(image_size.split("x")[1])
         if query.data.startswith('size='):
-            inference_steps = query.data.split("infs=")[1]
+            inference_steps_num = query.data.split("infs=")[1]
             if update.message is None:
                 message = \
                     f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
                     f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
                     f"<strong>Image Size</strong>" + \
                     f"<code>{context.user_data['image_width']}x{context.user_data['image_height']}</code>\n\n" + \
-                    f"<strong>Inference Steps </strong><code>{inference_steps}</code>\n\n" + \
+                    f"<strong>Inference Steps </strong><code>{inference_steps_num}</code>\n\n" + \
                     f"Please reply to this message with the prompt you would like the bot to use!"
                 await update.callback_query.edit_message_text(
                     text=message,
@@ -166,14 +166,14 @@ class NexVerse:
                     f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
                     f"<strong>Image Size</strong>" + \
                     f"<code>{context.user_data['image_width']}x{context.user_data['image_height']}</code>\n\n" + \
-                    f"<strong>Inference Steps </strong><code>{inference_steps}</code>\n\n" + \
+                    f"<strong>Inference Steps </strong><code>{inference_steps_num}</code>\n\n" + \
                     f"Please reply to this message with the prompt you would like the bot to use!"
                 await update.callback_query.edit_message_text(
                     text=message,
                     parse_mode="HTML",
                     reply_markup=None
                 )
-            context.user_data['inference_steps'] = int(inference_steps)
+            context.user_data['inference_steps'] = int(inference_steps_num)
             context.user_data['waiting_for_prompt'] = True
 
     async def reply_with_generated_image(self, update: Update, context: CallbackContext):
