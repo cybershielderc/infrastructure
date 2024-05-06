@@ -201,7 +201,7 @@ class TextToImageAsynchronous(TextToImage):
                               safety_checker: bool = False
                               ):
         print(f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // MODEL: {model.}" + \
+              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // MODEL: {model.value}" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
