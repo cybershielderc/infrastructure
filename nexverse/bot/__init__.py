@@ -14,7 +14,7 @@ from telegram.ext import (
     filters,
     CallbackQueryHandler
 )
-from telegram.
+
 from .start_menu import start_menu_markup
 from .image_models_menu import ai_models_image_menu
 from ..modelslab_api import MODEL, TextToImageAsynchronous
