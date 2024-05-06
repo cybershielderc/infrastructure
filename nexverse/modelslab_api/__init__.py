@@ -207,7 +207,7 @@ class TextToImageAsynchronous(TextToImage):
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // SIZE: {size}" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // TECHNICAL // SAMPLES: {samples}" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // TECHNICAL // N. INFER STEPS: {num_inference_steps}" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid}"
+              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // TECHNICAL // GUIDANCE: {guidance_scale}"
               )
         start_time = time.time()
         response = await self.get_image(
