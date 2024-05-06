@@ -155,18 +155,32 @@ class NexVerse:
                 )
                 context.user_data['tti_response_message'] = response_message.message_id
         else:
-            response_message = await update.message.reply_photo(
-                photo=image[1],
-                caption=message,
-                parse_mode='HTML',
-                reply_markup=InlineKeyboardMarkup(
-                    [[
-                        InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
-                        InlineKeyboardButton("Back to Menu", callback_data="m1")
-                    ]]
+            if type(image[1]) is str:
+                response_message = await update.callback_query.message.reply_photo(
+                    photo=image[1],
+                    caption=message,
+                    parse_mode='HTML',
+                    reply_markup=InlineKeyboardMarkup(
+                        [[
+                            InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
+                            InlineKeyboardButton("Back to Menu", callback_data="m1")
+                        ]]
+                    )
                 )
-            )
-            context.user_data['tti_response_message'] = response_message.message_id
+                context.user_data['tti_response_message'] = response_message.message_id
+            elif type(image[1]) is list:
+                response_message = await update.callback_query.message.reply_media_group(
+                    media=[InputMediaPhoto(media=x) for x in image[1]],
+                    caption=message,
+                    parse_mode='HTML',
+                    reply_markup=InlineKeyboardMarkup(
+                        [[
+                            InlineKeyboardButton("Regenerate", callback_data="regenerate_data"),
+                            InlineKeyboardButton("Back to Menu", callback_data="m1")
+                        ]]
+                    )
+                )
+                context.user_data['tti_response_message'] = response_message.message_id
 
     async def text_input(self, update: Update, context: CallbackContext):
         if 'waiting_for_neg_prompt' in context.user_data:
