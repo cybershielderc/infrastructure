@@ -117,21 +117,6 @@ class NexVerse:
             await update.message.reply_text(
                 text="Sorry, I couldn't generate that image for you! :/\nPlease try again!."
             )
-
-        if image['status'] == 'processing':
-            try:
-                image = self.ai_image_api.build_request(
-                    self.ai_image_api.get_model(context.user_data['selected_model']),
-                    context.user_data['pos_prompt'],
-                    context.user_data['neg_prompt'] if context.user_data[
-                                                           'neg_prompt'] is not '-' else self.ai_image_api.DEFAULT_NEG_PROMPT
-                ).json()
-            except requests.exceptions.ConnectionError:
-                await update._bot.delete_message(chat_id=update.message.chat_id,
-                                                 message_id=context.user_data['reply_message_id'])
-                await update.message.reply_text(
-                    text="Sorry, I couldn't generate that image for you! :/\nPlease try again!."
-                )
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image['id']}</code>\n" + \
                   f"<strong>Time Took {image['generationTime']:.2f} seconds</strong>\n\n<strong>Prompt</strong>\n" + \
                   f"{context.user_data['pos_prompt']}\n\n<strong>Negative Prompt</strong>\n{context.user_data['neg_prompt']}" + \
@@ -140,13 +125,7 @@ class NexVerse:
             if context.user_data['reply_message_id'] is not None:
                 await update._bot.delete_message(chat_id=update.message.chat_id,
                                                  message_id=context.user_data['reply_message_id'])
-                context.user_data['reply_message_id'] = None
-        try:
-            if 'tti_response_message' in context.user_data:
-                if context.user_data['tti_response_message'] is not None:
-                    context.user_data['tti_response_message'] = None
-            time.sleep(1)
-            image_bytes: bytes = get_file_byte_data_from_url(image['output'][0])
+                context.user_data['reply_message_id'] = NoneS
             if not update.message:
                 response_message = await update.callback_query.message.reply_photo(
                     photo=image_bytes,
