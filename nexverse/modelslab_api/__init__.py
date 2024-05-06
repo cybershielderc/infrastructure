@@ -248,5 +248,5 @@ class TextToImageAsynchronous(TextToImage):
 
 
 # TEST
+tti_a = TextToImageAsynchronous()
 for i in range(10):
-    
