@@ -244,6 +244,7 @@ class TextToImageAsynchronous(TextToImage):
                         data=json.dumps({'key': self.api_key}),
                         headers={'Content-Type': 'application/json'}
                     ).status_code
+                    if queue_status_code == 404 or queue_status_code == 4
                     while queue_status_code != 200:
                         queue_status_code = requests.post(
                             url=response[1]['future_links'][0],
