@@ -103,7 +103,7 @@ class NexVerse:
             context.user_data['selected_model_name'] = selection[1]
             context.user_data['waiting_for_prompt'] = True
         if query.data.startswith('samples='):
-            number_of
+            number_of_samples = query.data.split("samples=")[1]
 
     async def reply_with_generated_image(self, update: Update, context: CallbackContext):
         try:
