@@ -118,12 +118,12 @@ class NexVerse:
                 )
             context.user_data['number_of_samples'] = int(number_of_samples)
         if query.data.startswith('size='):
-            number_of_samples = query.data.split("size=")[1]
+            image_size = query.data.split("size=")[1]
             if update.message is None:
                 message = \
                     f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
                     f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
-                    f"<strong>Image Size</strong><code>{context.user_data['']}"
+                    f"<strong>Image Size</strong><code>{image_size}</code>\n\nSelect the number of inference steps!"
                 await update.callback_query.edit_message_text(
                     text=message,
                     parse_mode="HTML",
