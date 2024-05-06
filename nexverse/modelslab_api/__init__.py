@@ -151,7 +151,7 @@ class TextToImageAsynchronous(TextToImage):
             "key": self.api_key,
             "model_id": model.value,
             "prompt": prompt,
-            "negative_prompt": neg_prompt if not type(neg_prompt) is tuple else str(neg),
+            "negative_prompt": neg_prompt if not type(neg_prompt) is tuple else str(neg_prompt),
             "width": size[0],
             "height": size[1],
             "samples": samples,
