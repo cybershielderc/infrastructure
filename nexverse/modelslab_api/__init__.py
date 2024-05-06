@@ -230,7 +230,7 @@ class TextToImageAsynchronous(TextToImage):
                     return [
                         response[1]['id'],  # Image ID
                         response[1]['output'][0] if len(response[1]['output']) == 1 else response[1]['output'],
-                        # Image URI,
+                        # Image URI/s,
                         "N/A",  # Prompt
                         f"{response[1]['generationTime']:.2f}",  # Image Generation Time
                     ]
