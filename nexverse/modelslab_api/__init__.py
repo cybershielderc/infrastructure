@@ -245,8 +245,7 @@ class TextToImageAsynchronous(TextToImage):
                         headers={'Content-Type': 'application/json'}
                     ).status_code
                     while queue_status_code != 200:
-
-                    
+                        
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
