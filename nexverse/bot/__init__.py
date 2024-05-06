@@ -185,7 +185,7 @@ class NexVerse:
                 context.user_data['neg_prompt'] if context.user_data[
                                                        'neg_prompt'] is not '-' else self.ai_image_api.DEFAULT_NEG_PROMPT,
                 [context.user_data['image_width'], context.user_data['image_height']],
-                
+                context.user_data['samples']
             )
         except requests.exceptions.ConnectionError:
             await update._bot.delete_message(chat_id=update.message.chat_id,
