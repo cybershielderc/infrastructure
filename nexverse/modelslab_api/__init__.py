@@ -252,6 +252,7 @@ class TextToImageAsynchronous(TextToImage):
                                 data=json.dumps({'key': self.api_key}),
                                 headers={'Content-Type': 'application/json'}
                             ).status_code
+                            if queue_status_code == 200: break
                             print(
                                 f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting image for URQ-{requesting_uid}")
                             await asyncio.sleep(1)
