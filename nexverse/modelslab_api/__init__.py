@@ -245,3 +245,8 @@ class TextToImageAsynchronous(TextToImage):
                         response[1]['prompt'],  # Prompt
                         f"{start_time - time.time():.2f}",  # Image Generation Time
                     ]
+
+
+# TEST
+for i in range(10):
+    
