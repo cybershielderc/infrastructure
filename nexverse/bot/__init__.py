@@ -158,7 +158,7 @@ class NexVerse:
                 await update.callback_query.edit_message_text(
                     text=message,
                     parse_mode="HTML",
-                    reply_markup=inference_steps()
+                    reply_markup=None
                 )
             else:
                 message = \
