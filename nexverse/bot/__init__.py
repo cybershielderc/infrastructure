@@ -128,7 +128,7 @@ class NexVerse:
                                                  message_id=context.user_data['reply_message_id'])
                 context.user_data['reply_message_id'] = None
         if not update.message:
-            if type(image[1]) is str
+            if type(image[1]) is str:
             response_message = await update.callback_query.message.reply_photo(
                 photo=image[1],
                 caption=message,
