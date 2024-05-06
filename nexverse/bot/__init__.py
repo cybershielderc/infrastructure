@@ -126,10 +126,10 @@ class NexVerse:
                     f"<strong>Image Size</strong><code>{image_size}</code>\n\nSelect the number of inference steps!\n" + \
                     f""
                 await update.callback_query.edit_message_text(
-                        text=message,
-                        parse_mode="HTML",
-                        reply_markup=size_options()
-                    )
+                    text=message,
+                    parse_mode="HTML",
+                    reply_markup=size_options()
+                )
             else:
                 message = \
                     f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
