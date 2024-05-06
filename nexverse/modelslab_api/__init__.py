@@ -242,7 +242,7 @@ class TextToImageAsynchronous(TextToImage):
                     queue_status_code = requests.post(
                         url=response[1]['future_links'][0],
                         data=json.dumps({'key': self.api_key}),
-                        headers=
+                        headers={'Content-Type': 'application/json'}
                     ).status_code
                     if requests.post(
                             url=response[1]['future_links'][0]
