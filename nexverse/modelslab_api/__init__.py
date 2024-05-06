@@ -203,7 +203,7 @@ class TextToImageAsynchronous(TextToImage):
         print(f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // MODEL: {model.value}" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // PROMPT: \n{prompt}" + \
-              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // NEG_PROMPT: " + \
+              f"[{ftime()}]-(TTI): request URQ-{requesting_uid} // NEG_PROMPT: \n{neg_prompt}" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
               f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:"
