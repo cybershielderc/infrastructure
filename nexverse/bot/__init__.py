@@ -153,8 +153,8 @@ class NexVerse:
                     f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
                     f"<strong>Image Size</strong>" + \
                     f"<code>{context.user_data['image_width']}x{context.user_data['image_height']}</code>\n\n" + \
-                    f"Select the number of inference steps!\nThe <strong>higher</strong>" + \
-                    f"the <strong>better</strong> the image!"
+                    f"<strong>Inference Steps </strong><code>{inference_steps}</code>\n\n" + \
+                    f"Please reply to this message with the prompt you would like the bot to use!"
                 await update.callback_query.edit_message_text(
                     text=message,
                     parse_mode="HTML",
