@@ -118,7 +118,7 @@ class NexVerse:
                 text="Sorry, I couldn't generate that image for you! :/\nPlease try again!."
             )
         message = f"Successfully generated!\n<strong>Image ID</strong> <code>{image[0]}</code>\n" + \
-                  f"<strong>Time Took {image[3]:.2f} seconds</strong>\n\n<strong>Prompt</strong>\n" + \
+                  f"<strong>Time Took {image[3]} seconds</strong>\n\n<strong>Prompt</strong>\n" + \
                   f"{context.user_data['pos_prompt']}\n\n<strong>Negative Prompt</strong>\n{context.user_data['neg_prompt']}" + \
                   f"\n\n<strong>Model Name</strong>\n{context.user_data['selected_model_name']}"
         if 'reply_message_id' in context.user_data:
