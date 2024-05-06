@@ -167,7 +167,7 @@ class NexVerse:
                     f"<strong>Image Size</strong>" + \
                     f"<code>{context.user_data['image_width']}x{context.user_data['image_height']}</code>\n\n" + \
                     f"<strong>Inference Steps </strong><code>{inference_steps}</code>\n\n" + \
-                    f"the <strong>better</strong> the image!"
+                    f"Please reply to this message with the prompt you would like the bot to use!"
                 await update.callback_query.edit_message_text(
                     text=message,
                     parse_mode="HTML",
