@@ -118,7 +118,7 @@ class NexVerse:
                 )
             context.user_data['number_of_samples'] = int(number_of_samples)
         if query.data.startswith('size='):
-            number_of_samples = query.data.split("samples=")[1]
+            number_of_samples = query.data.split("size=")[1]
             if update.message is None:
                 message = \
                     f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
