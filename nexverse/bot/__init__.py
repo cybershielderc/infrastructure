@@ -106,13 +106,13 @@ class NexVerse:
             number_of_samples = query.data.split("samples=")[1]
             if update.message is None:
                 await update.callback_query.edit_message_text(
-                    text=f"You have selected <strong>{selection[1]}</strong>\nPlease select the amount of samples you would like the\nbot to generate!",
+                    text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count </strong><code>{number_of_samples}</code>",
                     parse_mode="HTML",
                     reply_markup=size_options()
                 )
             else:
                 await update.callback_query.edit_message_text(
-                    text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count</strong><code>{number_of_samples}</code>",
+                    text=f"You have selected <strong>{selection[1]}</strong>\n\n<strong>Sample Count </strong><code>{number_of_samples}</code>",
                     parse_mode="HTML",
                     reply_markup=size_options()
                 )
