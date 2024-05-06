@@ -135,7 +135,9 @@ class NexVerse:
                 message = \
                     f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
                     f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
-                    f"Please select the size of the image you would like the AI to use!"
+                    f"<strong>Image Size</strong><code>{image_size}</code>\n\n" + \
+                    f"Select the number of inference steps!\nThe <strong>higher</strong>" + \
+                    f"the <strong>better</strong> the image!"
                 await update.callback_query.edit_message_text(
                     text=message,
                     parse_mode="HTML",
