@@ -6,5 +6,5 @@ from telegram import (
 
 def size_options() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup([
-        [InlineKeyboardButton('')]
+        [InlineKeyboardButton('512x512', callback_data='')]
     ])
