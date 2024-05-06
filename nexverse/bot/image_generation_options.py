@@ -3,4 +3,4 @@ from telegram import (
     InlineKeyboardMarkup
 )
 
-def 
+def resolution
