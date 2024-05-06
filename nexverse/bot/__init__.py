@@ -146,7 +146,7 @@ class NexVerse:
             context.user_data['image_width'] = int(image_size.split("x")[0])
             context.user_data['image_height'] = int(image_size.split("x")[1])
         if query.data.startswith('size='):
-            inference_steps_num = query.data.split("infs=")[1]
+            inference_steps_num = query.data.split("size=")[1]
             if update.message is None:
                 message = \
                     f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
