@@ -3,7 +3,8 @@ import asyncio
 import requests.exceptions
 import telegram.error
 from telegram import (
-    Update, InlineKeyboardButton, InlineKeyboardMarkup
+    Update, InlineKeyboardButton, InlineKeyboardMarkup,
+    InputMediaPhoto
 )
 from telegram.ext import (
     ApplicationBuilder,
