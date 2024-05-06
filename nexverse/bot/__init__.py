@@ -117,7 +117,7 @@ class NexVerse:
                     reply_markup=numberof_samples()
                 )
             context.user_data['number_of_samples'] = int(number_of_samples)
-            
+
     async def reply_with_generated_image(self, update: Update, context: CallbackContext):
         try:
             image = await self.ai_image_api.handle_response(
