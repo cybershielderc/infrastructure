@@ -253,6 +253,8 @@ class TextToImageAsynchronous(TextToImage):
                                 data=json.dumps({'key': self.api_key}),
                                 headers={'Content-Type': 'application/json'}
                             ).status_code
+                            print(
+                                f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting image for URQ-{requesting_uid}")
                             await asyncio.sleep(1)
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
