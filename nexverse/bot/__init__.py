@@ -20,7 +20,8 @@ from .image_models_menu import ai_models_image_menu
 from ..modelslab_api import MODEL, TextToImageAsynchronous
 from .image_generation_options import (
     size_options,
-    inference_steps
+    inference_steps,
+
 )
 
 import re
