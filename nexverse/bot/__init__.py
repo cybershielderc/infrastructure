@@ -21,7 +21,7 @@ from ..modelslab_api import MODEL, TextToImageAsynchronous
 from .image_generation_options import (
     size_options,
     inference_steps,
-
+numberof_samples
 )
 
 import re
