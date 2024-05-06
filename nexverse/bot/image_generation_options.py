@@ -14,5 +14,5 @@ def size_options() -> InlineKeyboardMarkup:
 
 def inference_steps() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup([
-        
+        []
     ])
