@@ -246,7 +246,7 @@ class TextToImageAsynchronous(TextToImage):
                     ).status_code
                     if queue_status_code == 404:
                         print(
-                            f"[{ftime()}]-(TTI): URQ-{requesting_uid} Image URL Returned HTTP<404>")
+                            f"[{ftime()}]-(TTI): URQ-{requesting_uid} Image URL Returned HTTP<404>. Awaiting answer.")
                         while queue_status_code != 200:
                             queue_status_code = requests.post(
                                 url=response[1]['future_links'][0],
