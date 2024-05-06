@@ -3,4 +3,8 @@ from telegram import (
     InlineKeyboardMarkup
 )
 
-def resolution
+
+def size_options() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup([
+        []
+    ])
