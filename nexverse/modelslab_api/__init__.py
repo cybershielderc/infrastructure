@@ -244,14 +244,16 @@ class TextToImageAsynchronous(TextToImage):
                         data=json.dumps({'key': self.api_key}),
                         headers={'Content-Type': 'application/json'}
                     ).status_code
-                    if queue_status_code == 404 or queue_status_code == 4
-                    while queue_status_code != 200:
-                        queue_status_code = requests.post(
-                            url=response[1]['future_links'][0],
-                            data=json.dumps({'key': self.api_key}),
-                            headers={'Content-Type': 'application/json'}
-                        ).status_code
-                        await asyncio.sleep(1)
+                    if queue_status_code == 404:
+                        print(
+                            f"[{ftime()}]-(TTI): URQ-{requesting_uid} Image URL Returned HTTP<404>")
+                        while queue_status_code != 200:
+                            queue_status_code = requests.post(
+                                url=response[1]['future_links'][0],
+                                data=json.dumps({'key': self.api_key}),
+                                headers={'Content-Type': 'application/json'}
+                            ).status_code
+                            await asyncio.sleep(1)
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
