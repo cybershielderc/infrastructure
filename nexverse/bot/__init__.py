@@ -91,7 +91,7 @@ class NexVerse:
                 await update.callback_query.edit_message_text(
                     text=f"You have selected <strong>{selection[1]}</strong>\nPlease reply to this message to set the prompt you would like the AI to use!",
                     parse_mode="HTML",
-                    reply_markup=n()
+                    reply_markup=numberof_samples()
                 )
             else:
                 await update.message.edit_caption(
