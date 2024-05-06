@@ -101,7 +101,7 @@ class NexVerse:
                 )
             context.user_data['selected_model'] = selection[0]
             context.user_data['selected_model_name'] = selection[1]
-            context.user_data['waiting_for_prompt'] = True
+            //context.user_data['waiting_for_prompt'] = True
         if query.data.startswith('samples='):
             number_of_samples = query.data.split("samples=")[1]
 
