@@ -231,7 +231,7 @@ class TextToImageAsynchronous(TextToImage):
                         response[1]['id'],  # Image ID
                         response[1]['output'][0],  # Image URI,
                         "N/A",  # Prompt
-                        f"{response['generationTime']:.2f}",  # Image Generation Time
+                        f"{response[1]['generationTime']:.2f}",  # Image Generation Time
                     ]
                 elif response[1]['status'] == 'processing':
                     print(f"[{ftime()}]-(TTI): HTTP<200><processing> received for request URQ-{requesting_uid}")
