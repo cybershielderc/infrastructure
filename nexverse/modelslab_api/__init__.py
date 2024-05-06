@@ -201,14 +201,14 @@ class TextToImageAsynchronous(TextToImage):
                               safety_checker: bool = False
                               ):
         print(f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
-              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // MODEL: {model.value}" + \
-              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // PROMPT: \n{prompt}" + \
-              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // NEG_PROMPT: \n{neg_prompt}" + \
-              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // SIZE: {size}" + \
-              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // TECHNICAL // SAMPLES: {samples}" + \
-              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // TECHNICAL // N. INFER STEPS: {num_inference_steps}" + \
-              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // TECHNICAL // GUIDANCE: {guidance_scale}" + \
-              f"[{ftime()}]-(TTI): URQ-{requesting_uid} // TECHNICAL // SAFETY CHECKER?: {safety_checker}"
+              f"\n[{ftime()}]-(TTI): URQ-{requesting_uid} // MODEL: {model.value}" + \
+              f"\n[{ftime()}]-(TTI): URQ-{requesting_uid} // PROMPT: \n{prompt}" + \
+              f"\n[{ftime()}]-(TTI): URQ-{requesting_uid} // NEG_PROMPT: \n{neg_prompt}" + \
+              f"\n[{ftime()}]-(TTI): URQ-{requesting_uid} // SIZE: {size}" + \
+              f"\n[{ftime()}]-(TTI): URQ-{requesting_uid} // TECHNICAL // SAMPLES: {samples}" + \
+              f"\n[{ftime()}]-(TTI): URQ-{requesting_uid} // TECHNICAL // N. INFER STEPS: {num_inference_steps}" + \
+              f"\n[{ftime()}]-(TTI): URQ-{requesting_uid} // TECHNICAL // GUIDANCE: {guidance_scale}" + \
+              f"\n[{ftime()}]-(TTI): URQ-{requesting_uid} // TECHNICAL // SAFETY CHECKER?: {safety_checker}"
               )
         start_time = time.time()
         response = await self.get_image(
