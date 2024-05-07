@@ -311,8 +311,6 @@ class NexVerse:
                     context.user_data['pos_prompt'] = user_input
                     context.user_data['waiting_for_neg_prompt'] = True
 
-
-
     def run(self):
         """Run the bot"""
         self.app.run_polling()
