@@ -129,7 +129,9 @@ class NexVerse:
                     f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
                     f"<strong>Image Size </strong><code>{image_size}</code>\n\n" + \
                     f"Select the number of inference steps!\nThe <strong>higher</strong>" + \
-                    f"the <strong>better</strong> the image!"
+                    f"the <strong>better</strong> the image!" + \
+                    f"\n\n<strong>⚠️ WARNING ⚠️</strong> The higher the sample count, the more time it will take" + \
+                    f"\nto generate the results!",
                 await update.callback_query.edit_message_text(
                     text=message,
                     parse_mode="HTML",
