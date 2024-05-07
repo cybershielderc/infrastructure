@@ -304,8 +304,8 @@ class NexVerse:
                     # Capture message
                     user_input = update.message.text
                     await update.message.delete()
-                    await (update.message.reply_to_message
-                    await .edit_text(
+                    await update.message.reply_to_message.delete()
+                    await update.message.reply_text(
                         text=self.lang['final_message'].format(
                             mnam=context.user_data['selected_model_name'],
                             samc=context.user_data['number_of_samples'],
@@ -316,7 +316,7 @@ class NexVerse:
                         ),
                         parse_mode="HTML",
                         reply_markup=telegram.ForceReply()
-                    ))
+                    )
                     processing_message = await update.message.reply_text(
                         "Processing... ⌛ | Please be patient this will only take a few seconds!"
                     )
