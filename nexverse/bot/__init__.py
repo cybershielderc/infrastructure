@@ -181,7 +181,7 @@ class NexVerse:
         if query.data.startswith('infs='):
             inference_steps_num = query.data.split("infs=")[1]
             if update.message is None:
-                await update.callback_query.(
+                await update.callback_query.send_text(
                     text=self.lang['reply_pos_prompt'].format(
                         mnam=context.user_data['selected_model_name'],
                         samc=context.user_data['number_of_samples'],
