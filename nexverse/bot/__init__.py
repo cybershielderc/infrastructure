@@ -128,7 +128,9 @@ class NexVerse:
             image_size = query.data.split("size=")[1]
             if update.message is None:
                 await update.callback_query.edit_message_text(
-                    text=self.lang['select_size'],
+                    text=self.lang['select_inference'].format(
+                        
+                    ),
                     parse_mode="HTML",
                     reply_markup=inference_steps()
                 )
