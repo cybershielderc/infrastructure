@@ -159,7 +159,9 @@ class NexVerse:
                     f"<strong>Inference Steps </strong><code>{inference_steps_num}</code>\n\n" + \
                     f"Please reply to this message with the prompt you would like the bot to use!"
                 await update.callback_query.edit_message_text(
-                    text=message,
+                    text=self.lang['reply_pos_prompt'].format(
+                        
+                    ),
                     parse_mode="HTML",
                     reply_markup=None
                 )
