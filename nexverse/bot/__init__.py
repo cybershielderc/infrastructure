@@ -193,8 +193,8 @@ class NexVerse:
                     reply_markup=telegram.ForceReply()
                 )
             else:
-                await update.callback_query.message.delete()
-                await update.callback_query.send_text(
+                await update.message.delete()
+                await update.send_text(
                     text=self.lang['reply_pos_prompt'].format(
                         mnam=context.user_data['selected_model_name'],
                         samc=context.user_data['number_of_samples'],
