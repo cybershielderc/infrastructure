@@ -310,6 +310,7 @@ class NexVerse:
                             mnam=context.user_data['selected_model_name'],
                             samc=context.user_data['number_of_samples'],
                             imsi=context.user_data['image_width'] + "x" + context.user_data['image_height'],
+                            infs=context.user_data['inference_steps'],
                             
                         ),
                         parse_mode="HTML",
