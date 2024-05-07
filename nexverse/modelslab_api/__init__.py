@@ -238,7 +238,8 @@ class TextToImageAsynchronous(TextToImage):
                             while not all(queue_status_codes):
                                 queue_status_codes = []
                                 for url in response[1]['output']:
-                                    if requests.get(url).status_code == 200:
+                                    if requests.get(url).status_code == 200: pass
+                                    
                                 if all(queue_status_codes):
                                     break
                                 else:
