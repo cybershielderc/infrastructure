@@ -11,7 +11,9 @@ from telegram.ext import (
     filters,
     CallbackQueryHandler
 )
+import os
 from urllib.request import urlretrieve
+from urllib.parse import urlparse
 from .image_generation_options import (
     size_options,
     inference_steps,
@@ -308,6 +310,8 @@ class NexVerse:
                     context.user_data['waiting_for_prompt'] = False
                     context.user_data['pos_prompt'] = user_input
                     context.user_data['waiting_for_neg_prompt'] = True
+
+
 
     def run(self):
         """Run the bot"""
