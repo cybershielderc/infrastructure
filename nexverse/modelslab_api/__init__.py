@@ -231,7 +231,7 @@ class TextToImageAsynchronous(TextToImage):
                     if len(response[1]['output']) is not 1:
                         queue_status_codes = [True if requests.get(x).status_code==200 else False for x in response[1]['output']]
                         while all(queue_status_codes):
-                            
+
                     queue_status_code = requests.get(
                         url=response[1]['output'][0]
                     ).status_code
