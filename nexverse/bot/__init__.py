@@ -340,7 +340,7 @@ class NexVerse:
                         ),
                         parse_mode="HTML",
                         reply_markup=telegram.ForceReply()
-                    ))
+                    )
                     context.user_data['waiting_for_prompt'] = False
                     context.user_data['pos_prompt'] = user_input
                     context.user_data['waiting_for_neg_prompt'] = True
