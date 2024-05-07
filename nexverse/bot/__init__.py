@@ -284,7 +284,7 @@ class NexVerse:
                             imsi=context.user_data['image_width'] + "x" + context.user_data['image_height'],
                             infs=context.user_data['inference_steps'],
                             posp=context.user_data['pos_prompt'],
-                            
+                            negp=user_input
                         ),
                         parse_mode="HTML",
                         reply_markup=None
