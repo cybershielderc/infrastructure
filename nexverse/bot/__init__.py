@@ -194,7 +194,7 @@ class NexVerse:
                 )
             else:
                 await update.message.delete()
-                await update.message.send_text(
+                await update.message.reply_text(
                     text=self.lang['reply_pos_prompt'].format(
                         mnam=context.user_data['selected_model_name'],
                         samc=context.user_data['number_of_samples'],
