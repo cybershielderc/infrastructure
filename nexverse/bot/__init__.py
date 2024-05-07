@@ -272,7 +272,6 @@ class NexVerse:
                     await update.message.delete()
                     response_message = \
                         f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
-                        f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
                         f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
                         f"<strong>Image Size </strong>" + \
                         f"<code>{context.user_data['image_width']}x{context.user_data['image_height']}</code>\n\n" + \
