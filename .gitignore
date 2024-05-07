@@ -23,6 +23,7 @@ infrastructure
 *.o
 *.obj
 
+nexverse/ai_creations/*
 # Precompiled Headers
 *.gch
 *.pch
