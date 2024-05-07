@@ -274,6 +274,7 @@ class NexVerse:
                     )
                 )
                 context.user_data['tti_response_message'] = response_message.message_id
+                self.download_and_store(context._user_id, image[1])
             elif type(image[1]) is list:
                 await update.message.reply_media_group(
                     media=[InputMediaPhoto(media=x) for x in image[1]],
@@ -289,7 +290,7 @@ class NexVerse:
                     )
                 )
                 context.user_data['tti_response_message'] = response_message.message_id
-                self.download_and_store(r)
+                self.download_and_store(context._user_id, image[1])
 
     async def text_input(self, update: Update, context: CallbackContext):
         if 'waiting_for_neg_prompt' in context.user_data:
