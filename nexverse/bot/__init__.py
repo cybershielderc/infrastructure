@@ -192,6 +192,7 @@ class NexVerse:
                     reply_markup=None
                 )
             else:
+                await update.callback_query.
                 await update.callback_query.edit_message_text(
                     text=self.lang['reply_pos_prompt'].format(
                         mnam=context.user_data['selected_model_name'],
