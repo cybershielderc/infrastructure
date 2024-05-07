@@ -311,7 +311,7 @@ class NexVerse:
                             samc=context.user_data['number_of_samples'],
                             imsi=context.user_data['image_width'] + "x" + context.user_data['image_height'],
                             infs=context.user_data['inference_steps'],
-                            
+                            uinp=user_input,
                         ),
                         parse_mode="HTML",
                         reply_markup=None
