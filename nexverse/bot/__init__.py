@@ -37,7 +37,7 @@ def get_file_byte_data_from_url(file_url):
 
 
 class NexVerse:
-    def __init__(self, token: str, ai_image_api: TextToImageAsynchronous):
+    def __init__(self, token: str, ai_image_api: TextToImageAsynchronous, lang_dict):
         self.token = token
         self.ai_image_api = ai_image_api
         self.app = self._initialize_bot()
