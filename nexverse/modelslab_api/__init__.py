@@ -198,7 +198,7 @@ class TextToImageAsynchronous(TextToImage):
                               samples: int = 1,
                               num_inference_steps: int = 100,
                               seed: int = None,
-                              guidance_scale: float = 150,
+                              guidance_scale: float = 1_500,
                               safety_checker: bool = False
                               ):
         print(f"[{ftime()}]-(TTI): request URQ-{requesting_uid} parameters:" + \
