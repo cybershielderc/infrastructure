@@ -75,7 +75,7 @@ class NexVerse:
 
             # Download the file
             try:
-                urllib.request.urlretrieve(url, file_path)
+                urlretrieve(url, file_path)
                 print(f"File downloaded and stored at: {file_path}")
             except Exception as e:
                 print(f"Failed to download the file from {url}: {e}")
