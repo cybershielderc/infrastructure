@@ -279,7 +279,7 @@ class NexVerse:
                             'pos_prompt'] + "\n\n<strong>User Negative Prompt</strong>\n" + user_input
                     await update.message.reply_to_message.edit_text(
                         text=self.lang['final_message'].format(
-                            mn
+                            mnam=
                         ),
                         parse_mode="HTML",
                         reply_markup=None
