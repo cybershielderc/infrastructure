@@ -163,7 +163,7 @@ class NexVerse:
                         mnam=context.user_data['selected_model_name'],
                         samc=context.user_data['number_of_samples'],
                         imsi=context.user_data['image_height'] + "x" + context.user_data['image_width'],
-                        infs=context.user_data['']
+                        infs=inference_steps_num
                     ),
                     parse_mode="HTML",
                     reply_markup=None
@@ -177,7 +177,12 @@ class NexVerse:
                     f"<strong>Inference Steps </strong><code>{inference_steps_num}</code>\n\n" + \
                     f"Please reply to this message with the prompt you would like the bot to use!"
                 await update.callback_query.edit_message_text(
-                    text=message,
+                    text=self.lang['reply_pos_prompt'].format(
+                        mnam=context.user_data['selected_model_name'],
+                        samc=context.user_data['number_of_samples'],
+                        imsi=context.user_data['image_height'] + "x" + context.user_data['image_width'],
+                        infs=inference_steps_num
+                    )
                     parse_mode="HTML",
                     reply_markup=None
                 )
