@@ -98,7 +98,7 @@ class NexVerse:
                     text= \
                         f"You have selected <strong>{selection[1]}</strong>\n" + \
                         "Please select the amount of samples you would like the\nbot to generate!" + \
-                        f"\n\n<strong>⚠️ WARNING ⚠️</strong>",
+                        f"\n\n<strong>⚠️ WARNING ⚠️</strong> The higher the sample count, the more time it will take"+\,
                     parse_mode="HTML",
                     reply_markup=numberof_samples()
                 )
