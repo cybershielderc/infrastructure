@@ -290,10 +290,10 @@ class NexVerse:
                     # Capture message
                     user_input = update.message.text
                     response_message = \
-                        f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n"
+                        f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
                     await update.message.delete()
                     await update.message.reply_to_message.edit_text(
-                        text=f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n<strong>User Prompt</strong>\n" + user_input + "\n\n<strong>\nPlease reply to this message once more to set the negative prompt you would like the AI to use!</strong>\n<strong>Or reply with - to use the default negative prompt</strong>",
+                        text="<strong>User Prompt</strong>\n" + user_input + "\n\n<strong>\nPlease reply to this message once more to set the negative prompt you would like the AI to use!</strong>\n<strong>Or reply with - to use the default negative prompt</strong>",
                         parse_mode="HTML",
                         reply_markup=None
                     )
