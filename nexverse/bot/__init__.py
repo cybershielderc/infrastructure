@@ -200,7 +200,7 @@ class NexVerse:
                         infs=inference_steps_num
                     ),
                     parse_mode="HTML",
-                    reply_markup=telegram.ForceReply(f)
+                    reply_markup=telegram.ForceReply().
                 )
             context.user_data['inference_steps'] = int(inference_steps_num)
             context.user_data['waiting_for_prompt'] = True
