@@ -230,10 +230,11 @@ class TextToImageAsynchronous(TextToImage):
                     print(f"[{ftime()}]-(TTI): URQ-{requesting_uid} Checking if request is multi-imaged")
                     if len(response[1]['output']) is not 1:
 
-                        queue_status_codes = [True if requests.get(x).status_code==200 else False for x in response[1]['output']]
+                        queue_status_codes = [True if requests.get(x).status_code == 200 else False for x in
+                                              response[1]['output']]
                         if not all(queue_status_codes):
                             print(
-                            f"[{ftime()}]-(TTI): URQ-{requesting_uid} Images URL Returned HTTP<404>. Awaiting answer.")
+                                f"[{ftime()}]-(TTI): URQ-{requesting_uid} Images URL Returned HTTP<404>. Awaiting answer.")
                             while all(queue_status_codes):
                                 queue_status_codes = [True if requests.get(x).status_code == 200 else False for x in
                                                       response[1]['output']]
