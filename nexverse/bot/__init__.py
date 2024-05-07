@@ -294,7 +294,7 @@ class NexVerse:
                         f"<strong>User Prompt</strong>\n" + user_input + "\n\n<strong>" + \
                         f"\nPlease reply to this message once more to set the negative" + \
                         f"prompt you would like the AI to use!</strong>" + \
-                        
+                        f"\n<strong>Or reply with - to use the default negative prompt</strong>"
 
                     await update.message.delete()
                     await update.message.reply_to_message.edit_text(
