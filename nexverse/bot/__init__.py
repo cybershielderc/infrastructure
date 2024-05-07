@@ -90,7 +90,7 @@ class NexVerse:
             selection = query.data.split("ai>img>model>selection#//")[1].split("#CNAME#")
             if update.message is None:
                 await update.callback_query.edit_message_text(
-                    text=str(self.lang['select_samples']),
+                    text=str(self.lang['select_samples']).format(mnam=selection[1]),
                     parse_mode="HTML",
                     reply_markup=numberof_samples()
                 )
