@@ -33,9 +33,9 @@ def inference_steps() -> InlineKeyboardMarkup:
             InlineKeyboardButton('500', callback_data='infs=120')
         ],
         [
-            InlineKeyboardButton('0', callback_data='infs=130'),
-            InlineKeyboardButton('140', callback_data='infs=140'),
-            InlineKeyboardButton('150', callback_data='infs=150'),
+            InlineKeyboardButton('600', callback_data='infs=130'),
+            InlineKeyboardButton('700', callback_data='infs=140'),
+            InlineKeyboardButton('800', callback_data='infs=150'),
             InlineKeyboardButton('160', callback_data='infs=160')
         ],
         [
