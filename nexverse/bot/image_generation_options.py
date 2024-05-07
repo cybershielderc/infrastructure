@@ -40,13 +40,7 @@ def numberof_samples() -> InlineKeyboardMarkup:
         [
             InlineKeyboardButton('1', callback_data='samples=1'),
             InlineKeyboardButton('2', callback_data='samples=2'),
-        ],
-        [
             InlineKeyboardButton('3', callback_data='samples=3'),
             InlineKeyboardButton('4', callback_data='samples=4'),
-        ],
-        [
-            InlineKeyboardButton('5', callback_data='samples=5'),
-            InlineKeyboardButton('6', callback_data='samples=6'),
-        ],
+        ]
     ])
