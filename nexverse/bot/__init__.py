@@ -131,7 +131,7 @@ class NexVerse:
                     text=self.lang['select_inference'].format(
                         mnam=context.user_data['selected_model_name'],
                         samc=context.user_data['number_of_samples'],
-                        s
+                        
                     ),
                     parse_mode="HTML",
                     reply_markup=inference_steps()
