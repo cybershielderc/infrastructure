@@ -274,7 +274,7 @@ class NexVerse:
                         text=self.lang['final_message'].format(
                             mnam=context.user_data['selected_model_name'],
                             samc=context.user_data['number_of_samples'],
-                            imsi=context.user_data['image_width'] + "x" + context.user_data['image_height'],
+                            imsi=f"{context.user_data['image_height']}x{context.user_data['image_width']}",
                             infs=context.user_data['inference_steps'],
                             posp=context.user_data['pos_prompt'],
                             negp=user_input
@@ -299,7 +299,7 @@ class NexVerse:
                         text=self.lang['reply_neg_prompt'].format(
                             mnam=context.user_data['selected_model_name'],
                             samc=context.user_data['number_of_samples'],
-                            imsi=context.user_data['image_width'] + "x" + context.user_data['image_height'],
+                            imsi=f"{context.user_data['image_height']}x{context.user_data['image_width']}",
                             infs=context.user_data['inference_steps'],
                             uinp=user_input,
                         ),
