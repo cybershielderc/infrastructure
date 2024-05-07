@@ -282,7 +282,7 @@ class NexVerse:
                             mnam=context.user_data['selected_model_name'],
                             samc=context.user_data['number_of_samples'],
                             imsi=context.user_data['image_width'] + "x" + context.user_data['image_height'],
-                            
+                            infs=
                         ),
                         parse_mode="HTML",
                         reply_markup=None
