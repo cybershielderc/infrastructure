@@ -109,7 +109,7 @@ class NexVerse:
                 await update.callback_query.edit_message_text(
                     text=self.lang['select_size'].format(
                         mnam=context.user_data['selected_model_name'],
-                        samc=
+                        samc=number_of_samples
                     ),
                     parse_mode="HTML",
                     reply_markup=size_options()
