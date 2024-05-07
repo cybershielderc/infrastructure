@@ -221,8 +221,8 @@ class NexVerse:
                 await update.callback_query.message.reply_media_group(
                     media=[InputMediaPhoto(media=x) for x in image[1]],
                 )
-                response_message = await update.callback_query.message.reply_caption(
-                    caption=message,
+                response_message = await update.callback_query.message.reply_text(
+                    text=message,
                     parse_mode='HTML',
                     reply_markup=InlineKeyboardMarkup(
                         [[
@@ -250,8 +250,8 @@ class NexVerse:
                 await update.message.reply_media_group(
                     media=[InputMediaPhoto(media=x) for x in image[1]],
                 )
-                response_message = await update.message.reply_caption(
-                    caption=message,
+                response_message = await update.message.reply_text(
+                    text=message,
                     parse_mode='HTML',
                     reply_markup=InlineKeyboardMarkup(
                         [[
