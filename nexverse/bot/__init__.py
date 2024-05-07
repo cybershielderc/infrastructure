@@ -147,8 +147,8 @@ class NexVerse:
                     parse_mode="HTML",
                     reply_markup=inference_steps()
                 )
-            context.user_data['image_width'] = int(image_size.split("x")[0])
-            context.user_data['image_height'] = int(image_size.split("x")[1])
+                context.user_data['image_width'] = int(image_size.split("x")[0])
+                context.user_data['image_height'] = int(image_size.split("x")[1])
         if query.data.startswith('infs='):
             inference_steps_num = query.data.split("infs=")[1]
             if update.message is None:
