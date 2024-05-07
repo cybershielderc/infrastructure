@@ -9,6 +9,7 @@ if __name__ == '__main__':
     with open("cfgs/bots.json", "r") as f:
         data = json.loads(f.read())
         f.close()
+    with open("cfgs/l")
     token = data['tg']['token']
     # Initiate cryptocurrency module
     cryptocurrency = Cryptocurrency()
