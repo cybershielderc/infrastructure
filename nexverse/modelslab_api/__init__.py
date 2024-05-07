@@ -238,8 +238,10 @@ class TextToImageAsynchronous(TextToImage):
                                 f"[{ftime()}]-(TTI): URQ-{requesting_uid} Images URL Returned HTTP<404>. Awaiting answer.")
                             while not len(dummy_queue_urls) == 0:
                                 for url in response[1]['output']:
-                                    if requests.get(url).status_code == 200: dummy_queue_urls.pop(
-                                        dummy_queue_urls.index(url))
+                                    if requests.get(url).status_code == 200:
+                                        dummy_queue_urls.pop(
+                                            dummy_queue_urls.index(url)
+                                        )
                                 if all(queue_status_codes):
                                     break
                                 else:
