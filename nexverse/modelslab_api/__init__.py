@@ -245,23 +245,24 @@ class TextToImageAsynchronous(TextToImage):
                                         f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting images for URQ-{requesting_uid} HTTP<40x>")
                                     await asyncio.sleep(1)
                                 await asyncio.sleep(1)
-                    queue_status_code = requests.get(
-                        url=response[1]['output'][0]
-                    ).status_code
-                    print(f"[{ftime()}]-(TTI): Queued Image Status Code <{queue_status_code}>")
-                    if queue_status_code == 404 or queue_status_code == 401 or queue_status_code == 403:
-                        print(
-                            f"[{ftime()}]-(TTI): URQ-{requesting_uid} Image URL Returned HTTP<404>. Awaiting answer.")
-                        while queue_status_code != 200:
-                            queue_status_code = requests.get(
-                                url=response[1]['output'][0]
-                            ).status_code
-                            if queue_status_code == 200:
-                                break
-                            else:
-                                print(
-                                    f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting image for URQ-{requesting_uid} HTTP<{queue_status_code}>")
-                                await asyncio.sleep(1)
+                    else:
+                        queue_status_code = requests.get(
+                            url=response[1]['output'][0]
+                        ).status_code
+                        print(f"[{ftime()}]-(TTI): Queued Image Status Code <{queue_status_code}>")
+                        if queue_status_code == 404 or queue_status_code == 401 or queue_status_code == 403:
+                            print(
+                                f"[{ftime()}]-(TTI): URQ-{requesting_uid} Image URL Returned HTTP<404>. Awaiting answer.")
+                            while queue_status_code != 200:
+                                queue_status_code = requests.get(
+                                    url=response[1]['output'][0]
+                                ).status_code
+                                if queue_status_code == 200:
+                                    break
+                                else:
+                                    print(
+                                        f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting image for URQ-{requesting_uid} HTTP<{queue_status_code}>")
+                                    await asyncio.sleep(1)
                     return [
                         response[1]['id'],  # Image ID
                         response[1]['output'][0] if len(response[1]['output']) == 1 else response[1]['output'],
