@@ -307,7 +307,7 @@ class NexVerse:
                     await update.message.delete()
                     await update.message.reply_to_message.edit_text(
                         text=self.lang['reply_neg_prompt'].format(
-                            
+                            mnam=
                         ),
                         parse_mode="HTML",
                         reply_markup=None
