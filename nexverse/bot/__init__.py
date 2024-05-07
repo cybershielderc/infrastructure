@@ -127,14 +127,6 @@ class NexVerse:
         if query.data.startswith('size='):
             image_size = query.data.split("size=")[1]
             if update.message is None:
-                message = \
-                    f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
-                    f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
-                    f"<strong>Image Size </strong><code>{image_size}</code>\n\n" + \
-                    f"Select the number of inference steps!\nThe <strong>higher</strong>" + \
-                    f"the <strong>better</strong> the image!" + \
-                    f"\n\n⚠️<strong>WARNING</strong>⚠️ The higher the inference steps, the more time it will take" + \
-                    f"\nto generate the results!",
                 await update.callback_query.edit_message_text(
                     text=message,
                     parse_mode="HTML",
