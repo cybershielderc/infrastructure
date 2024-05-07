@@ -239,7 +239,7 @@ class TextToImageAsynchronous(TextToImage):
                             while not len(dummy_queue_urls) == 0:
                                 for url in response[1]['output']:
                                     if requests.get(url).status_code == 200: dummy_queue_urls.pop(
-                                        dummy_queue_urls.index())
+                                        dummy_queue_urls.index(url))
                                 if all(queue_status_codes):
                                     break
                                 else:
