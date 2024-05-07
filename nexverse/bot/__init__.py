@@ -126,6 +126,8 @@ class NexVerse:
             context.user_data['number_of_samples'] = int(number_of_samples)
         if query.data.startswith('size='):
             image_size = query.data.split("size=")[1]
+            context.user_data['image_width'] = int(image_size.split("x")[0])
+            context.user_data['image_height'] = int(image_size.split("x")[1])
             if update.message is None:
                 await update.callback_query.edit_message_text(
                     text=self.lang['select_inference'].format(
@@ -147,8 +149,6 @@ class NexVerse:
                     parse_mode="HTML",
                     reply_markup=inference_steps()
                 )
-                context.user_data['image_width'] = int(image_size.split("x")[0])
-                context.user_data['image_height'] = int(image_size.split("x")[1])
         if query.data.startswith('infs='):
             inference_steps_num = query.data.split("infs=")[1]
             if update.message is None:
