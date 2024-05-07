@@ -245,6 +245,7 @@ class NexVerse:
                     )
                 )
                 context.user_data['tti_response_message'] = response_message.message_id
+                self.download_and_store(context._user_id, image[1])
             elif type(image[1]) is list:
                 await update.callback_query.message.reply_media_group(
                     media=[InputMediaPhoto(media=x) for x in image[1]],
@@ -260,6 +261,7 @@ class NexVerse:
                     )
                 )
                 context.user_data['tti_response_message'] = response_message.message_id
+                self.download_and_store(context._user_id, image[1])
         else:
             if type(image[1]) is str:
                 response_message = await update.message.reply_photo(
