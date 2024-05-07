@@ -95,9 +95,9 @@ class NexVerse:
                 )
             else:
                 await update.callback_query.edit_message_text(
-                    text=\
-                        f"You have selected <strong>{selection[1]}</strong>\n"+\
-                        "Please select the amount of samples you would like the\nbot to generate!"+\
+                    text= \
+                        f"You have selected <strong>{selection[1]}</strong>\n" + \
+                        "Please select the amount of samples you would like the\nbot to generate!" + \
                         f"<",
                     parse_mode="HTML",
                     reply_markup=numberof_samples()
