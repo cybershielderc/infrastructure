@@ -54,6 +54,32 @@ class NexVerse:
         app.add_handler(CommandHandler("start", self.start_menu))
         return app
 
+    def download_and_store(self, user_id, urls):
+        if isinstance(urls, str):
+            urls = [urls]  # Convert single URL string to a list
+
+        for url in urls:
+            # Extract filename from the URL
+            parsed_url = urlparse(url)
+            filename = os.path.basename(parsed_url.path)
+
+            # Define the directory path
+            directory = f"nexverse/ai_creations/tg_{user_id}"
+
+            # Check if directory exists, if not create it
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+
+            # Define the file path
+            file_path = os.path.join(directory, filename)
+
+            # Download the file
+            try:
+                urllib.request.urlretrieve(url, file_path)
+                print(f"File downloaded and stored at: {file_path}")
+            except Exception as e:
+                print(f"Failed to download the file from {url}: {e}")
+
     async def start_menu(self, update: Update, context: CallbackContext, message: str = None,
                          menu: InlineKeyboardMarkup = None) -> None:
         caption = f'<strong>{message}</strong>' if message else \
