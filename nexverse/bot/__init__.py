@@ -189,7 +189,7 @@ class NexVerse:
                         infs=str(inference_steps_num)
                     ),
                     parse_mode="HTML",
-                    reply_markup=telegram.ForceReply(force_reply=True)
+                    reply_markup=telegram.ForceReply()
                 )
             else:
                 await update.callback_query.edit_message_text(
