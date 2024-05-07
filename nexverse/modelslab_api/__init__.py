@@ -228,6 +228,7 @@ class TextToImageAsynchronous(TextToImage):
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     print(f"[{ftime()}]-(TTI): URQ-{requesting_uid} Checking if request is multi-imaged")
+                    if r
                     queue_status_code = requests.get(
                         url=response[1]['output'][0]
                     ).status_code
