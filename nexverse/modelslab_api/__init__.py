@@ -243,6 +243,7 @@ class TextToImageAsynchronous(TextToImage):
                                 else:
                                     print(
                                         f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting images for URQ-{requesting_uid} HTTP<40x>")
+                                    print(f"[{ftime()}]-(TTI): Status' <{queue_status_codes}> for URQ-{requesting_uid}")
                                     await asyncio.sleep(1)
                                 await asyncio.sleep(1)
                     else:
