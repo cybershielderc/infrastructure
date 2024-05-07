@@ -1,6 +1,7 @@
 import enum
 import time
 
+import aiohttp
 import requests
 import json
 import asyncio
@@ -30,6 +31,32 @@ class MODEL(enum.Enum):
     ANYTHING = "anything-v4"
     DARK_SUSHI = "dark-sushi-25d"
     SAKURA = "sakurav3"
+
+async def check_urls(response, requesting_uid):
+    queue_status_codes = [False] * len(response[1]['output'])
+    async with aiohttp.ClientSession() as session:
+        while not all(queue_status_codes):
+            tasks = []
+            for i, url in enumerate(response[1]['output']):
+                if not queue_status_codes[i]:
+                    tasks.append(check_url(session, url, queue_status_codes, i, requesting_uid))
+            await asyncio.gather(*tasks)
+            if all(queue_status_codes):
+                break
+            else:
+                print(
+                    f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting images for URQ-{requesting_uid} HTTP<40x>")
+                print(f"[{ftime()}]-(TTI): Status' <{queue_status_codes}> for URQ-{requesting_uid}")
+                await asyncio.sleep(1)
+            await asyncio.sleep(1)
+
+async def check_url(session, url, queue_status_codes, index, requesting_uid):
+    async with session.get(url) as response:
+        if response.status == 200:
+            queue_status_codes[index] = True
+            print(
+                f"[{ftime()}]-(TTI): Removing URL {url} from the checking list for URQ-{requesting_uid} HTTP=200")
+            print(f"[{ftime()}]-(TTI): Status' <{queue_status_codes}> for URQ-{requesting_uid}")
 
 
 class TextToImage:
