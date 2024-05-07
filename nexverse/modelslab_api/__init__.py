@@ -286,7 +286,7 @@ class TextToImageAsynchronous(TextToImage):
                             while not all(queue_status_codes):
                                 queue_status_codes = [True if requests.get(x).status_code == 200 else False for x in
                                                       response[1]['future_links']]
-                                print(f"[{ftime()}]-(TTI): Status' ")
+                                print(f"[{ftime()}]-(TTI): Status' <{queue_status_codes}>")
                                 if all(queue_status_codes):
                                     break
                                 else:
