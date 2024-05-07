@@ -307,25 +307,9 @@ class TextToImageAsynchronous(TextToImage):
                     eta: int = response[1]['eta']
                     await asyncio.sleep(eta + 0.95)
                     if len(response[1]['future_links']) is not 1:
-
-                        queue_status_codes = [True if requests.get(x).status_code == 200 else False for x in
-                                              response[1]['future_links']]
-                        if not all(queue_status_codes):
-                            print(
-                                f"[{ftime()}]-(TTI): URQ-{requesting_uid} Images URL Returned HTTP<404>. Awaiting answer.")
-                            while not all(queue_status_codes):
-                                queue_status_codes = [True if requests.get(x).status_code == 200 else False for x in
-                                                      response[1]['future_links']]
-                                print(f"[{ftime()}]-(TTI): Status' <{queue_status_codes}> for URQ-{requesting_uid}")
-                                if all(queue_status_codes):
-                                    break
-                                else:
-                                    print(
-                                        f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting images for URQ-{requesting_uid} HTTP<40x>")
-                                    await asyncio.sleep(1)
-                                await asyncio.sleep(1)
+                        await check_urls(response[1]['future_links'])
                     else:
-                        await check_urls(response)
+                        await check_urls(response[1]['future_links'])
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
