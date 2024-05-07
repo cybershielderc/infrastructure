@@ -107,7 +107,10 @@ class NexVerse:
             number_of_samples = query.data.split("samples=")[1]
             if update.message is None:
                 await update.callback_query.edit_message_text(
-                    text=self.lang['select_size'],
+                    text=self.lang['select_size'].format(
+                        mnam=context.user_data['selected_model_name'],
+                        
+                    ),
                     parse_mode="HTML",
                     reply_markup=size_options()
                 )
