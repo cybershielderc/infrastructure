@@ -151,13 +151,6 @@ class NexVerse:
         if query.data.startswith('infs='):
             inference_steps_num = query.data.split("infs=")[1]
             if update.message is None:
-                message = \
-                    f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
-                    f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
-                    f"<strong>Image Size </strong>" + \
-                    f"<code>{context.user_data['image_width']}x{context.user_data['image_height']}</code>\n\n" + \
-                    f"<strong>Inference Steps </strong><code>{inference_steps_num}</code>\n\n" + \
-                    f"Please reply to this message with the prompt you would like the bot to use!"
                 await update.callback_query.edit_message_text(
                     text=self.lang['reply_pos_prompt'].format(
                         mnam=context.user_data['selected_model_name'],
@@ -169,13 +162,6 @@ class NexVerse:
                     reply_markup=None
                 )
             else:
-                message = \
-                    f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
-                    f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
-                    f"<strong>Image Size </strong>" + \
-                    f"<code>{context.user_data['image_width']}x{context.user_data['image_height']}</code>\n\n" + \
-                    f"<strong>Inference Steps </strong><code>{inference_steps_num}</code>\n\n" + \
-                    f"Please reply to this message with the prompt you would like the bot to use!"
                 await update.callback_query.edit_message_text(
                     text=self.lang['reply_pos_prompt'].format(
                         mnam=context.user_data['selected_model_name'],
