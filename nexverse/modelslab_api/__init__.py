@@ -232,22 +232,19 @@ class TextToImageAsynchronous(TextToImage):
 
                         queue_status_codes = [True if requests.get(x).status_code == 200 else False for x in
                                               response[1]['output']]
-                        dummy_queue_urls: list = response[1]['output']
                         if not all(queue_status_codes):
                             print(
                                 f"[{ftime()}]-(TTI): URQ-{requesting_uid} Images URL Returned HTTP<404>. Awaiting answer.")
-                            while not len(dummy_queue_urls) == 0:
-                                for url in response[1]['output']:
-                                    if requests.get(url).status_code == 200:
-                                        dummy_queue_urls.pop(
-                                            dummy_queue_urls.index(url)
-                                        )
-                                    else:
-                                        print(
-                                            f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting images for URQ-{requesting_uid} HTTP<40x>")
-                                        print(
-                                            f"[{ftime()}]-(TTI): Status' <{queue_status_codes}> for URQ-{requesting_uid}")
-                                        await asyncio.sleep(1)
+                            while not all(queue_status_codes):
+                                queue_status_codes = [True if requests.get(x).status_code == 200 else False for x in
+                                                      response[1]['output']]
+                                if all(queue_status_codes):
+                                    break
+                                else:
+                                    print(
+                                        f"[{ftime()}]-(TTI): Awaiting 1 seconds before requesting images for URQ-{requesting_uid} HTTP<40x>")
+                                    print(f"[{ftime()}]-(TTI): Status' <{queue_status_codes}> for URQ-{requesting_uid}")
+                                    await asyncio.sleep(1)
                     else:
                         queue_status_code = requests.get(
                             url=response[1]['output'][0]
