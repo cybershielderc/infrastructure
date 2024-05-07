@@ -307,9 +307,9 @@ class TextToImageAsynchronous(TextToImage):
                     eta: int = response[1]['eta']
                     await asyncio.sleep(eta + 0.95)
                     if len(response[1]['future_links']) is not 1:
-                        await check_urls(requesting_uid, response[1]['future_links'])
+                        await check_urls(response[1]['future_links'], requesting_uid)
                     else:
-                        await check_urls(requesting_uid, response[1]['future_links'])
+                        await check_urls(response[1]['future_links'], requesting_uid)
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
