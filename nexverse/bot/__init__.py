@@ -189,11 +189,10 @@ class NexVerse:
                         infs=str(inference_steps_num)
                     ),
                     parse_mode="HTML",
-                    reply_markup=None
+                    reply_markup=telegram.ForceReply(force_reply=True)
                 )
             else:
-                await update.callback_query.delete_message()
-                await update.callback_query.send_text(
+                await update.callback_query.edit_message_text(
                     text=self.lang['reply_pos_prompt'].format(
                         mnam=context.user_data['selected_model_name'],
                         samc=context.user_data['number_of_samples'],
