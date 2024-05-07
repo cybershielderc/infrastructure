@@ -325,7 +325,7 @@ class TextToImageAsynchronous(TextToImage):
                                     await asyncio.sleep(1)
                                 await asyncio.sleep(1)
                     else:
-                        await check_url()
+                        await check_urls(image)
                     print(f"[{ftime()}]-(TTI): Returning request URQ-{requesting_uid}\n" + \
                           f"[{ftime()}]-(TTI): URQ-{requesting_uid} Data: \n{response[1]}")
                     return [
