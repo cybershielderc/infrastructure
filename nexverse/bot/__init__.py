@@ -146,7 +146,11 @@ class NexVerse:
                     f"\n\n⚠️<strong>WARNING</strong>⚠️ The higher the inference steps, the more time it will take" + \
                     f"\nto generate the results!",
                 await update.callback_query.edit_message_text(
-                    text=message,
+                    text=self.lang['select_inference'].format(
+                        mnam=context.user_data['selected_model_name'],
+                        samc=context.user_data['number_of_samples'],
+                        imsi=context.user_data['image_height'] + "x" + context.user_data['image_width']
+                    ),
                     parse_mode="HTML",
                     reply_markup=inference_steps()
                 )
