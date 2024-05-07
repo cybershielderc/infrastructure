@@ -20,13 +20,14 @@ def inference_steps() -> InlineKeyboardMarkup:
             InlineKeyboardButton('60', callback_data='infs=60'),
             InlineKeyboardButton('80', callback_data='infs=80')
         ],
+        [InlineKeyboardButton('One-time Payment of 500 $GEN to use!', callback_data='ignore_0xdead')],
         [
             InlineKeyboardButton('100', callback_data='infs=100'),
             InlineKeyboardButton('120', callback_data='infs=120'),
             InlineKeyboardButton('140', callback_data='infs=140'),
             InlineKeyboardButton('160', callback_data='infs=160')
         ],
-        [InlineKeyboardButton('One-time Payment of 5,000 $GEN to use!', callback_data='ignore_0xdead')],
+        [InlineKeyboardButton('One-time Payment of 1,000 $GEN to use!', callback_data='ignore_0xdead')],
         [
             InlineKeyboardButton('200', callback_data='infs=200'),
             InlineKeyboardButton('300', callback_data='infs=300'),
