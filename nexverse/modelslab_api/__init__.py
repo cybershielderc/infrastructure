@@ -236,7 +236,7 @@ class TextToImageAsynchronous(TextToImage):
                         if not all(queue_status_codes):
                             print(
                                 f"[{ftime()}]-(TTI): URQ-{requesting_uid} Images URL Returned HTTP<404>. Awaiting answer.")
-                            while not all(queue_status_codes):
+                            while not len(dummy_queue_urls) == 0:
                                 queue_status_codes = []
                                 for url in response[1]['output']:
                                     if requests.get(url).status_code == 200: pas
