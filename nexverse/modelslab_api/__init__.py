@@ -246,7 +246,7 @@ class TextToImageAsynchronous(TextToImage):
                                     print(f"[{ftime()}]-(TTI): Status' <{queue_status_codes}> for URQ-{requesting_uid}")
                                     await asyncio.sleep(1)
                     else:
-                        queue_status_code = requests.get(
+                        queue_status_code = requests.head(
                             url=response[1]['output'][0]
                         ).status_code
                         print(f"[{ftime()}]-(TTI): Queued Image Status Code <{queue_status_code}>")
@@ -254,7 +254,7 @@ class TextToImageAsynchronous(TextToImage):
                             print(
                                 f"[{ftime()}]-(TTI): URQ-{requesting_uid} Image URL Returned HTTP<404>. Awaiting answer.")
                             while queue_status_code != 200:
-                                queue_status_code = requests.get(
+                                queue_status_code = requests.head(
                                     url=response[1]['output'][0]
                                 ).status_code
                                 if queue_status_code == 200:
