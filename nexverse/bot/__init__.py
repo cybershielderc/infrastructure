@@ -330,5 +330,5 @@ class NexVerse:
 
 
 def run_app(token: str, image_api: TextToImageAsynchronous, lang_dict: dict) -> ApplicationBuilder:
-    bot = NexVerse(token, image_api)
+    bot = NexVerse(token, image_api, lang_dict)
     bot.run()
