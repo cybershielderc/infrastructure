@@ -142,7 +142,7 @@ class NexVerse:
                     text=self.lang['select_inference'].format(
                         mnam=context.user_data['selected_model_name'],
                         samc=context.user_data['number_of_samples'],
-                        imsi=context.user_data['image_height'] + "x" + context.user_data['image_width']
+                        imsi=image_size.split("x")[0] + "x" + image_size.split("x")[1]
                     ),
                     parse_mode="HTML",
                     reply_markup=inference_steps()
