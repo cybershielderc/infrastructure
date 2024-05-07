@@ -129,7 +129,7 @@ class NexVerse:
             if update.message is None:
                 await update.callback_query.edit_message_text(
                     text=self.lang['select_inference'].format(
-                        
+                        m
                     ),
                     parse_mode="HTML",
                     reply_markup=inference_steps()
