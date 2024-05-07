@@ -10,7 +10,8 @@ if __name__ == '__main__':
         data = json.loads(f.read())
         f.close()
     with open("cfgs/lang_en_US.json", "r") as f:
-        
+        lang = json.loads(f.read())
+        f.close()
     token = data['tg']['token']
     # Initiate cryptocurrency module
     cryptocurrency = Cryptocurrency()
