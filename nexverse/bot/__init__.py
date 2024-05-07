@@ -315,7 +315,7 @@ class NexVerse:
                             negp=user_input
                         ),
                         parse_mode="HTML",
-                        reply_markup=telegram.ForceReply()
+                        reply_markup=None
                     )
                     processing_message = await update.message.reply_text(
                         "Processing... ⌛ | Please be patient this will only take a few seconds!"
