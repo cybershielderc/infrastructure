@@ -230,7 +230,7 @@ class TextToImageAsynchronous(TextToImage):
                     print(f"[{ftime()}]-(TTI): URQ-{requesting_uid} Checking if request is multi-imaged")
                     if len(response[1]['output']) is not 1:
                         queue_status_codes = [requests.get(url=x).status_code for x in response[1]['output']]
-                        
+                        while 
                     queue_status_code = requests.get(
                         url=response[1]['output'][0]
                     ).status_code
