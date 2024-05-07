@@ -130,6 +130,7 @@ class NexVerse:
                 await update.callback_query.edit_message_text(
                     text=self.lang['select_inference'].format(
                         mnam=context.user_data['selected_model_name'],
+                        samc=
                     ),
                     parse_mode="HTML",
                     reply_markup=inference_steps()
