@@ -276,7 +276,7 @@ class NexVerse:
                         f"<strong>Sample Count </strong><code>{context.user_data['number_of_samples']}</code>\n\n" + \
                         f"<strong>Image Size </strong>" + \
                         f"<code>{context.user_data['image_width']}x{context.user_data['image_height']}</code>\n\n" + \
-                        f"<strong>Inference Steps </strong><code>{inference_steps_num}</code>\n\n" + \
+                        f"<strong>Inference Steps </strong><code>{context.user_data['inference_steps']}</code>\n\n" + \
                         f"<strong>User Prompt</strong>\n" + context.user_data[
                             'pos_prompt'] + "\n\n<strong>User Negative Prompt</strong>\n" + user_input
                     await update.message.reply_to_message.edit_text(
