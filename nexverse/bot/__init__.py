@@ -11,7 +11,7 @@ from telegram.ext import (
     filters,
     CallbackQueryHandler
 )
-from urllib.request import url
+from urllib.request import urlretrieve
 from .image_generation_options import (
     size_options,
     inference_steps,
