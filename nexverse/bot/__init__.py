@@ -90,7 +90,7 @@ class NexVerse:
             selection = query.data.split("ai>img>model>selection#//")[1].split("#CNAME#")
             if update.message is None:
                 await update.callback_query.edit_message_text(
-                    text=f"You have selected <strong>{selection[1]}</strong>\nPlease select the amount of samples you would like the\nbot to generate!",
+                    text=self.lang['select_samples'].,
                     parse_mode="HTML",
                     reply_markup=numberof_samples()
                 )
