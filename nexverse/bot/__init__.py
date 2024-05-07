@@ -182,7 +182,7 @@ class NexVerse:
             inference_steps_num = query.data.split("infs=")[1]
             if update.message is None:
                 await update.callback_query.message.delete()
-                await update.callback_query.chat_instance.send_text(
+                await update.callback_query.message.send_text(
                     text=self.lang['reply_pos_prompt'].format(
                         mnam=context.user_data['selected_model_name'],
                         samc=context.user_data['number_of_samples'],
