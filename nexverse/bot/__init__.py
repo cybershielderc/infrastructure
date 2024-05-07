@@ -270,6 +270,9 @@ class NexVerse:
                     # Capture message
                     user_input = update.message.text
                     await update.message.delete()
+                    response_message = \
+                        f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
+
                     await update.message.reply_to_message.edit_text(
                         text=f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n<strong>User Prompt</strong>\n" +
                              context.user_data[
