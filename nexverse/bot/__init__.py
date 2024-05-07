@@ -162,7 +162,8 @@ class NexVerse:
                     text=self.lang['reply_pos_prompt'].format(
                         mnam=context.user_data['selected_model_name'],
                         samc=context.user_data['number_of_samples'],
-                        imsi=
+                        imsi=context.user_data['image_height'] + "x" + context.user_data['image_width'],
+                        
                     ),
                     parse_mode="HTML",
                     reply_markup=None
