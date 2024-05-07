@@ -272,7 +272,8 @@ class NexVerse:
                     await update.message.delete()
                     response_message = \
                         f"You have selected <strong>{context.user_data['selected_model_name']}</strong>\n\n" + \
-                        f"<strong>User Prompt</strong>\n"
+                        f"<strong>User Prompt</strong>\n"+context.user_data[
+                                 'pos_prompt']+"\n\n<strong>User Negative Prompt</strong>\n" + user_input
                     await update.message.reply_to_message.edit_text(
                         text=f"<strong>User Prompt</strong>\n" +
                              context.user_data[
