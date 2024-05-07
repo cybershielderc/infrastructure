@@ -330,7 +330,7 @@ class NexVerse:
                     user_input = update.message.text
                     await update.message.delete()
                     await (update.message.reply_to_message.delete()
-                .edit_text(
+                    .edit_text(
                         text=self.lang['reply_neg_prompt'].format(
                             mnam=context.user_data['selected_model_name'],
                             samc=context.user_data['number_of_samples'],
