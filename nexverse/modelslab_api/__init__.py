@@ -32,6 +32,7 @@ class MODEL(enum.Enum):
     DARK_SUSHI = "dark-sushi-25d"
     SAKURA = "sakurav3"
 
+
 async def check_urls(response, requesting_uid):
     queue_status_codes = [False] * len(response[1]['output'])
     async with aiohttp.ClientSession() as session:
@@ -49,6 +50,7 @@ async def check_urls(response, requesting_uid):
                 print(f"[{ftime()}]-(TTI): Status' <{queue_status_codes}> for URQ-{requesting_uid}")
                 await asyncio.sleep(1)
             await asyncio.sleep(1)
+
 
 async def check_url(session, url, queue_status_codes, index, requesting_uid):
     async with session.get(url) as response:
