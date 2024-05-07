@@ -306,7 +306,7 @@ class NexVerse:
                         f"\n<strong>Or reply with - to use the default negative prompt</strong>"
                     await update.message.delete()
                     await update.message.reply_to_message.edit_text(
-                        text=response_message,
+                        text=self.lang[],
                         parse_mode="HTML",
                         reply_markup=None
                     )
