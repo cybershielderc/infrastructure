@@ -119,7 +119,8 @@ class NexVerse:
                     text=self.lang['select_size'].format(
                         mnam=context.user_data['selected_model_name'],
                         samc=number_of_samples,
-                    ), parse_mode="HTML",
+                    ),
+                    parse_mode="HTML",
                     reply_markup=size_options()
                 )
             context.user_data['number_of_samples'] = int(number_of_samples)
