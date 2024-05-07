@@ -329,7 +329,8 @@ class NexVerse:
                     # Capture message
                     user_input = update.message.text
                     await update.message.delete()
-                    await update.message.reply_to_message.delete().edit_text(
+                    await (update.message.reply_to_message.delete()
+                .edit_text(
                         text=self.lang['reply_neg_prompt'].format(
                             mnam=context.user_data['selected_model_name'],
                             samc=context.user_data['number_of_samples'],
@@ -339,7 +340,7 @@ class NexVerse:
                         ),
                         parse_mode="HTML",
                         reply_markup=telegram.ForceReply()
-                    )
+                    ))
                     context.user_data['waiting_for_prompt'] = False
                     context.user_data['pos_prompt'] = user_input
                     context.user_data['waiting_for_neg_prompt'] = True
