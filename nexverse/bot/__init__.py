@@ -336,7 +336,7 @@ class NexVerse:
                             uinp=user_input,
                         ),
                         parse_mode="HTML",
-                        reply_markup=None
+                        reply_markup=telegram.ForceReply()
                     )
                     context.user_data['waiting_for_prompt'] = False
                     context.user_data['pos_prompt'] = user_input
