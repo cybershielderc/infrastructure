@@ -15,28 +15,28 @@ def size_options() -> InlineKeyboardMarkup:
 def inference_steps() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup([
         [
-            InlineKeyboardButton('20', callback_data='infs=10'),
-            InlineKeyboardButton('40', callback_data='infs=20'),
-            InlineKeyboardButton('60', callback_data='infs=30'),
-            InlineKeyboardButton('80', callback_data='infs=40')
+            InlineKeyboardButton('20', callback_data='infs=20'),
+            InlineKeyboardButton('40', callback_data='infs=40'),
+            InlineKeyboardButton('60', callback_data='infs=60'),
+            InlineKeyboardButton('80', callback_data='infs=80')
         ],
         [
-            InlineKeyboardButton('100', callback_data='infs=50'),
-            InlineKeyboardButton('120', callback_data='infs=60'),
-            InlineKeyboardButton('140', callback_data='infs=70'),
-            InlineKeyboardButton('160', callback_data='infs=80')
+            InlineKeyboardButton('100', callback_data='infs=100'),
+            InlineKeyboardButton('120', callback_data='infs=120'),
+            InlineKeyboardButton('140', callback_data='infs=140'),
+            InlineKeyboardButton('160', callback_data='infs=160')
         ],
         [
-            InlineKeyboardButton('200', callback_data='infs=90'),
-            InlineKeyboardButton('300', callback_data='infs=100'),
-            InlineKeyboardButton('400', callback_data='infs=110'),
-            InlineKeyboardButton('500', callback_data='infs=120')
+            InlineKeyboardButton('200', callback_data='infs=200'),
+            InlineKeyboardButton('300', callback_data='infs=300'),
+            InlineKeyboardButton('400', callback_data='infs=400'),
+            InlineKeyboardButton('500', callback_data='infs=500')
         ],
         [
-            InlineKeyboardButton('600', callback_data='infs=130'),
-            InlineKeyboardButton('700', callback_data='infs=140'),
-            InlineKeyboardButton('800', callback_data='infs=150'),
-            InlineKeyboardButton('1,000', callback_data='infs=160')
+            InlineKeyboardButton('600', callback_data='infs=600'),
+            InlineKeyboardButton('700', callback_data='infs=700'),
+            InlineKeyboardButton('800', callback_data='infs=800'),
+            InlineKeyboardButton('1,000', callback_data='infs=1000')
         ],
         [
             InlineKeyboardButton('170', callback_data='infs=170'),
