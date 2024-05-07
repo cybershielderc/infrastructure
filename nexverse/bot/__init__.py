@@ -182,7 +182,7 @@ class NexVerse:
                         samc=context.user_data['number_of_samples'],
                         imsi=context.user_data['image_height'] + "x" + context.user_data['image_width'],
                         infs=inference_steps_num
-                    )
+                    ),
                     parse_mode="HTML",
                     reply_markup=None
                 )
