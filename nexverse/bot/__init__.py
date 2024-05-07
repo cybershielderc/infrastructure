@@ -129,6 +129,7 @@ class NexVerse:
             if update.message is None:
                 await update.callback_query.edit_message_text(
                     text=self.lang['select_inference'].format(
+                        warn="⚠️",
                         mnam=context.user_data['selected_model_name'],
                         samc=context.user_data['number_of_samples'],
                         imsi=context.user_data['image_height'] + "x" + context.user_data['image_width']
