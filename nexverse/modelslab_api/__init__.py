@@ -214,7 +214,7 @@ class TextToImageAsynchronous(TextToImage):
         start_time = time.time()
         response = await self.get_image(
             model, requesting_uid, prompt, neg_prompt,
-            size, samples, 1000, seed,
+            size, samples, 1_000, seed,
             guidance_scale, safety_checker
         )
         if response[0] is not None:
