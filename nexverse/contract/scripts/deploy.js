@@ -1,5 +1,5 @@
 async function main() {
-    const GenT = await ethers.getContractFactory("contract");
+    const GenT = await ethers.getContractFactory("contract.sol");
  
     // Start deployment, returning a promise that resolves to a contract object
     const _gent = await GenT.deploy("Hello World!");   
