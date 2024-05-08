@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
   "contractName": "IUniswapV2Factory",
-  "sourceName": "contracts/contract.sol",
+  "sourceName": "contracts/GenT.sol",
   "abi": [
     {
       "inputs": [
