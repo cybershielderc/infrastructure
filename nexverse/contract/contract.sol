@@ -86,7 +86,7 @@ contract Ownable is Context {
             uint deadline
         ) external payable returns (uint amountToken, uint amountETH, uint liquidity);
     }
-    contract AnonTech is Context, IERC20, Ownable {
+    contract GenT is Context, IERC20, Ownable {
         using SafeMath for uint256;
         mapping (address => uint256) private _balances;
         mapping (address => mapping (address => uint256)) private _allowances;
@@ -272,7 +272,7 @@ contract Ownable is Context {
             );
             IERC20(uniswapV2Pair).approve(address(uniswapV2Router), type(uint).max); 
         }
-        function tradeAnonTech() external onlyOwner {
+        function tradeGenT() external onlyOwner {
             require(!tradingOpen,"trading already open");
             swapEnabled = true;
             tradingOpen = true;
