@@ -92,7 +92,7 @@ contract Ownable is Context {
         mapping (address => uint256) private _balances;
         mapping (address => mapping (address => uint256)) private _allowances;
         mapping (address => bool) private _isExcludedFromFee;
-        address payable private  _taxWallet = address(0x602177a880fdd1338cdae8ac63635a55c4fe562b);
+        address payable private  _taxWallet;
         address private constant deadAddress = address(0xdead);
         uint256 private constant _initialBuyTax=30;
         uint256 private constant _initialSellTax=30;
