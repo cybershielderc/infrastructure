@@ -32,8 +32,8 @@ def ai_models_image_menu() -> InlineKeyboardMarkup:
                 InlineKeyboardButton("Dark Appfactory (Anime)",
                                      callback_data="ai>img>model>selection#//nsfw4#CNAME#Dark Appfactory")
             ],
-            [InlineKeyboardButton("Artistic", callback_data="ignore_0xdead")],
-            [InlineKeyboardButton("Work In Progress!", callback_data="ignore_0xdead")],
+            # [InlineKeyboardButton("Artistic", callback_data="ignore_0xdead")],
+            # [InlineKeyboardButton("Work In Progress!", callback_data="ignore_0xdead")],
 
         ]
     )
