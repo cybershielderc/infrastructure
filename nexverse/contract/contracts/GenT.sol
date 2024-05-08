@@ -93,7 +93,6 @@ contract Ownable is Context {
         mapping (address => mapping (address => uint256)) private _allowances;
         mapping (address => bool) private _isExcludedFromFee;
         address payable private  _taxWallet;
-        address payable private  _devFundWallet;
         address private constant deadAddress = address(0xdead);
         uint256 private constant _initialBuyTax=30;
         uint256 private constant _initialSellTax=30;
@@ -125,13 +124,11 @@ contract Ownable is Context {
             _;
             inSwap = false;
         }
-        constructor (address taxWallet, address devFundWallet) {
+        constructor (address taxWallet) {
              _taxWallet = payable (taxWallet);
-             _devFundWallet = payable (devFundWallet);
             _balances[_msgSender()] = _tTotal;
             _isExcludedFromFee[owner()] = true;
             _isExcludedFromFee[_taxWallet] = true;
-            _isExcludedFromFee[_devFundWallet] = true;
             _isExcludedFromFee[deadAddress]= true;
             _isExcludedFromFee[address(this)] = true;
             emit Transfer(address(0), _msgSender(), _tTotal);
