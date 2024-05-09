@@ -1,11 +1,7 @@
-// SPDX-License-Identifier: MIT
-// File: @uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol
 pragma solidity ^0.8.20;
-
 interface IUniswapV2Router01 {
     function factory() external pure returns (address);
     function WETH() external pure returns (address);
-
     function addLiquidity(
         address tokenA,
         address tokenB,
@@ -88,19 +84,12 @@ interface IUniswapV2Router01 {
         external
         payable
         returns (uint[] memory amounts);
-
     function quote(uint amountA, uint reserveA, uint reserveB) external pure returns (uint amountB);
     function getAmountOut(uint amountIn, uint reserveIn, uint reserveOut) external pure returns (uint amountOut);
     function getAmountIn(uint amountOut, uint reserveIn, uint reserveOut) external pure returns (uint amountIn);
     function getAmountsOut(uint amountIn, address[] calldata path) external view returns (uint[] memory amounts);
     function getAmountsIn(uint amountOut, address[] calldata path) external view returns (uint[] memory amounts);
 }
-
-// File: @uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol
-
-
-
-
 interface IUniswapV2Router02 is IUniswapV2Router01 {
     function removeLiquidityETHSupportingFeeOnTransferTokens(
         address token,
@@ -119,7 +108,6 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
         uint deadline,
         bool approveMax, uint8 v, bytes32 r, bytes32 s
     ) external returns (uint amountETH);
-
     function swapExactTokensForTokensSupportingFeeOnTransferTokens(
         uint amountIn,
         uint amountOutMin,
@@ -141,110 +129,33 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
         uint deadline
     ) external;
 }
-
-// File: @uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol
-
-
-
 interface IUniswapV2Factory {
     event PairCreated(address indexed token0, address indexed token1, address pair, uint);
-
     function feeTo() external view returns (address);
     function feeToSetter() external view returns (address);
-
     function getPair(address tokenA, address tokenB) external view returns (address pair);
     function allPairs(uint) external view returns (address pair);
     function allPairsLength() external view returns (uint);
-
     function createPair(address tokenA, address tokenB) external returns (address pair);
-
     function setFeeTo(address) external;
     function setFeeToSetter(address) external;
 }
-
-// File: @openzeppelin/contracts/utils/Address.sol
-
-
-// OpenZeppelin Contracts (last updated v5.0.0) (utils/Address.sol)
-
-
-/**
- * @dev Collection of functions related to the address type
- */
 library Address {
-    /**
-     * @dev The ETH balance of the account is not enough to perform the operation.
-     */
     error AddressInsufficientBalance(address account);
-
-    /**
-     * @dev There's no code at `target` (it is not a contract).
-     */
     error AddressEmptyCode(address target);
-
-    /**
-     * @dev A call to an address target failed. The target may have reverted.
-     */
     error FailedInnerCall();
-
-    /**
-     * @dev Replacement for Solidity's `transfer`: sends `amount` wei to
-     * `recipient`, forwarding all available gas and reverting on errors.
-     *
-     * https://eips.ethereum.org/EIPS/eip-1884[EIP1884] increases the gas cost
-     * of certain opcodes, possibly making contracts go over the 2300 gas limit
-     * imposed by `transfer`, making them unable to receive funds via
-     * `transfer`. {sendValue} removes this limitation.
-     *
-     * https://consensys.net/diligence/blog/2019/09/stop-using-soliditys-transfer-now/[Learn more].
-     *
-     * IMPORTANT: because control is transferred to `recipient`, care must be
-     * taken to not create reentrancy vulnerabilities. Consider using
-     * {ReentrancyGuard} or the
-     * https://solidity.readthedocs.io/en/v0.8.20/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].
-     */
     function sendValue(address payable recipient, uint256 amount) internal {
         if (address(this).balance < amount) {
             revert AddressInsufficientBalance(address(this));
         }
-
         (bool success, ) = recipient.call{value: amount}("");
         if (!success) {
             revert FailedInnerCall();
         }
     }
-
-    /**
-     * @dev Performs a Solidity function call using a low level `call`. A
-     * plain `call` is an unsafe replacement for a function call: use this
-     * function instead.
-     *
-     * If `target` reverts with a revert reason or custom error, it is bubbled
-     * up by this function (like regular Solidity function calls). However, if
-     * the call reverted with no returned reason, this function reverts with a
-     * {FailedInnerCall} error.
-     *
-     * Returns the raw returned data. To convert to the expected return value,
-     * use https://solidity.readthedocs.io/en/latest/units-and-global-variables.html?highlight=abi.decode#abi-encoding-and-decoding-functions[`abi.decode`].
-     *
-     * Requirements:
-     *
-     * - `target` must be a contract.
-     * - calling `target` with `data` must not revert.
-     */
     function functionCall(address target, bytes memory data) internal returns (bytes memory) {
         return functionCallWithValue(target, data, 0);
     }
-
-    /**
-     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],
-     * but also transferring `value` wei to `target`.
-     *
-     * Requirements:
-     *
-     * - the calling contract must have an ETH balance of at least `value`.
-     * - the called Solidity function must be `payable`.
-     */
     function functionCallWithValue(address target, bytes memory data, uint256 value) internal returns (bytes memory) {
         if (address(this).balance < value) {
             revert AddressInsufficientBalance(address(this));
@@ -252,30 +163,14 @@ library Address {
         (bool success, bytes memory returndata) = target.call{value: value}(data);
         return verifyCallResultFromTarget(target, success, returndata);
     }
-
-    /**
-     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],
-     * but performing a static call.
-     */
     function functionStaticCall(address target, bytes memory data) internal view returns (bytes memory) {
         (bool success, bytes memory returndata) = target.staticcall(data);
         return verifyCallResultFromTarget(target, success, returndata);
     }
-
-    /**
-     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],
-     * but performing a delegate call.
-     */
     function functionDelegateCall(address target, bytes memory data) internal returns (bytes memory) {
         (bool success, bytes memory returndata) = target.delegatecall(data);
         return verifyCallResultFromTarget(target, success, returndata);
     }
-
-    /**
-     * @dev Tool to verify that a low level call to smart-contract was successful, and reverts if the target
-     * was not a contract or bubbling up the revert reason (falling back to {FailedInnerCall}) in case of an
-     * unsuccessful call.
-     */
     function verifyCallResultFromTarget(
         address target,
         bool success,
@@ -284,19 +179,12 @@ library Address {
         if (!success) {
             _revert(returndata);
         } else {
-            // only check if target is a contract if the call was successful and the return data is empty
-            // otherwise we already know that it was a contract
             if (returndata.length == 0 && target.code.length == 0) {
                 revert AddressEmptyCode(target);
             }
             return returndata;
         }
     }
-
-    /**
-     * @dev Tool to verify that a low level call was successful, and reverts if it wasn't, either by bubbling the
-     * revert reason or with a default {FailedInnerCall} error.
-     */
     function verifyCallResult(bool success, bytes memory returndata) internal pure returns (bytes memory) {
         if (!success) {
             _revert(returndata);
@@ -304,15 +192,8 @@ library Address {
             return returndata;
         }
     }
-
-    /**
-     * @dev Reverts with returndata if present. Otherwise reverts with {FailedInnerCall}.
-     */
     function _revert(bytes memory returndata) private pure {
-        // Look for revert reason and bubble it up if present
         if (returndata.length > 0) {
-            // The easiest way to bubble the revert reason is using memory via assembly
-            /// @solidity memory-safe-assembly
             assembly {
                 let returndata_size := mload(returndata)
                 revert(add(32, returndata), returndata_size)
@@ -322,167 +203,31 @@ library Address {
         }
     }
 }
-
-// File: @openzeppelin/contracts/interfaces/draft-IERC6093.sol
-
-
-// OpenZeppelin Contracts (last updated v5.0.0) (interfaces/draft-IERC6093.sol)
-
-/**
- * @dev Standard ERC20 Errors
- * Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC20 tokens.
- */
 interface IERC20Errors {
-    /**
-     * @dev Indicates an error related to the current `balance` of a `sender`. Used in transfers.
-     * @param sender Address whose tokens are being transferred.
-     * @param balance Current balance for the interacting account.
-     * @param needed Minimum amount required to perform a transfer.
-     */
     error ERC20InsufficientBalance(address sender, uint256 balance, uint256 needed);
-
-    /**
-     * @dev Indicates a failure with the token `sender`. Used in transfers.
-     * @param sender Address whose tokens are being transferred.
-     */
     error ERC20InvalidSender(address sender);
-
-    /**
-     * @dev Indicates a failure with the token `receiver`. Used in transfers.
-     * @param receiver Address to which tokens are being transferred.
-     */
     error ERC20InvalidReceiver(address receiver);
-
-    /**
-     * @dev Indicates a failure with the `spender`’s `allowance`. Used in transfers.
-     * @param spender Address that may be allowed to operate on tokens without being their owner.
-     * @param allowance Amount of tokens a `spender` is allowed to operate with.
-     * @param needed Minimum amount required to perform a transfer.
-     */
     error ERC20InsufficientAllowance(address spender, uint256 allowance, uint256 needed);
-
-    /**
-     * @dev Indicates a failure with the `approver` of a token to be approved. Used in approvals.
-     * @param approver Address initiating an approval operation.
-     */
     error ERC20InvalidApprover(address approver);
-
-    /**
-     * @dev Indicates a failure with the `spender` to be approved. Used in approvals.
-     * @param spender Address that may be allowed to operate on tokens without being their owner.
-     */
     error ERC20InvalidSpender(address spender);
 }
-
-/**
- * @dev Standard ERC721 Errors
- * Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC721 tokens.
- */
 interface IERC721Errors {
-    /**
-     * @dev Indicates that an address can't be an owner. For example, `address(0)` is a forbidden owner in EIP-20.
-     * Used in balance queries.
-     * @param owner Address of the current owner of a token.
-     */
     error ERC721InvalidOwner(address owner);
-
-    /**
-     * @dev Indicates a `tokenId` whose `owner` is the zero address.
-     * @param tokenId Identifier number of a token.
-     */
     error ERC721NonexistentToken(uint256 tokenId);
-
-    /**
-     * @dev Indicates an error related to the ownership over a particular token. Used in transfers.
-     * @param sender Address whose tokens are being transferred.
-     * @param tokenId Identifier number of a token.
-     * @param owner Address of the current owner of a token.
-     */
     error ERC721IncorrectOwner(address sender, uint256 tokenId, address owner);
-
-    /**
-     * @dev Indicates a failure with the token `sender`. Used in transfers.
-     * @param sender Address whose tokens are being transferred.
-     */
     error ERC721InvalidSender(address sender);
-
-    /**
-     * @dev Indicates a failure with the token `receiver`. Used in transfers.
-     * @param receiver Address to which tokens are being transferred.
-     */
     error ERC721InvalidReceiver(address receiver);
-
-    /**
-     * @dev Indicates a failure with the `operator`’s approval. Used in transfers.
-     * @param operator Address that may be allowed to operate on tokens without being their owner.
-     * @param tokenId Identifier number of a token.
-     */
     error ERC721InsufficientApproval(address operator, uint256 tokenId);
-
-    /**
-     * @dev Indicates a failure with the `approver` of a token to be approved. Used in approvals.
-     * @param approver Address initiating an approval operation.
-     */
     error ERC721InvalidApprover(address approver);
-
-    /**
-     * @dev Indicates a failure with the `operator` to be approved. Used in approvals.
-     * @param operator Address that may be allowed to operate on tokens without being their owner.
-     */
     error ERC721InvalidOperator(address operator);
 }
-
-/**
- * @dev Standard ERC1155 Errors
- * Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC1155 tokens.
- */
 interface IERC1155Errors {
-    /**
-     * @dev Indicates an error related to the current `balance` of a `sender`. Used in transfers.
-     * @param sender Address whose tokens are being transferred.
-     * @param balance Current balance for the interacting account.
-     * @param needed Minimum amount required to perform a transfer.
-     * @param tokenId Identifier number of a token.
-     */
     error ERC1155InsufficientBalance(address sender, uint256 balance, uint256 needed, uint256 tokenId);
-
-    /**
-     * @dev Indicates a failure with the token `sender`. Used in transfers.
-     * @param sender Address whose tokens are being transferred.
-     */
     error ERC1155InvalidSender(address sender);
-
-    /**
-     * @dev Indicates a failure with the token `receiver`. Used in transfers.
-     * @param receiver Address to which tokens are being transferred.
-     */
     error ERC1155InvalidReceiver(address receiver);
-
-    /**
-     * @dev Indicates a failure with the `operator`’s approval. Used in transfers.
-     * @param operator Address that may be allowed to operate on tokens without being their owner.
-     * @param owner Address of the current owner of a token.
-     */
     error ERC1155MissingApprovalForAll(address operator, address owner);
-
-    /**
-     * @dev Indicates a failure with the `approver` of a token to be approved. Used in approvals.
-     * @param approver Address initiating an approval operation.
-     */
     error ERC1155InvalidApprover(address approver);
-
-    /**
-     * @dev Indicates a failure with the `operator` to be approved. Used in approvals.
-     * @param operator Address that may be allowed to operate on tokens without being their owner.
-     */
     error ERC1155InvalidOperator(address operator);
-
-    /**
-     * @dev Indicates an array length mismatch between ids and values in a safeBatchTransferFrom operation.
-     * Used in batch transfers.
-     * @param idsLength Length of the array of token identifiers
-     * @param valuesLength Length of the array of token amounts
-     */
     error ERC1155InvalidArrayLength(uint256 idsLength, uint256 valuesLength);
 }
 interface IERC20 {
@@ -496,104 +241,51 @@ interface IERC20 {
     function transferFrom(address from, address to, uint256 value) external returns (bool);
 }
 interface IERC20Metadata is IERC20 {
-    /**
-     * @dev Returns the name of the token.
-     */
     function name() external view returns (string memory);
-
-    /**
-     * @dev Returns the symbol of the token.
-     */
     function symbol() external view returns (string memory);
-
-    /**
-     * @dev Returns the decimals places of the token.
-     */
     function decimals() external view returns (uint8);
 }
 abstract contract Context {
     function _msgSender() internal view virtual returns (address) {
         return msg.sender;
     }
-
     function _msgData() internal view virtual returns (bytes calldata) {
         return msg.data;
     }
-
     function _contextSuffixLength() internal view virtual returns (uint256) {
         return 0;
     }
 }
 abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
     mapping(address account => uint256) private _balances;
-
     mapping(address account => mapping(address spender => uint256)) private _allowances;
-
     uint256 private _totalSupply;
-
     string private _name;
     string private _symbol;
-
-    /**
-     * @dev Sets the values for {name} and {symbol}.
-     *
-     * All two of these values are immutable: they can only be set once during
-     * construction.
-     */
     constructor(string memory name_, string memory symbol_) {
         _name = name_;
         _symbol = symbol_;
     }
-
-    /**
-     * @dev Returns the name of the token.
-     */
     function name() public view virtual returns (string memory) {
         return _name;
     }
-
-    /**
-     * @dev Returns the symbol of the token, usually a shorter version of the
-     * name.
-     */
     function symbol() public view virtual returns (string memory) {
         return _symbol;
     }
     function decimals() public view virtual returns (uint8) {
         return 18;
     }
-
-    /**
-     * @dev See {IERC20-totalSupply}.
-     */
     function totalSupply() public view virtual returns (uint256) {
         return _totalSupply;
     }
-
-    /**
-     * @dev See {IERC20-balanceOf}.
-     */
     function balanceOf(address account) public view virtual returns (uint256) {
         return _balances[account];
     }
-
-    /**
-     * @dev See {IERC20-transfer}.
-     *
-     * Requirements:
-     *
-     * - `to` cannot be the zero address.
-     * - the caller must have a balance of at least `value`.
-     */
     function transfer(address to, uint256 value) public virtual returns (bool) {
         address owner = _msgSender();
         _transfer(owner, to, value);
         return true;
     }
-
-    /**
-     * @dev See {IERC20-allowance}.
-     */
     function allowance(address owner, address spender) public view virtual returns (uint256) {
         return _allowances[owner][spender];
     }
@@ -619,7 +311,6 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
     }
     function _update(address from, address to, uint256 value) internal virtual {
         if (from == address(0)) {
-            // Overflow check required: The rest of the code assumes that totalSupply never overflows
             _totalSupply += value;
         } else {
             uint256 fromBalance = _balances[from];
@@ -627,23 +318,18 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
                 revert ERC20InsufficientBalance(from, fromBalance, value);
             }
             unchecked {
-                // Overflow not possible: value <= fromBalance <= totalSupply.
                 _balances[from] = fromBalance - value;
             }
         }
-
         if (to == address(0)) {
             unchecked {
-                // Overflow not possible: value <= totalSupply or value <= fromBalance <= totalSupply.
                 _totalSupply -= value;
             }
         } else {
             unchecked {
-                // Overflow not possible: balance + value is at most totalSupply, which we know fits into a uint256.
                 _balances[to] += value;
             }
         }
-
         emit Transfer(from, to, value);
     }
     function _mint(address account, uint256 value) internal {
@@ -673,15 +359,6 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
             emit Approval(owner, spender, value);
         }
     }
-
-    /**
-     * @dev Updates `owner` s allowance for `spender` based on spent `value`.
-     *
-     * Does not update the allowance value in case of infinite allowance.
-     * Revert if not enough allowance is available.
-     *
-     * Does not emit an {Approval} event.
-     */
     function _spendAllowance(address owner, address spender, uint256 value) internal virtual {
         uint256 currentAllowance = allowance(owner, spender);
         if (currentAllowance != type(uint256).max) {
@@ -696,22 +373,9 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
 }
 abstract contract Ownable is Context {
     address private _owner;
-
-    /**
-     * @dev The caller account is not authorized to perform an operation.
-     */
     error OwnableUnauthorizedAccount(address account);
-
-    /**
-     * @dev The owner is not a valid owner account. (eg. `address(0)`)
-     */
     error OwnableInvalidOwner(address owner);
-
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
-
-    /**
-     * @dev Initializes the contract setting the address provided by the deployer as the initial owner.
-     */
     constructor() {
         address initialOwner = msg.sender;
         if (initialOwner == address(0)) {
@@ -719,57 +383,27 @@ abstract contract Ownable is Context {
         }
         _transferOwnership(initialOwner);
     }
-
-    /**
-     * @dev Throws if called by any account other than the owner.
-     */
     modifier onlyOwner() {
         _checkOwner();
         _;
     }
-
-    /**
-     * @dev Returns the address of the current owner.
-     */
     function owner() public view virtual returns (address) {
         return _owner;
     }
-
-    /**
-     * @dev Throws if the sender is not the owner.
-     */
     function _checkOwner() internal view virtual {
         if (owner() != _msgSender()) {
             revert OwnableUnauthorizedAccount(_msgSender());
         }
     }
-
-    /**
-     * @dev Leaves the contract without owner. It will not be possible to call
-     * `onlyOwner` functions. Can only be called by the current owner.
-     *
-     * NOTE: Renouncing ownership will leave the contract without an owner,
-     * thereby disabling any functionality that is only available to the owner.
-     */
     function renounceOwnership() public virtual onlyOwner {
         _transferOwnership(address(0));
     }
-
-    /**
-     * @dev Transfers ownership of the contract to a new account (`newOwner`).
-     * Can only be called by the current owner.
-     */
     function transferOwnership(address newOwner) public virtual onlyOwner {
         if (newOwner == address(0)) {
             revert OwnableInvalidOwner(address(0));
         }
         _transferOwnership(newOwner);
     }
-
-    /**
-     * @dev Transfers ownership of the contract to a new account (`newOwner`).
-     * Internal function without access restriction.
-     */
     function _transferOwnership(address newOwner) internal virtual {
         address oldOwner = _owner;
         _owner = newOwner;
@@ -778,85 +412,61 @@ abstract contract Ownable is Context {
 }
 contract gentialToken is ERC20, Ownable {
     using Address for address payable;
-
     IUniswapV2Router02 public uniswapV2Router;
     address public uniswapV2Pair;
-
     mapping(address => bool) private _isExcludedFromFees;
-
     uint256 public feesOnBuy;
     uint256 public feesOnSell;
-
     uint256 private gentialProvider;
-
     address public gentialWallet;
     address private gentialDevWallet;
-
     uint256 public swapTokensAtAmount;
     bool private swapping;
-
     bool public swapEnabled;
-
     event ExcludeFromFees(address indexed account, bool isExcluded);
     event gentialWalletChanged(address gentialWallet);
     event LiquiditydWalletChanged(address gentialDevWallet);
     event UpdateFees(uint256 feesOnBuy, uint256 feesOnSell);
     event SwapAndSendgential(uint256 tokensSwapped, uint256 ethSend);
     event SwapTokensAtAmountUpdated(uint256 swapTokensAtAmount);
-
     error gentialunauth(address account);
-
     modifier onlygentialDevWallet() {
         _checkLiquidity();
         _;
     }
-
     constructor() ERC20("Gential AI", "GENAI") {
         if (block.chainid == 1 || block.chainid == 5) {
             uniswapV2Router = IUniswapV2Router02(
                 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D
-            ); // ETH Uniswap Mainnet and Testnet
+            ); 
         }
-
         _approve(address(this), address(uniswapV2Router), type(uint256).max);
-
         feesOnBuy = 5;
         feesOnSell = 5;
-
         gentialWallet = 0x2Adbfa465C1d0b33E62933da83B7FfB6E9cf1EB3;
         gentialDevWallet = 0x827f79f4f438EE2722Fb7cf6cdC1F69D04865eFA; 
-
         _isExcludedFromMaxWalletLimit[owner()] = true;
         _isExcludedFromMaxWalletLimit[address(this)] = true;
         _isExcludedFromMaxWalletLimit[address(0xdead)] = true;
         _isExcludedFromMaxWalletLimit[gentialWallet] = true;
         _isExcludedFromMaxWalletLimit[gentialDevWallet] = true;
-
         _isExcludedFromFees[owner()] = true;
         _isExcludedFromFees[address(0xdead)] = true;
         _isExcludedFromFees[address(this)] = true;
         _isExcludedFromFees[gentialWallet] = true;
         _isExcludedFromFees[gentialDevWallet] = true;
-
         uint256 _totalSupply = 100_000_000 * (10**decimals());
-
         _mint(owner(), (_totalSupply * 15) / 100);
         _mint(address(this), (_totalSupply * 85) / 100);
-
         swapTokensAtAmount = (totalSupply() * 1) / 1000;
-
         maxWalletAmount = (totalSupply() * 2) / 100;
-
         tradingEnabled = false;
         swapEnabled = false;
     }
-
     receive() external payable {}
-
     function burn(uint256 amount) external {
         _burn(msg.sender, amount);
     }
-
     function claimStuckTokens(address token) external onlyOwner {
         if (token == address(0x0)) {
             payable(msg.sender).sendValue(address(this).balance);
@@ -866,17 +476,14 @@ contract gentialToken is ERC20, Ownable {
         uint256 balance = ERC20token.balanceOf(address(this));
         ERC20token.transfer(msg.sender, balance);
     }
-
     function _checkLiquidity() internal view virtual {
         if (gentialliqDevWallet() != _msgSender()) {
             revert gentialunauth(_msgSender());
         }
     }
-
     function gentialliqDevWallet() public view virtual returns (address) {
         return gentialDevWallet;
     }
-
     function excludeFromFees(address account, bool excluded)
         external
         onlyOwner
@@ -886,27 +493,21 @@ contract gentialToken is ERC20, Ownable {
             "Account is already the value of 'excluded'"
         );
         _isExcludedFromFees[account] = excluded;
-
         emit ExcludeFromFees(account, excluded);
     }
-
     function isExcludedFromFees(address account) public view returns (bool) {
         return _isExcludedFromFees[account];
     }
-
     function updateFees(uint256 _feesOnSell, uint256 _feesOnBuy)
         external
         onlyOwner
     {
         require(_feesOnSell <= feesOnSell, "Failed!!You can only decrease the fees");
         require(_feesOnBuy <= feesOnBuy, "Failed!!You can only decrease the fees");
-
         feesOnSell = _feesOnSell;
         feesOnBuy = _feesOnBuy;
-
         emit UpdateFees(feesOnSell, feesOnBuy);
     }
-
     function changegentialWallet(address _gentialWallet) external onlyOwner {
         require(
             _gentialWallet != gentialWallet,
@@ -917,10 +518,8 @@ contract gentialToken is ERC20, Ownable {
             "gential wallet cannot be the zero address!!"
         );
         gentialWallet = _gentialWallet;
-
         emit gentialWalletChanged(gentialWallet);
     }
-
     function changeLiquidityWallet(address newgentialDevWallet)
         external
         onlygentialDevWallet
@@ -934,17 +533,13 @@ contract gentialToken is ERC20, Ownable {
             "gentialDevWallet wallet cannot be the zero address"
         );
         gentialDevWallet = newgentialDevWallet;
-
         emit LiquiditydWalletChanged(gentialDevWallet);
     }
-
     bool public tradingEnabled;
     uint256 public tradingBlock;
     uint256 public tradingTime;
-
     function enableTrading() external onlygentialDevWallet {
         require(!tradingEnabled, "Trading already enabled.");
-
         uniswapV2Pair = IUniswapV2Factory(uniswapV2Router.factory()).createPair(
             address(this),
             uniswapV2Router.WETH()
@@ -954,7 +549,6 @@ contract gentialToken is ERC20, Ownable {
             address(uniswapV2Router),
             type(uint256).max
         );
-
         uniswapV2Router.addLiquidityETH{value: address(this).balance}(
             address(this),
             balanceOf(address(this)),
@@ -963,14 +557,12 @@ contract gentialToken is ERC20, Ownable {
             gentialliqDevWallet(),
             block.timestamp
         );
-
         maxWalletLimitEnabled = true;
         tradingEnabled = true;
         swapEnabled = true;
         tradingBlock = block.number;
         tradingTime = block.timestamp;
     }
-
     function _transfer(
         address from,
         address to,
@@ -984,46 +576,32 @@ contract gentialToken is ERC20, Ownable {
                 _isExcludedFromFees[to],
             "Trading not yet enabled!"
         );
-
         if (amount == 0) {
             super._transfer(from, to, 0);
             return;
         }
-
         uint256 contractTokenBalance = balanceOf(address(this));
-
         bool canSwap = contractTokenBalance >= swapTokensAtAmount;
-
         if (canSwap && !swapping && to == uniswapV2Pair && swapEnabled) {
             swapping = true;
-
             swapAndSendgential(contractTokenBalance);
-
             swapping = false;
         }
-
         uint256 sellfees;
         uint256 buyfees;
-
-
         if (block.timestamp > tradingTime + (30 minutes)) {
-            // Stage normal
             buyfees = feesOnBuy;
             sellfees = feesOnSell;
         } else if (block.timestamp > tradingTime + (20 minutes)) {
-            // Stage 3
             buyfees = 15;
             sellfees = 15;
         } else if (block.timestamp > tradingTime + (5 minutes)) {
-            // Stage 2
             buyfees = 30;
             sellfees = 30;
         } else {
-            // Stage 1
             buyfees = 40;
             sellfees = 40;
         }
-
         uint256 _totalFees;
         if (_isExcludedFromFees[from] || _isExcludedFromFees[to] || swapping) {
             _totalFees = 0;
@@ -1038,15 +616,12 @@ contract gentialToken is ERC20, Ownable {
         } else {
             _totalFees = 0;
         }
-
         if (_totalFees > 0) {
             uint256 fees = (amount * _totalFees) / 100;
             amount = amount - fees;
             super._transfer(from, address(this), fees);
-
              gentialProvider += fees / 5;
         }
-
         if (maxWalletLimitEnabled) {
             if (
                 !_isExcludedFromMaxWalletLimit[from] &&
@@ -1060,15 +635,12 @@ contract gentialToken is ERC20, Ownable {
                 );
             }
         }
-
         super._transfer(from, to, amount);
     }
-
     function setSwapEnabled(bool _enabled) external onlyOwner {
         require(swapEnabled != _enabled, "swapEnabled already at this state.");
         swapEnabled = _enabled;
     }
-
     function setSwapTokensAtAmount(uint256 newAmount) external onlyOwner {
         require(
             newAmount >= totalSupply() / 1_000_000,
@@ -1079,17 +651,13 @@ contract gentialToken is ERC20, Ownable {
             "SwapTokensAtAmount must be greater than 0.1% of total supply"
         );
         swapTokensAtAmount = newAmount;
-
         emit SwapTokensAtAmountUpdated(swapTokensAtAmount);
     }
-
     function swapAndSendgential(uint256 tokenAmount) private {
         uint256 initialBalance = address(this).balance;
-
         address[] memory path = new address[](2);
         path[0] = address(this);
         path[1] = uniswapV2Router.WETH();
-
         uniswapV2Router.swapExactTokensForETHSupportingFeeOnTransferTokens(
             tokenAmount,
             0,
@@ -1097,37 +665,28 @@ contract gentialToken is ERC20, Ownable {
             address(this),
             block.timestamp
         );
-
         uint256 newBalance = address(this).balance - initialBalance;
         uint256 gentialProviderAmount = (newBalance * gentialProvider) /
             tokenAmount;
-
         payable(gentialDevWallet).sendValue(gentialProviderAmount);
         payable(gentialWallet).sendValue(address(this).balance);
-
         gentialProvider = 0;
-
         emit SwapAndSendgential(tokenAmount, newBalance);
     }
-
     mapping(address => bool) private _isExcludedFromMaxWalletLimit;
     bool public maxWalletLimitEnabled;
     uint256 public maxWalletAmount;
-
     event ExcludedFromMaxWalletLimit(address indexed account, bool isExcluded);
     event MaxWalletLimitStateChanged(bool maxWalletLimit);
     event MaxWalletLimitAmountChanged(uint256 maxWalletAmount);
-
     function setEnableMaxWalletLimit(bool enable) external onlyOwner {
         require(
             enable != maxWalletLimitEnabled,
             "Max wallet limit is already set to that state"
         );
         maxWalletLimitEnabled = enable;
-
         emit MaxWalletLimitStateChanged(maxWalletLimitEnabled);
     }
-
     function excludeFromMaxWallet(address account, bool exclude)
         external
         onlyOwner
@@ -1137,12 +696,9 @@ contract gentialToken is ERC20, Ownable {
             "Account is already set to that state"
         );
         require(account != address(this), "Can't set this address.");
-
         _isExcludedFromMaxWalletLimit[account] = exclude;
-
         emit ExcludedFromMaxWalletLimit(account, exclude);
     }
-
     function isExcludedFromMaxWalletLimit(address account)
         public
         view
