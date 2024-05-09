@@ -19,5 +19,6 @@ async function main() {
     console.log("The name is: " + name);
     console.log("The symbol is: " + symbol);
     console.log("The decimals is: " + decimals);
+    console.log(await GenTContract.reduceTax(50,50))
   }
   main();
