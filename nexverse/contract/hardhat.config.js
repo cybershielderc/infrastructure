@@ -18,8 +18,8 @@ module.exports = {
          url: API_URL,
          accounts: [`0x${PRIVATE_KEY}`]
       },
-      etherscan: {
-        apiKey: "Y4exjmDVLGQ8h9twwUc7DSqDPx6WwhbE"
-      }
    },
+   etherscan: {
+    apiKey: "Y4exjmDVLGQ8h9twwUc7DSqDPx6WwhbE"
+  }
 }
