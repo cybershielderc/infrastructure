@@ -19,7 +19,7 @@ async function main() {
     console.log("The name is: " + name);
     console.log("The symbol is: " + symbol);
     console.log("The decimals is: " + decimals);
-    const gasLimit = GenTContract.estimateGas.reduceTax();
+    const gasLimit = GenTContract.estimateGas.reduceTax(25,25);
     console.log("The gasLimit for reduceTax is: " + gasLimit);
     //console.log(await GenTContract.reduceTax(25,25))
   }
