@@ -13,7 +13,11 @@ const signer = new ethers.Wallet(PRIVATE_KEY, alchemyProvider);
 const GenTContract = new ethers.Contract(CONTRACT_ADDRESS, contract.abi, signer);
 
 async function main() {
-    const message = await GenTContract.name();
-    console.log("The name is: " + message);
+    const name = await GenTContract.name();
+    const symbol = await GenTContract.symbol();
+    const decimals = await GenTContract.decimals();
+    console.log("The name is: " + name);
+    console.log("The symbol is: " + symbol);
+    console.log("The decimals is: " + decimals);
   }
   main();
