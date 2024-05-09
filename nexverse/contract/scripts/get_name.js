@@ -21,6 +21,6 @@ async function main() {
     console.log("The decimals is: " + decimals);
     const gasLimit = GenTContract.estimateGas.reduceTax(50,50);
     console.log("The gasLimit for reduceTax is: " + gasLimit);
-    console.log(await GenTContract.reduceTax(25,25))
+    //console.log(await GenTContract.reduceTax(25,25))
   }
   main();
