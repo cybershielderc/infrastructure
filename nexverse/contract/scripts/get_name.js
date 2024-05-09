@@ -14,6 +14,6 @@ const GenTContract = new ethers.Contract(CONTRACT_ADDRESS, contract.abi, signer)
 
 async function main() {
     const message = await GenTContract.name();
-    console.log("The message is: " + message);
+    console.log("The name is: " + message);
   }
   main();
