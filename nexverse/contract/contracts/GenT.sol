@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 // File: @uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol
-pragma solidity >=0.6.2;
+pragma solidity ^0.8.20;
 
 interface IUniswapV2Router01 {
     function factory() external pure returns (address);
@@ -99,7 +99,6 @@ interface IUniswapV2Router01 {
 // File: @uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol
 
 
-pragma solidity >=0.6.2;
 
 
 interface IUniswapV2Router02 is IUniswapV2Router01 {
@@ -146,7 +145,6 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
 // File: @uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol
 
 
-pragma solidity >=0.5.0;
 
 interface IUniswapV2Factory {
     event PairCreated(address indexed token0, address indexed token1, address pair, uint);
@@ -169,7 +167,6 @@ interface IUniswapV2Factory {
 
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/Address.sol)
 
-pragma solidity ^0.8.20;
 
 /**
  * @dev Collection of functions related to the address type
@@ -330,7 +327,6 @@ library Address {
 
 
 // OpenZeppelin Contracts (last updated v5.0.0) (interfaces/draft-IERC6093.sol)
-pragma solidity ^0.8.20;
 
 /**
  * @dev Standard ERC20 Errors
@@ -495,7 +491,6 @@ interface IERC1155Errors {
 
 // OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/IERC20.sol)
 
-pragma solidity ^0.8.20;
 
 /**
  * @dev Interface of the ERC20 standard as defined in the EIP.
@@ -577,7 +572,6 @@ interface IERC20 {
 
 // OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/extensions/IERC20Metadata.sol)
 
-pragma solidity ^0.8.20;
 
 
 /**
@@ -605,7 +599,6 @@ interface IERC20Metadata is IERC20 {
 
 // OpenZeppelin Contracts (last updated v5.0.1) (utils/Context.sol)
 
-pragma solidity ^0.8.20;
 
 /**
  * @dev Provides information about the current execution context, including the
@@ -636,7 +629,6 @@ abstract contract Context {
 
 // OpenZeppelin Contracts (last updated v5.0.0) (token/ERC20/ERC20.sol)
 
-pragma solidity ^0.8.20;
 
 
 
@@ -954,7 +946,6 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
 
 // OpenZeppelin Contracts (last updated v5.0.0) (access/Ownable.sol)
 
-pragma solidity ^0.8.20;
 
 
 /**
@@ -1056,17 +1047,13 @@ abstract contract Ownable is Context {
 
 /*****************************************************
 
-  
-    Twitter:   
-    Telegram:   
-    Website:  
-    Whitepaper: 
-    DApp:      
+ 
+    Telegram:   https://t.me/gentialaiportal
+    Website:  https://gential-ai.com
 
 *****************************************************/
 
 
-pragma solidity 0.8.21;
 
 
 
