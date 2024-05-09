@@ -1,3 +1,4 @@
+//SPDX-License-Identifier: GPL-2.0-only
 pragma solidity ^0.8.20;
 abstract contract Context {
     function _msgSender() internal view virtual returns (address) {
