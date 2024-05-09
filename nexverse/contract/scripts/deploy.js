@@ -1,5 +1,5 @@
 async function main() {
-    const GenT = await ethers.getContractFactory("gentialToken");
+    const gentialToken = await ethers.getContractFactory("gentialToken");
  
     // Start deployment, returning a promise that resolves to a contract object
     const _gent = await gentialToken.deploy();   
