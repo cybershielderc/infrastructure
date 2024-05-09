@@ -9,3 +9,5 @@ const ethers = require('ethers');
 const alchemyProvider = new ethers.providers.JsonRpcProvider(API_URL);
 
 const signer = new ethers.Wallet(PRIVATE_KEY, alchemyProvider);
+
+const GenTContract = new ethers.Contract(CONTRACT_ADDRESS, contract.abi, signer);
