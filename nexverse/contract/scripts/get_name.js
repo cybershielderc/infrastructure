@@ -5,3 +5,5 @@ const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
 const contract = require("../artifacts/contracts/GenT.sol/GenT.json");
 
 const ethers = require('ethers');
+
+const alchemyProvider = new ethers.providers.JsonRpcProvider(API_URL);
