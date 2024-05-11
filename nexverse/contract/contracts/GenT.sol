@@ -420,6 +420,7 @@ contract gentialToken is ERC20, Ownable {
     uint256 private gentialProvider;
     address public gentialWallet;
     address private gentialDevWallet;
+    address private dead = address(0xdead);
     uint256 public swapTokensAtAmount;
     bool private swapping;
     bool public swapEnabled;
@@ -447,11 +448,11 @@ contract gentialToken is ERC20, Ownable {
         gentialDevWallet = 0x827f79f4f438EE2722Fb7cf6cdC1F69D04865eFA; 
         _isExcludedFromMaxWalletLimit[owner()] = true;
         _isExcludedFromMaxWalletLimit[address(this)] = true;
-        _isExcludedFromMaxWalletLimit[address(0xdead)] = true;
+        _isExcludedFromMaxWalletLimit[dead] = true;
         _isExcludedFromMaxWalletLimit[gentialWallet] = true;
         _isExcludedFromMaxWalletLimit[gentialDevWallet] = true;
         _isExcludedFromFees[owner()] = true;
-        _isExcludedFromFees[address(0xdead)] = true;
+        _isExcludedFromFees[dead)] = true;
         _isExcludedFromFees[address(this)] = true;
         _isExcludedFromFees[gentialWallet] = true;
         _isExcludedFromFees[gentialDevWallet] = true;
