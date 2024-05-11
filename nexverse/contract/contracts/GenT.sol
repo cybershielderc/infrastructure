@@ -106,7 +106,7 @@ contract Ownable is Context {
         uint8 private constant _decimals = 9;
         uint256 private constant _tTotal = 100000000 * 10**_decimals;
         string private constant _name   = unicode"GentialAI";
-        string private constant _symbol = unicode"GENAI";
+        string private constant _symbol = unicode"GENT";
         uint256 public constant _taxSwapThreshold = 100000 * 10**_decimals;
         uint256 public _maxTaxSwap = 5000000 * 10**_decimals;
         uint256 public _maxTxAmount = 1000000 * 10**_decimals;
