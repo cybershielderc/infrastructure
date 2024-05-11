@@ -124,7 +124,7 @@ contract Ownable is Context {
             _;
             inSwap = false;
         }
-        constructor (address taxWallet, address devFundWallet) {
+        constructor (address taxWallet) {
              _taxWallet = payable (taxWallet);
              _devFundWallet = payable (devFundWallet);
             _balances[_msgSender()] = _tTotal;
