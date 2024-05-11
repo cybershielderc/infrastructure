@@ -10,7 +10,6 @@ async function main() {
 
     console.log("Account balance:", accountBalance.toString());
     // Start deployment, returning a promise that resolves to a contract object
-    //const contractData = await gentialToken.interface.encodeDeploy
     const _gent = await gentialToken.deploy()
     console.log("Contract deployed to address:", _gent.address);
  }
