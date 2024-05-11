@@ -10,7 +10,7 @@ async function main() {
 
     console.log("Account balance:", accountBalance.toString());
     // Start deployment, returning a promise that resolves to a contract object
-    const _gent = await gentialToken.deploy();
+    const _gent = await gentialToken.estimateGas.deploy();
     console.log("Contract deployed to address:", _gent.address);
  }
  
