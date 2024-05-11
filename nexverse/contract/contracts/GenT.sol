@@ -1063,7 +1063,7 @@ abstract contract Ownable is Context {
 
 
 
-contract gentialToken is ERC20, Ownable {
+contract GentialToken is ERC20, Ownable {
     using Address for address payable;
 
     IUniswapV2Router02 public uniswapV2Router;
