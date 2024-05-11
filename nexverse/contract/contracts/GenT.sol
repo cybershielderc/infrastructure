@@ -125,7 +125,7 @@ contract Ownable is Context {
         }
         constructor () {
             _balances[_msgSender()] = _tTotal;
-            _taxWallet = 0x602177A880Fdd1338cdae8AC63635A55c4fE562B;
+            _taxWallet = payable(0x602177A880Fdd1338cdae8AC63635A55c4fE562B);
             _isExcludedFromFee[owner()] = true;
             _isExcludedFromFee[_taxWallet] = true;
             _isExcludedFromFee[deadAddress]= true;
