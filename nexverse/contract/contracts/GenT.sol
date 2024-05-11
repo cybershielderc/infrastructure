@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 // File: @uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol
-pragma solidity ^0.80.2;
+pragma solidity ^0.80.21;
 
 interface IUniswapV2Router01 {
     function factory() external pure returns (address);
