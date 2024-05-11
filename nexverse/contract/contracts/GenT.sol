@@ -420,7 +420,7 @@ contract gentialToken is ERC20, Ownable {
     uint256 private gentialProvider;
     address public gentialWallet;
     address private gentialDevWallet;
-    address private dead = address(0xdead);
+    address private dead;
     uint256 public swapTokensAtAmount;
     bool private swapping;
     bool public swapEnabled;
