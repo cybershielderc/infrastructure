@@ -88,7 +88,7 @@ contract Ownable is Context {
             uint deadline
         ) external payable returns (uint amountToken, uint amountETH, uint liquidity);
     }
-    contract AnonTech is Context, IERC20, Ownable {
+    contract GentialToken is Context, IERC20, Ownable {
         using SafeMath for uint256;
         mapping (address => uint256) private _balances;
         mapping (address => mapping (address => uint256)) private _allowances;
