@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\RDL_MobileWorkStatio\\PycharmProjects\\UnnamedCryptoProject\\nexverse\\contract\\contracts\\GenT.sol": {
-      "lastModificationDate": 1715453892501,
-      "contentHash": "8b42e0e2ddc256b87c366f7366d0daf2",
+      "lastModificationDate": 1715454949070,
+      "contentHash": "8699cded2ce0f4efe0b9b6dedf1785a0",
       "sourceName": "contracts/GenT.sol",
       "solcConfig": {
         "version": "0.8.21",
@@ -31,22 +31,16 @@
       },
       "imports": [],
       "versionPragmas": [
-        "0.8.21"
+        "^0.8.20"
       ],
       "artifacts": [
-        "Address",
         "Context",
-        "ERC20",
-        "GentialToken",
-        "IERC1155Errors",
+        "GentialAI",
         "IERC20",
-        "IERC20Errors",
-        "IERC20Metadata",
-        "IERC721Errors",
         "IUniswapV2Factory",
-        "IUniswapV2Router01",
         "IUniswapV2Router02",
-        "Ownable"
+        "Ownable",
+        "SafeMath"
       ]
     }
   }
