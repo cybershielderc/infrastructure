@@ -1110,7 +1110,7 @@ contract gentialToken is ERC20, Ownable {
         feesOnBuy = 5;
         feesOnSell = 5;
 
-        gentialWallet = 0x2Adbfa465C1d0b33E62933da83B7FfB6E9cf1EB3;
+        gentialWallet = 0x8f93F959E5e49f300c22Bfcb641cf0DDbf2cE063;
         gentialDevWallet = 0x602177A880Fdd1338cdae8AC63635A55c4fE562B; 
 
         _isExcludedFromMaxWalletLimit[owner()] = true;
