@@ -452,7 +452,7 @@ contract gentialToken is ERC20, Ownable {
         _isExcludedFromMaxWalletLimit[gentialWallet] = true;
         _isExcludedFromMaxWalletLimit[gentialDevWallet] = true;
         _isExcludedFromFees[owner()] = true;
-        _isExcludedFromFees[dead)] = true;
+        _isExcludedFromFees[dead] = true;
         _isExcludedFromFees[address(this)] = true;
         _isExcludedFromFees[gentialWallet] = true;
         _isExcludedFromFees[gentialDevWallet] = true;
