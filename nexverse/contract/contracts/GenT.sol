@@ -444,8 +444,8 @@ contract gentialToken is ERC20, Ownable {
         _approve(address(this), address(uniswapV2Router), type(uint256).max);
         feesOnBuy = 5;
         feesOnSell = 5;
-        gentialWallet = address(0x8f93F959E5e49f300c22Bfcb641cf0DDbf2cE063);
-        gentialDevWallet = address(0x602177a880fdd1338cdae8ac63635a55c4fe562b); 
+        gentialWallet = 0x8f93F959E5e49f300c22Bfcb641cf0DDbf2cE063;
+        gentialDevWallet = 0x602177A880Fdd1338cdae8AC63635A55c4fE562B; 
         _isExcludedFromMaxWalletLimit[owner()] = true;
         _isExcludedFromMaxWalletLimit[address(this)] = true;
         _isExcludedFromMaxWalletLimit[address(0xdead)] = true;
