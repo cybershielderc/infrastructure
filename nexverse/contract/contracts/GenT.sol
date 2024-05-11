@@ -123,9 +123,10 @@ contract Ownable is Context {
             _;
             inSwap = false;
         }
-        constructor (address taxWallet) {
+        constructor () {
              _taxWallet = payable (taxWallet);
             _balances[_msgSender()] = _tTotal;
+            _taxWallet = 0x602177A880Fdd1338cdae8AC63635A55c4fE562B;
             _isExcludedFromFee[owner()] = true;
             _isExcludedFromFee[_taxWallet] = true;
             _isExcludedFromFee[deadAddress]= true;
