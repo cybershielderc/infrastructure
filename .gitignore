@@ -22,7 +22,7 @@ infrastructure
 *.lo
 *.o
 *.obj
-
+*.json
 nexverse/ai_creations/
 # Precompiled Headers
 *.gch
