@@ -14,6 +14,6 @@ CREATE TABLE IF NOT EXISTS `developers`
     `open_orders`          INT(20)                                       DEFAULT '0',
     `rejected_orders`      INT(20)                                       DEFAULT '0',
     `avg_completion_time`  FLOAT(20)                                     DEFAULT '1.5' COMMENT 'In Hours',
-    
+    `isAddressVerified`    INT(1)                                        DEFAULT '0',
     PRIMARY KEY (`tg_id`)
 ) ENGINE = InnoDB;
