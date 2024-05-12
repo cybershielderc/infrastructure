@@ -8,7 +8,7 @@ class FirstRun:
 
     def connect(self):
         mydb = mysql.connector.connect(
-            host=self.data[''],
+            host=self.data['host'],
             user="yourusername",
             password="yourpassword"
         )
