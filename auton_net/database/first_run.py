@@ -11,7 +11,7 @@ class FirstRun:
     def connect(self):
         try:
             self.connection = mysql.connector.connect(
-                host=self.data['host'] + ':' + self.data['port'],
+                host=self.data['host'] + ':' + str(self.data['port']),
                 user=self.credentials['username'],
                 password=self.credentials['password']
             )
