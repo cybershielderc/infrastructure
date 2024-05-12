@@ -1,5 +1,5 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-
+from .
 
 # Small Menus
 def start_menu() -> InlineKeyboardMarkup:
