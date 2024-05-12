@@ -1,5 +1,8 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from .
+from .developer_panel import (
+    developer_panel_main
+)
+
 
 # Small Menus
 def start_menu() -> InlineKeyboardMarkup:
