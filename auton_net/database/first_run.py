@@ -21,7 +21,7 @@ class FirstRun:
             self.cursor = self.connection.cursor()
             self.cursor.execute("SHOW DATABASES;")
             for database in self.cursor:
-                pass
+                print(database)
         except Exception as e:
             raise e
 
