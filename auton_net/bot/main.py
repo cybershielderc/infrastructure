@@ -60,4 +60,4 @@ class NexVerse:
                 text=caption,
                 parse_mode='HTML',
                 reply_markup=start_menu_markup() if not menu else menu,
-           
+            )
