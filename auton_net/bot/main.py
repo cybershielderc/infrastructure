@@ -56,3 +56,7 @@ class NexVerse:
                 parse_mode='HTML',
                 reply_markup=start_menu_markup() if not menu else menu,
             )
+
+    def run(self):
+        """Run the bot"""
+        self.app.run_polling()
