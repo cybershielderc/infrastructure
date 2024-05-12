@@ -25,7 +25,7 @@ def start_menu_markup() -> InlineKeyboardMarkup:
     )
 
 
-class NexVerse:
+class AutonNET:
     def __init__(self, token: str, lang_dict: dict = {}):
         self.token = token
         self.lang = lang_dict
@@ -63,5 +63,5 @@ class NexVerse:
 
 
 def run_app(token: str, lang_dict: dict) -> ApplicationBuilder:
-    bot = NexVerse(token, lang_dict)
+    bot = AutonNET(token, lang_dict)
     bot.run()
