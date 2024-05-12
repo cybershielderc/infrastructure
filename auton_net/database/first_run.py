@@ -13,3 +13,6 @@ class FirstRun:
             user=self.credentials['username'],
             password=self.credentials['password']
         )
+
+    def execute_scripts(self):
+        
