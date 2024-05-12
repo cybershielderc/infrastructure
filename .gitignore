@@ -25,6 +25,7 @@ infrastructure
 *.json
 nexverse/ai_creations/
 nexverse/contract/node_modules
+nexverse/contract/n
 # Precompiled Headers
 *.gch
 *.pch
