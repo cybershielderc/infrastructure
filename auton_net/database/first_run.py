@@ -9,6 +9,6 @@ class FirstRun:
     def connect(self):
         mydb = mysql.connector.connect(
             host=self.data['host'] + ':' + self.data['port'],
-            user="yourusername",
+            user=self.credentials['user'],
             password="yourpassword"
         )
