@@ -63,7 +63,7 @@ class AutonNET:
         await query.answer()
         await query.delete_message()
         await query.reply_markup(
-            caption="",
+            caption=f'<strong>Hi {update.effective_user.name}</strong>',
             reply_markup=marketplace_panel(),
         )
 
@@ -71,7 +71,7 @@ class AutonNET:
         query = update.callback_query
         await query.answer()
         await query.reply_markup(
-            caption="",
+            caption=f'<strong>Hi {update.effective_user.name}</strong>',
             reply_markup=developer_panel_main()
         )
 
