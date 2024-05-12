@@ -15,7 +15,7 @@ class FirstRun:
                 user=self.credentials['username'],
                 password=self.credentials['password']
             )
-        except mysql.connector.
+        except mysql.connector.errors.
 
     def execute_scripts(self):
         pass
