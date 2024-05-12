@@ -48,14 +48,14 @@ class AutonNET:
                 caption=caption,
                 parse_mode='HTML',
                 reply_markup=start_menu() if not menu else menu,
-                photo=open("./bot/images/banner.jpg", "rb"),
+                photo=open("./bot/images/banners/banner.jpg", "rb"),
             )
         else:
             await update.message.reply_photo(
                 caption=caption,
                 parse_mode='HTML',
                 reply_markup=start_menu() if not menu else menu,
-                photo=open("./bot/images/banner.jpg", "rb"),
+                photo=open("./bot/images/banners/banner.jpg", "rb"),
             )
 
     async def mp_panel(self, update: Update, context: CallbackContext) -> None:
