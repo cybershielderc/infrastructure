@@ -31,4 +31,3 @@ class FirstRun:
             with open(os.path.join("./database/tables/", file), "r") as data:
                 print(data.read())
                 data.close()
-                
