@@ -63,7 +63,6 @@ class AutonNET:
         await query.answer()
         await query.edit_message_reply_markup(
             reply_markup=marketplace_panel(),
-            photo=None
         )
 
     async def mp_dev_panel(self, update: Update, context: CallbackContext) -> None:
