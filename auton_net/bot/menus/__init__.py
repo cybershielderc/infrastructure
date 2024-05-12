@@ -12,7 +12,5 @@ def start_menu() -> InlineKeyboardMarkup:
 
 def marketplace_panel() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup([
-        [
-
-        ]
+        [InlineKeyboardButton("🛠️ Marketplace 🧾", callback_data="ignore_0xdead")],
     ])
