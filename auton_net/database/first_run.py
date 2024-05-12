@@ -22,6 +22,8 @@ class FirstRun:
             self.cursor.execute("SHOW DATABASES;")
             for database in self.cursor:
                 pass
+        except Exception as e:
+            
 
     def execute_scripts(self):
         pass
