@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `developers`
     `nickname`             TEXT(50) CHARACTER SET utf8 COLLATE utf8_bin  DEFAULT 'Anonymous Developer',
     `connected_wallet`     TEXT(256) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT '0xdead' COMMENT 'ETH 42-character Hexadecimal Address',
     `completed_orders`     INT(20)                                       DEFAULT '0',
+    `open_orfers`          INT(20)                                       DEFAULT '0',
 
     PRIMARY KEY (`tg_id`)
 ) ENGINE = InnoDB;
