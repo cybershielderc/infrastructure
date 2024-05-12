@@ -31,7 +31,7 @@ class FirstRun:
             with open(os.path.join("./database/tables/", file), "r") as data:
                 try:
                     self.cursor.execute(data.read())
-                    print
+                    print("Successfully executed ", )
                 except Exception as e:
                     raise e
                 data.close()
