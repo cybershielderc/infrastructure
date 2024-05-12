@@ -23,7 +23,7 @@ class FirstRun:
             for database in self.cursor:
                 pass
         except Exception as e:
-            
+            raise e
 
     def execute_scripts(self):
         pass
