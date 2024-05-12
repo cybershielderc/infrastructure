@@ -13,7 +13,8 @@ class FirstRun:
             self.connection = mysql.connector.connect(
                 host=self.data['host'],
                 user=self.credentials['username'],
-                password=self.credentials['password']
+                password=self.credentials['password'],
+                database=self.data['database']
             )
         except mysql.connector.errors.DatabaseError as e:
             raise e
@@ -26,7 +27,6 @@ class FirstRun:
             raise e
 
     def execute_scripts(self):
-        self.cursor.execute("SELECT DATABASE ")
         files = os.listdir("./database/tables/")
         for file in files:
             with open(os.path.join("./database/tables/", file), "r") as data:
