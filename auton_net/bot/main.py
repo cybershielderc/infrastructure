@@ -62,6 +62,6 @@ class NexVerse:
         self.app.run_polling()
 
 
-def run_app(token: str, image_api: TextToImageAsynchronous, lang_dict: dict) -> ApplicationBuilder:
+def run_app(token: str, lang_dict: dict) -> ApplicationBuilder:
     bot = NexVerse(token, image_api, lang_dict)
     bot.run()
