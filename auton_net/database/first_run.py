@@ -29,5 +29,5 @@ class FirstRun:
         files = os.listdir("./database/tables/")
         for file in files:
             with open(os.path.join("./database/tables/", file), "r") as data:
-                print(data.read())
+                self.cursor.execute(data.read())
                 data.close()
