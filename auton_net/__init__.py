@@ -8,4 +8,5 @@ if __name__ == '__main__':
         file.close()
     f_run = FirstRun(data['database'], data['database']['credentials'])
     f_run.connect()
+    f_run.
     run_app(data["keys"]["tg"], {})
