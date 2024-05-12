@@ -15,6 +15,10 @@ from telegram.ext import (
 import os
 from urllib.request import urlretrieve
 from urllib.parse import urlparse
+from .menus import (
+    start_menu,
+    marketplace_panel
+)
 
 
 def start_menu_markup() -> InlineKeyboardMarkup:
