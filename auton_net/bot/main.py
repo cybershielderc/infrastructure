@@ -58,7 +58,7 @@ class AutonNET:
         query = update.callback_query
         await query.answer()
         await query.edit_message_text(
-            text="",
+            text=query,
             reply_markup=marketplace_panel()
         )
 
