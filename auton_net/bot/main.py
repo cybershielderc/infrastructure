@@ -21,14 +21,6 @@ from .menus import (
 )
 
 
-def start_menu_markup() -> InlineKeyboardMarkup:
-    return InlineKeyboardMarkup(
-        [
-            [InlineKeyboardButton("🛠️ Marketplace 🧾", callback_data="mp_1")],
-        ]
-    )
-
-
 class AutonNET:
     def __init__(self, token: str, lang_dict: dict = {}):
         self.token = token
@@ -53,7 +45,7 @@ class AutonNET:
             await update.callback_query.message.reply_text(
                 text=caption,
                 parse_mode='HTML',
-                reply_markup=start_menu_markup() if not menu else menu,
+                reply_markup=start_menu() if not menu else menu,
             )
         else:
             await update.message.reply_text(
