@@ -18,7 +18,9 @@ class FirstRun:
         except mysql.connector.errors.DatabaseError as e:
             raise e
         try:
-            self.
+            self.cursor = self.connection.cursor()
+            self.cursor.execute("SHOW DATABASES;")
+            
 
     def execute_scripts(self):
         pass
