@@ -58,7 +58,7 @@ class AutonNET:
         query = update.callback_query
         await query.answer()
         await query.edit_message_text(
-            text="Please select a model to generate the image with!",
+            text="",
             reply_markup=marketplace_panel()
         )
 
