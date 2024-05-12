@@ -15,7 +15,7 @@
   "database": {
     "host": "csl.sh",
     "port": 3306,
-    "database": "s13_autonnet",
+    "database": "s13_autonet",
     "credentials": {
       "username": "u13_PJbhygM9na",
       "password": "xRkZ=pxY2.cDPhNAA+b9G+Dn"
