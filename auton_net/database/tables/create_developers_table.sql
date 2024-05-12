@@ -1,4 +1,4 @@
-CREATE TABLE `developers`
+CREATE TABLE IF NOT EXISTS `developers`
 (
     `tg_id`                INT(20)                                      DEFAULT '0',
     `linked_portfolio_rid` INT(20)                                      DEFAULT '0',
