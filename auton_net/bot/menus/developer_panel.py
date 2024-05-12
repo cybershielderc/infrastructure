@@ -1,3 +1,3 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
-def developer_pnale
+def developer_panel_main()
