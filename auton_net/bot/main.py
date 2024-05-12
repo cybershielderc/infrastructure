@@ -18,7 +18,7 @@ from urllib.parse import urlparse
 from .menus import (
     start_menu,
     marketplace_panel,
-d
+developer_panel_main
 )
 
 
