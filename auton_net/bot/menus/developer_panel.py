@@ -9,6 +9,7 @@ def developer_panel_main() -> InlineKeyboardMarkup:
                 InlineKeyboardButton("🛠️ Stats 🧾", callback_data="mp_dev_stats"),
                 InlineKeyboardButton(" 🧾Orders 🧾", callback_data="mp_dev_orders"),
                 InlineKeyboardButton("💸 Awaiting Funds 🧾", callback_data="mp_dev_funds"),
-            ]
+            ],
+            [InlineKeyboardButton("Back", callback_data="ignore_0xdead")],
         ]
     )
