@@ -44,16 +44,17 @@ class AutonNET:
         caption = f'<strong>{message}</strong>' if message else \
             f'<strong>Hi {update.effective_user.name}</strong>'
         if update.message is None:
-            await update.callback_query.message.reply_text(
-                text=caption,
+            await update.callback_query.message.reply_photo(
+                caption=caption,
                 parse_mode='HTML',
                 reply_markup=start_menu() if not menu else menu,
             )
         else:
-            await update.message.reply_text(
-                text=caption,
+            await update.message.reply_photo(
+                caption=caption,
                 parse_mode='HTML',
                 reply_markup=start_menu() if not menu else menu,
+                photo=
             )
 
     async def mp_panel(self, update: Update, context: CallbackContext) -> None:
