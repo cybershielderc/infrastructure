@@ -27,6 +27,5 @@ class FirstRun:
 
     def execute_scripts(self):
         files = os.listdir("./database/tables/")
-        print(files)
         for file in files:
             print(file)
