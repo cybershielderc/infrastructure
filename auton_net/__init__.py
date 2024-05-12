@@ -9,5 +9,6 @@ if __name__ == '__main__':
     f_run = FirstRun(data['database'], data['database']['credentials'])
     # Connect to First Run Model
     f_run.connect()
+    # Execute Table Creation Scripts
     f_run.execute_scripts()
     run_app(data["keys"]["tg"], {})
