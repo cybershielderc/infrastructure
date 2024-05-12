@@ -28,4 +28,7 @@ class FirstRun:
     def execute_scripts(self):
         files = os.listdir("./database/tables/")
         for file in files:
-            with open(os.path.join("./database/tables/", file), )
+            with open(os.path.join("./database/tables/", file), "r") as data:
+                print(data.read())
+                data.close()
+                
