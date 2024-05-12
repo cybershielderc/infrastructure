@@ -25,7 +25,7 @@ class NexVerse:
 
     def _initialize_bot(self) -> ApplicationBuilder:
         app: ApplicationBuilder = ApplicationBuilder().token(self.token).build()
-        app.add_handler(CallbackQueryHandler(self.start_menu, "main"))
+        /app.add_handler(CallbackQueryHandler(self.start_menu, "main"))
         app.add_handler(CallbackQueryHandler(self.image_ai_menu, "m1"))
         app.add_handler(CallbackQueryHandler(self.button_input))
         app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, self.text_input))
