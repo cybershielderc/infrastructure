@@ -26,7 +26,7 @@ class FirstRun:
             raise e
 
     def execute_scripts(self):
-        files = [f for f in os.listdir("./database/tables/") if os.path.isfile(f)]
+        files = os.listdir("./database/tables/")
         print(files)
         for file in files:
             print(file)
