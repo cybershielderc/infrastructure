@@ -19,7 +19,7 @@ class FirstRun:
             raise e
         try:
             self.cursor = self.connection.cursor()
-            self.cursor.execute("SHOW DATABASES;")
+            databases = self.cursor.execute("SHOW DATABASES;")
             
 
     def execute_scripts(self):
