@@ -26,7 +26,7 @@ class FirstRun:
             raise e
 
     def execute_scripts(self):
-        self.cursor.execute("SELECT ")
+        self.cursor.execute("SELECT DATABASE ")
         files = os.listdir("./database/tables/")
         for file in files:
             with open(os.path.join("./database/tables/", file), "r") as data:
