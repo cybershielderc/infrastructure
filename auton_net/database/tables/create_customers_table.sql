@@ -1,4 +1,4 @@
-CREATE TABLE `customers` IF NOT EXISTS (
+CREATE TABLE IF NOT EXISTS `customers` (
 	`tg_id` INT(20),
 	`open_requests` INT(20) DEFAULT '0',
 	`budget` INT(20) DEFAULT '50' COMMENT 'Budget in USDT',
