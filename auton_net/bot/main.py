@@ -62,7 +62,6 @@ class AutonNET:
         query = update.callback_query
         await query.answer()
         await query.delete_message()
-        await query.
         await query.edit_message_reply_markup(
             reply_markup=marketplace_panel(),
         )
