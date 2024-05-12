@@ -27,3 +27,5 @@ class FirstRun:
 
     def execute_scripts(self):
         files = [f for f in os.listdir() if os.path.isfile("./tables/")]
+        for file in files:
+            print(file)
