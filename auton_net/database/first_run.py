@@ -3,6 +3,7 @@ import mysql.connector
 
 class FirstRun:
     def __init__(self, data, credentials):
+        self.connection = None
         self.data = data
         self.credentials = credentials
 
