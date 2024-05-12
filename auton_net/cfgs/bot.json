@@ -1,0 +1,24 @@
+{
+  "bot_name": "AutonNET",
+  "version": "v1.alpha",
+  "build": "#12052024//1100",
+  "author": "Tal A. Baskin (~redstonedlife)",
+  "author_id": 0,
+  "keys": {
+    "tg": "6712810416:AAEnR7OYApWWqCirtKS2L-zjOo1f-LsA8Wo",
+    "etherscan": {
+      "main": "9YQCK67AQ1DXT527MTRIJ5DGQED9VDVI8J",
+      "block_exp": "XM6FY1N1U7ZEX1NVF4PDK5J8M6SYDB4WP8",
+      "price_exp": "7F17WRWIB6GBGCM1XTUWZT2YTS8QMH44QQ"
+    }
+  },
+  "database": {
+    "host": "csl.sh",
+    "port": 3306,
+    "database": "s13_autonnet",
+    "credentials": {
+      "username": "u13_PJbhygM9na",
+      "password": "4vfL7A9Ot9+WyWllN@ouMOq="
+    }
+  }
+}

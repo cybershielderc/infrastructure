@@ -1,0 +1,16 @@
+{
+  "name": "NexVerse",
+  "version": "1.0-build#29042024//2227",
+  "author": "Tal A. Baskin (~redstonedlife)",
+  "token": "7126070767:AAEzkJzZiEP0C2EFvc5RVzJkceVs00LvvPc",
+  "apis": {
+    "modelslab": "NlFoDAa0laHjQO94ufjjx6eoBdhzUPmr1pMKr2IxgStWCD6w5JmqVSm2R6nb"
+  },
+  "database": {
+    "host": "csl.sh",
+    "port": 3306,
+    "user": "u4_H4D2gtn0lm",
+    "password": "8lohL3!Y@2ajbL6Vl4c+9Yth",
+    "database": "s4_merc_db"
+  }
+}
