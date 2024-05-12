@@ -17,6 +17,8 @@ class FirstRun:
             )
         except mysql.connector.errors.DatabaseError as e:
             raise e
+        try:
+            self.
 
     def execute_scripts(self):
         pass
