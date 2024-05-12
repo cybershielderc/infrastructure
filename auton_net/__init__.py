@@ -7,6 +7,7 @@ if __name__ == '__main__':
         data = json.loads(file.read())
         file.close()
     f_run = FirstRun(data['database'], data['database']['credentials'])
+    # Connect to First Run Model
     f_run.connect()
     f_run.execute_scripts()
-    # run_app(data["keys"]["tg"], {})
+    run_app(data["keys"]["tg"], {})
