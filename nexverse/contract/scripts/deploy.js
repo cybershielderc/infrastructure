@@ -1,6 +1,6 @@
 async function main() {
     const [deployer] = await ethers.getSigners();
-    const gentialToken = await ethers.getContractFactory("GentialAI");
+    const gentialToken = await ethers.getContractFactory("AutonNet");
   
     const accountBalance = await deployer.provider.getBalance(deployer.address); 
     console.log(

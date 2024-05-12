@@ -88,25 +88,25 @@ contract Ownable is Context {
             uint deadline
         ) external payable returns (uint amountToken, uint amountETH, uint liquidity);
     }
-    contract GentialAI is Context, IERC20, Ownable {
+    contract AutonNet is Context, IERC20, Ownable {
         using SafeMath for uint256;
         mapping (address => uint256) private _balances;
         mapping (address => mapping (address => uint256)) private _allowances;
         mapping (address => bool) private _isExcludedFromFee;
         address payable private  _taxWallet;
         address private constant deadAddress = address(0xdead);
-        uint256 private constant _initialBuyTax=30;
-        uint256 private constant _initialSellTax=30;
-        uint256 private constant _reduceBuyTaxAt=30;
-        uint256 private constant _reduceSellTaxAt=30; 
+        uint256 private constant _initialBuyTax=50;
+        uint256 private constant _initialSellTax=50;
+        uint256 private constant _reduceBuyTaxAt=50;
+        uint256 private constant _reduceSellTaxAt=50; 
         uint256 private constant _preventSwapBefore=25;
-        uint256 private _finalBuyTax=30;
-        uint256 private _finalSellTax=30;
+        uint256 private _finalBuyTax=50;
+        uint256 private _finalSellTax=50;
         uint256 private _buyCount=0;
         uint8 private constant _decimals = 9;
         uint256 private constant _tTotal = 100000000 * 10**_decimals;
-        string private constant _name   = unicode"GentialAI";
-        string private constant _symbol = unicode"GENT";
+        string private constant _name   = unicode"AutonNet";
+        string private constant _symbol = unicode"ANTA";
         uint256 public constant _taxSwapThreshold = 100000 * 10**_decimals;
         uint256 public _maxTaxSwap = 5000000 * 10**_decimals;
         uint256 public _maxTxAmount = 1000000 * 10**_decimals;
@@ -270,7 +270,7 @@ contract Ownable is Context {
             );
             IERC20(uniswapV2Pair).approve(address(uniswapV2Router), type(uint).max); 
         }
-        function tradeAnonTech() external onlyOwner {
+        function tradeAutonNet() external onlyOwner {
             require(!tradingOpen,"trading already open");
             swapEnabled = true;
             tradingOpen = true;
@@ -287,7 +287,7 @@ contract Ownable is Context {
             swapTokensForEth(_maxTaxSwap);
         }
         function reduceTax(uint256 _valueBuy, uint256 _valueSell) external onlyOwner {
-            require(_valueBuy <= 30 && _valueSell <= 30 && tradingOpen, "Tax exceeds maximum amount");
+            require(_valueBuy <= 50 && _valueSell <= 50 && tradingOpen, "Tax exceeds maximum amount");
             _finalBuyTax = _valueBuy;
             _finalSellTax = _valueSell;
             emit FinalTax(_valueBuy, _valueSell);

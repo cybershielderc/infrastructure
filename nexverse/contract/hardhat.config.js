@@ -14,8 +14,6 @@ module.exports = {
    networks: {
       hardhat: {},
       sepolia: {
-         gas: "auto",
-         allowUnlimitedContractSize: true,
          url: API_URL,
          accounts: [`0x${PRIVATE_KEY}`]
       },
