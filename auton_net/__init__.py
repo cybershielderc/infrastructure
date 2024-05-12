@@ -7,4 +7,5 @@ if __name__ == '__main__':
         data = json.loads(file.read())
         file.close()
     f_run = FirstRun(data['database'], data['database']['credentials'])
+    f_run.connect()
     run_app(data["keys"]["tg"], {})
