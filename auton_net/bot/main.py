@@ -63,5 +63,5 @@ class NexVerse:
 
 
 def run_app(token: str, lang_dict: dict) -> ApplicationBuilder:
-    bot = NexVerse(token, image_api, lang_dict)
+    bot = NexVerse(token, lang_dict)
     bot.run()
