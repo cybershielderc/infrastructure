@@ -20,7 +20,7 @@ from urllib.parse import urlparse
 def start_menu_markup() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("🛠️ Marketplace 🧾", callback_data="open_marketplace_panel")],
+            [InlineKeyboardButton("🛠️ Marketplace 🧾", callback_data="mp_1")],
         ]
     )
 
