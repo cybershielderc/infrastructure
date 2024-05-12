@@ -19,8 +19,9 @@ class FirstRun:
             raise e
         try:
             self.cursor = self.connection.cursor()
-            databases = self.cursor.execute("SHOW DATABASES;")
-            
+            self.cursor.execute("SHOW DATABASES;")
+            for database in self.cursor:
+                pass
 
     def execute_scripts(self):
         pass
