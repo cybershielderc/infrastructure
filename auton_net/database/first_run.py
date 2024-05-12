@@ -28,4 +28,4 @@ class FirstRun:
     def execute_scripts(self):
         files = os.listdir("./database/tables/")
         for file in files:
-            print(os.path.join("./database/tables"))
+            print(os.path.join("./database/tables/", file))
