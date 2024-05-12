@@ -59,7 +59,7 @@ class AutonNET:
         await query.answer()
         await query.edit_message_text(
             text="Please select a model to generate the image with!",
-            reply_markup=ai_models_image_menu()
+            reply_markup=marketplace_panel()
         )
 
     def run(self):
