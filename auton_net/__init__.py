@@ -5,4 +5,4 @@ if __name__ == '__main__':
     with open("cfgs/bot.json", "r") as file:
         data = json.loads(file.read())
         file.close()
-    run_app(data["keys"]["tg"])
+    run_app(data["keys"]["tg"], {})
