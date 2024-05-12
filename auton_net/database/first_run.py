@@ -9,11 +9,13 @@ class FirstRun:
         self.credentials = credentials
 
     def connect(self):
-        self.connection = mysql.connector.connect(
-            host=self.data['host'] + ':' + self.data['port'],
-            user=self.credentials['username'],
-            password=self.credentials['password']
-        )
+        try:
+            self.connection = mysql.connector.connect(
+                host=self.data['host'] + ':' + self.data['port'],
+                user=self.credentials['username'],
+                password=self.credentials['password']
+            )
+        except mysql.connector.
 
     def execute_scripts(self):
         pass
