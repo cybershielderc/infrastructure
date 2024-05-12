@@ -1,1 +1,1 @@
-from .first_run import *
+from .first_run import FirstRun
