@@ -51,7 +51,7 @@ class AutonNET:
             await update.message.reply_text(
                 text=caption,
                 parse_mode='HTML',
-                reply_markup=start_menu_markup() if not menu else menu,
+                reply_markup=start_menu() if not menu else menu,
             )
 
     async def image_ai_menu(self, update: Update, context: CallbackContext) -> None:
