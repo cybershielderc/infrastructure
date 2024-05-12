@@ -24,7 +24,7 @@ infrastructure
 *.obj
 *.json
 nexverse/ai_creations/
-nexverse/contract/node_modules
+nexverse/contract/node_modules/*
 nexverse/contract/.env
 # Precompiled Headers
 *.gch
