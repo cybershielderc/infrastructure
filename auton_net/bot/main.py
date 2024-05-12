@@ -18,9 +18,8 @@ from urllib.parse import urlparse
 
 
 class NexVerse:
-    def __init__(self, token: str, ai_image_api: TextToImageAsynchronous, lang_dict: dict):
+    def __init__(self, token: str, lang_dict: dict = {}):
         self.token = token
-        self.ai_image_api = ai_image_api
         self.lang = lang_dict
         self.app = self._initialize_bot()
 
