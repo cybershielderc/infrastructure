@@ -17,6 +17,19 @@ from urllib.request import urlretrieve
 from urllib.parse import urlparse
 
 
+def start_menu_markup() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+        [
+            [InlineKeyboardButton("🛠️ Services 🧾", callback_data="ignore_0xdead")],
+            [
+                InlineKeyboardButton("Text-to-Image (TTI)", callback_data="m1"),
+                # InlineKeyboardButton("Image-to-Image (WIP)", callback_data="ignore_0xdead"),  # "image_to_image"),
+                # InlineKeyboardButton("AI Assistant (WIP)", callback_data="ignore_0xdead"),  # "initiate_chat"),
+            ]
+        ]
+    )
+
+
 class NexVerse:
     def __init__(self, token: str, lang_dict: dict = {}):
         self.token = token
@@ -31,3 +44,20 @@ class NexVerse:
         # app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, self.text_input))
         app.add_handler(CommandHandler("start", self.start_menu))
         return app
+
+    async def start_menu(self, update: Update, context: CallbackContext, message: str = None,
+                         menu: InlineKeyboardMarkup = None) -> None:
+        caption = f'<strong>{message}</strong>' if message else \
+            f'<strong>Hi {update.effective_user.name}</strong>'
+        if update.message is None:
+            await update.callback_query.message.reply_text(
+                text=caption,
+                parse_mode='HTML',
+                reply_markup=start_menu_markup() if not menu else menu,
+            )
+        else:
+            await update.message.reply_text(
+                text=caption,
+                parse_mode='HTML',
+                reply_markup=start_menu_markup() if not menu else menu,
+           
