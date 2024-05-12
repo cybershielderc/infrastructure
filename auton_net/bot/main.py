@@ -57,8 +57,7 @@ class AutonNET:
     async def image_ai_menu(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         await query.answer()
-        await query.edit_message_text(
-            text=,
+        await query.edit_message_reply_markup(
             reply_markup=marketplace_panel()
         )
 
