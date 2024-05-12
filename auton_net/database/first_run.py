@@ -26,4 +26,4 @@ class FirstRun:
             raise e
 
     def execute_scripts(self):
-        files = [f for f in os.listdir() if os.path.isfile(".")]
+        files = [f for f in os.listdir() if os.path.isfile("./tables/")]
