@@ -66,7 +66,7 @@ class AutonNET:
         query = update.callback_query
         await query.answer()
         await query.edit_message_reply_markup(
-            reply_markup=
+            reply_markup=developer_panel_main()
         )
 
     def run(self):
