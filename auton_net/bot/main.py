@@ -58,6 +58,14 @@ class AutonNET:
                 reply_markup=start_menu_markup() if not menu else menu,
             )
 
+    async def image_ai_menu(self, update: Update, context: CallbackContext) -> None:
+        query = update.callback_query
+        await query.answer()
+        await query.edit_message_text(
+            text="Please select a model to generate the image with!",
+            reply_markup=ai_models_image_menu()
+        )
+
     def run(self):
         """Run the bot"""
         self.app.run_polling()
