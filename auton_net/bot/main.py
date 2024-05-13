@@ -117,7 +117,7 @@ class AutonNET:
                         caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
                                 f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
                                 f'<strong>Nickname</strong> <code>{update.effective_user.name}</code>\n' + \
-                                f'\nWhat is the lowest price you',
+                                f'\nWhat is the lowest price you would accept?',
                         reply_markup=None
                     )
         await query.answer()
