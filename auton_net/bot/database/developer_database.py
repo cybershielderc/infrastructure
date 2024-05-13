@@ -35,7 +35,7 @@ class CreateDeveloperDatapoint:
     @staticmethod
     def create_developer(data: dict = None,
                          credentials: dict = None,
-                         telegram_id: int = None,
+                         telegram_id: int = -,
                          accepted_budget_min: int = 0,
                          accepted_budget_max: int = 0,
                          accepted_worktime_min: int = 0,
