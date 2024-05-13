@@ -90,7 +90,7 @@ class AutonNET:
                 reply_markup=developer_panel_register()
             )
 
-    async
+    async def text_input(self, update: Update, context: CallbackContext):
 
     async def registeration_input(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
