@@ -67,5 +67,6 @@ class CreateDeveloperDatapoint:
             VALUES
             ({telegram_id}, -1, {accepted_budget_min}, {accepted_budget_max}, {accepted_worktime_min},{accepted_worktime_max}, 5.0, 0, {isAnonymous}, {nickname}, '{wallet_address}', 0, 0, 0, 0.0, 0);
             """
+            cursor.execute(statement)
         except Exception as e:
             raise e
