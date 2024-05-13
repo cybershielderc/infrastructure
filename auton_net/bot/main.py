@@ -106,13 +106,14 @@ class AutonNET:
                 context.user_data['dev_reg#anon'] = selection
                 # Selection is Yes on remaining anonymous, ask for nickname
                 if selection:
-                    await query.delete_message()
-                    await query.send_caption(
-                        caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
-                                f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
-                                f'\nWhat nickname would you like to go by?',
-                        reply_markup=telegram.ForceReply()
-                    )
+                    if update.message is None:
+                        await update.callback_query.message.delete()
+                        await update.callback_query.message.reply_text(
+                            caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
+                                    f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
+                                    f'\nWhat nickname would you like to go by?',
+                            reply_markup=telegram.ForceReply()
+                        )
                     context.user_data['dev_reg#anon#nickname#awaiting'] = True
                 else:
                     # Selection is No on remaining anonymous, default nickname is TG name
