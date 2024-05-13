@@ -123,7 +123,6 @@ class AutonNET:
                                     f'\nWhat nickname would you like to go by?',
                             reply_markup=telegram.ForceReply()
                         )
-                    context.user_data['dev_reg#anon#nickname#awaiting'] = True
                 else:
                     # Selection is No on remaining anonymous, default nickname is TG name
                     context.user_data['dev_reg#budget#min#awaiting']
