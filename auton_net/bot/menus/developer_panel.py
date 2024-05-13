@@ -29,4 +29,4 @@ def developer_panel_register() -> InlineKeyboardMarkup:
         ]
     )
 
-def developer_panel_
+def developer_panel_is_ano
