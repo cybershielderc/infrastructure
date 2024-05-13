@@ -8,6 +8,6 @@ class CheckDeveloperStatus:
         if data is None:
             raise Exception('data is required')
         if credentials is None:
-            raise Exception('')
+            raise Exception('credentials are required')
         if telegram_id is None:
             raise Exception('Telegram ID is required')
