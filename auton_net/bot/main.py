@@ -95,6 +95,7 @@ class AutonNET:
         if CreateDeveloperDatapoint.create_developer(
             data=self.bot_data['database'],
             credentials=self.bot_data['database']['credentials'],
+            
         )
 
     def run(self):
