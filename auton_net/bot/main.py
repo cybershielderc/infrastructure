@@ -20,7 +20,7 @@ from .menus import (
     marketplace_panel,
     developer_panel_main
 )
-from ...autonnet_bot.database import (
+from .database import (
     CheckDeveloperStatus
 )
 
