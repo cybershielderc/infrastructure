@@ -26,10 +26,6 @@ class CheckDeveloperStatus:
             _u = cursor.fetchone()
             cursor.close()
             connection.close()
-            if cursor.fetchone() is None:
-
-                return True
-            else:
-                return True
+            return True if _u else False
         except Exception as e:
             raise e
