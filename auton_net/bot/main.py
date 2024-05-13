@@ -103,11 +103,15 @@ class AutonNET:
                 selection = True if query.data.split("dev_reg#anon>>")[1] is 'yes' else False
                 await query.answer()
                 context.user_data['dev_reg#anon'] = selection
-                await query.edit_message_caption(
-                    caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
-                            f'\n<strong>Is Anonymous?</strong> <code>{selection}</code>',
-                    reply_markup=None
-                )
+                # Selection is Yes on remaining anonymous, ask for nickname
+                if selection:
+                    await query.edit_message_caption(
+                        caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
+                                f'\n<strong>Is Anonymous?</strong> <code>{selection}</code>',
+                        reply_markup=None
+                    )
+                else:
+                    # Selection is No on remanining anonymous, default
         await query.answer()
 
     def run(self):
