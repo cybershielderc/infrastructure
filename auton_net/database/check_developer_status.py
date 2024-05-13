@@ -13,17 +13,17 @@ class CheckDeveloperStatus:
             raise Exception('Telegram ID is required')
         try:
             connection = mysql.connector.connect(
-                host=.data['host'],
-                user=.credentials['username'],
-                password=.credentials['password'],
-                database=.data['database']
+                host=data['host'],
+                user=credentials['username'],
+                password=credentials['password'],
+                database=data['database']
             )
         except mysql.connector.errors.DatabaseError as e:
             raise e
         try:
-            .cursor = .connection.cursor()
-            .cursor.execute("SHOW DATABASES;")
-            for database in .cursor:
+            cursor = connection.cursor()
+            cursor.execute("SHOW DATABASES;")
+            for database in cursor:
                 print(database)
         except Exception as e:
             raise e
