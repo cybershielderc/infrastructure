@@ -1,6 +1,6 @@
 from bot.main import run_app
 import json
-from database import (
+from auton_net.bot.database import (
     FirstRun,
     CheckDeveloperStatus
 )
