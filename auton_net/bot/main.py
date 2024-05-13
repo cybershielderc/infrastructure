@@ -83,18 +83,7 @@ class AutonNET:
         else:
             await query.edit_message_text(
                 text="Sorry, but you have not been registered as a developer!\nWould you like to register?",
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "✅ Yes, Register me!", callback_data="mp_dev_register"
-                            ),
-                            InlineKeyboardButton(
-                                "❌ No, I'm not a developer!", callback_data="mp_1"
-                            )
-                        ]
-                    ]
-                )
+                reply_markup=None
             )
 
     def run(self):
