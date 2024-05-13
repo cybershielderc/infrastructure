@@ -98,6 +98,7 @@ class AutonNET:
             credentials=self.bot_data['database']['credentials'],
             telegram_id=update.effective_user.id
         ):
+            
 
     def run(self):
         """Run the bot"""
