@@ -19,7 +19,7 @@ from .menus import (
     start_menu,
     marketplace_panel,
     developer_panel_main,
-    de
+    developer_panel_register
 )
 from .database import (
     CheckDeveloperStatus
