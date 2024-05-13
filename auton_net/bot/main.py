@@ -81,7 +81,7 @@ class AutonNET:
             caption="Would you like to remain anonymous on our platform?\n" + \
                     "By selecting <strong>yes</strong> your name will be kept hidden\n" + \
                     "when communicating with a client!, Instead a nickname will be shown!\n" + \
-                    "",
+                    "By selecting <strong>no</strong>",
             reply_markup=developer_panel_is_anonymous(),
         )
 
