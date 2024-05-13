@@ -82,7 +82,7 @@ class AutonNET:
                 reply_markup=developer_panel_main()
             )
         else:
-            await update.callback_query.edit_message_text(
+            await query.edit_message_text(
                 text="Sorry, but you have not been registered as a developer!\nWould you like to register?",
                 reply_markup=developer_panel_register()
             )
