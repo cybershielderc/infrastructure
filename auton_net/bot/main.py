@@ -86,7 +86,7 @@ class AutonNET:
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [InlineKeyboardButton(
-                            "Yes, Register me!"
+                            "Yes, Register me!", callback_data=
                         )]
                     ]
                 )
