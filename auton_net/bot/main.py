@@ -112,7 +112,7 @@ class AutonNET:
                                 f'\nWhat nickname would you like to go by?',
                         reply_markup=None
                     )
-                    context.user_data['dev_reg#anon#nickname#'] = selection
+                    context.user_data['dev_reg#anon#nickname#awaiting'] = True
                 else:
                     # Selection is No on remaining anonymous, default nickname is TG name
                     await query.edit_message_caption(
