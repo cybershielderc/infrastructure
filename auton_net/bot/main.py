@@ -61,19 +61,14 @@ class AutonNET:
     async def mp_panel(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         await query.answer()
-        await query.delete_message()
-        await query.reply_markup(
-            caption=f'<strong>Hi {update.effective_user.name}</strong>',
-            parse_mode='HTML',
+        await query.edit_message_reply_markup(
             reply_markup=marketplace_panel(),
         )
 
     async def mp_dev_panel(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         await query.answer()
-        await query.reply_markup(
-            caption=f'<strong>Hi {update.effective_user.name}</strong>',
-            parse_mode='HTML',
+        await query.edit_message_reply_markup(
             reply_markup=developer_panel_main()
         )
 
