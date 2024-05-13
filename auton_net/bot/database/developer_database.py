@@ -65,7 +65,7 @@ class CreateDeveloperDatapoint:
             INSERT INTO `developers`
             (`tg_id`, `linked_portfolio_rid`, `accepted_budget_min`, `accepted_budget_max`, `accepted_worktime_min`, `accepted_worktime_max`, `rating`, `isVerified`, `isAnonymous`, `nickname`, `connected_wallet`, `completed_orders`, `open_orders`, `rejected_orders`, `avg_completion_time`, `isAddressVerified`)
             VALUES
-            ({telegram_id}, -1, {accepted_budget_min}, {accepted_budget_max}, {accepted_worktime_min},{accepted_worktime_max}, 5.0, 0, {isAnonymous}, {nickname}, '0xdead', 0, 0, 0, 1.5, 0);
+            ({telegram_id}, -1, {accepted_budget_min}, {accepted_budget_max}, {accepted_worktime_min},{accepted_worktime_max}, 5.0, 0, {isAnonymous}, {nickname}, '{wallet_address}', 0, 0, 0, 1.5, 0);
             """
         except Exception as e:
             raise e
