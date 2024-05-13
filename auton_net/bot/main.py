@@ -23,7 +23,7 @@ from .menus import (
 
 
 class AutonNET:
-    def __init__(self, token: str, lang_dict: dict = {}):
+    def __init__(self, token: str, lang_dict: dict = {}, developer_databse: ):
         self.token = token
         self.lang = lang_dict
         self.app = self._initialize_bot()
@@ -68,7 +68,7 @@ class AutonNET:
     async def mp_dev_panel(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         await query.answer()
-        
+
         await query.edit_message_reply_markup(
             reply_markup=developer_panel_main()
         )
