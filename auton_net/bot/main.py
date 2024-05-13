@@ -106,6 +106,7 @@ class AutonNET:
                 context.user_data['dev_reg#anon'] = selection
                 # Selection is Yes on remaining anonymous, ask for nickname
                 if selection:
+                    context.user_data['dev_reg#anon#nickname#awaiting'] = True
                     if update.message is None:
                         await update.callback_query.message.delete()
                         await update.callback_query.message.reply_text(
