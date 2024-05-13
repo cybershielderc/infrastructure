@@ -26,7 +26,7 @@ from ..database import (
 
 
 class AutonNET:
-    def __init__(self, token: str, lang_dict: dict = {}):
+    def __init__(self, token: str, data: dict = {}, lang_dict: dict = {}):
         self.token = token
         self.lang = lang_dict
         self.app = self._initialize_bot()
