@@ -33,7 +33,10 @@ class CheckDeveloperStatus:
 
 class CreateDeveloperDatapoint:
     @staticmethod
-    def check_developer_status(data: dict = None, credentials: dict = None, telegram_id: str = None) -> bool:
+    def create_developer(data: dict = None,
+                         credentials: dict = None,
+                         telegram_id: str = None
+                         ) -> bool:
         if data is None:
             raise Exception('data is required')
         if credentials is None:
