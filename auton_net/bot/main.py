@@ -29,6 +29,7 @@ class AutonNET:
     def __init__(self, token: str, bot_data: dict = {}, lang_dict: dict = {}):
         self.token = token
         self.lang = lang_dict
+        self.bot_data = bot_data
         self.app = self._initialize_bot()
 
     def _initialize_bot(self) -> ApplicationBuilder:
