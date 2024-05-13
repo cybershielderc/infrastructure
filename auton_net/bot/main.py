@@ -95,7 +95,7 @@ class AutonNET:
         if query.data.startswith("mp_dev_start_registration"):
             await query.answer()
             context.user_data['devRegistration'] = True
-            await query.edit_message_reply_markup(reply_markup=)
+            await query.edit_message_reply_markup(reply_markup=developer_panel_is_anonymous())
         await query.answer()
 
     def run(self):
