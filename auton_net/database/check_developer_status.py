@@ -6,4 +6,3 @@ class CheckDeveloperStatus:
     def __init__(self, data: dict, credentials: dict):
         self.data = data
         self.credentials = credentials
-        
