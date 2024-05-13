@@ -13,3 +13,15 @@ def developer_panel_main() -> InlineKeyboardMarkup:
             [InlineKeyboardButton("🔙 Back 🔙", callback_data="mp_1")],
         ]
     )
+def developer_panel_register() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "✅ Yes, Register me!", callback_data="mp_dev_register"
+                            ),
+                            InlineKeyboardButton(
+                                "❌ No, I'm not a developer!", callback_data="mp_1"
+                            )
+                        ]
+                    ]
