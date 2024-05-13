@@ -74,13 +74,13 @@ class AutonNET:
         await query.answer()
         # Check if user is a developer
         if CheckDeveloperStatus.check_developer_status(
-            self.bot_data['database'], self.bot_data['database']['credentials'],
-            str(update.effective_user.id)
-        )
-        await query.edit_message_reply_markup(
-            reply_markup=developer_panel_main()
-        )
-
+                self.bot_data['database'], self.bot_data['database']['credentials'],
+                str(update.effective_user.id)
+        ):
+            await query.edit_message_reply_markup(
+                reply_markup=developer_panel_main()
+            )
+        
     def run(self):
         """Run the bot"""
         self.app.run_polling()
@@ -88,4 +88,4 @@ class AutonNET:
 
 def run_app(token: str, bot_data: dict, lang_dict: dict) -> ApplicationBuilder:
     bot = AutonNET(token, bot_data, lang_dict)
-    bot.run()
+    bot.r
