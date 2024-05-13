@@ -108,7 +108,8 @@ class AutonNET:
                 if selection:
                     await query.edit_message_caption(
                         caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
-                                f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>',
+                                f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
+                                f'\nWhat nickname would you like to go by?',
                         reply_markup=None
                     )
                 else:
