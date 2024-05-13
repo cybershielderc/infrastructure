@@ -5,6 +5,8 @@ CREATE TABLE IF NOT EXISTS `developers`
     `accepted_budget_min`   INT(20)                                       DEFAULT '100',
     `accepted_budget_max`   INT(20)                                       DEFAULT '200',
     `accepted_worktime_min` INT(20)                                       DEFAULT '4' COMMENT 'In Days',
+    `accepted_worktime_min` INT(20)                                       DEFAULT '4' COMMENT 'In Days',
+
     `rating`                FLOAT(20)                                     DEFAULT '1.0',
     `isVerified`            INT(1)                                        DEFAULT '0',
     `isAnonymous`           INT(1)                                        DEFAULT '1',
