@@ -126,14 +126,15 @@ class AutonNET:
                 else:
                     # Selection is No on remaining anonymous, default nickname is TG name
                     context.user_data['dev_reg#budget#min#awaiting']
-                    await update.callback_query.message.delete()
-                    await update.callback_query.message.reply_text(
-                        caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
-                                f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
-                                f'<strong>Nickname</strong> <code>{update.effective_user.name}</code>\n' + \
-                                f'\nWhat is the lowest price you would accept?',
-                        reply_markup=None
-                    )
+                    if update.message is None:
+                        await update.callback_query.message.delete()
+                        await update.callback_query.message.reply_text(
+                            caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
+                                    f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
+                                    f'<strong>Nickname</strong> <code>{update.effective_user.name}</code>\n' + \
+                                    f'\nWhat is the lowest price you would accept?',
+                            reply_markup=None
+                        )
 
         await query.answer()
 
@@ -152,5 +153,4 @@ class AutonNET:
 
 
 def run_app(token: str, bot_data: dict, lang_dict: dict) -> ApplicationBuilder:
-    bot = AutonNET(token, bot_data, lang_dict)
-    bot.run()
+    bot = AutonNET(token, bot_data, lan
