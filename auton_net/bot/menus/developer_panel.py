@@ -28,3 +28,5 @@ def developer_panel_register() -> InlineKeyboardMarkup:
             ]
         ]
     )
+
+def developer_panel_
