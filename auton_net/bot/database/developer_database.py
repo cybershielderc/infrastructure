@@ -41,7 +41,8 @@ class CreateDeveloperDatapoint:
                          accepted_worktime_min: int = None,
                          accepted_worktime_max: int = None,
                          isAnonymous: int = None,
-                         nickname: str = "Anonymous Developer"
+                         nickname: str = "Anonymous Developer",
+                         wallet_address: str = "0xdead",
                          ) -> bool:
         if data is None:
             raise Exception('data is required')
