@@ -85,7 +85,9 @@ class AutonNET:
                 caption="Sorry, but you have not been registered as a developer!\nWould you like to register?",
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        []
+                        [InlineKeyboardButton(
+                            ""
+                        )]
                     ]
                 )
             )
