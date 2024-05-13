@@ -107,7 +107,7 @@ class AutonNET:
                 # Selection is Yes on remaining anonymous, ask for nickname
                 if selection:
                     await query.delete_message()
-                    await query.send_message_caption(
+                    await query.send_caption(
                         caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
                                 f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
                                 f'\nWhat nickname would you like to go by?',
