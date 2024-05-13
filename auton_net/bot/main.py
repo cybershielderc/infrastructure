@@ -40,6 +40,7 @@ class AutonNET:
         app.add_handler(CallbackQueryHandler(self.mp_panel, "mp_1"))
         app.add_handler(CallbackQueryHandler(self.mp_dev_panel, "mp_dev"))
         app.add_handler(CallbackQueryHandler(self.mp_dev_register_1, "mp_dev_register"))
+        # app.add_handler(CallbackQueryHandler(self.mp_dev_register_1, "mp_dev_register"))
         # app.add_handler(CallbackQueryHandler(self.start_menu, "main"))
         # app.add_handler(CallbackQueryHandler(self.image_ai_menu, "m1"))
         # app.add_handler(CallbackQueryHandler(self.button_input))
@@ -101,6 +102,11 @@ class AutonNET:
         ):
             await query.edit_message_reply_markup(
                 reply_markup=developer_panel_is_anonymous()
+            )
+        else:
+            await query.edit_message_caption(
+                caption="Sorry, but an error occured upon registration",
+                reply_markup=developer_panel_register()
             )
 
     def run(self):
