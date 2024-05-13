@@ -103,6 +103,7 @@ class AutonNET:
                 selection = True if query.data.split("dev_reg#anon>>")[1] is 'yes' else False
                 await query.answer()
                 context.user_data['dev_reg#anon'] = selection
+                await query.edit_message_caption()
         await query.answer()
 
     def run(self):
