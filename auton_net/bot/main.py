@@ -126,6 +126,11 @@ class AutonNET:
 
         await query.answer()
 
+    async def text_input(self, update: Update, context: CallbackContext):
+        if 'dev_reg#anon#nickname#awaiting' in context.user_data:
+            if context.user_data['dev_reg#anon#nickname#awaiting']:
+                
+
     def run(self):
         """Run the bot"""
         self.app.run_polling()
