@@ -70,7 +70,7 @@ class AutonNET:
         await query.edit_message_reply_markup(
             reply_markup=marketplace_panel(),
         )
-        
+
     async def mp_dev_panel(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         await query.answer()
@@ -87,6 +87,8 @@ class AutonNET:
                 caption="Sorry, but you have not been registered as a developer!\nWould you like to register?",
                 reply_markup=developer_panel_register()
             )
+
+    async def 
 
     def run(self):
         """Run the bot"""
