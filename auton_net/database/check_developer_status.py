@@ -23,7 +23,6 @@ class CheckDeveloperStatus:
         try:
             cursor = connection.cursor()
             cursor.execute(f"SELECT * FROM developers WHERE tg_id = {telegram_id}")
-            for database in cursor:
-                print(database)
+            
         except Exception as e:
             raise e
