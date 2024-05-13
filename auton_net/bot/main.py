@@ -84,7 +84,7 @@ class AutonNET:
         else:
             await query.edit_message_text(
                 text="Sorry, but you have not been registered as a developer!\nWould you like to register?",
-                reply_markup=None
+                reply_markup=developer_panel_register
             )
 
     def run(self):
