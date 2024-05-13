@@ -115,7 +115,7 @@ class AutonNET:
                     context.user_data['dev_reg#anon#nickname#awaiting'] = True
                 else:
                     # Selection is No on remaining anonymous, default nickname is TG name
-                    context.user_data['dev_reg#anon#nickname#awaiting']
+                    context.user_data['dev_reg#budget#min#awaiting']
                     await query.edit_message_caption(
                         caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
                                 f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
