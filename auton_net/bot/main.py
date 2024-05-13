@@ -92,7 +92,9 @@ class AutonNET:
 
     async def registeration_input(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
-        if query.data.
+        if query.data.startswith("mp_dev_start_registration"):
+            await query.answer()
+            
         await query.answer()
 
     def run(self):
