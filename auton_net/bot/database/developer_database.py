@@ -29,4 +29,4 @@ class CheckDeveloperStatus:
             return True if _u else False
         except Exception as e:
             raise e
-class 
+class CreateDeveloperDatapoint:
