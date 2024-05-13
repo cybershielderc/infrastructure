@@ -108,14 +108,15 @@ class AutonNET:
                 if selection:
                     await query.edit_message_caption(
                         caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
-                                f'\n<strong>Is Anonymous?</strong> <code>{query.data.split("dev_reg#anon>>")[1]}</code>',
+                                f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>',
                         reply_markup=None
                     )
                 else:
                     # Selection is No on remaining anonymous, default nickname is TG name
                     await query.edit_message_caption(
                         caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
-                                f'\n<strong>Is Anonymous?</strong> <code>{query.data.split("dev_reg#anon>>")[1]}</code>',
+                                f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
+                                f'<strong>Nickname</strong> <code>',
                         reply_markup=None
                     )
         await query.answer()
