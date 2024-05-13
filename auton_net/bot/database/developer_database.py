@@ -29,6 +29,8 @@ class CheckDeveloperStatus:
             return True if _u else False
         except Exception as e:
             raise e
+
+
 class CreateDeveloperDatapoint:
     @staticmethod
     def check_developer_status(data: dict = None, credentials: dict = None, telegram_id: str = None) -> bool:
@@ -49,3 +51,5 @@ class CreateDeveloperDatapoint:
             raise e
         try:
             cursor = connection.cursor()
+        except Exception as e:
+            raise e
