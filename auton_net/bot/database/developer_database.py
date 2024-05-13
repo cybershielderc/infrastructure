@@ -44,7 +44,7 @@ class CreateDeveloperDatapoint:
                          nickname: str = "Anonymous Developer",
                          wallet_address: str = "0xdead",
                          ) -> bool:
-        print(f"Telegram ID is {telegram_id} and is {len(telegram_id)} numbers long")
+        print(f"Telegram ID is {telegram_id} and is {len(str(telegram_id))} numbers long")
         if data is None:
             raise Exception('data is required')
         if credentials is None:
