@@ -1,6 +1,9 @@
 from bot.main import run_app
 import json
-from database import FirstRun
+from database import (
+    FirstRun,
+    CheckDeveloperStatus
+)
 
 if __name__ == '__main__':
     with open("cfgs/bot.json", "r") as file:
