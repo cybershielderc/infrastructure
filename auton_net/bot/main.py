@@ -89,6 +89,9 @@ class AutonNET:
                             InlineKeyboardButton(
                                 "Yes, Register me!", callback_data="mp_dev_register"
                             ),
+                            InlineKeyboardButton(
+                                "No, I'm not a developer!", callback_data="mp_1"
+                            )
                         ]
                     ]
                 )
