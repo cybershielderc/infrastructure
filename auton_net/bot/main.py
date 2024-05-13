@@ -89,6 +89,8 @@ class AutonNET:
             )
 
     async def mp_dev_register_1(self, update: Update, context: CallbackContext) -> None:
+        query = update.callback_query
+        await query.answer()
 
     def run(self):
         """Run the bot"""
