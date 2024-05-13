@@ -105,7 +105,7 @@ class AutonNET:
             )
         else:
             await query.edit_message_caption(
-                caption="Sorry, but an error occured upon registration",
+                caption="Sorry, but an error occured upon registration!",
                 reply_markup=developer_panel_register()
             )
 
