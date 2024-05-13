@@ -80,7 +80,8 @@ class AutonNET:
             await query.edit_message_reply_markup(
                 reply_markup=developer_panel_main()
             )
-        
+        else:
+            
     def run(self):
         """Run the bot"""
         self.app.run_polling()
