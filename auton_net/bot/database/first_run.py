@@ -27,12 +27,12 @@ class FirstRun:
             raise e
 
     def execute_scripts(self):
-        files = os.listdir(".bot/database/tables/")
+        files = os.listdir("./bot/database/tables/")
         for file in files:
-            with open(os.path.join(".bot/database/tables/", file), "r") as data:
+            with open(os.path.join("./bot/database/tables/", file), "r") as data:
                 try:
                     self.cursor.execute(data.read())
-                    print("Successfully executed ", os.path.join(".bot/database/tables/", file))
+                    print("Successfully executed ", os.path.join("./bot/database/tables/", file))
                 except Exception as e:
                     raise e
                 data.close()
