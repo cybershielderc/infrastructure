@@ -93,7 +93,8 @@ class AutonNET:
         query = update.callback_query
         await query.answer()
         if CreateDeveloperDatapoint.create_developer(
-            da
+            database=self.bot_data['database'],
+            
         )
 
     def run(self):
