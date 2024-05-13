@@ -68,5 +68,9 @@ class CreateDeveloperDatapoint:
             ({telegram_id}, -1, {accepted_budget_min}, {accepted_budget_max}, {accepted_worktime_min},{accepted_worktime_max}, 5.0, 0, {isAnonymous}, {nickname}, '{wallet_address}', 0, 0, 0, 0.0, 0);
             """
             cursor.execute(statement)
+            connection.commit()
+            cursor.close()
+            connection.close()
+            return True
         except Exception as e:
             raise e
