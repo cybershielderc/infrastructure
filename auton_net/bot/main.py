@@ -38,7 +38,6 @@ class AutonNET:
     def _initialize_bot(self) -> ApplicationBuilder:
         app: ApplicationBuilder = ApplicationBuilder().token(self.token).build()
         app.add_handler(CallbackQueryHandler(self.mp_panel, "mp_1"))
-        app.add_handler(CallbackQueryHandler(self.mp_dev_register_1, "mp_dev_start_registration"))
         app.add_handler(CallbackQueryHandler(self.mp_dev_panel, "mp_dev"))
         # app.add_handler(CallbackQueryHandler(self.mp_dev_register_1, "mp_dev_register_proceed_to_anonymity"))
         # app.add_handler(CallbackQueryHandler(self.start_menu, "main"))
