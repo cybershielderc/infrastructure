@@ -82,6 +82,6 @@ class AutonNET:
         self.app.run_polling()
 
 
-def run_app(token: str, lang_dict: dict) -> ApplicationBuilder:
-    bot = AutonNET(token, lang_dict)
+def run_app(token: str, bot_data: dict, lang_dict: dict) -> ApplicationBuilder:
+    bot = AutonNET(token, bot_data, lang_dict)
     bot.run()
