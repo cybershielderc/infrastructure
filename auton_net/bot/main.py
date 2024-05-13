@@ -22,8 +22,8 @@ from .menus import (
     developer_panel_register
 )
 from .database import (
-    CheckDeveloperStatus
-    
+    CheckDeveloperStatus,
+    CreateDeveloperDatapoint
 )
 
 
