@@ -94,7 +94,8 @@ class AutonNET:
         query = update.callback_query
         if query.data.startswith("mp_dev_start_registration"):
             await query.answer()
-            context.user_data['']
+            context.user_data['devRegistration'] = True
+            
         await query.answer()
 
     def run(self):
