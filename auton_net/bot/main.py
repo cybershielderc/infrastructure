@@ -95,20 +95,6 @@ class AutonNET:
         query = update.callback_query
         await query.answer()
 
-        if CreateDeveloperDatapoint.create_developer(
-                data=self.bot_data['database'],
-                credentials=self.bot_data['database']['credentials'],
-                telegram_id=update.effective_user.id
-        ):
-            await query.edit_message_reply_markup(
-                reply_markup=developer_panel_is_anonymous()
-            )
-        else:
-            await query.edit_message_caption(
-                caption="Sorry, but an error occured upon registration!",
-                reply_markup=marketplace_panel()
-            )
-
     def run(self):
         """Run the bot"""
         self.app.run_polling()
