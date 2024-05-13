@@ -129,7 +129,11 @@ class AutonNET:
     async def text_input(self, update: Update, context: CallbackContext):
         if 'dev_reg#anon#nickname#awaiting' in context.user_data:
             if context.user_data['dev_reg#anon#nickname#awaiting']:
-
+                if update.message.reply_to_message:
+                    # Capture message
+                    user_input = update.message.text
+                    await update.message.delete()
+                    await update.message.reply_to_message.delete()
 
     def run(self):
         """Run the bot"""
