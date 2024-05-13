@@ -91,7 +91,7 @@ class AutonNET:
                 reply_markup=developer_panel_register()
             )
 
-    async def mp_dev_register_1(self, update: Update, context: CallbackContext) -> None:
+    async def registeration_input(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         await query.answer()
 
