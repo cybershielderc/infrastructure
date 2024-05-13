@@ -111,7 +111,7 @@ class AutonNET:
                         reply_markup=None
                     )
                 else:
-                    # Selection is No on remanining anonymous, default
+                    # Selection is No on remanining anonymous, default nickname is TG name
         await query.answer()
 
     def run(self):
