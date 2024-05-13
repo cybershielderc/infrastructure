@@ -100,7 +100,7 @@ class AutonNET:
                 telegram_id=update.effective_user.id
         ):
             await query.edit_message_reply_markup(
-                reply_markup=developer_panel_main()
+                reply_markup=developer_panel_is_anonymous()
             )
 
     def run(self):
