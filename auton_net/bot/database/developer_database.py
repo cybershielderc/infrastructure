@@ -36,7 +36,7 @@ class CreateDeveloperDatapoint:
     def create_developer(data: dict = None,
                          credentials: dict = None,
                          telegram_id: str = None,
-                         ) -> bool:
+                         accepted_budget_min: ) -> bool:
         if data is None:
             raise Exception('data is required')
         if credentials is None:
