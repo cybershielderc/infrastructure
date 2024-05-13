@@ -78,7 +78,8 @@ class AutonNET:
         query = update.callback_query
         await query.answer()
         await query.edit_message_reply_markup(
-            caption="",
+            caption="Would you like to remain anonymous on our platform?\n"+\
+            ,
             reply_markup=developer_panel_is_anonymous(),
         )
 
