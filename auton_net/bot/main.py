@@ -20,7 +20,7 @@ from .menus import (
     marketplace_panel,
     developer_panel_main
 )
-from ..database import (
+from database import (
     CheckDeveloperStatus
 )
 
