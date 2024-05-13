@@ -92,10 +92,11 @@ class AutonNET:
     async def mp_dev_register_1(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         await query.answer()
+
         if CreateDeveloperDatapoint.create_developer(
             data=self.bot_data['database'],
             credentials=self.bot_data['database']['credentials'],
-            telegram_id=update.
+            telegram_id=update.effective_user.id
         )
 
     def run(self):
