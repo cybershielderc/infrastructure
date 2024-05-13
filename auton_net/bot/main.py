@@ -79,7 +79,7 @@ class AutonNET:
         await query.answer()
         await query.edit_message_reply_markup(
             caption="Would you like to remain anonymous on our platform?\n" + \
-                    "By selecting <strong>yes</strong>",
+                    "By selecting <strong>yes</strong> your ",
             reply_markup=developer_panel_is_anonymous(),
         )
 
