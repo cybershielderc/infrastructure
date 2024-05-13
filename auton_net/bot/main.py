@@ -97,7 +97,7 @@ class AutonNET:
             await query.answer()
             context.user_data['devRegistration'] = True
             await query.edit_message_caption(caption='', reply_markup=developer_panel_is_anonymous())
-        if query.data.s
+        if 
         await query.answer()
 
     def run(self):
