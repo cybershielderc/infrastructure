@@ -63,7 +63,7 @@ class AutonNET:
                 reply_markup=start_menu() if not menu else menu,
                 photo=open("./bot/images/banners/banner.jpg", "rb"),
             )
-
+    
     async def mp_panel(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         await query.answer()
