@@ -38,7 +38,7 @@ def developer_panel_is_anonymous() -> InlineKeyboardMarkup:
                     "✅ Yes", callback_data="dev_reg#anon>>yes"
                 ),
                 InlineKeyboardButton(
-                    "❌ No, I'd like to be seen", callback_data="dev_reg#anon>>no"
+                    "❌ No", callback_data="dev_reg#anon>>no"
                 )
             ]
         ]
