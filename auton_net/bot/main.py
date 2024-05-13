@@ -83,6 +83,7 @@ class AutonNET:
                     "when communicating with a client!, Instead a nickname will be shown!\n" + \
                     "By selecting <strong>no</strong> your name will be visible by the\n" + \
                     "receiving end!",
+            parse_mode='HTML',
             reply_markup=developer_panel_is_anonymous(),
         )
 
