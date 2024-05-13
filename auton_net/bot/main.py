@@ -19,7 +19,8 @@ from .menus import (
     start_menu,
     marketplace_panel,
     developer_panel_main,
-    developer_panel_register
+    developer_panel_register,
+    developer_panel_is_anonymous
 )
 from .database import (
     CheckDeveloperStatus,
@@ -94,11 +95,13 @@ class AutonNET:
         await query.answer()
 
         if CreateDeveloperDatapoint.create_developer(
-            data=self.bot_data['database'],
-            credentials=self.bot_data['database']['credentials'],
-            telegram_id=update.effective_user.id
+                data=self.bot_data['database'],
+                credentials=self.bot_data['database']['credentials'],
+                telegram_id=update.effective_user.id
         ):
-            
+            await query.edit_message_reply_markup(
+                reply_markup=developer_panel_main()
+            )
 
     def run(self):
         """Run the bot"""
