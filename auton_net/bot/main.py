@@ -88,7 +88,7 @@ class AutonNET:
                 reply_markup=developer_panel_register()
             )
 
-    async def 
+    async def mp_dev_register_1(self, update: Update, context: CallbackContext) -> None:
 
     def run(self):
         """Run the bot"""
