@@ -23,8 +23,9 @@ class CheckDeveloperStatus:
         try:
             cursor = connection.cursor()
             cursor.execute(f"SELECT * FROM developers WHERE tg_id = {telegram_id}")
+            
             if cursor.fetchone() is None:
-                
+
                 return True
             else:
                 return True
