@@ -20,7 +20,9 @@ from .menus import (
     marketplace_panel,
     developer_panel_main
 )
-from .
+from ..database import (
+    CheckDeveloperStatus
+)
 
 
 class AutonNET:
