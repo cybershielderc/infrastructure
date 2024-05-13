@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS `developers`
 (
-    `tg_id`                 INT                                           DEFAULT 0,
+    `tg_id`                 INT                                           DEFAULT '0',
     `linked_portfolio_rid`  INT(20)                                       DEFAULT '0',
     `accepted_budget_min`   INT(20)                                       DEFAULT '100',
     `accepted_budget_max`   INT(20)                                       DEFAULT '200',
