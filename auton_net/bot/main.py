@@ -104,7 +104,7 @@ class AutonNET:
                 await query.answer()
                 context.user_data['dev_reg#anon'] = selection
                 await query.edit_message_caption(
-                    caption='<strong>Registration Form</strong>' + \
+                    caption=f'<strong>Registration Form</strong> <code>{query.}</code>' + \
                             f'\n<strong>Is Anonymous?</strong> <code>{selection}</code>',
                     reply_markup=None
                 )
