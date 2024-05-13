@@ -29,4 +29,17 @@ def developer_panel_register() -> InlineKeyboardMarkup:
         ]
     )
 
-def developer_panel_is_anonymous() -> bool:
+
+def developer_panel_is_anonymous() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(
+                    "✅ Yes, I'd like to remain anonymous", callback_data="mp_dev_register"
+                ),
+                InlineKeyboardButton(
+                    "❌ No, I'm not a developer!", callback_data="mp_1"
+                )
+            ]
+        ]
+    )
