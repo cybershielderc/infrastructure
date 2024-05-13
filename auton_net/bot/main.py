@@ -75,6 +75,7 @@ class AutonNET:
         # Check if user is a developer
         if CheckDeveloperStatus.check_developer_status(
             self.bot_data['database'], self.bot_data['database']['credentials'],
+            
         )
         await query.edit_message_reply_markup(
             reply_markup=developer_panel_main()
