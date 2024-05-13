@@ -22,7 +22,7 @@ class CheckDeveloperStatus:
             raise e
         try:
             cursor = connection.cursor()
-            cursor.execute("SHOW DATABASES;")
+            cursor.execute("SELECT * FROM developers")
             for database in cursor:
                 print(database)
         except Exception as e:
