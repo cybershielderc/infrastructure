@@ -92,6 +92,7 @@ class AutonNET:
 
     async def registeration_input(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
+        if query.data.startswith("ignore_0xdead"): await query.answer()
         if query.data.startswith("mp_dev_start_registration"):
             await query.answer()
             context.user_data['devRegistration'] = True
