@@ -100,7 +100,7 @@ class AutonNET:
         if context.user_data['devRegistration']:
             # Developer Registration
             if query.data.startswith("dev_reg#anon>>"):
-                selection = True if query.data.split("dev_reg#anon>>")[1] is 'yes' elif 
+                selection = True if query.data.split("dev_reg#anon>>")[1] is 'yes' else False
                 await query.answer()
         await query.answer()
 
