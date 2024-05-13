@@ -106,7 +106,7 @@ class AutonNET:
         else:
             await query.edit_message_caption(
                 caption="Sorry, but an error occured upon registration!",
-                reply_markup=developer_panel_register()
+                reply_markup=marketplace_panel()
             )
 
     def run(self):
