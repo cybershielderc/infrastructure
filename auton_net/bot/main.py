@@ -88,4 +88,4 @@ class AutonNET:
 
 def run_app(token: str, bot_data: dict, lang_dict: dict) -> ApplicationBuilder:
     bot = AutonNET(token, bot_data, lang_dict)
-    bot.r
+    bot.run()
