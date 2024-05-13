@@ -82,7 +82,7 @@ class AutonNET:
                     "By selecting <strong>yes</strong> your name will be kept hidden\n" + \
                     "when communicating with a client!, Instead a nickname will be shown!\n" + \
                     "By selecting <strong>no</strong> your name will be visible by the\n" + \
-                    "receiving end ",
+                    "receiving end!",
             reply_markup=developer_panel_is_anonymous(),
         )
 
