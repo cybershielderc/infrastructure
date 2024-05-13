@@ -92,6 +92,7 @@ class AutonNET:
 
     async def registeration_input(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
+        if query.data.
         await query.answer()
 
     def run(self):
