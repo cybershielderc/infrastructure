@@ -23,7 +23,7 @@ from .menus import (
 
 
 class AutonNET:
-    def __init__(self, token: str, lang_dict: dict = {}, developer_databse: ):
+    def __init__(self, token: str, lang_dict: dict = {}):
         self.token = token
         self.lang = lang_dict
         self.app = self._initialize_bot()
