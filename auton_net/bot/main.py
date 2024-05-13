@@ -77,7 +77,7 @@ class AutonNET:
     async def mp_dev_register_1(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         await query.answer()
-        await query.edit_message_reply_markup(
+        await query.edit_message_caption(
             caption="Would you like to remain anonymous on our platform?\n" + \
                     "By selecting <strong>yes</strong> your name will be kept hidden\n" + \
                     "when communicating with a client!, Instead a nickname will be shown!\n" + \
