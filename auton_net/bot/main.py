@@ -100,7 +100,7 @@ class AutonNET:
         if context.user_data['devRegistration']:
             # Developer Registration
             if query.data.startswith("dev_reg#anon>>"):
-                await q
+                await query.answer()
         await query.answer()
 
     def run(self):
