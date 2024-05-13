@@ -18,7 +18,8 @@ from urllib.parse import urlparse
 from .menus import (
     start_menu,
     marketplace_panel,
-    developer_panel_main
+    developer_panel_main,
+    de
 )
 from .database import (
     CheckDeveloperStatus
