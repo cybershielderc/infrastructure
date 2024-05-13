@@ -74,6 +74,13 @@ class AutonNET:
             reply_markup=marketplace_panel(),
         )
 
+    async def mp_dev_register_1(self, update: Update, context: CallbackContext) -> None:
+        query = update.callback_query
+        await query.answer()
+        await query.edit_message_reply_markup(
+            reply_markup=developer_panel_is_anonymous(),
+        )
+
     async def mp_dev_panel(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         await query.answer()
