@@ -53,9 +53,9 @@ class CreateDeveloperDatapoint:
             cursor = connection.cursor()
             statement = f"""
             INSERT INTO `developers`
-(`tg_id`, `linked_portfolio_rid`, `accepted_budget_min`, `accepted_budget_max`, `accepted_worktime`, `rating`, `isVerified`, `isAnonymous`, `nickname`, `connected_wallet`, `completed_orders`, `open_orders`, `rejected_orders`, `avg_completion_time`, `isAddressVerified`)
-VALUES
-(123456789, 0, 100, 200, 4, 1.0, 0, 1, 'Anonymous Developer', '0xdead', 0, 0, 0, 1.5, 0);
-"""
+            (`tg_id`, `linked_portfolio_rid`, `accepted_budget_min`, `accepted_budget_max`, `accepted_worktime`, `rating`, `isVerified`, `isAnonymous`, `nickname`, `connected_wallet`, `completed_orders`, `open_orders`, `rejected_orders`, `avg_completion_time`, `isAddressVerified`)
+            VALUES
+            ({}, 0, 100, 200, 4, 1.0, 0, 1, 'Anonymous Developer', '0xdead', 0, 0, 0, 1.5, 0);
+            """
         except Exception as e:
             raise e
