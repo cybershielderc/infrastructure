@@ -8,6 +8,15 @@ from telegram.ext import CallbackContext
 from auton_net.bot.database import CreateDeveloperDatapoint
 
 
+def ftime() -> str:
+    return datetime.now().strftime("%d-%m-%Y//%H:%M:%S.%f")
+
+
+def fprint(system, string, end='\n'):
+    out_string = f"[{ftime()}]({system}): {string}"
+    print(out_string, end=end)
+
+
 async def register_anonymous_logic(update: Update, context: CallbackContext) -> None:
     query = update.callback_query
     if query.data.split("dev_reg#anon>>")[1] == "yes":
@@ -472,7 +481,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                 parse_mode='HTML',
                 reply_markup=None
             )
-            
+
             st_time = datetime.now()
             try:
                 user_data = (
