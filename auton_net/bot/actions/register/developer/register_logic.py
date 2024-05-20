@@ -508,7 +508,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                     f"\n\nHere's some statistics for you to think about while we re-direct you\n" + \
                     f"to the seller panel we created for you!\n\n" + \
                     f"Your registration took roughly <strong>{datetime.now() - st_time} seconds</strong>!\n" + \
-                    f"You are now a seller amongst our large network of sellers!"
+                    f"You are now a <strong>seller</strong> amongst our large network of sellers!"
             )
 
 
