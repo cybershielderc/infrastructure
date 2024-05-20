@@ -510,7 +510,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                     f"to the seller panel we created for you!\n\n" + \
                     f"Your registration took roughly <strong>{datetime.now() - st_time} seconds</strong>!\n" + \
                     f"You are now a <strong>seller</strong> amongst our large network of <strong>sellers!</strong>\n\n" + \
-                    f"",
+                    f"\nYou will be redirected to the seller panel within 5 seconds!",
                 parse_mode="HTML"
             )
             await asyncio.sleep(5)
