@@ -117,8 +117,8 @@ class GetDeveloperInformation:
             accepted_worktime_min, integer
             accepted_worktime_max, integer
             rating, float between 1-5
-            isAnonymous, boolean
             isVerified, boolean
+            isAnonymous, boolean
             nickname, string
             completed_orders, integer
             open_orders, integer
@@ -160,7 +160,7 @@ class GetDeveloperInformation:
                 result[5],  # accepted_worktime_min
                 result[6],  # accepted_worktime_max
                 result[7],  # rating
-                
+
             ]]
         except Exception as e:
             return [e]
