@@ -7,3 +7,4 @@ class RetrieveAllConversations:
     @staticmethod
     def get_all_conversations(cls, data: dict = None):
         if not data: raise Exception("No database datat provided")
+        query = f'''SELECT conversation.'''
