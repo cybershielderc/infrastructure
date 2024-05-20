@@ -136,8 +136,8 @@ class GetDeveloperInformation:
             )
         except mysql.connector.errors.DatabaseError as e:
             raise e
-        return [None]
         try:
             cursor = connection.cursor()
         except Exception as e:
             raise e
+        return [None]
