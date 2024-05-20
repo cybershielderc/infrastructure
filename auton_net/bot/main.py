@@ -128,9 +128,9 @@ class AutonNET:
         query = update.callback_query
         if query.data.startswith("ignore_0xdead"): await query.answer()
         if 'devRegistration' in context.user_data:
-            await seller_registration(update, context)
+            await seller_register_logic(update, context)
         if 'clientRegistration' in context.user_data:
-            await seller_registration(update, context)
+            await seller_register_logic(update, context)
         await query.answer()
 
     async def text_input(self, update: Update, context: CallbackContext):
