@@ -118,5 +118,5 @@ class GetDeveloperInformation:
             rejected_orders, integer
             isAddressVerified, boolean
             avg_completion_time, float
-            
+            connected_wallet, boolean
         """
