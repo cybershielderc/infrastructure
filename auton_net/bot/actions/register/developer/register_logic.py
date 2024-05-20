@@ -499,7 +499,8 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
         # After account creation edit the message that the account was created successfully
         if not message:
             raise Exception("Account creation message was not sent!")
-        
+        await message.edit_text()
+
 
 async def register_logic(update: Update, context: CallbackContext) -> None:
     query = update.callback_query
