@@ -511,6 +511,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                     f"You are now a <strong>seller</strong> amongst our large network of <strong>sellers!</strong>",
                 parse_mode="HTML"
             )
+            await asyncio.sleep()
 
 
 async def register_logic(update: Update, context: CallbackContext) -> None:
