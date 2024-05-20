@@ -339,19 +339,3 @@ class AutonNET:
 def run_app(token: str, bot_data: dict, lang_dict: dict) -> ApplicationBuilder:
     bot = AutonNET(token, bot_data, lang_dict)
     bot.run()
-
-
-if __name__ == '__main__':
-    with open("./cfgs/bot.json", "r") as file:
-        data = json.loads(file.read())
-        file.close()
-    f_run = FirstRun(data['database'], data['database']['credentials'])
-    # Connect to First Run Model
-    f_run.connect()
-    # Execute Table Creation Scripts
-    f_run.execute_scripts()
-    # Run APP
-    try:
-        run_app(data["keys"]["tg"], data, {})
-    except KeyboardInterrupt as e:
-        exit(-1)
