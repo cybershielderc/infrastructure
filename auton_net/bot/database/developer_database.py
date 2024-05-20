@@ -110,4 +110,5 @@ class GetDeveloperInformation:
             accepted_worktime_min, integer
             accepted_worktime_max, integer
             rating, float between 1-5
+            
         """
