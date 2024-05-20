@@ -105,5 +105,5 @@ class GetDeveloperInformation:
         """
         Gets developer information and returns it as a list object formatting in such a way
         [
-            accepted_
+            accepted_budget_min, integer
         """
