@@ -514,6 +514,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
             except Exception as e:
                 raise e
             # After account creation edit the message that the account was created successfully
+            fprint("RTXI", f"Attempting to send U-{update.effective_user.id} the fun message")
             if not message:
                 raise Exception("Account creation message was not sent!")
             await message.edit_text(
