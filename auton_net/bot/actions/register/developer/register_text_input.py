@@ -1,5 +1,16 @@
+from datetime import datetime
+
 from telegram.ext import CallbackContext
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+
+
+def ftime() -> str:
+    return datetime.now().strftime("%d-%m-%Y//%H:%M:%S.%f")
+
+
+def fprint(system, string, end='\n'):
+    out_string = f"[{ftime()}]({system}): {string}"
+    print(out_string, end=end)
 
 
 async def handle_seller_text_input(update: Update, context: CallbackContext) -> None:
