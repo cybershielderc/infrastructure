@@ -143,7 +143,7 @@ class GetDeveloperInformation:
             )
             result = cursor.fetchone()
             if result is None or len(result) == 0:
-                raise Exception("")
+                raise Exception(f"Fatal SQL Error ")
         except Exception as e:
             return [e]
         return [None]
