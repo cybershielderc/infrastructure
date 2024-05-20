@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff929a0d-e48f-4b40-a380-e4d32f5dfa64" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auton_net/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auton_net/bot/database/developer_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/database/developer_database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auton_net/bot/database/tables/create_customers_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/database/tables/create_customers_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auton_net/bot/database/tables/create_developers_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/database/tables/create_developers_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auton_net/bot/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auton_net/bot/menus/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/menus/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auton_net/bot/menus/developer_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/menus/developer_panel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auton_net/bot/actions/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/actions/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auton_net/bot/actions/register/developer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/actions/register/developer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auton_net/bot/actions/register/developer/register_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/actions/register/developer/register_logic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,11 +86,11 @@
       <recent name="C:\Users\RDL_MobileWorkStatio\PycharmProjects\UnnamedCryptoProject\vshieldapi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\RDL_MobileWorkStatio\PycharmProjects\UnnamedCryptoProject\auton_net\bot\actions\register\developer" />
       <recent name="C:\Users\RDL_MobileWorkStatio\PycharmProjects\UnnamedCryptoProject\auton_net\bot" />
       <recent name="C:\Users\RDL_MobileWorkStatio\PycharmProjects\UnnamedCryptoProject\auton_net\bot\images\banners" />
       <recent name="C:\Users\RDL_MobileWorkStatio\PycharmProjects\UnnamedCryptoProject\cfgs" />
       <recent name="C:\Users\RDL_MobileWorkStatio\PycharmProjects\UnnamedCryptoProject" />
-      <recent name="C:\Users\RDL_MobileWorkStatio\PycharmProjects\UnnamedCryptoProject\bots\modules" />
     </key>
   </component>
   <component name="RunManager" selected="Python.__init__">
@@ -289,7 +284,7 @@
       <workItem from="1715866763894" duration="3360000" />
       <workItem from="1716145520123" duration="1387000" />
       <workItem from="1716151412718" duration="167000" />
-      <workItem from="1716216013852" duration="598000" />
+      <workItem from="1716216013852" duration="760000" />
     </task>
     <servers />
   </component>
