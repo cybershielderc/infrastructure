@@ -520,8 +520,8 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                 reply_markup=context.bot_data["developer_panel"]()
             )
         else:
-            await update.message.delete()
-            message = await update.message.reply_text(
+            await update.callback_query.message.delete()
+            message = await update.callback_query.message.reply_text(
                 text=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
                      f'\n<strong>Is Anonymous?</strong> <code>{context.user_data["dev_reg#var><isAnonReadable"]}</code>\n' + \
                      f'<strong>Nickname</strong> <code>{context.user_data["dev_reg#var><nickname"]}</code>\n' + \
@@ -584,7 +584,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
             await asyncio.sleep(5)
             fprint("RTXI", f"Attempting to redirect U-{update.effective_user.id} to seller panel")
             await message.delete()
-            await update.(
+            await update.message(
                 text=f"",
                 reply_markup=context.bot_data["developer_panel"]()
             )
