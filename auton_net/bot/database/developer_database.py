@@ -139,7 +139,7 @@ class GetDeveloperInformation:
         try:
             cursor = connection.cursor()
             cursor.execute(
-                f"""SELECT * FROM developers WHERE t"""
+                f"""SELECT * FROM developers WHERE tg_id={telegram_id};"""
             )
         except Exception as e:
             return [e]
