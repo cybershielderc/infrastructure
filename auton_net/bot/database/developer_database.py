@@ -141,6 +141,7 @@ class GetDeveloperInformation:
             cursor.execute(
                 f"""SELECT * FROM developers WHERE tg_id={telegram_id};"""
             )
+            result = cursor.fetchone()
         except Exception as e:
             return [e]
         return [None]
