@@ -161,6 +161,7 @@ class GetDeveloperInformation:
                 result[6],  # accepted_worktime_max
                 result[7],  # rating
                 True if result[8] is 1 else False,  # isVerified
+                
             ]]
         except Exception as e:
             return [e]
