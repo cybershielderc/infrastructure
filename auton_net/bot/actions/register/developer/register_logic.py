@@ -484,6 +484,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
             fprint("RTXI", f"Attempting to register U-{update.effective_user.id}")
             st_time = datetime.now()
             try:
+                fprint("RTXI", f"Gathering user data for registration of U-{update.effective_user.id}")
                 user_data = (
                     1 if context.user_data["dev_reg#var><isAnonReadable"] == "Yes" else 0,  # U-0
                     context.user_data["dev_reg#var><nickname"],  # U-1
@@ -493,6 +494,8 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                     context.user_data["dev_reg#var><max_timeframe"],  # U-5
                     context.user_data["dev_reg#var><eth_address"]  # U-6
                 )
+                fprint("RTXI", f"User data for U-{update.effective_user.id} was gathered successfully")
+                fprint("RTXI", f"Attempting to register U-{update.effective_user.id} in the database")
                 CreateDeveloperDatapoint.create_developer(
                     host=context.bot_data["database_host"],
                     database=context.bot_data["database_database"],
