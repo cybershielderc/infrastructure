@@ -159,7 +159,8 @@ class GetDeveloperInformation:
                 result[4],  # accepted_budget_max
                 result[5],  # accepted_worktime_min
                 result[6],  # accepted_worktime_max
-                re
+                result[7],  # rating
+                
             ]]
         except Exception as e:
             return [e]
