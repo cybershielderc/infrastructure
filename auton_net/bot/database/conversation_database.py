@@ -20,9 +20,9 @@ class RetrieveAllConversations:
         try:
             cursor = connection.cursor()
             cursor.execute(query)
-            _u = cursor.fetchone()
+            _u = cursor.fetchall()
             cursor.close()
             connection.close()
-            return True if _u else False
+            return _u
         except Exception as e:
             raise e
