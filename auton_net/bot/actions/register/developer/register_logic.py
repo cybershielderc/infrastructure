@@ -507,7 +507,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                     f"<strong>Welcome to the AutonNET Seller Family!</strong>" + \
                     f"\n\nHere's some statistics for you to think about while we re-direct you\n" + \
                     f"to the seller panel we created for you!\n\n" + \
-                    f"Your registration took roughly"
+                    f"Your registration took roughly <strong>{}</strong>"
             )
 
 
