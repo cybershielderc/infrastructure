@@ -4,13 +4,14 @@ from telegram import (
     Update, InlineKeyboardButton, InlineKeyboardMarkup,
     InputMediaPhoto
 )
+from telegram.constants import ParseMode
 from telegram.ext import (
     ApplicationBuilder,
     CommandHandler,
     MessageHandler,
     CallbackContext,
     filters,
-    CallbackQueryHandler
+    CallbackQueryHandler, Application
 )
 import os
 from urllib.request import urlretrieve
@@ -26,6 +27,19 @@ from .database import (
     CheckDeveloperStatus,
     CreateDeveloperDatapoint
 )
+from .actions import (
+    register_logic
+)
+import datetime
+
+
+def ftime() -> str:
+    return datetime.datetime.now().strftime("%d-%m-%Y//%H:%M:%S.%f")
+
+
+def fprint(system, string, end='\n'):
+    out_string = f"[{ftime()}]({system}): {string}"
+    print(out_string, end=end)
 
 
 class AutonNET:
@@ -35,8 +49,12 @@ class AutonNET:
         self.bot_data = bot_data
         self.app = self._initialize_bot()
 
-    def _initialize_bot(self) -> ApplicationBuilder:
-        app: ApplicationBuilder = ApplicationBuilder().token(self.token).build()
+    def _initialize_bot(self) -> Application:
+        app: Application = ApplicationBuilder().token(self.token).build()
+        app.bot_data["database_host"] = f"{self.bot_data['database']['host']}:{self.bot_data['database']['port']}"
+        app.bot_data["database_user"] = f"{self.bot_data['database']['credentials']['username']}"
+        app.bot_data["database_password"] = f"{self.bot_data['database']['credentials']['password']}"
+        app.bot_data["database_database"] = f"{self.bot_data['database']['database']}"
         app.add_handler(CallbackQueryHandler(self.mp_panel, "mp_1"))
         app.add_handler(CallbackQueryHandler(self.mp_dev_register_1, "mp_dev_start_registration"))
         app.add_handler(CallbackQueryHandler(self.mp_dev_panel, "mp_dev"))
@@ -77,6 +95,8 @@ class AutonNET:
     async def mp_dev_register_1(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         await query.answer()
+        context.user_data['devRegistration'] = True
+        print('devReg is now True')
         await query.edit_message_caption(
             caption="Would you like to remain anonymous on our platform?\n" + \
                     "By selecting <strong>yes</strong> your name will be kept hidden\n" + \
@@ -107,68 +127,211 @@ class AutonNET:
     async def registeration_input(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         if query.data.startswith("ignore_0xdead"): await query.answer()
-        if query.data.startswith("mp_dev_start_registration"):
-            await query.answer()
-            context.user_data['devRegistration'] = True
-            await query.edit_message_caption(caption='', reply_markup=developer_panel_is_anonymous())
-        if context.user_data['devRegistration']:
-            # Developer Registration
-            if query.data.startswith("dev_reg#anon>>"):
-                selection = True if query.data.split("dev_reg#anon>>")[1] is 'yes' else False
-                selection_readable = query.data.split("dev_reg#anon>>")[1]
-                await query.answer()
-                context.user_data['dev_reg#anon'] = selection
-                # Selection is Yes on remaining anonymous, ask for nickname
-                if selection:
-                    context.user_data['dev_reg#anon#nickname#awaiting'] = True
-                    if update.message is None:
-                        await update.callback_query.message.delete()
-                        await update.callback_query.message.reply_text(
-                            caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
-                                    f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
-                                    f'\nWhat nickname would you like to go by?',
-                            reply_markup=telegram.ForceReply()
-                        )
-                    else:
-                        await update.message.delete()
-                        await update.message.reply_text(
-                            caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
-                                    f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
-                                    f'\nWhat nickname would you like to go by?',
-                            reply_markup=telegram.ForceReply()
-                        )
-                else:
-                    # Selection is No on remaining anonymous, default nickname is TG name
-                    context.user_data['dev_reg#budget#min#awaiting']
-                    if update.message is None:
-                        await update.callback_query.message.delete()
-                        await update.callback_query.message.reply_text(
-                            caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
-                                    f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
-                                    f'<strong>Nickname</strong> <code>{update.effective_user.name}</code>\n' + \
-                                    f'\nWhat is the lowest price you would accept?',
-                            reply_markup=None
-                        )
-                    else:
-                        await update.message.delete()
-                        await update.message.reply_text(
-                            caption=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
-                                    f'\n<strong>Is Anonymous?</strong> <code>{selection_readable}</code>\n' + \
-                                    f'<strong>Nickname</strong> <code>{update.effective_user.name}</code>\n' + \
-                                    f'\nWhat is the lowest price you would accept?',
-                            reply_markup=None
-                        )
-
+        if 'devRegistration' in context.user_data:
+            await register_logic(update, context)
         await query.answer()
 
     async def text_input(self, update: Update, context: CallbackContext):
-        if 'dev_reg#anon#nickname#awaiting' in context.user_data:
-            if context.user_data['dev_reg#anon#nickname#awaiting']:
-                if update.message.reply_to_message:
-                    # Capture message
-                    user_input = update.message.text
-                    await update.message.delete()
-                    await update.message.reply_to_message.delete()
+        if 'devRegistration' in context.user_data:
+            if 'dev_reg#anon#nickname#awaiting' in context.user_data:
+                if context.user_data['dev_reg#anon#nickname#awaiting']:
+                    if update.message.reply_to_message:
+                        # Capture message
+                        user_input = update.message.text
+                        await update.message.delete()
+                        await update.message.reply_to_message.delete()
+                        fprint("RTXI", f"U-{update.effective_user.id} gave {user_input} as a nickname")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Showing confirmation menu")
+                        context.user_data['dev_reg#anon#nickname#awaiting'] = False
+                        context.user_data['dev_reg#var><nickname'] = user_input
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Saved Nickname to user data until confirmation")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Set Awaiting Status to False")
+                        await update.message.reply_text(
+                            text=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
+                                 f'\n<strong>Is Anonymous?</strong> <code>{context.user_data["dev_reg#var><isAnonReadable"]}</code>\n' + \
+                                 f'<strong>Nickname</strong> <code>{context.user_data["dev_reg#var><nickname"]}</code>\n' + \
+                                 f'\nAre you sure this is the nickname you want?',
+                            parse_mode='HTML',
+                            reply_markup=InlineKeyboardMarkup(
+                                [
+                                    [
+                                        InlineKeyboardButton('✅ Yes', callback_data='dev_reg#nick#confirmation>>yes'),
+                                        InlineKeyboardButton('❌ No', callback_data='dev_reg#nick#confirmation>>no')
+                                    ]
+                                ]
+                            )
+                        )
+            if 'dev_reg#budget#min#awaiting' in context.user_data:
+                if context.user_data['dev_reg#budget#min#awaiting']:
+                    if update.message.reply_to_message:
+                        # Capture message
+                        user_input = update.message.text
+                        await update.message.delete()
+                        await update.message.reply_to_message.delete()
+                        fprint("RTXI", f"U-{update.effective_user.id} gave {user_input}$ as a min budget")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Showing confirmation menu")
+                        context.user_data['dev_reg#budget#min#awaiting'] = False
+                        context.user_data['dev_reg#var><min_budget'] = user_input
+                        fprint("RTXI",
+                               f"U-{update.effective_user.id}>> Saved Min Budget to user data until confirmation")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Set Awaiting Status to False")
+                        await update.message.reply_text(
+                            text=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
+                                 f'\n<strong>Is Anonymous?</strong> <code>{context.user_data["dev_reg#var><isAnonReadable"]}</code>\n' + \
+                                 f'<strong>Nickname</strong> <code>{context.user_data["dev_reg#var><nickname"]}</code>\n' + \
+                                 f'<strong>Minimum Price (In USD)</strong> <code>{context.user_data["dev_reg#var><min_budget"]}$</code>\n' + \
+                                 f'\nAre you sure this is the minimum accepted price you want?',
+                            parse_mode='HTML',
+                            reply_markup=InlineKeyboardMarkup(
+                                [
+                                    [
+                                        InlineKeyboardButton('✅ Yes',
+                                                             callback_data='dev_reg#min_budget#confirmation>>yes'),
+                                        InlineKeyboardButton('❌ No',
+                                                             callback_data='dev_reg#min_budget#confirmation>>no')
+                                    ]
+                                ]
+                            )
+                        )
+            if 'dev_reg#budget#max#awaiting' in context.user_data:
+                if context.user_data['dev_reg#budget#max#awaiting']:
+                    if update.message.reply_to_message:
+                        # Capture message
+                        user_input = update.message.text
+                        await update.message.delete()
+                        await update.message.reply_to_message.delete()
+                        fprint("RTXI", f"U-{update.effective_user.id} gave {user_input}$ as a max budget")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Showing confirmation menu")
+                        context.user_data['dev_reg#budget#max#awaiting'] = False
+                        context.user_data['dev_reg#var><max_budget'] = user_input
+                        fprint("RTXI",
+                               f"U-{update.effective_user.id}>> Saved Min Budget to user data until confirmation")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Set Awaiting Status to False")
+                        await update.message.reply_text(
+                            text=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
+                                 f'\n<strong>Is Anonymous?</strong> <code>{context.user_data["dev_reg#var><isAnonReadable"]}</code>\n' + \
+                                 f'<strong>Nickname</strong> <code>{context.user_data["dev_reg#var><nickname"]}</code>\n' + \
+                                 f'<strong>Minimum Price (In USD)</strong> <code>{context.user_data["dev_reg#var><min_budget"]}$</code>\n' + \
+                                 f'<strong>Maximum Price (In USD)</strong> <code>{context.user_data["dev_reg#var><max_budget"]}$</code>\n' + \
+                                 f'\nAre you sure this is the maximum accepted price you want?',
+                            parse_mode='HTML',
+                            reply_markup=InlineKeyboardMarkup(
+                                [
+                                    [
+                                        InlineKeyboardButton('✅ Yes',
+                                                             callback_data='dev_reg#max_budget#confirmation>>yes'),
+                                        InlineKeyboardButton('❌ No',
+                                                             callback_data='dev_reg#max_budget#confirmation>>no')
+                                    ]
+                                ]
+                            )
+                        )
+            if 'dev_reg#timeframe#min#awaiting' in context.user_data:
+                if context.user_data['dev_reg#timeframe#min#awaiting']:
+                    if update.message.reply_to_message:
+                        # Capture message
+                        user_input = update.message.text
+                        await update.message.delete()
+                        await update.message.reply_to_message.delete()
+                        fprint("RTXI", f"U-{update.effective_user.id} gave {user_input} as a min timeframe")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Showing confirmation menu")
+                        context.user_data['dev_reg#timeframe#min#awaiting'] = False
+                        context.user_data['dev_reg#var><min_timeframe'] = user_input
+                        fprint("RTXI",
+                               f"U-{update.effective_user.id}>> Saved Min Timeframe to user data until confirmation")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Set Awaiting Status to False")
+                        await update.message.reply_text(
+                            text=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
+                                 f'\n<strong>Is Anonymous?</strong> <code>{context.user_data["dev_reg#var><isAnonReadable"]}</code>\n' + \
+                                 f'<strong>Nickname</strong> <code>{context.user_data["dev_reg#var><nickname"]}</code>\n' + \
+                                 f'<strong>Minimum Price (In USD)</strong> <code>{context.user_data["dev_reg#var><min_budget"]}$</code>\n' + \
+                                 f'<strong>Maximum Price (In USD)</strong> <code>{context.user_data["dev_reg#var><max_budget"]}$</code>\n' + \
+                                 f'<strong>Minimum Timeframe (In Days)</strong> <code>{context.user_data["dev_reg#var><min_timeframe"]}</code>\n' + \
+ \
+                                 f'\nAre you sure this is the minimum accepted timeframe you want?',
+                            parse_mode='HTML',
+                            reply_markup=InlineKeyboardMarkup(
+                                [
+                                    [
+                                        InlineKeyboardButton('✅ Yes',
+                                                             callback_data='dev_reg#min_timeframe#confirmation>>yes'),
+                                        InlineKeyboardButton('❌ No',
+                                                             callback_data='dev_reg#min_timeframe#confirmation>>no')
+                                    ]
+                                ]
+                            )
+                        )
+            if 'dev_reg#timeframe#max#awaiting' in context.user_data:
+                if context.user_data['dev_reg#timeframe#max#awaiting']:
+                    if update.message.reply_to_message:
+                        # Capture message
+                        user_input = update.message.text
+                        await update.message.delete()
+                        await update.message.reply_to_message.delete()
+                        fprint("RTXI", f"U-{update.effective_user.id} gave {user_input} as a max timeframe")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Showing confirmation menu")
+                        context.user_data['dev_reg#timeframe#max#awaiting'] = False
+                        context.user_data['dev_reg#var><max_timeframe'] = user_input
+                        fprint("RTXI",
+                               f"U-{update.effective_user.id}>> Saved Min Timeframe to user data until confirmation")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Set Awaiting Status to False")
+                        await update.message.reply_text(
+                            text=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
+                                 f'\n<strong>Is Anonymous?</strong> <code>{context.user_data["dev_reg#var><isAnonReadable"]}</code>\n' + \
+                                 f'<strong>Nickname</strong> <code>{context.user_data["dev_reg#var><nickname"]}</code>\n' + \
+                                 f'<strong>Minimum Price (In USD)</strong> <code>{context.user_data["dev_reg#var><min_budget"]}$</code>\n' + \
+                                 f'<strong>Maximum Price (In USD)</strong> <code>{context.user_data["dev_reg#var><max_budget"]}$</code>\n' + \
+                                 f'<strong>Minimum Timeframe (In Days)</strong> <code>{context.user_data["dev_reg#var><min_timeframe"]}</code>\n' + \
+                                 f'<strong>Maximum Timeframe (In Days)</strong> <code>{context.user_data["dev_reg#var><max_timeframe"]}</code>\n' + \
+                                 f'\nAre you sure this is the maximum accepted timeframe you want?',
+                            parse_mode='HTML',
+                            reply_markup=InlineKeyboardMarkup(
+                                [
+                                    [
+                                        InlineKeyboardButton('✅ Yes',
+                                                             callback_data='dev_reg#max_timeframe#confirmation>>yes'),
+                                        InlineKeyboardButton('❌ No',
+                                                             callback_data='dev_reg#max_timeframe#confirmation>>no')
+                                    ]
+                                ]
+                            )
+                        )
+            if 'dev_reg#wallet_addr#awaiting' in context.user_data:
+                if context.user_data['dev_reg#wallet_addr#awaiting']:
+                    if update.message.reply_to_message:
+                        # Capture message
+                        user_input = update.message.text
+                        await update.message.delete()
+                        await update.message.reply_to_message.delete()
+                        fprint("RTXI", f"U-{update.effective_user.id} gave {user_input} as a eth wallet timeframe")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Showing confirmation menu")
+                        context.user_data['dev_reg#wallet_addr#awaiting'] = False
+                        context.user_data['dev_reg#var><eth_address'] = user_input
+                        fprint("RTXI",
+                               f"U-{update.effective_user.id}>> Saved Eth address to user data until confirmation")
+                        fprint("RTXI", f"U-{update.effective_user.id}>> Set Awaiting Status to False")
+                        await update.message.reply_text(
+                            text=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
+                                 f'\n<strong>Is Anonymous?</strong> <code>{context.user_data["dev_reg#var><isAnonReadable"]}</code>\n' + \
+                                 f'<strong>Nickname</strong> <code>{context.user_data["dev_reg#var><nickname"]}</code>\n' + \
+                                 f'<strong>Minimum Price (In USD)</strong> <code>{context.user_data["dev_reg#var><min_budget"]}$</code>\n' + \
+                                 f'<strong>Maximum Price (In USD)</strong> <code>{context.user_data["dev_reg#var><max_budget"]}$</code>\n' + \
+                                 f'<strong>Minimum Timeframe (In Days)</strong> <code>{context.user_data["dev_reg#var><min_timeframe"]}</code>\n' + \
+                                 f'<strong>Minimum Timeframe (In Days)</strong> <code>{context.user_data["dev_reg#var><max_timeframe"]}</code>\n' + \
+                                 f'<strong>Ethereum Wallet Address</strong> <code>{context.user_data["dev_reg#var><eth_address"]}</code>\n' + \
+                                 f'\nAre you sure this is the ethereum wallet address you want linked to your account?',
+                            parse_mode='HTML',
+                            reply_markup=InlineKeyboardMarkup(
+                                [
+                                    [
+                                        InlineKeyboardButton('✅ Yes',
+                                                             callback_data='dev_reg#wallet_addr#confirmation>>yes'),
+                                        InlineKeyboardButton('❌ No',
+                                                             callback_data='dev_reg#wallet_addr#confirmation>>no')
+                                    ]
+                                ]
+                            )
+                        )
 
     def run(self):
         """Run the bot"""

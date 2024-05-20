@@ -4,7 +4,7 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 def developer_panel_main() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("🛠️ Developer Panel 🧾", callback_data="ignore_0xdead")],
+            [InlineKeyboardButton("🛠️ Seller Panel 🧾", callback_data="ignore_0xdead")],
             [
                 InlineKeyboardButton("🛠️ Stats 🧾", callback_data="mp_dev_stats"),
                 InlineKeyboardButton(" 🧾Orders 🧾", callback_data="mp_dev_orders"),
@@ -23,7 +23,7 @@ def developer_panel_register() -> InlineKeyboardMarkup:
                     "✅ Yes, Register me!", callback_data="mp_dev_start_registration"
                 ),
                 InlineKeyboardButton(
-                    "❌ No, I'm not a developer!", callback_data="mp_1"
+                    "❌ No, I'm not a seller!", callback_data="mp_1"
                 )
             ]
         ]

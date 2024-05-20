@@ -1,6 +1,6 @@
 from bot.main import run_app
 import json
-from auton_net.bot.database import (
+from bot.database import (
     FirstRun,
     CheckDeveloperStatus
 )
@@ -15,4 +15,7 @@ if __name__ == '__main__':
     # Execute Table Creation Scripts
     f_run.execute_scripts()
     # Run APP
-    run_app(data["keys"]["tg"], data, {})
+    try:
+        run_app(data["keys"]["tg"], data, {})
+    except KeyboardInterrupt as e:
+        exit(-1)

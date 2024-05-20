@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS `developers`
 (
     `tg_id`                 BIGINT                                        DEFAULT '0',
+    `developer_uuid`        TEXT(256) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT '0000000',
     `linked_portfolio_rid`  INT(20)                                       DEFAULT '0',
     `accepted_budget_min`   BIGINT                                        DEFAULT '100',
     `accepted_budget_max`   BIGINT                                        DEFAULT '200',

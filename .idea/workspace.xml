@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff929a0d-e48f-4b40-a380-e4d32f5dfa64" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auton_net/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auton_net/bot/database/developer_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/database/developer_database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auton_net/bot/database/tables/create_customers_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/database/tables/create_customers_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auton_net/bot/database/tables/create_developers_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/database/tables/create_developers_table.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auton_net/bot/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auton_net/bot/menus/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/menus/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auton_net/bot/menus/developer_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/menus/developer_panel.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +76,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\RDL_MobileWorkStatio\\AppData\\Local\\Programs\\PyCharm Professional\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -278,6 +285,11 @@
       <workItem from="1715003450233" duration="31732000" />
       <workItem from="1715447916813" duration="702000" />
       <workItem from="1715503448412" duration="27993000" />
+      <workItem from="1715776664053" duration="1732000" />
+      <workItem from="1715866763894" duration="3360000" />
+      <workItem from="1716145520123" duration="1387000" />
+      <workItem from="1716151412718" duration="167000" />
+      <workItem from="1716216013852" duration="598000" />
     </task>
     <servers />
   </component>
@@ -286,7 +298,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/UnnamedCryptoProject$sherlock_test.coverage" NAME="sherlock_test Coverage Results" MODIFIED="1713822027110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bots/modules/osint/tests" />
-    <SUITE FILE_PATH="coverage/UnnamedCryptoProject$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1715573524344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auton_net" />
+    <SUITE FILE_PATH="coverage/UnnamedCryptoProject$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1715777102009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auton_net" />
     <SUITE FILE_PATH="coverage/UnnamedCryptoProject$database_handler.coverage" NAME="database_handler Coverage Results" MODIFIED="1713140651549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bots/tele" />
     <SUITE FILE_PATH="coverage/UnnamedCryptoProject$__init____3_.coverage" NAME="__init__ (3) Coverage Results" MODIFIED="1714587832619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nexverse/bot" />
     <SUITE FILE_PATH="coverage/UnnamedCryptoProject$sherlock_test__1_.coverage" NAME="sherlock_test (1) Coverage Results" MODIFIED="1713822106450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bots/modules/tests" />
