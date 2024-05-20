@@ -162,6 +162,7 @@ class GetDeveloperInformation:
                 result[7],  # rating
                 True if result[8] == 1 else False,  # isVerified
                 True if result[9] == 1 else False,  # isAnonymous
+                
             ]]
         except Exception as e:
             return [e]
