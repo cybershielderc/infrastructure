@@ -1,4 +1,4 @@
-from bot.main import run_app
+from bot import run_app
 import json
 from bot.database import (
     FirstRun,
