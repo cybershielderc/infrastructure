@@ -96,4 +96,4 @@ class CreateDeveloperDatapoint:
         except Exception as e:
             raise e
 
-class 
+class GetDeveloperInformation
