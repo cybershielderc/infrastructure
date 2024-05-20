@@ -7,7 +7,7 @@ class RetrieveAllConversations:
     @staticmethod
     def get_all_conversations(cls, data: dict = None):
         if not data: raise Exception("No database datat provided")
-        query = f'''SELECT initiator_id, participant_id WHERE conversation.isHolding = 1;'''
+        query = f'''SELECT initiator_id, participant_id FROM conversation WHERE conversation.isHolding = 1;'''
         try:
             connection = mysql.connector.connect(
                 host=data['host'],
