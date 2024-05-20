@@ -588,7 +588,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                 caption=f'<strong>Hi {update.effective_user.name}</strong>',
                 reply_markup=context.bot_data["developer_panel"](),
                 parse_mode='HTML',
-                photo=open("./bot/images/banners/banner.jpg", "rb"),
+                photo=open("./bot/images/banners/banner.jpg", "rb")
             )
 
 
