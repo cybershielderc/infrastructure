@@ -100,5 +100,5 @@ class GetDeveloperInformation:
     @staticmethod
     def get_developer_information(
             host: str = None, database: str = None, username: str = None, password: str = None, telegram_id: int = None
-    ):
+    ) -> list:
         
