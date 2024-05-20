@@ -104,7 +104,7 @@ class GetDeveloperInformation:
     ) -> list:
         """
         Gets developer information and returns it as a list object formatting in such a way
-        [
+        @return [
             accepted_budget_min, integer
             accepted_budget_max, integer
             accepted_worktime_min, integer
@@ -121,5 +121,4 @@ class GetDeveloperInformation:
             connected_wallet, boolean
             developer_uuid, string
         ]
-        @return 
         """
