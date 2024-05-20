@@ -439,6 +439,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
     else:
         # Show next menu
         context.user_data['dev_reg#wallet_addr#awaiting'] = False
+        message = None
         if update.message is None:
             await update.callback_query.message.delete()
             await update.callback_query.message.reply_text(
