@@ -583,6 +583,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
             )
             await asyncio.sleep(5)
             fprint("RTXI", f"Attempting to redirect U-{update.effective_user.id} to seller panel")
+            await message.delete()
             await message.edit_text(
                 text=f"",
                 reply_markup=context.bot_data["developer_panel"]()
