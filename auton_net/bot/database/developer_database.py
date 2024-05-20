@@ -160,7 +160,7 @@ class GetDeveloperInformation:
                 result[5],  # accepted_worktime_min
                 result[6],  # accepted_worktime_max
                 result[7],  # rating
-                result[8]
+                True if result[8] is 1 else False
             ]]
         except Exception as e:
             return [e]
