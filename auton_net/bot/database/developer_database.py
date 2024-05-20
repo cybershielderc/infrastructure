@@ -156,4 +156,4 @@ class GetDeveloperInformation:
             ]]
         except Exception as e:
             return [e]
-        return [None, []]
+        return [None, []]
