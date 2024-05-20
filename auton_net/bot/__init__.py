@@ -1,6 +1,5 @@
 from .main import run_app
-
-f
+import json
 
 if __name__ == '__main__':
     with open("./cfgs/bot.json", "r") as file:
