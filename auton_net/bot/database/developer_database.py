@@ -139,4 +139,5 @@ class GetDeveloperInformation:
         return [None]
         try:
             cursor = connection.cursor()
-        except mysql.connector.
+        except Exception as e:
+            raise e
