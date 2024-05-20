@@ -142,7 +142,7 @@ class GetDeveloperInformation:
                 f"""SELECT * FROM developers WHERE tg_id={telegram_id};"""
             )
             result = cursor.fetchone()
-            
+            if result is None or len(result) == 0:
         except Exception as e:
             return [e]
         return [None]
