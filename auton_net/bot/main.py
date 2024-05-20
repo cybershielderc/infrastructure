@@ -1,10 +1,8 @@
-import requests.exceptions
-import telegram
+import datetime
+
 from telegram import (
-    Update, InlineKeyboardButton, InlineKeyboardMarkup,
-    InputMediaPhoto
+    Update, InlineKeyboardButton, InlineKeyboardMarkup
 )
-from telegram.constants import ParseMode
 from telegram.ext import (
     ApplicationBuilder,
     CommandHandler,
@@ -13,9 +11,11 @@ from telegram.ext import (
     filters,
     CallbackQueryHandler, Application
 )
-import os
-from urllib.request import urlretrieve
-from urllib.parse import urlparse
+
+from .actions.register.developer import register_logic as seller_register_logic
+from .database import (
+    CheckDeveloperStatus
+)
 from .menus import (
     start_menu,
     marketplace_panel,
@@ -23,12 +23,10 @@ from .menus import (
     developer_panel_register,
     developer_panel_is_anonymous
 )
-from .database import (
-    CheckDeveloperStatus,
-    CreateDeveloperDatapoint
+from bot.database import (
+    FirstRun,
+    CheckDeveloperStatus
 )
-from .actions.register.developer import register_logic as seller_register_logic
-import datetime
 
 
 def ftime() -> str:
