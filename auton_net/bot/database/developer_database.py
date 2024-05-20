@@ -150,6 +150,8 @@ class GetDeveloperInformation:
             return [True, [
                 result[3],
                 result[4],
+                result[5],
+                result[6],
                 
             ]]
         except Exception as e:
