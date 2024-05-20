@@ -109,5 +109,5 @@ class GetDeveloperInformation:
             accepted_budget_max, integer
             accepted_worktime_min, integer
             accepted_worktime_max, integer
-            rating, 
+            rating, float 
         """
