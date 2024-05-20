@@ -466,6 +466,56 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                 parse_mode='HTML',
                 reply_markup=None
             )
+            fprint("RTXI", f"Attempting to register U-{update.effective_user.id}")
+            st_time = datetime.now()
+            try:
+                fprint("RTXI", f"Gathering user data for registration of U-{update.effective_user.id}")
+                user_data = (
+                    1 if context.user_data["dev_reg#var><isAnonReadable"] == "Yes" else 0,  # U-0
+                    context.user_data["dev_reg#var><nickname"],  # U-1
+                    context.user_data["dev_reg#var><min_budget"],  # U-2
+                    context.user_data["dev_reg#var><max_budget"],  # U-3
+                    context.user_data["dev_reg#var><min_timeframe"],  # U-4
+                    context.user_data["dev_reg#var><max_timeframe"],  # U-5
+                    context.user_data["dev_reg#var><eth_address"]  # U-6
+                )
+                fprint("RTXI", f"User data for U-{update.effective_user.id} was gathered successfully")
+                fprint("RTXI", f"Attempting to register U-{update.effective_user.id} in the database")
+                CreateDeveloperDatapoint.create_developer(
+                    host=context.bot_data["database_host"],
+                    database=context.bot_data["database_database"],
+                    username=context.bot_data["database_user"],
+                    password=context.bot_data["database_password"],
+                    telegram_id=update.effective_user.id,
+                    accepted_budget_min=user_data[2],
+                    accepted_budget_max=user_data[3],
+                    accepted_worktime_min=user_data[4],
+                    accepted_worktime_max=user_data[5],
+                    isAnonymous=user_data[0],
+                    nickname=user_data[1],
+                    wallet_address=user_data[6]
+                )
+                fprint("RTXI", f"U-{update.effective_user.id} was registered successfully in the database")
+            except Exception as e:
+                raise e
+            # After account creation edit the message that the account was created successfully
+            fprint("RTXI", f"Attempting to send U-{update.effective_user.id} the fun message")
+            if not message:
+                raise Exception("Account creation message was not sent!")
+            await message.edit_text(
+                text= \
+                    f"<strong>Successfully registered!<strong>\n\n" + \
+                    f"<strong>Welcome to the AutonNET Seller Family!</strong>" + \
+                    f"\n\nHere's some statistics for you to think about while we re-direct you\n" + \
+                    f"to the seller panel we created for you!\n\n" + \
+                    f"Your registration took roughly <strong>{datetime.now() - st_time} seconds</strong>!\n" + \
+                    f"You are now a <strong>seller</strong> amongst our large network of <strong>sellers!</strong>\n\n" + \
+                    f"\nYou will be redirected to the seller panel within 5 seconds!",
+                parse_mode="HTML"
+            )
+            await asyncio.sleep(5)
+            fprint("RTXI", f"Attempting to redirect U-{update.effective_user.id} to seller panel")
+            await context.bot_data["developer_panel"](update, context)
         else:
             await update.message.delete()
             message = await update.message.reply_text(
