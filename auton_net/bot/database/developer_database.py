@@ -136,3 +136,4 @@ class GetDeveloperInformation:
             )
         except mysql.connector.errors.DatabaseError as e:
             raise e
+        return [None]
