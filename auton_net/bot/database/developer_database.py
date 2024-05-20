@@ -112,5 +112,6 @@ class GetDeveloperInformation:
             rating, float between 1-5
             isAnonymous, boolean
             isVerified, boolean
+            nickname, string
             
         """
