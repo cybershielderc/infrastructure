@@ -112,9 +112,7 @@ class AutonNET:
                 self.bot_data['database'], self.bot_data['database']['credentials'],
                 str(update.effective_user.id)
         ):
-            await query.edit_message_reply_markup(
-                reply_markup=developer_panel_main()
-            )
+            await query.edit_message_reply_markup(reply_markup=developer_panel_main())
         else:
             await query.edit_message_caption(
                 caption="Sorry, but you have not been registered as a developer!\nWould you like to register?",
