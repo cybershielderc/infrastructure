@@ -1,8 +1,11 @@
-from typing import Any
+from datetime import date, datetime, timedelta, time
+from typing import Any, List, Set
 
 import mysql.connector
 import os
 import uuid
+
+from _decimal import Decimal
 
 
 class CheckDeveloperStatus:
@@ -103,7 +106,9 @@ class GetDeveloperInformation:
     @staticmethod
     def get_developer_information(
             host: str = None, database: str = None, username: str = None, password: str = None, telegram_id: int = None
-    ) -> list[object, [Any]]:
+    ) -> list[bool | list[
+        Decimal | bytes | date | datetime | float | int | set[str] | str | timedelta | None | time | Any]] | list[
+             Exception] | list[list[Any] | None]:
         """
         Gets developer information and returns it as a list object formatting in such a way
         @return [
@@ -158,4 +163,4 @@ class GetDeveloperInformation:
             ]]
         except Exception as e:
             return [e]
-        return [None, []]
+        return [False, []]
