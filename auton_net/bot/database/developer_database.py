@@ -113,5 +113,6 @@ class GetDeveloperInformation:
             isAnonymous, boolean
             isVerified, boolean
             nickname, string
+            completed_orders, integer
             
         """
