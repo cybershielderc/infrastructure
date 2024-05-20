@@ -23,7 +23,7 @@ from .menus import (
     developer_panel_register,
     developer_panel_is_anonymous
 )
-from bot.database import (
+from .database import (
     FirstRun,
     CheckDeveloperStatus
 )
