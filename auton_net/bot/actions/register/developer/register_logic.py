@@ -514,8 +514,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                 parse_mode="HTML"
             )
             await asyncio.sleep(5)
-            await message.delete()
-            await
+            await context.bot_data["developer_panel"]()
 
 
 async def register_logic(update: Update, context: CallbackContext) -> None:
