@@ -470,6 +470,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                 parse_mode='HTML',
                 reply_markup=None
             )
+            time
             try:
                 user_data = (
                     1 if context.user_data["dev_reg#var><isAnonReadable"] == "Yes" else 0,  # U-0
