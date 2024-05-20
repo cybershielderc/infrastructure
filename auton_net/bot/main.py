@@ -12,8 +12,8 @@ from telegram.ext import (
     CallbackQueryHandler, Application
 )
 
-from .actions.register.developer import register_logic as seller_register_logic
-from .actions.register.developer import register_text_input as seller_register_text
+from .actions.register.developer.register_logic import register_logic as seller_register_logic
+from .actions.register.developer.register_text_input import register_text_input as seller_register_text
 from .database import (
     CheckDeveloperStatus
 )
