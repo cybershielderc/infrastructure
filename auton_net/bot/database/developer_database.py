@@ -143,6 +143,8 @@ class GetDeveloperInformation:
             )
             result = cursor.fetchone()
             if result is None or len(result) == 0:
+                cursor.close()
+                connection.close()
                 raise Exception(
                     f"Fatal SQL Error occurred when trying to fetch Seller information! for U-{telegram_id}")
 
