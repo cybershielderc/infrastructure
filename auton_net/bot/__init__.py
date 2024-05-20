@@ -1,5 +1,8 @@
 from .main import run_app
 import json
+from .database import (
+    FirstRun
+)
 
 if __name__ == '__main__':
     with open("./cfgs/bot.json", "r") as file:
