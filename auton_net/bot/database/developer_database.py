@@ -105,4 +105,5 @@ class GetDeveloperInformation:
         """
         Gets developer information and returns it as a list object formatting in such a way
         [
+            accepted_
         """
