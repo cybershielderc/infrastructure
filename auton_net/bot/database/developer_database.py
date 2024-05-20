@@ -119,5 +119,7 @@ class GetDeveloperInformation:
             isAddressVerified, boolean
             avg_completion_time, float
             connected_wallet, boolean
-            deve
+            developer_uuid, string
+        ]
+        @
         """
