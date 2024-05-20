@@ -121,5 +121,4 @@ class GetDeveloperInformation:
             connected_wallet, boolean
             developer_uuid, string
         ]
-        @
         """
