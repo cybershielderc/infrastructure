@@ -500,7 +500,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
             if not message:
                 raise Exception("Account creation message was not sent!")
             await message.edit_text(
-                text=""
+                text=f""
             )
 
 
