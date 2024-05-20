@@ -143,6 +143,7 @@ class GetDeveloperInformation:
             )
             result = cursor.fetchone()
             if result is None or len(result) == 0:
+                raise Exception("")
         except Exception as e:
             return [e]
         return [None]
