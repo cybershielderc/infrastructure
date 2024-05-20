@@ -1,4 +1,4 @@
-CREATE TABLE `conversation`
+CREATE TABLE IF NOT EXISTS `conversation`
 (
     `initiator_id`           BIGINT DEFAULT '0',
     `participant_id`         BIGINT,
