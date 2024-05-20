@@ -4,5 +4,6 @@ from .register_logic import (
     register_maximum_timeframe,
     register_maximum_budget,
     register_anonymous_logic,
+    register_nickname_logic,
 
 )
