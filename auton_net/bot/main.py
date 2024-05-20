@@ -13,6 +13,7 @@ from telegram.ext import (
 )
 
 from .actions.register.developer import register_logic as seller_register_logic
+from .actions.register.developer import register_text_input as seller_register_text
 from .database import (
     CheckDeveloperStatus
 )
