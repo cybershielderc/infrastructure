@@ -481,7 +481,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                 parse_mode='HTML',
                 reply_markup=None
             )
-            fprint("RTXI", f"Attempting to register U-{}")
+            fprint("RTXI", f"Attempting to register U-{update.effective_user.id}")
             st_time = datetime.now()
             try:
                 user_data = (
