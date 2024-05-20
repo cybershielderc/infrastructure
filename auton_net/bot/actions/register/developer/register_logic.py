@@ -456,7 +456,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
             )
         else:
             await update.message.delete()
-            await update.message.reply_text(
+            message = await update.message.reply_text(
                 text=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
                      f'\n<strong>Is Anonymous?</strong> <code>{context.user_data["dev_reg#var><isAnonReadable"]}</code>\n' + \
                      f'<strong>Nickname</strong> <code>{context.user_data["dev_reg#var><nickname"]}</code>\n' + \
