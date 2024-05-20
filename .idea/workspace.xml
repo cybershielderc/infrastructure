@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ff929a0d-e48f-4b40-a380-e4d32f5dfa64" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/auton_net/bot/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auton_net/bot/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +286,7 @@
       <workItem from="1715866763894" duration="3360000" />
       <workItem from="1716145520123" duration="1387000" />
       <workItem from="1716151412718" duration="167000" />
-      <workItem from="1716216013852" duration="3244000" />
+      <workItem from="1716216013852" duration="3279000" />
     </task>
     <servers />
   </component>
@@ -302,7 +301,7 @@
     <SUITE FILE_PATH="coverage/UnnamedCryptoProject$__init____2_.coverage" NAME="__init__ (2) Coverage Results" MODIFIED="1714585015289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nexverse/modelslab_api" />
     <SUITE FILE_PATH="coverage/UnnamedCryptoProject$main.coverage" NAME="main Coverage Results" MODIFIED="1715116607127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/UnnamedCryptoProject$sherlock_test__2_.coverage" NAME="sherlock_test (2) Coverage Results" MODIFIED="1713826698660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/UnnamedCryptoProject$__init____1_.coverage" NAME="__init__ (1) Coverage Results" MODIFIED="1713925271956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bots/modules/cryptocurrency" />
+    <SUITE FILE_PATH="coverage/UnnamedCryptoProject$__init____1_.coverage" NAME="__init__ (1) Coverage Results" MODIFIED="1716223802993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auton_net/bot" />
     <SUITE FILE_PATH="coverage/UnnamedCryptoProject$database_handler.coverage" NAME="database_handler Coverage Results" MODIFIED="1713140651549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bots/tele" />
     <SUITE FILE_PATH="coverage/UnnamedCryptoProject$sherlock_test__1_.coverage" NAME="sherlock_test (1) Coverage Results" MODIFIED="1713822106450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bots/modules/tests" />
     <SUITE FILE_PATH="coverage/UnnamedCryptoProject$app.coverage" NAME="app Coverage Results" MODIFIED="1714074319219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cdn/mainnode_webserver" />
