@@ -98,4 +98,4 @@ class CreateDeveloperDatapoint:
 
 class GetDeveloperInformation:
     @staticmethod
-    def 
+    def get_developer_information()
