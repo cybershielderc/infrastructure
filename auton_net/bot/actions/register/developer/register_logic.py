@@ -526,4 +526,4 @@ async def register_logic(update: Update, context: CallbackContext) -> None:
                 await register_maximum_timeframe(update, context)
             # Wallet Address Confirmation
             if query.data.startswith("dev_reg#wallet_addr#confirmation>>"):
-                await register_wallet_address(update, context)
+                await register_wallet_address(update, context)
