@@ -139,5 +139,5 @@ class GetDeveloperInformation:
         try:
             cursor = connection.cursor()
         except Exception as e:
-            raise e
+            return [None]
         return [None]
