@@ -96,7 +96,7 @@ class AutonNET:
         query = update.callback_query
         await query.answer()
         context.user_data['devRegistration'] = True
-        fprint("R")
+        fprint("", )
         await query.edit_message_caption(
             caption="Would you like to remain anonymous on our platform?\n" + \
                     "By selecting <strong>yes</strong> your name will be kept hidden\n" + \
