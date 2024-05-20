@@ -586,7 +586,9 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
             await message.delete()
             await update.callback_query.message.reply_photo(
                 caption=f'<strong>Hi {update.effective_user.name}</strong>',
-                reply_markup=context.bot_data["developer_panel"]()
+                reply_markup=context.bot_data["developer_panel"](),
+                parse_mode='HTML',
+                photo=open("./bot/images/banners/banner.jpg", "rb"),
             )
 
 
