@@ -107,4 +107,5 @@ class GetDeveloperInformation:
         [
             accepted_budget_min, integer
             accepted_budget_max, integer
+            
         """
