@@ -96,4 +96,6 @@ class CreateDeveloperDatapoint:
         except Exception as e:
             raise e
 
-class GetDeveloperInformation
+class GetDeveloperInformation:
+    @staticmethod
+    def 
