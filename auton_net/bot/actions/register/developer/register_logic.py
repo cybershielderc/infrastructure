@@ -498,7 +498,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
             raise e
         # After account creation edit the message that the account was created successfully
         if not message:
-            pr
+            raise Exception("")
 
 
 async def register_logic(update: Update, context: CallbackContext) -> None:
