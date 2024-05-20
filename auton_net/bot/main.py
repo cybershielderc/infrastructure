@@ -27,7 +27,7 @@ from .database import (
     CheckDeveloperStatus,
     CreateDeveloperDatapoint
 )
-from actions.register.developer import register_logic as seller_register_logic
+from .actions.register.developer import register_logic as seller_register_logic
 import datetime
 
 
