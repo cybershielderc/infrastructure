@@ -122,3 +122,17 @@ class GetDeveloperInformation:
             developer_uuid, string
         ]
         """
+        if password is None or username is None or database is None or host is None:
+            raise Exception('data is required')
+        if telegram_id is None:
+            raise Exception('Telegram ID is required')
+        try:
+            connection = mysql.connector.connect(
+                host=host.split(":")[0],
+                port=host.split(":")[1],
+                user=username,
+                password=password,
+                database=database
+            )
+        except mysql.connector.errors.DatabaseError as e:
+            raise e
