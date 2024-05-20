@@ -4,4 +4,4 @@ import uuid
 
 class RetrieveAllConversations:
     @staticmethod
-    
+    def get_all_conversations(cls, ):
