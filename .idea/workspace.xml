@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff929a0d-e48f-4b40-a380-e4d32f5dfa64" name="Changes" comment="" />
+    <list default="true" id="ff929a0d-e48f-4b40-a380-e4d32f5dfa64" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/auton_net/bot/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/auton_net/bot/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -289,12 +291,23 @@
       <workItem from="1715866763894" duration="3360000" />
       <workItem from="1716145520123" duration="1387000" />
       <workItem from="1716151412718" duration="167000" />
-      <workItem from="1716216013852" duration="11507000" />
+      <workItem from="1716216013852" duration="11526000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/auton_net/bot/actions/register/developer/register_logic.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/UnnamedCryptoProject$sherlock_test.coverage" NAME="sherlock_test Coverage Results" MODIFIED="1713822027110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bots/modules/osint/tests" />
