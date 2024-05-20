@@ -117,6 +117,6 @@ class GetDeveloperInformation:
             open_orders, integer
             rejected_orders, integer
             isAddressVerified, boolean
-            avg_completion_time, integer
+            avg_completion_time, float
             
         """
