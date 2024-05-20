@@ -495,6 +495,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
             )
         except Exception as e:
             raise e
+        # After account creation s
 
 
 async def register_logic(update: Update, context: CallbackContext) -> None:
