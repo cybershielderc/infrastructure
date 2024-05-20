@@ -96,9 +96,13 @@ class CreateDeveloperDatapoint:
         except Exception as e:
             raise e
 
+
 class GetDeveloperInformation:
     @staticmethod
     def get_developer_information(
             host: str = None, database: str = None, username: str = None, password: str = None, telegram_id: int = None
     ) -> list:
-        
+        """
+        Gets developer information and returns it as a list object formatting in such a way
+        [
+        """
