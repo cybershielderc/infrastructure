@@ -160,8 +160,8 @@ class GetDeveloperInformation:
                 result[5],  # accepted_worktime_min
                 result[6],  # accepted_worktime_max
                 result[7],  # rating
-                True if result[8] is 1 else False,  # isVerified
-                True if result[9] is 1 else False,  # isAnonymous
+                True if result[8] == 1 else False,  # isVerified
+                True if result[9] == 1 else False,  # isAnonymous
             ]]
         except Exception as e:
             return [e]
