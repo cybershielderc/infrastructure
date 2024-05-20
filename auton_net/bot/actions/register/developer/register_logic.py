@@ -515,7 +515,10 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
             )
             await asyncio.sleep(5)
             fprint("RTXI", f"Attempting to redirect U-{update.effective_user.id} to seller panel")
-            await message.edit_text()
+            await message.edit_text(
+                text="",
+                reply_markup=
+            )
         else:
             await update.message.delete()
             message = await update.message.reply_text(
