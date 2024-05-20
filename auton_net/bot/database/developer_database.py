@@ -144,8 +144,8 @@ class GetDeveloperInformation:
             result = cursor.fetchone()
             if result is None or len(result) == 0:
                 raise Exception(
-                    f"Fatal SQL Error occurred when trying to fetch Developer @redacted: Seller, information! for U-{telegram_id}")
-            
+                    f"Fatal SQL Error occurred when trying to fetch Seller information! for U-{telegram_id}")
+
         except Exception as e:
             return [e]
         return [None]
