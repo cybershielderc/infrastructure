@@ -114,5 +114,6 @@ class GetDeveloperInformation:
             isVerified, boolean
             nickname, string
             completed_orders, integer
-            
+            open_orders, integer
+            rejected_orders, integer
         """
