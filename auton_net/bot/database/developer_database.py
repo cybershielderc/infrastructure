@@ -138,7 +138,9 @@ class GetDeveloperInformation:
             raise e
         try:
             cursor = connection.cursor()
-            cursor.execute("""""")
+            cursor.execute(
+                f"""SELECT * FROM developers WHERE t"""
+            )
         except Exception as e:
             return [e]
         return [None]
