@@ -3,7 +3,7 @@ import json
 import telegram
 from telegram import Update
 from telegram.ext import CallbackContext
-from ..database import CreateDeveloperDatapoint
+from auton_net.bot.database import CreateDeveloperDatapoint
 
 
 async def register_anonymous_logic(update: Update, context: CallbackContext) -> None:
