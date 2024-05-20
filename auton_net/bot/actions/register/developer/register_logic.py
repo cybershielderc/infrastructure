@@ -510,7 +510,7 @@ async def register_wallet_address(update: Update, context: CallbackContext) -> N
                     nickname=user_data[1],
                     wallet_address=user_data[6]
                 )
-                fprint("RTXI", f"U-{update.effective_user.id}")
+                fprint("RTXI", f"U-{update.effective_user.id} was registered successfully in the database")
             except Exception as e:
                 raise e
             # After account creation edit the message that the account was created successfully
