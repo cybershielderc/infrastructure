@@ -148,7 +148,9 @@ class GetDeveloperInformation:
                 raise Exception(
                     f"Fatal SQL Error occurred when trying to fetch Seller information! for U-{telegram_id}")
             return [True, [
-                result[]
+                result[3],
+                result[4],
+                
             ]]
         except Exception as e:
             return [e]
