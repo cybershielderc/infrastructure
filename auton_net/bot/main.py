@@ -27,7 +27,7 @@ from .menus import (
 from .database import (
     FirstRun,
     CheckDeveloperStatus,
-GetDeveloperInformation
+    GetDeveloperInformation
 )
 
 
