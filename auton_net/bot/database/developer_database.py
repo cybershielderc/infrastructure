@@ -171,4 +171,4 @@ class GetDeveloperInformation:
                 result[1],  # Developer UUID
             ]]
         except Exception as e:
-            return [e]
+            return [e, []]
