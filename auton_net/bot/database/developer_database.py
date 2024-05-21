@@ -164,7 +164,7 @@ class GetDeveloperInformation:
                 True if result[9] == 1 else False,  # isAnonymous
                 result[10],  # nickname
                 result[12],  # completed_orders
-                result[]
+                result[13],  # 
             ]]
         except Exception as e:
             return [e]
