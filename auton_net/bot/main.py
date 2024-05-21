@@ -120,6 +120,21 @@ class AutonNET:
                 reply_markup=developer_panel_register()
             )
 
+    async def mp_dev_panel_stats(self, update: Update, context: CallbackContext) -> None:
+        query = update.callback_query
+        await query.answer()
+        # Check if user is a developer
+        if CheckDeveloperStatus.check_developer_status(
+                self.bot_data['database'], self.bot_data['database']['credentials'],
+                str(update.effective_user.id)
+        ):
+            await query.edit_message_reply_markup(reply_markup=developer_panel_main())
+        else:
+            await query.edit_message_caption(
+                caption="Sorry, but you have not been registered as a developer!\nWould you like to register?",
+                reply_markup=developer_panel_register()
+            )
+
     async def registeration_input(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         if query.data.startswith("ignore_0xdead"): await query.answer()
