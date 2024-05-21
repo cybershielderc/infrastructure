@@ -125,7 +125,7 @@ class AutonNET:
         query = update.callback_query
         await query.answer()
         # Check if user is a developer
-        seller_stats =
+        seller_stats = GetDeveloperInformation.
             await query.edit_message_reply_markup(reply_markup=developer_panel_main())
         else:
             await query.edit_message_caption(
