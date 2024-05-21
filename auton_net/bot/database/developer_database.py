@@ -123,8 +123,8 @@ class GetDeveloperInformation:
             completed_orders, integer
             open_orders, integer
             rejected_orders, integer
-            isAddressVerified, boolean
             avg_completion_time, float
+            isAddressVerified, boolean
             connected_wallet, boolean
             developer_uuid, string
         ]
@@ -166,7 +166,7 @@ class GetDeveloperInformation:
                 result[12],  # completed_orders
                 result[13],  # open_orders
                 result[14],  # rejected orders
-                
+
             ]]
         except Exception as e:
             return [e]
