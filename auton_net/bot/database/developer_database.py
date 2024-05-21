@@ -166,6 +166,7 @@ class GetDeveloperInformation:
                 result[12],  # completed_orders
                 result[13],  # open_orders
                 result[14],  # rejected orders
+                result[15],  # average completion time
 
             ]]
         except Exception as e:
