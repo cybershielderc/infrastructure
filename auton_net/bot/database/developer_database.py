@@ -165,7 +165,7 @@ class GetDeveloperInformation:
                 result[10],  # nickname
                 result[12],  # completed_orders
                 result[13],  # open_orders
-                result[14],  # rejected
+                result[14],  # rejected orders
             ]]
         except Exception as e:
             return [e]
