@@ -129,7 +129,7 @@ class AutonNET:
             host=context.bot_data['database_host'],
             database=context.bot_data['database_database'],
             username=context.bot_data['database_user'],
-            password=context.bot_data['']
+            password=context.bot_data['database_password']
         )
             await query.edit_message_reply_markup(reply_markup=developer_panel_main())
         else:
