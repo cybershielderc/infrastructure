@@ -130,7 +130,7 @@ class AutonNET:
             database=context.bot_data['database_database'],
             username=context.bot_data['database_user'],
             password=context.bot_data['database_password'],
-            telegram_id=
+            telegram_id=update.effective_user.id
         )
             await query.edit_message_reply_markup(reply_markup=developer_panel_main())
         else:
