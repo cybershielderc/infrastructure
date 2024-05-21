@@ -132,12 +132,12 @@ class AutonNET:
             password=context.bot_data['database_password'],
             telegram_id=update.effective_user.id
         )
-            await query.edit_message_reply_markup(reply_markup=developer_panel_main())
-        else:
-            await query.edit_message_caption(
-                caption="Sorry, but you have not been registered as a developer!\nWould you like to register?",
-                reply_markup=developer_panel_register()
-            )
+        #    await query.edit_message_reply_markup(reply_markup=developer_panel_main())
+        # else:
+        #    await query.edit_message_caption(
+        #        caption="Sorry, but you have not been registered as a developer!\nWould you like to register?",
+        #        reply_markup=developer_panel_register()
+        #    )
 
     async def registeration_input(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
