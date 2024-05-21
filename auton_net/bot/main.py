@@ -134,7 +134,7 @@ class AutonNET:
         )
         if seller_stats[0] is True:
             message = \
-                f"""<strong>Seller """
+                f"""<strong>Seller Statistics for {}"""
         #    await query.edit_message_reply_markup(reply_markup=developer_panel_main())
         # else:
         #    await query.edit_message_caption(
