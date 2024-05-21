@@ -127,7 +127,8 @@ class AutonNET:
         # Check if user is a developer
         seller_stats = GetDeveloperInformation.get_developer_information(
             host=context.bot_data['database_host'],
-            database=context.user_data
+            database=context.bot_data['database_database'],
+            username=context.bot_data['database_username']
         )
             await query.edit_message_reply_markup(reply_markup=developer_panel_main())
         else:
