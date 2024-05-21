@@ -132,7 +132,7 @@ class AutonNET:
             password=context.bot_data['database_password'],
             telegram_id=update.effective_user.id
         )
-        if seller_stats[0] is False
+        if seller_stats[0] is not True:
         #    await query.edit_message_reply_markup(reply_markup=developer_panel_main())
         # else:
         #    await query.edit_message_caption(
