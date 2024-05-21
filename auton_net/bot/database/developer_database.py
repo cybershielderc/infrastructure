@@ -167,7 +167,8 @@ class GetDeveloperInformation:
                 result[13],  # open_orders
                 result[14],  # rejected orders
                 result[15],  # average completion time
-                True if result[16] == 1 else False,  # Is Address Verified
+                True if result[16] == 1 else False,  # Is Address Verified,
+                result[1]  # Developer UUID
             ]]
         except Exception as e:
             return [e]
