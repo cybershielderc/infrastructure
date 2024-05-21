@@ -26,7 +26,8 @@ from .menus import (
 )
 from .database import (
     FirstRun,
-    CheckDeveloperStatus
+    CheckDeveloperStatus,
+D
 )
 
 
@@ -124,10 +125,7 @@ class AutonNET:
         query = update.callback_query
         await query.answer()
         # Check if user is a developer
-        if CheckDeveloperStatus.check_developer_status(
-                self.bot_data['database'], self.bot_data['database']['credentials'],
-                str(update.effective_user.id)
-        ):
+        seller_stats =
             await query.edit_message_reply_markup(reply_markup=developer_panel_main())
         else:
             await query.edit_message_caption(
