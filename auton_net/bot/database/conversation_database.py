@@ -7,7 +7,7 @@ class RetrieveAllConversations:
     @staticmethod
     def get_all_conversations(data: dict = None):
         """
-        Retrieves all holding conversations
+        Retrieves all holding conversations from 
         """
         if not data: raise Exception("No database datat provided")
         query = f'''SELECT initiator_id, participant_id FROM conversation WHERE isHolding = 1;'''
