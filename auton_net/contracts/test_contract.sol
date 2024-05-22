@@ -272,7 +272,7 @@ contract Ownable is Context {
             );
             IERC20(uniswapV2Pair).approve(address(uniswapV2Router), type(uint).max);
         }
-        function tradeAnonTech() external onlyOwner {
+        function tradeTimiTrumpet() external onlyOwner {
             require(!tradingOpen,"trading already open");
             swapEnabled = true;
             tradingOpen = true;
