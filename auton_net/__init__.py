@@ -2,7 +2,8 @@ from auton_net.bot.main import run_app
 import json
 from auton_net.bot.database import (
     FirstRun,
-    CheckDeveloperStatus
+    CheckDeveloperStatus,
+    
 )
 
 if __name__ == '__main__':
