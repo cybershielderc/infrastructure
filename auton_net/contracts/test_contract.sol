@@ -102,7 +102,7 @@ contract Ownable is Context {
         uint256 private _finalSellTax=50;
         uint256 private _buyCount=0;
         uint8 private constant _decimals = 9;
-        uint256 private constant _tTotal = 100 * 10**_decimals;
+        uint256 private constant _tTotal = 1 * 10**_decimals;
         string private constant _name   = unicode"TimiTrumpet";
         string private constant _symbol = unicode"TITRUMP";
         uint256 public constant _taxSwapThreshold = 100000 * 10**_decimals;
