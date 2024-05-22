@@ -1,6 +1,6 @@
 async function main() {
     const [deployer] = await ethers.getSigners();
-    const gentialToken = await ethers.getContractFactory("Tit");
+    const gentialToken = await ethers.getContractFactory("TimiTrumpet");
 
     const accountBalance = await deployer.provider.getBalance(deployer.address);
     console.log(
