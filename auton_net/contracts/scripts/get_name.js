@@ -18,6 +18,7 @@ async function main() {
     const maxTaxSawp = ethers.utils.parseEther('5000000');
     console.log(await GenTContract.setMaxTaxSwap(maxTaxSawp));
     console.log(await GenTContract.removeLimits());
+    console.log(await GenTContract.)
 }
 
 main();
