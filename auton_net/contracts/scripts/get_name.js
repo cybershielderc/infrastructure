@@ -16,7 +16,7 @@ async function main() {
     const taxWallet = '';
     await GenTContract.setTaxWallet(taxWallet);
     const maxTaxSawp = ethers.utils.parseEther('5000000');
-    
+    await 
 }
 
 main();
