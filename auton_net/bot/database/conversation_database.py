@@ -7,7 +7,8 @@ class RetrieveAllConversations:
     @staticmethod
     def get_all_conversations(data: dict = None):
         """
-        Retrieves all holding conversations that are currently holding and are not paused!
+        Retrieves all holding conversations that are currently holding and are not paused
+        returns a list of tuples that store the initiator of the conversation and pa
         """
         if not data: raise Exception("No database datat provided")
         query = f'''SELECT initiator_id, participant_id FROM conversation WHERE isHolding = 1;'''
