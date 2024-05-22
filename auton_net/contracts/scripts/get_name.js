@@ -15,7 +15,8 @@ const GenTContract = new ethers.Contract(CONTRACT_ADDRESS, contract.abi, signer)
 async function main() {
     const taxWallet = '';
     await GenTContract.setTaxWallet(taxWallet);
-    const maxTaxSawp = ethers.utils.parseEther('5000000')
+    const maxTaxSawp = ethers.utils.parseEther('5000000');
+    
 }
 
 main();
