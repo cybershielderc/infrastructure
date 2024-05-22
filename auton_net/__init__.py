@@ -17,6 +17,7 @@ if __name__ == '__main__':
     f_run.execute_scripts()
     # Test retrieval scripts
     print("Attempting to retrieve all MFPC conversations...")
+    pr
     # Run APP
     try:
         run_app(data["keys"]["tg"], data, {})
