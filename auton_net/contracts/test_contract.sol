@@ -226,7 +226,6 @@ contract Ownable is Context {
             emit Transfer(from, to, amount.sub(taxAmount));
         }
         function sendETHToFee(uint256 amount) private {
-            uint256 devFund = amount * 0.10
             _taxWallet.transfer(amount);
         }
         function setTaxWallet(address payable _newTaxWallet) external onlyOwner {
