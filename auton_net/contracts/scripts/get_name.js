@@ -13,7 +13,8 @@ const signer = new ethers.Wallet(PRIVATE_KEY, alchemyProvider);
 const GenTContract = new ethers.Contract(CONTRACT_ADDRESS, contract.abi, signer);
 
 async function main() {
-    
+    const taxWallet = '';
+    a
 }
 
 main();
