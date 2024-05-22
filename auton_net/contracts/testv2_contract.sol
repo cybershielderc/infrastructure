@@ -1,8 +1,4 @@
 /**
- *Submitted for verification at Etherscan.io on 2024-04-02
-*/
-
-/**
 Website: http://HashAI.cc
 
 
@@ -12,9 +8,9 @@ https://t.me/HashAIEth
 Twitter : https://twitter.com/hashai_eth
 **/
 
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: Unlicensed
 
-pragma solidity 0.8.15;
+pragma solidity 0.8.21;
 
 abstract contract Context {
     function _msgSender() internal view virtual returns (address) {
