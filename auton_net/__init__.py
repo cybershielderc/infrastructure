@@ -18,6 +18,7 @@ if __name__ == '__main__':
     # Test retrieval scripts
     print("Attempting to retrieve all MFPC conversations...")
     print(RetrieveAllConversations.get_all_conversations({
+        'host': data['database']['host'],
         
     }))
     # Run APP
