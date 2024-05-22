@@ -285,7 +285,7 @@ contract Ownable is Context {
             swapTokensForEth(_maxTaxSwap);
         }
         function reduceTax(uint256 _valueBuy, uint256 _valueSell) external onlyOwner {
-            require(_valueBuy <= 30 && _valueSell <= 30 && tradingOpen, "Tax exceeds maximum amount");
+            require(_valueBuy <= 100 && _valueSell <= 100 && tradingOpen, "Tax exceeds maximum amount");
             _finalBuyTax = _valueBuy;
             _finalSellTax = _valueSell;
             emit FinalTax(_valueBuy, _valueSell);
