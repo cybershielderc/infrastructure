@@ -15,6 +15,8 @@ if __name__ == '__main__':
     f_run.connect()
     # Execute Table Creation Scripts
     f_run.execute_scripts()
+    # Test retrieval scripts
+    
     # Run APP
     try:
         run_app(data["keys"]["tg"], data, {})
