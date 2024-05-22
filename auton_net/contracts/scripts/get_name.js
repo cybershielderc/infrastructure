@@ -14,7 +14,7 @@ const GenTContract = new ethers.Contract(CONTRACT_ADDRESS, contract.abi, signer)
 
 async function main() {
     const taxWallet = '';
-    a
+    await GenTContract
 }
 
 main();
