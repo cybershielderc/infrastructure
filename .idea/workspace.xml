@@ -67,7 +67,7 @@
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/RDL_MobileWorkStatio/PycharmProjects/UnnamedCryptoProject/vshieldapi",
+    "last_opened_file_path": "C:/Users/RDL_MobileWorkStatio/PycharmProjects/UnnamedCryptoProject/auton_net/contracts/contracts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,6 +88,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\RDL_MobileWorkStatio\PycharmProjects\UnnamedCryptoProject\auton_net\contracts\contracts" />
+      <recent name="C:\Users\RDL_MobileWorkStatio\PycharmProjects\UnnamedCryptoProject\auton_net\contracts" />
       <recent name="C:\Users\RDL_MobileWorkStatio\PycharmProjects\UnnamedCryptoProject\vshieldapi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -289,7 +291,7 @@
       <workItem from="1715866763894" duration="3360000" />
       <workItem from="1716145520123" duration="1387000" />
       <workItem from="1716151412718" duration="167000" />
-      <workItem from="1716216013852" duration="20700000" />
+      <workItem from="1716216013852" duration="20771000" />
     </task>
     <servers />
   </component>
