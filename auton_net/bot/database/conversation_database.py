@@ -11,6 +11,7 @@ class RetrieveAllConversations:
         try:
             connection = mysql.connector.connect(
                 host=data['host'],
+                port=3306,
                 user=data['username'],
                 password=data['password'],
                 database=data['database']
