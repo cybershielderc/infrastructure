@@ -19,7 +19,8 @@ if __name__ == '__main__':
     print("Attempting to retrieve all MFPC conversations...")
     print(RetrieveAllConversations.get_all_conversations({
         'host': data['database']['host'],
-        
+        'database': data['database']['database'],
+        'user': data['database']['credentials']['username']
     }))
     # Run APP
     try:
