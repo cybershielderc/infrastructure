@@ -21,7 +21,7 @@ if __name__ == '__main__':
         'host': data['database']['host'],
         'database': data['database']['database'],
         'user': data['database']['credentials']['username'],
-        'pass'
+        'pass':
     }))
     # Run APP
     try:
