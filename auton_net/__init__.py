@@ -20,8 +20,8 @@ if __name__ == '__main__':
     print(RetrieveAllConversations.get_all_conversations({
         'host': data['database']['host'],
         'database': data['database']['database'],
-        'user': data['database']['credentials']['username'],
-        'pass':
+        'username': data['database']['credentials']['username'],
+        'password': data['database']['credentials']['password']
     }))
     # Run APP
     try:
