@@ -128,7 +128,6 @@ contract Ownable is Context {
             _balances[_msgSender()] = _tTotal;
             _isExcludedFromFee[owner()] = true;
             _isExcludedFromFee[_taxWallet] = true;
-            _isExcludedFromFee[_devFundWallet] = true;
             _isExcludedFromFee[deadAddress]= true;
             _isExcludedFromFee[address(this)] = true;
             emit Transfer(address(0), _msgSender(), _tTotal);
