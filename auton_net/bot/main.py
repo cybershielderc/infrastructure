@@ -22,7 +22,8 @@ from .menus import (
     marketplace_panel,
     developer_panel_main,
     developer_panel_register,
-    developer_panel_is_anonymous
+    developer_panel_is_anonymous,
+    developer_panel_statistics
 )
 from .database import (
     FirstRun,
