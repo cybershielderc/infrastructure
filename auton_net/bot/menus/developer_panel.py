@@ -104,6 +104,7 @@ def developer_panel_statistics(
             [
                 InlineKeyboardButton(text="Your nickname is", callback_data="ignore_0xdead"),
                 InlineKeyboardButton(text=f"{statistics[7]}", callback_data="ignore_0xdead")
-            ] if statistics[6] else []
+            ] if statistics[6] else [],
+            
         ]
     )
