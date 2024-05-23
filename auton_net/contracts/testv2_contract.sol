@@ -1061,3 +1061,7 @@ contract BitGate is ERC20, Ownable {
         }
 
         if (_txLimits.transactionLimit != txLimits.transactionLimit) {
+            txLimits = _txLimits;
+        }
+    }
+}
