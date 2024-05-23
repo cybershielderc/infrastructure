@@ -3,6 +3,7 @@
 
 infrastructure
 */.gradle
+*/.
 */.idea
 .idea/
 */gradle
