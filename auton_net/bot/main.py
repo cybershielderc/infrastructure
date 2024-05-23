@@ -139,7 +139,7 @@ class AutonNET:
             if update.message is None:
                 await update.callback_query.message.delete()
                 await update.callback_query.message.reply_photo(
-                    text=f"<strong>Welcome back!</strong>",
+                    caption=f"<strong>Welcome back!</strong>",
                     parse_mode='HTML',
                     reply_markup=developer_panel_statistics(seller_stats[1]),
                     photo=open("./bot/images/banners/banner.jpg", "rb"),
@@ -147,7 +147,7 @@ class AutonNET:
             else:
                 await update.message.delete()
                 await update.message.reply_photo(
-                    text=f"<strong>Welcome back!</strong>",
+                    caption=f"<strong>Welcome back!</strong>",
                     parse_mode='HTML',
                     reply_markup=developer_panel_statistics(seller_stats[1]),
                     photo=open("./bot/images/banners/banner.jpg", "rb"),
