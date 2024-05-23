@@ -136,7 +136,7 @@ class AutonNET:
             telegram_id=update.effective_user.id
         )
         if seller_stats[0] is True:
-            await query.edit_message_reply_markup(reply_markup=developer_panel_statistics()
+            await query.edit_message_reply_markup(reply_markup=developer_panel_statistics(seller_stats[1]))
         # else:
         #    await query.edit_message_caption(
         #        caption="Sorry, but you have not been registered as a developer!\nWould you like to register?",
