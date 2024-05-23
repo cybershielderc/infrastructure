@@ -59,7 +59,6 @@ def determine_rating(rating: float) -> str:
         stars += "🌗"
     elif remaining >= 0.25:
         stars += "🌘"
-
     return stars.ljust(5, "🌑")
 
 
