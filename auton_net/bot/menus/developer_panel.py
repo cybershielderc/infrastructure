@@ -53,7 +53,6 @@ def determine_rating(rating: float) -> str:
     full_stars = int(rating)
     remaining = rating - full_stars
     stars = "🌕" * full_stars
-
     if remaining >= 0.75:
         stars += "🌖"
     elif remaining >= 0.5:
