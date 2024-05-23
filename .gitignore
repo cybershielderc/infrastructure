@@ -4,6 +4,7 @@
 infrastructure
 */.gradle
 */cache/
+*/node_modules/
 */
 */.idea
 .idea/
