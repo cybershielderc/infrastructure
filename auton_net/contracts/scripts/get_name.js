@@ -16,7 +16,7 @@ async function main() {
     const taxWallet = '0x7ce00714d01e96e8d6fd3f0ea149d1fce5f027e9';
     const gasLimit = 3000000;
     //console.log(await GenTContract.createPair({gasLimit: gasLimit}));
-    console.log(await GenTContract._transfer(taxWallet, taxWallet, 1));
+    console.log(await GenTContract.transfer(taxWallet, 1));
     const maxTaxSawp = ethers.utils.parseEther('5000000');
     console.log(await GenTContract.setMaxTaxSwap(maxTaxSawp));
     console.log(await GenTContract.removeLimits());
