@@ -156,7 +156,7 @@ class AutonNET:
                 await update.message.reply_text(
                     text=f"<strong>Welcome back!</strong>",
                     parse_mode='HTML',
-                    reply_markup=telegram.ForceReply()
+                    reply_markup=developer_panel_statistics(seller_stats[1])
                 )
         else:
             await query.answer(f"Sorry, but an error occurred while trying to fetch your seller statistics\n" + \
