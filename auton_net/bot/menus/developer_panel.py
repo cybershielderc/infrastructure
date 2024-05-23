@@ -45,4 +45,5 @@ def developer_panel_is_anonymous() -> InlineKeyboardMarkup:
     )
 
 
-def developer_panel_stat
+def developer_panel_statistics() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup()
