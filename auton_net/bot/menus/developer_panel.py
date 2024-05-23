@@ -113,7 +113,11 @@ def developer_panel_statistics(
             ],
             [
                 InlineKeyboardButton(text="Open", callback_data="ignore_0xdead"),
-                InlineKeyboardButton(text=f"{statistics[3]}", callback_data="ignore_0xdead")
+                InlineKeyboardButton(text=f"{statistics[9]}", callback_data="ignore_0xdead")
+            ],
+            [
+                InlineKeyboardButton(text="Rejected", callback_data="ignore_0xdead"),
+                InlineKeyboardButton(text=f"{statistics[10]}", callback_data="ignore_0xdead")
             ],
         ]
     )
