@@ -3,7 +3,8 @@ from .developer_panel import (
     developer_panel_main,
     developer_panel_register,
     developer_panel_is_anonymous,
-    d
+    determine_rating,
+    developer_panel_statistics
 )
 
 
