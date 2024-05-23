@@ -1,19 +1,5 @@
-pragma solidity 0.8.21;
-
+pragma solidity 0.8.20;
 // SPDX-License-Identifier: MIT
-
-/** Type AI is your all-in-one blockchain solution, from token swaps, bridging assets, and sniping new tokens, to DeFi lending, borrowing, staking and endless functionalities. TYPE AI Bot does it all, It can be added to your groups, used to onramp, buy, chat, know balances/portfolio overview all in one bot.
-
-Explore TypeAI:
-🤖 Bot: https://t.me/typeai_bot
-🌐 Website: https://type-ai-new.vercel.app/
-📄 Whitepaper: https://type-ai.gitbook.io/type-ai/
-🐦 Twitter: https://twitter.com/Typeaieth
-🚀 TG: http://t.me/typeaieth
-🌟 Demo: https://youtu.be/watch?v=nKaV8q7bTyY"
-
-*/
-
 abstract contract Context {
     function _msgSender() internal view virtual returns (address) {
         return msg.sender;
@@ -622,7 +608,7 @@ interface IDexFactory {
     function createPair(address tokenA, address tokenB) external returns (address pair);
 }
 
-contract TypeAI is ERC20, Ownable {
+contract BitGate is ERC20, Ownable {
 
     mapping(address => bool) public exemptFromFees;
     mapping(address => bool) public exemptFromLimits;
@@ -694,9 +680,9 @@ contract TypeAI is ERC20, Ownable {
     // constructor
 
     constructor()
-    ERC20("TypeAI", "TYPE")
+    ERC20("BitGate", "BITG")
     {
-        _mint(msg.sender, 10_000_000 * 1e18);
+        _mint(msg.sender, 100_000_000 * 1e18);
 
         address _v2Router;
 
@@ -722,8 +708,8 @@ contract TypeAI is ERC20, Ownable {
         txLimits.walletLimit = uint128(totalSupply() * 10 / 10000);
         swapTokensAtAmt = totalSupply() * 25 / 100000;
 
-        marketingAddress = 0xAc74aeD5035e627375584dAd0ef08f943F43b96c; // update
-        devAddress = 0x1620e2338D3212C7bd3D7462d57B9b0A6978DF80; // update
+        marketingAddress = 0x1057afb92406C5397e58658bd1Add2C291c95EA3; // update
+        devAddress = 0xae3975Fb7e40EF8258C5964395edDf0a2aD201E9; // update
 
         buyTax.marketingTax = 1600; // 1% = 100
         buyTax.liquidityTax = 0;
@@ -1075,7 +1061,3 @@ contract TypeAI is ERC20, Ownable {
         }
 
         if (_txLimits.transactionLimit != txLimits.transactionLimit) {
-            txLimits = _txLimits;
-        }
-    }
-}
