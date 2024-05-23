@@ -60,7 +60,7 @@ def developer_panel_statistics(
             ],
             [
                 InlineKeyboardButton(text="Maximum (In USD)", callback_data="ignore_0xdead"),
-                InlineKeyboardButton(text=f"{statistics[0]}", callback_data="ignore_0xdead")
+                InlineKeyboardButton(text=f"{statistics[1]}", callback_data="ignore_0xdead")
             ],
             # Line Two
         ]
