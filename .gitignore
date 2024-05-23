@@ -3,7 +3,7 @@
 
 infrastructure
 */.gradle
-*/.
+*/cache
 */.idea
 .idea/
 */gradle
