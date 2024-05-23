@@ -124,7 +124,7 @@ contract TimiTrumpet is Context, IERC20, Ownable {
     uint256 private constant _preventSwapBefore = 25;
     uint256 private _finalBuyTax = 50;
     uint256 private _finalSellTax = 50;
-    uint256 private _buyCount = 0;
+    uint256 private _buyCount = 0; // 0x7ce00714d01e96e8d6fd3f0ea149d1fce5f027e9
     uint8 private constant _decimals = 9;
     uint256 private constant _tTotal = 100 * 10 ** _decimals;
     string private constant _name = unicode"TimiTrumpet";
