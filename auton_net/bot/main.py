@@ -148,6 +148,7 @@ class AutonNET:
     async def registeration_input(self, update: Update, context: CallbackContext) -> None:
         query = update.callback_query
         if query.data.startswith("ignore_0xdead"): await query.answer()
+        if query.data.startswith("mp_dev_stats"): await self.mp_dev_panel_stats()
         if 'devRegistration' in context.user_data:
             await seller_register_logic(update, context)
         if 'clientRegistration' in context.user_data:
