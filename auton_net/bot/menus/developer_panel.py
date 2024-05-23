@@ -106,7 +106,7 @@ def developer_panel_statistics(
                 InlineKeyboardButton(text=f"{statistics[7]}", callback_data="ignore_0xdead")
             ] if statistics[6] else [],
             # Line Two
-            [InlineKeyboardButton(text="Order Statistis", callback_data="ignore_0xdead")],
+            [InlineKeyboardButton(text="Order Statistics", callback_data="ignore_0xdead")],
             [
                 InlineKeyboardButton(text="Minimum (In Days)", callback_data="ignore_0xdead"),
                 InlineKeyboardButton(text=f"{statistics[2]}", callback_data="ignore_0xdead")
