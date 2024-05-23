@@ -95,7 +95,7 @@ def developer_panel_statistics(
             ],
             [
                 InlineKeyboardButton(text="Are you verified?", callback_data="ignore_0xdead"),
-                InlineKeyboardButton(text=f"{'Yes <>' if }", callback_data="ignore_0xdead")
+                InlineKeyboardButton(text=f"{'Yes <>' if statistics[5]}", callback_data="ignore_0xdead")
             ],
             [
                 InlineKeyboardButton(text="Maximum (In Days)", callback_data="ignore_0xdead"),
