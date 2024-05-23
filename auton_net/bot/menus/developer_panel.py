@@ -97,7 +97,10 @@ def developer_panel_statistics(
                 InlineKeyboardButton(text="Are you verified?", callback_data="ignore_0xdead"),
                 InlineKeyboardButton(text=f"{'Yes <>' if statistics[5] else 'No <>'}", callback_data="ignore_0xdead")
             ],
-            
+            [
+                InlineKeyboardButton(text="Wallet verified?", callback_data="ignore_0xdead"),
+                InlineKeyboardButton(text=f"{'Yes <>' if statistics[12] else 'No <>'}", callback_data="ignore_0xdead")
+            ],
             [
                 InlineKeyboardButton(text="Are you anonymous?", callback_data="ignore_0xdead"),
                 InlineKeyboardButton(text=f"{'Yes <>' if statistics[6] else 'No <>'}", callback_data="ignore_0xdead")
