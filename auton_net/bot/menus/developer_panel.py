@@ -56,7 +56,7 @@ def developer_panel_statistics(
             [InlineKeyboardButton(text="Accepted Budget Range", callback_data="ignore_0xdead")],
             [
                 InlineKeyboardButton(text="Minimum", callback_data="ignore_0xdead"),
-                InlineKeyboardButton(text=f"{}")
+                InlineKeyboardButton(text=f"{statistics[0]}", callback_data=statistics[1])
             ]
         ]
     )
