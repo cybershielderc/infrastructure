@@ -139,7 +139,7 @@ class AutonNET:
             await query.edit_message_reply_markup(reply_markup=developer_panel_statistics(seller_stats[1]))
         else:
             await query.answer(f"Sorry, but an error occurred while trying to fetch your seller statistics\n" + \
-                               f"{s}")
+                               f"{seller_stats[0]}")
         #    await query.edit_message_caption(
         #        caption="Sorry, but you have not been registered as a developer!\nWould you like to register?",
         #        reply_markup=developer_panel_register()
