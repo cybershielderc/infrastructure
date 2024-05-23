@@ -154,7 +154,7 @@ class AutonNET:
             else:
                 await update.message.delete()
                 await update.message.reply_text(
-                    text=f"Welcome back!"
+                    text=f"<strong>Welcome back!</strong>",
                     parse_mode='HTML',
                     reply_markup=telegram.ForceReply()
                 )
