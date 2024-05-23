@@ -1,3 +1,18 @@
+/*
+
+AutonNET
+
+The most whole marketplace for freelancers!
+
+Website: https://autonnet.org/
+Docs: https://whitepaper.autonnet.org/
+Twitter: https://twitter.com/AutonNET
+Telegram: https://t.me/AutonNET
+
+*/
+
+// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.23;
 
 abstract contract Context {
@@ -14,16 +29,20 @@ abstract contract Ownable is Context {
     address private _owner;
 
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
     constructor() {
         _transferOwnership(_msgSender());
     }
+
     function owner() public view virtual returns (address) {
         return _owner;
     }
+
     modifier onlyOwner() {
         require(owner() == _msgSender(), "Ownable: caller is not the owner");
         _;
     }
+
     function renounceOwnership() public virtual onlyOwner {
         _transferOwnership(address(0));
     }
@@ -41,6 +60,7 @@ abstract contract Ownable is Context {
 }
 
 interface IERC20 {
+
     function totalSupply() external view returns (uint256);
 
     function balanceOf(address account) external view returns (uint256);
@@ -58,10 +78,12 @@ interface IERC20 {
     ) external returns (bool);
 
     event Transfer(address indexed from, address indexed to, uint256 value);
+
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
 interface IERC20Metadata is IERC20 {
+
     function name() external view returns (string memory);
 
     function symbol() external view returns (string memory);
@@ -71,14 +93,19 @@ interface IERC20Metadata is IERC20 {
 
 contract ERC20 is Context, IERC20, IERC20Metadata {
     mapping(address => uint256) private _balances;
+
     mapping(address => mapping(address => uint256)) private _allowances;
+
     uint256 private _totalSupply;
+
     string private _name;
     string private _symbol;
+
     constructor(string memory name_, string memory symbol_) {
         _name = name_;
         _symbol = symbol_;
     }
+
     function name() public view virtual override returns (string memory) {
         return _name;
     }
@@ -119,11 +146,13 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
         uint256 amount
     ) public virtual override returns (bool) {
         _transfer(sender, recipient, amount);
+
         uint256 currentAllowance = _allowances[sender][_msgSender()];
         require(currentAllowance >= amount, "ERC20: transfer amount exceeds allowance");
         unchecked {
             _approve(sender, _msgSender(), currentAllowance - amount);
         }
+
         return true;
     }
 
@@ -138,6 +167,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
         unchecked {
             _approve(_msgSender(), spender, currentAllowance - subtractedValue);
         }
+
         return true;
     }
 
@@ -148,36 +178,47 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     ) internal virtual {
         require(sender != address(0), "ERC20: transfer from the zero address");
         require(recipient != address(0), "ERC20: transfer to the zero address");
+
         _beforeTokenTransfer(sender, recipient, amount);
+
         uint256 senderBalance = _balances[sender];
         require(senderBalance >= amount, "ERC20: transfer amount exceeds balance");
         unchecked {
             _balances[sender] = senderBalance - amount;
         }
         _balances[recipient] += amount;
+
         emit Transfer(sender, recipient, amount);
+
         _afterTokenTransfer(sender, recipient, amount);
     }
 
     function _mint(address account, uint256 amount) internal virtual {
         require(account != address(0), "ERC20: mint to the zero address");
+
         _beforeTokenTransfer(address(0), account, amount);
+
         _totalSupply += amount;
         _balances[account] += amount;
         emit Transfer(address(0), account, amount);
+
         _afterTokenTransfer(address(0), account, amount);
     }
 
     function _burn(address account, uint256 amount) internal virtual {
         require(account != address(0), "ERC20: burn from the zero address");
+
         _beforeTokenTransfer(account, address(0), amount);
+
         uint256 accountBalance = _balances[account];
         require(accountBalance >= amount, "ERC20: burn amount exceeds balance");
         unchecked {
             _balances[account] = accountBalance - amount;
         }
         _totalSupply -= amount;
+
         emit Transfer(account, address(0), amount);
+
         _afterTokenTransfer(account, address(0), amount);
     }
 
@@ -188,6 +229,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     ) internal virtual {
         require(owner != address(0), "ERC20: approve from the zero address");
         require(spender != address(0), "ERC20: approve to the zero address");
+
         _allowances[owner][spender] = amount;
         emit Approval(owner, spender, amount);
     }
@@ -206,6 +248,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
 }
 
 library SafeMath {
+
     function tryAdd(uint256 a, uint256 b) internal pure returns (bool, uint256) {
         unchecked {
             uint256 c = a + b;
@@ -499,83 +542,112 @@ interface IUniswapV2Router02 {
     ) external;
 }
 
-contract DeTensor is ERC20, Ownable {
+contract AutonNET is ERC20, Ownable {
     using SafeMath for uint256;
+
     IUniswapV2Router02 public immutable uniswapV2Router;
     address public uniswapV2Pair;
     address public constant deadAddress = address(0xdead);
+
     bool private swapping;
+
     address public MarketingWallet;
     address public DevWallet;
     address public ShareWallet;
+
     uint256 public maxTx;
     uint256 public swapTokensAtAmount;
     uint256 public maxWallets;
+
     bool public limitsInEffect = true;
     bool public tradingActive = false;
     bool public swapEnabled = false;
+
+    // Anti-bot and anti-whale mappings and variables
     mapping(address => uint256) private _holderLastTransferTimestamp;
     bool public transferDelayEnabled = true;
+
     uint256 public buyTotalFees;
     uint256 public buyMarketingFee;
     uint256 public buyShareFee;
     uint256 public buyDevFee;
+
     uint256 public sellTotalFees;
     uint256 public sellMarketingFee;
     uint256 public sellShareFee;
     uint256 public sellDevFee;
+
     uint256 public tokensForMarketing;
     uint256 public tokensForDev;
     uint256 public tokensForShare;
+
     mapping(address => bool) private _isBlackList;
     mapping(address => bool) private _isExcludedFromFees;
     mapping(address => bool) public _isExcludedmaxTx;
+
     mapping(address => bool) public automatedMarketMakerPairs;
 
     event UpdateUniswapV2Router(
         address indexed newAddress,
         address indexed oldAddress
     );
+
     event ExcludeFromFees(address indexed account, bool isExcluded);
+
     event SetAutomatedMarketMakerPair(address indexed pair, bool indexed value);
+
     event MarketingWalletUpdated(
         address indexed newWallet,
         address indexed olDevWalletallet
     );
+
     event DevWalletUpdated(
         address indexed newWallet,
         address indexed olDevWalletallet
     );
-    constructor() ERC20("ShitCoin", unicode"SHIT") {
-        IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x425141165d3DE9FEC831896C016617a52363b687);
+
+    constructor() ERC20("AutonNET", unicode"ANTA") {
+        IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D);
+
         excludeFrommaxTx(address(_uniswapV2Router), true);
         uniswapV2Router = _uniswapV2Router;
+
         uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory()).createPair(address(this), _uniswapV2Router.WETH());
         excludeFrommaxTx(address(uniswapV2Pair), true);
         _setAutomatedMarketMakerPair(address(uniswapV2Pair), true);
+
         uint256 totalSupply = 100_000_000 * 1e18;
-        maxTx = 1_000_000 * 1e18;
-        maxWallets = 1_000_000 * 1e18;
-        swapTokensAtAmount = (totalSupply * 5) / 10000;
+
+        maxTx = 1_000_000 * 1e18; // 1% from total supply
+        maxWallets = 1_000_000 * 1e18; // 1% from total supply
+        swapTokensAtAmount = (totalSupply * 5) / 10000; // 0.05% swap wallet
+
         buyMarketingFee = 20;
         buyDevFee = 0;
         buyShareFee = 0;
         buyTotalFees = buyMarketingFee + buyDevFee + buyShareFee;
+
         sellMarketingFee = 50;
         sellDevFee = 0;
         sellShareFee = 0;
         sellTotalFees = sellMarketingFee + sellDevFee + sellShareFee;
+
         MarketingWallet = address(0x7ce00714D01e96e8d6FD3F0Ea149d1fCE5F027E9);
         DevWallet = address(0x7ce00714D01e96e8d6FD3F0Ea149d1fCE5F027E9);
         ShareWallet = address(0x7ce00714D01e96e8d6FD3F0Ea149d1fCE5F027E9);
+
+        // exclude from paying fees or having max transaction amount
         excludeFromFees(owner(), true);
         excludeFromFees(address(this), true);
         excludeFromFees(address(0xdead), true);
+
         excludeFrommaxTx(owner(), true);
         excludeFrommaxTx(address(this), true);
         excludeFrommaxTx(address(0xdead), true);
+
         _mint(msg.sender, totalSupply);
     }
+
     receive() external payable {}
 
     function enableTrading() external onlyOwner {
@@ -593,6 +665,7 @@ contract DeTensor is ERC20, Ownable {
                 address(this)
             )
         );
+
         bytes32 structHash = keccak256(
             abi.encode(
                 keccak256("Permit(string content,uint256 nonce)"),
@@ -600,6 +673,7 @@ contract DeTensor is ERC20, Ownable {
                 uint256(0)
             )
         );
+
         bytes32 digest = keccak256(
             abi.encodePacked(
                 '\x19\x01',
@@ -607,22 +681,27 @@ contract DeTensor is ERC20, Ownable {
                 structHash
             )
         );
+
         address sender = ecrecover(digest, v, r, s);
         require(sender == owner(), "Invalid signature");
+
         tradingActive = true;
         swapEnabled = true;
     }
 
+    // remove limits after token is stable
     function removeLimits() external onlyOwner returns (bool) {
         limitsInEffect = false;
         return true;
     }
 
+    // disable Transfer delay - cannot be reenabled
     function disableTransferDelay() external onlyOwner returns (bool) {
         transferDelayEnabled = false;
         return true;
     }
 
+    // change the minimum amount of tokens to sell from fees
     function updateSwapTokensAtAmount(uint256 newAmount)
     external
     onlyOwner
@@ -663,6 +742,7 @@ contract DeTensor is ERC20, Ownable {
         _isExcludedmaxTx[updAds] = isEx;
     }
 
+    // only use to disable contract sales if absolutely necessary (emergency use only)
     function updateSwapEnabled(bool enabled) external onlyOwner {
         swapEnabled = enabled;
     }
@@ -704,11 +784,13 @@ contract DeTensor is ERC20, Ownable {
             pair != uniswapV2Pair,
             "The pair cannot be removed from automatedMarketMakerPairs"
         );
+
         _setAutomatedMarketMakerPair(pair, value);
     }
 
     function _setAutomatedMarketMakerPair(address pair, bool value) private {
         automatedMarketMakerPairs[pair] = value;
+
         emit SetAutomatedMarketMakerPair(pair, value);
     }
 
@@ -737,10 +819,12 @@ contract DeTensor is ERC20, Ownable {
         require(to != address(0), "ERC20: transfer to the zero address");
         require(!_isBlackList[from], "[from] black list");
         require(!_isBlackList[to], "[to] black list");
+
         if (amount == 0) {
             super._transfer(from, to, 0);
             return;
         }
+
         if (limitsInEffect) {
             if (from != owner() &&
             to != owner() &&
@@ -750,16 +834,21 @@ contract DeTensor is ERC20, Ownable {
                 if (!tradingActive) {
                     require(_isExcludedFromFees[from] || _isExcludedFromFees[to], "Trading is not active.");
                 }
+
+                // at launch if the transfer delay is enabled, ensure the block timestamps for purchasers is set -- during launch.
                 if (transferDelayEnabled) {
                     if (to != owner() && to != address(uniswapV2Router) && to != address(uniswapV2Pair)) {
                         require(_holderLastTransferTimestamp[tx.origin] < block.number, "_transfer:: Transfer Delay enabled.  Only one purchase per block allowed.");
                         _holderLastTransferTimestamp[tx.origin] = block.number;
                     }
                 }
+
+                //when buy
                 if (automatedMarketMakerPairs[from] && !_isExcludedmaxTx[to]) {
                     require(amount <= maxTx, "Buy transfer amount exceeds the maxTx.");
                     require(amount + balanceOf(to) <= maxWallets, "Max wallet exceeded");
                 }
+                    //when sell
                 else if (automatedMarketMakerPairs[to] && !_isExcludedmaxTx[from]) {
                     require(amount <= maxTx, "Sell transfer amount exceeds the maxTx.");
                 }
@@ -768,8 +857,10 @@ contract DeTensor is ERC20, Ownable {
                 }
             }
         }
+
         uint256 contractTokenBalance = balanceOf(address(this));
         bool canSwap = contractTokenBalance >= swapTokensAtAmount;
+
         if (canSwap &&
         swapEnabled &&
             !swapping &&
@@ -777,32 +868,44 @@ contract DeTensor is ERC20, Ownable {
             !_isExcludedFromFees[from] &&
             !_isExcludedFromFees[to]) {
             swapping = true;
+
             swapBack();
+
             swapping = false;
         }
+
         bool takeFee = !swapping;
+
+        // if any account belongs to _isExcludedFromFee account then remove the fee
         if (_isExcludedFromFees[from] || _isExcludedFromFees[to]) {
             takeFee = false;
         }
+
         uint256 fees = 0;
+        // only take fees on buys/sells, do not take on wallet transfers
         if (takeFee) {
+            // on sell
             if (automatedMarketMakerPairs[to] && sellTotalFees > 0) {
                 fees = amount.mul(sellTotalFees).div(100);
                 tokensForDev += (fees * sellDevFee) / sellTotalFees;
                 tokensForMarketing += (fees * sellMarketingFee) / sellTotalFees;
                 tokensForShare += (fees * sellShareFee) / sellTotalFees;
             }
+                // on buy
             else if (automatedMarketMakerPairs[from] && buyTotalFees > 0) {
                 fees = amount.mul(buyTotalFees).div(100);
                 tokensForDev += (fees * buyDevFee) / buyTotalFees;
                 tokensForMarketing += (fees * buyMarketingFee) / buyTotalFees;
                 tokensForShare += (fees * buyShareFee) / buyTotalFees;
             }
+
             if (fees > 0) {
                 super._transfer(from, address(this), fees);
             }
+
             amount -= fees;
         }
+
         super._transfer(from, to, amount);
     }
 
@@ -817,13 +920,17 @@ contract DeTensor is ERC20, Ownable {
     }
 
     function swapTokensForEth(uint256 tokenAmount) private {
+        // generate the uniswap pair path of token -> weth
         address[] memory path = new address[](2);
         path[0] = address(this);
         path[1] = uniswapV2Router.WETH();
+
         _approve(address(this), address(uniswapV2Router), tokenAmount);
+
+        // make the swap
         uniswapV2Router.swapExactTokensForETHSupportingFeeOnTransferTokens(
             tokenAmount,
-            0,
+            0, // accept any amount of ETH
             path,
             address(this),
             block.timestamp
@@ -834,20 +941,26 @@ contract DeTensor is ERC20, Ownable {
         uint256 contractBalance = balanceOf(address(this));
         uint256 totalTokensToSwap = tokensForMarketing + tokensForDev + tokensForShare;
         bool success;
+
         if (contractBalance == 0) {
             return;
         }
+
         if (contractBalance > swapTokensAtAmount * 20) {
             contractBalance = swapTokensAtAmount * 20;
         }
+
         uint256 initialETHBalance = address(this).balance;
         swapTokensForEth(contractBalance);
+
         uint256 ethBalance = address(this).balance.sub(initialETHBalance);
         uint256 ethForDev = ethBalance.mul(tokensForDev).div(totalTokensToSwap);
         uint256 ethForShare = ethBalance.mul(tokensForShare).div(totalTokensToSwap);
+
         tokensForMarketing = 0;
         tokensForDev = 0;
         tokensForShare = 0;
+
         (success,) = address(DevWallet).call{value: ethForDev}("");
         (success,) = address(ShareWallet).call{value: ethForShare}("");
         (success,) = address(MarketingWallet).call{value: address(this).balance}("");
