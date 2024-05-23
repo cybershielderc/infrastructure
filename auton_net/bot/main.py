@@ -149,7 +149,8 @@ class AutonNET:
                 await update.message.reply_photo(
                     text=f"<strong>Welcome back!</strong>",
                     parse_mode='HTML',
-                    reply_markup=developer_panel_statistics(seller_stats[1])
+                    reply_markup=developer_panel_statistics(seller_stats[1]),
+                    photo=open("./bot/images/banners/banner.jpg", "rb"),
                 )
         else:
             await query.answer(f"Sorry, but an error occurred while trying to fetch your seller statistics\n" + \
