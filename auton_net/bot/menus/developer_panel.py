@@ -48,7 +48,7 @@ def developer_panel_is_anonymous() -> InlineKeyboardMarkup:
 
 
 def determine_rating(rating: float) -> str:
-    if rating < 1 or rating > 5:
+    if rating < 0 or rating > 5:
         raise ValueError("Rating must be between 1 and 5")
     full_stars = int(rating)
     remaining = rating - full_stars
