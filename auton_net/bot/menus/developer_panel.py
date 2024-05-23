@@ -73,5 +73,6 @@ def developer_panel_statistics(
                 InlineKeyboardButton(text=f"{statistics[3]}", callback_data="ignore_0xdead")
             ],
             # Rating
+            [InlineKeyboardButton(text="Accepted Timeframe Range", callback_data="ignore_0xdead")],
         ]
     )
