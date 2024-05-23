@@ -52,6 +52,6 @@ def developer_panel_statistics(
 ) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         [
-            # Line
+            # Line One
         ]
     )
