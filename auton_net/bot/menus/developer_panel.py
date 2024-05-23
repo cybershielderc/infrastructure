@@ -83,5 +83,6 @@ def developer_panel_statistics(
                 InlineKeyboardButton(text=f"{statistics[3]}", callback_data="ignore_0xdead")
             ],
 
+
         ]
     )
