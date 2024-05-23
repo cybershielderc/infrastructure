@@ -91,7 +91,7 @@ def developer_panel_statistics(
             [InlineKeyboardButton(text="Reputation", callback_data="ignore_0xdead")],
             [
                 InlineKeyboardButton(text="Your Rating is", callback_data="ignore_0xdead"),
-                InlineKeyboardButton(text=f"{statistics[2]}", callback_data="ignore_0xdead")
+                InlineKeyboardButton(text=f"{determine_rating()}", callback_data="ignore_0xdead")
             ],
             [
                 InlineKeyboardButton(text="Maximum (In Days)", callback_data="ignore_0xdead"),
