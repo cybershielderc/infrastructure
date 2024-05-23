@@ -135,10 +135,7 @@ class AutonNET:
             telegram_id=update.effective_user.id
         )
         if seller_stats[0] is True:
-            message = \
-                f"""<strong>Seller Statistics</strong> for <strong>{seller_stats[1][7]}</strong>\n\n""" + \
-                f"""<strong>Minimum Price</strong>      <strong>Maximum Price</strong>\n""" + \
-                f"""<code>{seller_stats[1][0]}</code>"""
+            
         #    await query.edit_message_reply_markup(reply_markup=developer_panel_main())
         # else:
         #    await query.edit_message_caption(
