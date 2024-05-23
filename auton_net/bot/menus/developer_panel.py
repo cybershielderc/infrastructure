@@ -53,6 +53,6 @@ def developer_panel_statistics(
     return InlineKeyboardMarkup(
         [
             # Line One
-            [InlineKeyboardButton(text="", callback_data="ignore_0xdead")]
+            [InlineKeyboardButton(text="Accepted Budget Range", callback_data="ignore_0xdead")]
         ]
     )
