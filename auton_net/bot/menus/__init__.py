@@ -2,7 +2,8 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from .developer_panel import (
     developer_panel_main,
     developer_panel_register,
-    developer_panel_is_anonymous
+    developer_panel_is_anonymous,
+    d
 )
 
 
