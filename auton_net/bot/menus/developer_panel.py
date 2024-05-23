@@ -47,5 +47,6 @@ def developer_panel_is_anonymous() -> InlineKeyboardMarkup:
 
 def developer_panel_statistics(
         accepted_budget_min: int,
+        a
 ) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup()
