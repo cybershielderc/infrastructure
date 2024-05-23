@@ -125,5 +125,6 @@ def developer_panel_statistics(
             ],
             [InlineKeyboardButton(text="Your Seller UUID is", callback_data="ignore_0xdead")],
             [InlineKeyboardButton(text=f"{statistics[13]}", callback_data="ignore_0xdead")],
+            [InlineKeyboardButton("🔙 Back 🔙", callback_data="mp_1")],
         ]
     )
