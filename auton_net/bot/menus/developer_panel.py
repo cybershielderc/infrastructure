@@ -66,11 +66,11 @@ def developer_panel_statistics(
             [InlineKeyboardButton(text="Accepted Timeframe Range", callback_data="ignore_0xdead")],
             [
                 InlineKeyboardButton(text="Minimum (In Days)", callback_data="ignore_0xdead"),
-                InlineKeyboardButton(text=f"{statistics[]}", callback_data="ignore_0xdead")
+                InlineKeyboardButton(text=f"{statistics[2]}", callback_data="ignore_0xdead")
             ],
             [
-                InlineKeyboardButton(text="Maximum (In USD)", callback_data="ignore_0xdead"),
-                InlineKeyboardButton(text=f"{statistics[1]}", callback_data="ignore_0xdead")
+                InlineKeyboardButton(text="Maximum (In Days)", callback_data="ignore_0xdead"),
+                InlineKeyboardButton(text=f"{statistics[3]}", callback_data="ignore_0xdead")
             ],
         ]
     )
