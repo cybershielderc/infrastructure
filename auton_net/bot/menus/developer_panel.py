@@ -43,3 +43,6 @@ def developer_panel_is_anonymous() -> InlineKeyboardMarkup:
             ]
         ]
     )
+
+
+def developer_panel_stat
