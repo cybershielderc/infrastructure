@@ -46,6 +46,8 @@ def developer_panel_is_anonymous() -> InlineKeyboardMarkup:
         ]
     )
 
+def determine_rating(rating: float) -> str:
+    
 
 def developer_panel_statistics(
         statistics: list[Any]
@@ -75,14 +77,16 @@ def developer_panel_statistics(
             # Rating
             [InlineKeyboardButton(text="Reputation", callback_data="ignore_0xdead")],
             [
-                InlineKeyboardButton(text="Minimum (In Days)", callback_data="ignore_0xdead"),
+                InlineKeyboardButton(text="Your Rating is", callback_data="ignore_0xdead"),
                 InlineKeyboardButton(text=f"{statistics[2]}", callback_data="ignore_0xdead")
             ],
             [
                 InlineKeyboardButton(text="Maximum (In Days)", callback_data="ignore_0xdead"),
                 InlineKeyboardButton(text=f"{statistics[3]}", callback_data="ignore_0xdead")
             ],
-
-
+            [
+                InlineKeyboardButton(text="Maximum (In Days)", callback_data="ignore_0xdead"),
+                InlineKeyboardButton(text=f"{statistics[3]}", callback_data="ignore_0xdead")
+            ],
         ]
     )
