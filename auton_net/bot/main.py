@@ -139,17 +139,9 @@ class AutonNET:
             if update.message is None:
                 await update.callback_query.message.delete()
                 await update.callback_query.message.reply_text(
-                    text=f'<strong>Registration Form</strong> <code>D-{update.effective_user.id}</code>' + \
-                         f'\n<strong>Is Anonymous?</strong> <code>{context.user_data["dev_reg#var><isAnonReadable"]}</code>\n' + \
-                         f'<strong>Nickname</strong> <code>{context.user_data["dev_reg#var><nickname"]}</code>\n' + \
-                         f'<strong>Minimum Price (In USD)</strong> <code>{context.user_data["dev_reg#var><min_budget"]}$</code>\n' + \
-                         f'<strong>Maximum Price (In USD)</strong> <code>{context.user_data["dev_reg#var><max_budget"]}$</code>\n' + \
-                         f'<strong>Minimum Timeframe (In Days)</strong> <code>{context.user_data["dev_reg#var><min_timeframe"]}</code>\n' + \
-                         f'<strong>Minimum Timeframe (In Days)</strong> <code>{context.user_data["dev_reg#var><max_timeframe"]}</code>\n' + \
-                         f'<strong>Ethereum Wallet Address</strong> <code>{context.user_data["dev_reg#var><eth_address"]}</code>\n' + \
-                         f'\nWhat is the ethereum wallet address you want to link to this account?',
+                    text=f"<strong>Welcome back!</strong>",
                     parse_mode='HTML',
-                    reply_markup=telegram.ForceReply()
+                    reply_markup=developer_panel_statistics(seller_stats[1])
                 )
             else:
                 await update.message.delete()
