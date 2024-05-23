@@ -109,10 +109,10 @@ def developer_panel_statistics(
             [InlineKeyboardButton(text="Order Statistics", callback_data="ignore_0xdead")],
             [
                 InlineKeyboardButton(text="Completed", callback_data="ignore_0xdead"),
-                InlineKeyboardButton(text=f"{statistics[2]}", callback_data="ignore_0xdead")
+                InlineKeyboardButton(text=f"{statistics[8]}", callback_data="ignore_0xdead")
             ],
             [
-                InlineKeyboardButton(text="Maximum (In Days)", callback_data="ignore_0xdead"),
+                InlineKeyboardButton(text="Open", callback_data="ignore_0xdead"),
                 InlineKeyboardButton(text=f"{statistics[3]}", callback_data="ignore_0xdead")
             ],
         ]
