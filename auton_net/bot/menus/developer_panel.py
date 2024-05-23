@@ -108,7 +108,7 @@ def developer_panel_statistics(
             # Line Two
             [InlineKeyboardButton(text="Order Statistics", callback_data="ignore_0xdead")],
             [
-                InlineKeyboardButton(text="Minimum (In Days)", callback_data="ignore_0xdead"),
+                InlineKeyboardButton(text="Completed", callback_data="ignore_0xdead"),
                 InlineKeyboardButton(text=f"{statistics[2]}", callback_data="ignore_0xdead")
             ],
             [
