@@ -46,8 +46,24 @@ def developer_panel_is_anonymous() -> InlineKeyboardMarkup:
         ]
     )
 
+
 def determine_rating(rating: float) -> str:
-    
+    if rating < 1 or rating > 5:
+        raise ValueError("Rating must be between 1 and 5")
+
+    full_stars = int(rating)
+    remaining = rating - full_stars
+    stars = "🌕" * full_stars
+
+    if remaining >= 0.75:
+        stars += "🌖"
+    elif remaining >= 0.5:
+        stars += "🌗"
+    elif remaining >= 0.25:
+        stars += "🌘"
+
+    return stars.ljust(5, "🌑")
+
 
 def developer_panel_statistics(
         statistics: list[Any]
