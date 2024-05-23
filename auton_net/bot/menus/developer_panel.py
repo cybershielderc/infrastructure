@@ -105,6 +105,15 @@ def developer_panel_statistics(
                 InlineKeyboardButton(text="Your nickname is", callback_data="ignore_0xdead"),
                 InlineKeyboardButton(text=f"{statistics[7]}", callback_data="ignore_0xdead")
             ] if statistics[6] else [],
-            
+            # Line Two
+            [InlineKeyboardButton(text="Accepted Timeframe Range", callback_data="ignore_0xdead")],
+            [
+                InlineKeyboardButton(text="Minimum (In Days)", callback_data="ignore_0xdead"),
+                InlineKeyboardButton(text=f"{statistics[2]}", callback_data="ignore_0xdead")
+            ],
+            [
+                InlineKeyboardButton(text="Maximum (In Days)", callback_data="ignore_0xdead"),
+                InlineKeyboardButton(text=f"{statistics[3]}", callback_data="ignore_0xdead")
+            ],
         ]
     )
